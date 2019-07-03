@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Kefka.Views.Toggle_Overlays.Mikoto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:loc="clr-namespace:Kefka.Properties">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Column="0" Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <CheckBox Content="{x:Static loc:Strings.Potion}" Visibility="{Binding Mikoto.ShowPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UsePotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DoDamage}" Visibility="{Binding Mikoto.ShowDoDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.DoDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Holy}" Visibility="{Binding Mikoto.ShowHoly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseHoly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Divine Benison" Visibility="{Binding Mikoto.ShowDivineBenison, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseDivineBenison, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Plenary Indulgence" Visibility="{Binding Mikoto.ShowPlenaryIndulgence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UsePlenaryIndulgence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Asylum}" Visibility="{Binding Mikoto.ShowAsylum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseAsylum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Assize}" Visibility="{Binding Mikoto.ShowAssize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseAssize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.PresenceOfMind}" Visibility="{Binding Mikoto.ShowPresenceofMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UsePresenceofMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Tetragrammaton" Visibility="{Binding Mikoto.ShowTetragrammaton, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseTetragrammaton, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Benediction}" Visibility="{Binding Mikoto.ShowBenediction, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseBenediction, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Thin Air" Visibility="{Binding Mikoto.ShowThinAir, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseThinAir, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Fluid Aura" Visibility="{Binding Mikoto.ShowFluidAura, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseFluidAura, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Eye for an Eye" Visibility="{Binding Mikoto.ShowEyeforanEye, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseEyeforanEye, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Largesse" Visibility="{Binding Mikoto.ShowLargesse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Mikoto.UseLargesse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DestroyTarget}" IsChecked="{Binding Settings.DestroyTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+        </UniformGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel.DataContext>
+                <viewModels:MikotoPresetsViewModel />
+            </StackPanel.DataContext>
+            <Button Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset1, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset1}" />
+            <Button Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset2, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset2}" />
+            <Button Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset3, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset3}" />
+            <Button Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset4, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset4}" />
+            <Button Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset5, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset5}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

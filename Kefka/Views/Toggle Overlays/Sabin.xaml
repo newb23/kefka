@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Kefka.Views.Toggle_Overlays.Sabin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:utilities="clr-namespace:Kefka.Utilities">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <UniformGrid Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <CheckBox Content="{x:Static loc:Strings.AoE}" Visibility="{Binding Sabin.ShowAoE, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Buffs}" Visibility="{Binding Sabin.ShowBuffs, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DoTs}" Visibility="{Binding Sabin.ShowDoTs, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Mantra}" Visibility="{Binding Sabin.ShowMantra, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseMantra, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Opener}" Visibility="{Binding Sabin.ShowOpener, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Riddle of Earth" Visibility="{Binding Sabin.ShowRiddleofEarth, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseRiddleofEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.ElixirField}" Visibility="{Binding Sabin.ShowElixerField, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseElixirField, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Bloodbath}" Visibility="{Binding Sabin.ShowBloodbath, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseBloodbath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Second Wind" Visibility="{Binding Sabin.ShowSecondWind, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseSecondWind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DPSPotion}" Visibility="{Binding Sabin.ShowDpsPotion, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.HoldOGCDs}" Visibility="{Binding Sabin.ShowHoldoGcDs, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseHoldoGcDs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.FormShift}" Visibility="{Binding Sabin.ShowFormShift, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseFormShift, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.HowlingFist}" Visibility="{Binding Sabin.ShowHowlingFist, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseHowlingFist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.InterruptList}" Visibility="{Binding Sabin.ShowInterruptList, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" Checked="UncheckManualInterrupt" />
+            <CheckBox Content="{x:Static loc:Strings.TornadoKick}" Visibility="{Binding Sabin.ShowTornadoKick, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseTornadoKick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DestroyTarget}" IsChecked="{Binding Settings.DestroyTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.PerfectBalance}" Visibility="{Binding Sabin.ShowPerfectBalance, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UsePerfectBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.ShoulderTackle}" Visibility="{Binding Sabin.ShowShoulderTackle, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseShoulderTackle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.HoldPositionals}" Visibility="{Binding Sabin.ShowHoldPositionals, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseHoldPositionals, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" Visibility="{Binding Sabin.ShowManualInterrupt, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" Checked="UncheckInterruptList" />
+            <CheckBox Content="{x:Static loc:Strings.OoCFistsOfWind}" Visibility="{Binding Sabin.ShowOocFistsofWind, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseOocFistsofWind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.ArmoftheDestroyer}" Visibility="{Binding Sabin.ShowArmoftheDestroyer, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseArmoftheDestroyer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Feint" Visibility="{Binding Sabin.ShowFeint, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Sabin.UseFeint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+        </UniformGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel.DataContext>
+                <viewModels:SabinPresetsViewModel />
+            </StackPanel.DataContext>
+            <Button Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset1, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset1}" />
+            <Button Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset2, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset2}" />
+            <Button Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset3, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset3}" />
+            <Button Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset4, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset4}" />
+            <Button Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset5, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset5}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

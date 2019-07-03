@@ -1,0 +1,195 @@
+﻿<UserControl x:Class="Kefka.Views.Advanced.CombatSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+            <utilities:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Center">
+        <Grid.DataContext>
+            <viewModels:SettingsViewModel />
+        </Grid.DataContext>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+            <CheckBox Content="{x:Static loc:Strings.GoadTarget}" IsChecked="{Binding Settings.UseGoadTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Settings.UncheckUseManualGoadCommand}" />
+            <CheckBox Content="Show Goad Target" IsChecked="{Binding Settings.ShowGoadTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <CheckBox Content="{x:Static loc:Strings.ManualGoad}" IsChecked="{Binding Settings.UseManualGoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Settings.UncheckUseGoadTargetCommand}" />
+            <CheckBox Content="Show Manual Goad" IsChecked="{Binding Settings.ShowManualGoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" Margin="2" MinWidth="230" MinValue="0" MaxValue="5000" Increment="100" LabelContent="{x:Static loc:Strings.GoadTP}" Value="{Binding Settings.GoadTp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" MinWidth="230" MinValue="0" MaxValue="100000" Increment="100"  LabelContent="Rest HP %" Value="{Binding Settings.RestHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Rest MP %" Value="{Binding Settings.RestMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" MinWidth="230" MinValue="0" MaxValue="60"  Increment="1"  LabelContent="Rest TP %" Value="{Binding Settings.RestTpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox Margin="2" HorizontalAlignment="Center" Content="{x:Static loc:Strings.NoDoTsOnIgnoreTarget}" IsChecked="{Binding Settings.IgnoreTargetDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox Margin="2" HorizontalAlignment="Center" Content="{x:Static loc:Strings.DoTsCDsIgnoreHPSettings}" IsChecked="{Binding Settings.DestroyTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" MinWidth="230" MinValue="0" MaxValue="1000000" Increment="100"  LabelContent="{x:Static loc:Strings.TargetHP}" Value="{Binding Settings.TarHpInt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="{x:Static loc:Strings.TargetHPPct}" Value="{Binding Settings.TarHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Center" MinWidth="230" MinValue="0" MaxValue="60"  Increment="1"  LabelContent="{x:Static loc:Strings.TTDLimit}" Value="{Binding Settings.TimeToDeathLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <CheckBox Margin="0,20,0,0" HorizontalAlignment="Center" Content="Use Dynamic Target HP" IsChecked="{Binding Settings.DynamicTargetHp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Expander Margin="2" Header="Cooldowns">
+                <ContentControl Margin="0, 20, 0, 0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Instance (Tier 1)" HorizontalAlignment="Center" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                                <controls:KefkaIntNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Target HP% >=" Value="{Binding Settings.CdInstanceTier1HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <controls:KefkaDoubleNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="5"  Increment=".10"  LabelContent="Target HP Advantage" Value="{Binding Settings.CdInstanceTier1HpAdvantage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Instance (Tier 2)" HorizontalAlignment="Center" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <controls:KefkaIntNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Target HP% >=" Value="{Binding Settings.CdInstanceTier2HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <controls:KefkaDoubleNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="5"  Increment=".10"  LabelContent="Target HP Advantage" Value="{Binding Settings.CdInstanceTier2HpAdvantage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Overworld (Tier 1)" HorizontalAlignment="Center" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <controls:KefkaIntNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Target HP% >=" Value="{Binding Settings.CdOverworldTier1HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <controls:KefkaDoubleNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="5"  Increment=".10"  LabelContent="Target HP Advantage" Value="{Binding Settings.CdOverworldTier1HpAdvantage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ContentControl>
+            </Expander>
+            <Expander Margin="2" Header="DoTs">
+                <ContentControl Margin="0, 20, 0, 0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Instance (Tier 1)" HorizontalAlignment="Center" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                                <controls:KefkaIntNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Target HP% >=" Value="{Binding Settings.DotInstanceTier1HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <controls:KefkaDoubleNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="5"  Increment=".10"  LabelContent="Target HP Advantage" Value="{Binding Settings.DotInstanceTier1HpAdvantage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Instance (Tier 2)" HorizontalAlignment="Center" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <controls:KefkaIntNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Target HP% >=" Value="{Binding Settings.DotInstanceTier2HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <controls:KefkaDoubleNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="5"  Increment=".10"  LabelContent="Target HP Advantage" Value="{Binding Settings.DotInstanceTier2HpAdvantage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Overworld (Tier 1)" HorizontalAlignment="Center" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <controls:KefkaIntNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Target HP% >=" Value="{Binding Settings.DotOverworldTier1HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <controls:KefkaDoubleNumeric HorizontalAlignment="Right" MinWidth="230" MinValue="0" MaxValue="5"  Increment=".10"  LabelContent="Target HP Advantage" Value="{Binding Settings.DotOverworldTier1HpAdvantage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ContentControl>
+            </Expander>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Top">
+            <StackPanel.DataContext>
+                <viewModels:IgnoreTargetsViewModel />
+            </StackPanel.DataContext>
+            <Label Content="Interupt Target List" />
+            <ListBox Name="LstIgnoreTargets" MaxHeight="200" Height="200" ItemsSource="{Binding GuiIgnoreTargetsList}" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" FontSize="12" Text="{Binding Path=IgnoreTargetName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock Grid.Column="1" FontSize="12" Text="{Binding Path=IgnoreTargetId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Margin="0,5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Width="50" Height="25" Content="Add" Margin="2,0,0,0" Command="{Binding Instance.Add}" CommandParameter="{Binding ElementName=LstIgnoreTargets, Path=SelectedValue}" />
+                <Button Width="50" Height="25" Content="Remove" Margin="2,0,0,0" Command="{Binding Instance.Remove}" CommandParameter="{Binding ElementName=LstIgnoreTargets, Path=SelectedValue}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

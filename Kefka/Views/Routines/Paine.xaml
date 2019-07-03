@@ -1,0 +1,296 @@
+﻿<UserControl x:Class="Kefka.Views.Routines.Paine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:openers="clr-namespace:Kefka.Views.Openers"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <mahAppsControls:MetroAnimatedTabControl>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="{x:Static loc:Strings.RoutineToggles}">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Button x:Name="StanceButton" Grid.Column="0" Grid.Row="0" Content="Defiance" Click="StanceButton_Click" ToolTip="Switches Stances"/>
+                        <Button x:Name="TankButton" Grid.Column="1" Grid.Row="0" Content="Main Tank" Click="TankButton_Click" ToolTip="Switches between Main Tanking and Off Tanking"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Paine.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use an Opener (Set in the Opener Tab)"/>
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Paine.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Potions Increasing DPS (Set in the Advanced Side Tab)"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="ExProvoke" IsChecked="{Binding Paine.UseProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Provoke/Ultimatum/Shirk According to Routine Logic"/>
+                        <CheckBox Grid.Column="1" Grid.Row="3" Content="{x:Static loc:Strings.Tomahawk}" IsChecked="{Binding Paine.UseTomahawk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Tomahawk"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Onslaught" IsChecked="{Binding Paine.UseOnslaught, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Onslaught"/>
+                        <CheckBox Grid.Column="1" Grid.Row="4" Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Paine.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Berserk/Unchained/Infuriate/Inner Release"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="5" Content="Infur W/o Bers" IsChecked="{Binding Paine.InfuriateWithoutBerserk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Infuriate Without the Beserk Buff Active"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="6" Text="Min Enmity Lead"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" MaxValue="200000" Increment="100" LabelContent="ST" Value="{Binding Paine.ButchersBlockCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum Enmity Lead to Stop Using Butcher's Block Rotation"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="7" Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Paine.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Paine.UncheckUseManualInterruptCommand}" ToolTip="Whether or not to Use Interrupts Manually, or in the Rotation"/>
+                        <CheckBox Grid.Column="1" Grid.Row="7" Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Paine.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Paine.UncheckUseInterruptListCommand}" ToolTip="Whether or not to Use the Interrupt List when casting Interrupts"/>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.RefreshTimersMiscSettings}">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <controls:KefkaIntNumeric Grid.Column="0" Grid.Row="0" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="SE Refresh" Value="{Binding Paine.StormsEyeRefresh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Remaining Buff Time to Refresh the Storm's Eye Buff (in Milliseconds)"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="0" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="W/ Bers" Value="{Binding Paine.StormsEyeRefreshBerserk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Remaining Buff Time to Refresh Storm's Eye Buff With the Berserk Buff Active (in Milliseconds)"/>
+                        <controls:KefkaIntNumeric Grid.Column="0" Grid.Row="1" MinValue="0" MaxValue="60100"  Increment="100"  LabelContent="FC/Bers CD" Value="{Binding Paine.FellCleaveBerserkMinCD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Remaining Cooldown Time on Berserk to Begin Using Fell Cleave (in Milliseconds)"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="1" MinValue="0" MaxValue="30" Increment="1" LabelContent="AoE Count" Value="{Binding Paine.AoEMinEnemies, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Minimum Number of Enemies to Use AoE Abilities (Steel Cyclone/Decimate)"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Overpower :"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="2" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="Min Mobs" Value="{Binding Paine.OverpowerMinMobs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Minimum Number of Enemies to Use Overpower"/>
+                        <controls:KefkaIntNumeric Grid.Column="0" Grid.Row="3" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="Pull Count" Value="{Binding Paine.OverpowerPullCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Minimum Number of Overpower Uses to Gain Aggro After Engaging in Combat"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="3" MinValue="0" MaxValue="10000"  Increment="1"  LabelContent="Timer" Value="{Binding Paine.OverpowerRefreshTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="The Time Space Between Overpower Uses Throughout Combat; to Maintain Aggro"/>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="3" Header="{x:Static loc:Strings.Defensives}">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="{x:Static loc:Strings.Defensives}" IsChecked="{Binding Paine.UseDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Defensive abilities"/>
+                        <CheckBox Grid.Column="1" Grid.Row="0" Content="{x:Static loc:Strings.BusterDefense}" IsChecked="{Binding Paine.UseBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Defensive abilities for Tank Busters (Set in the Advanced Settings)"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="{x:Static loc:Strings.Holmgang}" IsChecked="{Binding Paine.UseHolmgang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Holmgang"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="1" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.HolmgangHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Holmgang"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="{x:Static loc:Strings.InnerBeast}" IsChecked="{Binding Paine.UseInnerBeast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Inner Beast"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="2" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.InnerBeastHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Inner Beast"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="{x:Static loc:Strings.ThrillofBattle}" IsChecked="{Binding Paine.UseThrillofBattle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Thrill of Battle"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="3" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.ThrillofBattleHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Thrill of Battle"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="{x:Static loc:Strings.Equilibrium}" IsChecked="{Binding Paine.UseEquilibrium, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Equilibrium"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="4" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.EquilibriumHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Equilibrium"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="5" Content="{x:Static loc:Strings.Vengeance}" IsChecked="{Binding Paine.UseVengeance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Vengeance"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="5" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.VengeanceHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Vengeance"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="{x:Static loc:Strings.Convalescence}" IsChecked="{Binding Paine.UseConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Convalescence"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.ConvalescenceHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Convalescence"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="7" Content="{x:Static loc:Strings.Awareness}" IsChecked="{Binding Paine.UseAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Awareness"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="7" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.AwarenessHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Awareness"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="8" Content="{x:Static loc:Strings.Rampart}" IsChecked="{Binding Paine.UseRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Rampart"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="8" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.RampartHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Rampart"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="9" Content="{x:Static loc:Strings.Anticipation}" IsChecked="{Binding Paine.UseAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Anticipation"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="9" Margin="2" MinValue="0" MaxValue="100" Increment="10" Value="{Binding Paine.AnticipationHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to Use Anticipation"/>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="Overlay">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" Content="Show Overlay" IsChecked="{Binding Settings.UseToggleOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.OverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Paine.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Paine.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Stance Button" IsChecked="{Binding Paine.ShowDeliverance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Swap Button" IsChecked="{Binding Paine.ShowSwap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Tank Button" IsChecked="{Binding Paine.ShowEnmityOverride, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Provoke}" IsChecked="{Binding Paine.ShowProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Tomahawk}" IsChecked="{Binding Paine.ShowTomahawk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Onslaught" IsChecked="{Binding Paine.ShowOnslaught, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Paine.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Paine.ShowManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Paine.ShowInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="{x:Static loc:Strings.DefensiveOverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Defensives}" IsChecked="{Binding Paine.ShowDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.BusterDefense}" IsChecked="{Binding Paine.ShowBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Holmgang}" IsChecked="{Binding Paine.ShowHolmgang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Equilibrium}" IsChecked="{Binding Paine.ShowEquilibrium, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InnerBeast}" IsChecked="{Binding Paine.ShowInnerBeast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Vengeance}" IsChecked="{Binding Paine.ShowVengeance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ThrillofBattle}" IsChecked="{Binding Paine.ShowThrillofBattle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.RawIntuition}" IsChecked="{Binding Paine.ShowRawIntuition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Rampart}" IsChecked="{Binding Paine.ShowRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Anticipation" IsChecked="{Binding Paine.ShowAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Awareness}" IsChecked="{Binding Paine.ShowAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Convalescence}" IsChecked="{Binding Paine.ShowConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Reprisal}" IsChecked="{Binding Paine.ShowReprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Hotkeys}">
+            <mahAppsControls:MetroTabItem.DataContext>
+                <viewModels:HotkeysViewModel />
+            </mahAppsControls:MetroTabItem.DataContext>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Columns="5" HorizontalAlignment="Center">
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Opener}" ModKeySetting="{Binding Paine.OpenerModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.OpenerKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Potion}" ModKeySetting="{Binding Paine.PotionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.PotionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Tank Swap" ModKeySetting="{Binding Paine.TankSwapModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.TankSwapKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.StanceSwap}" ModKeySetting="{Binding Paine.DeliveranceModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.DeliveranceKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Main/Off Tank" ModKeySetting="{Binding Paine.MainTankModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.MainTankKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.OverpowerSpam}" ModKeySetting="{Binding Paine.OverpowerSpamModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.OverpowerSpamKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Provoke}" ModKeySetting="{Binding Paine.ProvokeModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.ProvokeKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Tomahawk}" ModKeySetting="{Binding Paine.TomahawkModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.TomahawkKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Onslaught" ModKeySetting="{Binding Paine.OnslaughtModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.OnslaughtKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Buffs}" ModKeySetting="{Binding Paine.BuffsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.BuffsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Defensives}" ModKeySetting="{Binding Paine.DefensivesModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.DefensivesKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.TankBusters}" ModKeySetting="{Binding Paine.BusterDefenseModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.BusterDefenseKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Holmgang}" ModKeySetting="{Binding Paine.HolmgangModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.HolmgangKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Equilibrium}" ModKeySetting="{Binding Paine.EquilibriumModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.EquilibriumKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.InnerBeast}" ModKeySetting="{Binding Paine.InnerBeastModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.InnerBeastKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Vengeance}" ModKeySetting="{Binding Paine.VengeanceModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.VengeanceKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.ThrillofBattle}" ModKeySetting="{Binding Paine.ThrillofBattleModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.ThrillofBattleKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Rampart}" ModKeySetting="{Binding Paine.RampartModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.RampartKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Anticipation}" ModKeySetting="{Binding Paine.AnticipationModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.AnticipationKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Convalescence}" ModKeySetting="{Binding Paine.ConvalescenceModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.ConvalescenceKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Awareness}" ModKeySetting="{Binding Paine.AwarenessModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.AwarenessKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Reprisal}" ModKeySetting="{Binding Paine.ReprisalModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.ReprisalKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Interrupt" ModKeySetting="{Binding Paine.AutoInterruptModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.AutoInterruptKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+                <Separator Grid.Row="1" Margin="10" />
+                <Label Grid.Row="2" HorizontalAlignment="Center" Content="Preset Hotkeys" />
+                <UniformGrid Grid.Row="3" Columns="5" VerticalAlignment="Top">
+                    <controls:HotkeyControl Text="{Binding Paine.PresetNames.Preset1Name}" ModKeySetting="{Binding Paine.Preset1Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.Preset1Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Paine.PresetNames.Preset2Name}" ModKeySetting="{Binding Paine.Preset2Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.Preset2Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Paine.PresetNames.Preset3Name}" ModKeySetting="{Binding Paine.Preset3Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.Preset3Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Paine.PresetNames.Preset4Name}" ModKeySetting="{Binding Paine.Preset4Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.Preset4Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Paine.PresetNames.Preset5Name}" ModKeySetting="{Binding Paine.Preset5Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Paine.Preset5Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Opener}">
+            <openers:Paine_Opener />
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="Presets">
+            <Grid Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.DataContext>
+                    <viewModels:PainePresetsViewModel />
+                </Grid.DataContext>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Load" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadSettings}" />
+                    <Button Grid.Column="1" Content="Save" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SaveSettingsAs}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Set Preset 1" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset1}" />
+                    <Button Grid.Column="1" Content="Set Preset 2" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset2}" />
+                    <Button Grid.Column="2" Content="Set Preset 3" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset3}" />
+                    <Button Grid.Column="3" Content="Set Preset 4" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset4}" />
+                    <Button Grid.Column="4" Content="Set Preset 5" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset5}" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset1}" />
+                    <Button Grid.Column="1" Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset2}" />
+                    <Button Grid.Column="2" Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset3}" />
+                    <Button Grid.Column="3" Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset4}" />
+                    <Button Grid.Column="4" Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset5}" />
+                </Grid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

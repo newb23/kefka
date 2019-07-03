@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Kefka.Views.Toggle_Overlays.Cecil"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <mahAppsControls:MetroAnimatedTabControl HorizontalAlignment="Stretch" Background="Transparent">
+
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Button x:Name="GritButton" Visibility="{Binding Cecil.ShowGrit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" Content="Grit" Click="GritButton_Click" />
+                    <Button x:Name="TankButton" Visibility="{Binding Cecil.ShowGrit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" Content="Main Tank" Click="TankButton_Click" />
+                    <Button x:Name="SwapButton" Visibility="{Binding Cecil.ShowSwap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" Content="Swap" Click="Swap_Click" />
+                    <CheckBox Content="ExProvoke" Visibility="{Binding Cecil.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Opener}" Visibility="{Binding Cecil.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.DPSPotion}" Visibility="{Binding Cecil.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Unmend}" Visibility="{Binding Cecil.ShowUnmend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseUnmend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Plunge}" Visibility="{Binding Cecil.ShowPlunge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UsePlunge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.SaltedEarth}" Visibility="{Binding Cecil.ShowSaltedEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseSaltedEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="AoE Spam" Visibility="{Binding Cecil.ShowAoESpam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.AoESpam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.DarkArts}" Visibility="{Binding Cecil.ShowDarkArts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseDarkArts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.SoleSurvivor}" Visibility="{Binding Cecil.ShowSoleSurvivor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseSoleSurvivor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Buffs}" Visibility="{Binding Cecil.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" Visibility="{Binding Cecil.ShowManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" Checked="UncheckInterruptList" />
+                    <CheckBox Content="{x:Static loc:Strings.InterruptList}" Visibility="{Binding Cecil.ShowInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" Checked="UncheckManualInterrupt" />
+                    <CheckBox Content="{x:Static loc:Strings.DestroyTarget}" IsChecked="{Binding Settings.DestroyTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                </UniformGrid>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <StackPanel.DataContext>
+                        <viewModels:CecilPresetsViewModel />
+                    </StackPanel.DataContext>
+                    <Button Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset1, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset1}" />
+                    <Button Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset2, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset2}" />
+                    <Button Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset3, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset3}" />
+                    <Button Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset4, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset4}" />
+                    <Button Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset5, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset5}" />
+                </StackPanel>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Defensives}">
+            <UniformGrid Grid.Column="0" Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <CheckBox Content="{x:Static loc:Strings.Defensives}" Visibility="{Binding Cecil.ShowDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.BusterDefense}" Visibility="{Binding Cecil.ShowBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.LivingDead}" Visibility="{Binding Cecil.ShowLivingDead, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseLivingDead, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.DarkMind}" Visibility="{Binding Cecil.ShowDarkMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseDarkMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.ShadowWall}" Visibility="{Binding Cecil.ShowShadowWall, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseShadowWall, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="The Blackest Night" Visibility="{Binding Cecil.ShowTheBlackestNight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseBlackestNight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Rampart}" Visibility="{Binding Cecil.ShowRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Anticipation}" Visibility="{Binding Cecil.ShowAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Awareness}" Visibility="{Binding Cecil.ShowAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Convalescence}" Visibility="{Binding Cecil.ShowConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.UseConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Reprisal}" Visibility="{Binding Cecil.ShowReprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Cecil.ReprisalHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            </UniformGrid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

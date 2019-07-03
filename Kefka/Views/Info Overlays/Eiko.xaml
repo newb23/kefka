@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Kefka.Views.Info_Overlays.Eiko"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels">
+
+    <UserControl.DataContext>
+        <viewModels:OverlayViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <Viewbox>
+            <TextBlock Text="{Binding Instance.PetSelection}" Foreground="White"  FontFamily="Georgia" FontWeight="Bold" FontSize="16" />
+        </Viewbox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DB25C67-B07C-470E-AF55-3CB297B4BBD4}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kefka</RootNamespace>
+    <AssemblyName>Kefka</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AssemblyInfoFilePath>
+    </AssemblyInfoFilePath>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <NoWarn>CS1998</NoWarn>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugBeta|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugBeta\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoWarn>CS1998</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GreyMagic">
+      <HintPath>Libraries\GreyMagic.dll</HintPath>
+    </Reference>
+    <Reference Include="KefkaUI.Metro, Version=1.5.0.23, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\KefkaUI.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="KefkaUI.Metro.IconPacks, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\KefkaUI.Metro.IconPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RebornBuddy, Version=1.0.186.0, Culture=neutral, PublicKeyToken=48d7174f8a943034, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\RebornBuddy.exe</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AwaitableDelegateCommand.cs" />
+    <Compile Include="Commands\AwaitableDelegateCommandT.cs" />
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\DelegateCommandT.cs" />
+    <Compile Include="Commands\IAsyncCommand.cs" />
+    <Compile Include="Commands\IAsyncCommandT.cs" />
+    <Compile Include="Commands\IRaiseCanExecuteChanged.cs" />
+    <Compile Include="Controls\DoubleNumeric.xaml.cs">
+      <DependentUpon>DoubleNumeric.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HotkeyControl.xaml.cs">
+      <DependentUpon>HotkeyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IntNumeric.xaml.cs">
+      <DependentUpon>IntNumeric.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Kefka.cs" />
+    <Compile Include="Models\CientSession.cs" />
+    <Compile Include="Models\HealBuster.cs" />
+    <Compile Include="Models\Presets\CyanPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\ElaynePresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\BeatrixPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\CecilPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\ViviPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\SuritoPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\ShadowPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\SabinPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\RemielPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\PainePresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\MikotoPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\FreyaPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\EikoPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\EdwardPresetsSettingsModel.cs" />
+    <Compile Include="Models\Presets\BarretPresetsSettingsModel.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Hotkeys\RemielHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\MikotoHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\MainHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\ElayneHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\CyanHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\SuritoHotkeysModel.cs" />
+    <Compile Include="Models\IgnoreTarget.cs" />
+    <Compile Include="Models\Settings\ElayneSettingsModel.cs" />
+    <Compile Include="Models\Settings\CyanSettingsModel.cs" />
+    <Compile Include="Models\Settings\RemielSettingsModel .cs" />
+    <Compile Include="Models\Settings\MikotoSettingsModel.cs" />
+    <Compile Include="Models\Settings\SuritoSettingsModel.cs" />
+    <Compile Include="Models\Cleanse.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Strings.Designer.cs" />
+    <Compile Include="Properties\Strings.zh-CN.Designer.cs">
+      <DependentUpon>Strings.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Strings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Routine Files\General\KefkaEnmityManager.cs" />
+    <Compile Include="Routine Files\General\PvPAuras.cs" />
+    <Compile Include="Routine Files\General\PvPSpells.cs" />
+    <Compile Include="Routine Files\Elayne\ElayneRotation.cs" />
+    <Compile Include="Routine Files\Elayne\Elayne_Methods.cs" />
+    <Compile Include="Routine Files\Cyan\CyanRotation.cs" />
+    <Compile Include="Routine Files\Cyan\Cyan_Methods.cs" />
+    <Compile Include="Routine Files\General\DodgeManager.cs" />
+    <Compile Include="Routine Files\Mikoto\MikotoRotation.cs" />
+    <Compile Include="Routine Files\Mikoto\Mikoto_Methods.cs" />
+    <Compile Include="Routine Files\Remiel\RemielRotation.cs" />
+    <Compile Include="Routine Files\Remiel\Remiel_Methods.cs" />
+    <Compile Include="Routine Files\Surito\SuritoRotation.cs" />
+    <Compile Include="Routine Files\Surito\Surito_Method.cs" />
+    <Compile Include="Utilities\HealBusterManager.cs" />
+    <Compile Include="Utilities\Group.cs" />
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\DeepDive.cs" />
+    <Compile Include="Utilities\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Utilities\EnemyOverlayLogic.cs" />
+    <Compile Include="Models\EnemyInfo.cs" />
+    <Compile Include="Utilities\EnmityManager.cs" />
+    <Compile Include="Utilities\EnumBindingSourceExtension.cs" />
+    <Compile Include="Utilities\EnumDescriptionConverter.cs" />
+    <Compile Include="Utilities\EnumDescriptionTypeConverter.cs" />
+    <Compile Include="Utilities\IgnoreTargetManager.cs" />
+    <Compile Include="Utilities\LocalizedDescriptionAttribute.cs" />
+    <Compile Include="Utilities\LocationManager.cs" />
+    <Compile Include="Utilities\Memory.cs" />
+    <Compile Include="Utilities\MouseKeyboardStateTest.cs" />
+    <Compile Include="Utilities\RSS\Feed.cs" />
+    <Compile Include="Utilities\RSS\Feeds.cs" />
+    <Compile Include="Utilities\RSS\RssService.cs" />
+    <Compile Include="Utilities\CleanseManager.cs" />
+    <Compile Include="Utilities\ThreadSafeObservableCollection.cs" />
+    <Compile Include="Utilities\TargetSelectorManager.cs" />
+    <Compile Include="Utilities\ToastManager.cs" />
+    <Compile Include="Utilities\WindowCheck.cs" />
+    <Compile Include="ViewModels\HealBustersViewModel.cs" />
+    <Compile Include="ViewModels\EnemyOverlayViewModel.cs" />
+    <Compile Include="ViewModels\IgnoreTargetsViewModel.cs" />
+    <Compile Include="Models\PotionInfo.cs" />
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\Hotkeys\CecilHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\EdwardHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\EikoHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\FreyaHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\PaineHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\SabinHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\ShadowHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\ViviHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\BeatrixHotkeysModel.cs" />
+    <Compile Include="Models\Hotkeys\BarretHotkeysModel.cs" />
+    <Compile Include="Models\IgnoreTargetInfo.cs" />
+    <Compile Include="Routine Files\Vivi\ViviRotation.cs" />
+    <Compile Include="Routine Files\Vivi\Vivi_Methods.cs" />
+    <Compile Include="Utilities\ActivateWindow.cs" />
+    <Compile Include="Utilities\AutoDuty.cs" />
+    <Compile Include="Utilities\Logger.cs" />
+    <Compile Include="Utilities\Monitor.cs" />
+    <Compile Include="Models\Settings\BaseModel.cs" />
+    <Compile Include="Models\Settings\MainSettingsModel.cs" />
+    <Compile Include="Models\Settings\BarretSettingsModel.cs" />
+    <Compile Include="Models\Settings\BeatrixSettingsModel.cs" />
+    <Compile Include="Models\Settings\CecilSettingsModel.cs" />
+    <Compile Include="Models\Settings\EdwardSettingsModel.cs" />
+    <Compile Include="Models\Settings\EikoSettingsModel.cs" />
+    <Compile Include="Models\Settings\FreyaSettingsModel.cs" />
+    <Compile Include="Models\Settings\PaineSettingsModel.cs" />
+    <Compile Include="Models\Settings\SabinSettingsModel.cs" />
+    <Compile Include="Models\Settings\UtilityModel.cs" />
+    <Compile Include="Models\Settings\ViviSettingsModel.cs" />
+    <Compile Include="Models\Settings\ShadowSettingsModel.cs" />
+    <Compile Include="Models\OpenerSpellInfo.cs" />
+    <Compile Include="Models\SpellInfo.cs" />
+    <Compile Include="Models\TankBuster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Routine Files\Barret\BarretRotation.cs" />
+    <Compile Include="Routine Files\Barret\Barret_Methods.cs" />
+    <Compile Include="Routine Files\General\RoutineComposites.cs" />
+    <Compile Include="Routine Files\Beatrix\BeatrixRotation.cs" />
+    <Compile Include="Routine Files\Beatrix\Beatrix_Methods.cs" />
+    <Compile Include="Routine Files\Cecil\CecilRotation.cs" />
+    <Compile Include="Routine Files\Cecil\Cecil_Methods.cs" />
+    <Compile Include="Routine Files\Edward\Edward_Methods.cs" />
+    <Compile Include="Routine Files\Edward\EdwardRotation.cs" />
+    <Compile Include="Routine Files\Eiko\Eiko_Methods.cs" />
+    <Compile Include="Routine Files\Eiko\EikoRotation.cs" />
+    <Compile Include="Routine Files\Freya\Freya_Methods.cs" />
+    <Compile Include="Routine Files\Freya\FreyaRotation.cs" />
+    <Compile Include="Routine Files\General\Auras.cs" />
+    <Compile Include="Routine Files\General\Common Utils.cs" />
+    <Compile Include="Routine Files\General\Items.cs" />
+    <Compile Include="Utilities\InfoOverlayManager.cs" />
+    <Compile Include="Routine Files\General\Movement.cs" />
+    <Compile Include="Routine Files\General\Spells.cs" />
+    <Compile Include="Routine Files\Paine\Paine_Methods.cs" />
+    <Compile Include="Routine Files\Paine\PaineRotation.cs" />
+    <Compile Include="Routine Files\Rotation.cs" />
+    <Compile Include="Routine Files\Sabin\SabinRotation.cs" />
+    <Compile Include="Routine Files\Sabin\Sabin_Methods.cs" />
+    <Compile Include="Routine Files\Shadow\ShadowRotation.cs" />
+    <Compile Include="Routine Files\Shadow\Shadow_Methods.cs" />
+    <Compile Include="Routine Files\General\Ability.cs" />
+    <Compile Include="Utilities\CombatHelper.cs" />
+    <Compile Include="Utilities\FormManager.cs" />
+    <Compile Include="Utilities\OpenerManager.cs" />
+    <Compile Include="Utilities\InterruptManager.cs" />
+    <Compile Include="Utilities\Enums.cs" />
+    <Compile Include="Utilities\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="Utilities\HotkeyManager.cs" />
+    <Compile Include="Utilities\RoutineManager.cs" />
+    <Compile Include="Utilities\TankBusterManager.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Cyan_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Elayne_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\CleansesViewModel.cs" />
+    <Compile Include="ViewModels\Presets\CyanPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\ElaynePresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\ViviPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\SuritoPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\ShadowPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\SabinPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\RemielPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\PainePresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\MikotoPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\FreyaPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\EikoPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\EdwardPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\CecilPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\BeatrixPresetsViewModel.cs" />
+    <Compile Include="ViewModels\Presets\BarretPresetsViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\CardTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\ClemencyTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\CoverTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\GoadTargetViewModel.cs" />
+    <Compile Include="ViewModels\HotkeysViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Vivi_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Shadow_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Sabin_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Paine_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Cecil_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Freya_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Edward_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Eiko_OpenerViewModel .cs" />
+    <Compile Include="ViewModels\Openers\Beatrix_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\Openers\Barret_OpenerViewModel.cs" />
+    <Compile Include="ViewModels\InterruptViewModel.cs" />
+    <Compile Include="ViewModels\OverlayViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\DPS_PotionViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\DragonSightTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\NaturesMinneTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\PalisadeTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\SmokeScreenTargetViewModel.cs" />
+    <Compile Include="ViewModels\TargetSelectors\ShadewalkerTargetViewModel.cs" />
+    <Compile Include="ViewModels\SpellLogViewModel.cs" />
+    <Compile Include="ViewModels\TankBustersViewModel.cs" />
+    <Compile Include="Views\Advanced\AdvancedControl.xaml.cs">
+      <DependentUpon>AdvancedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\ChangeLog.xaml.cs">
+      <DependentUpon>ChangeLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\Cleanses.xaml.cs">
+      <DependentUpon>Cleanses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\CombatSettings.xaml.cs">
+      <DependentUpon>CombatSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\HealBusters.xaml.cs">
+      <DependentUpon>HealBusters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\UIOptions.xaml.cs">
+      <DependentUpon>UIOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\SpellLog.xaml.cs">
+      <DependentUpon>SpellLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\Interrupts.xaml.cs">
+      <DependentUpon>Interrupts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Barret.xaml.cs">
+      <DependentUpon>Barret.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Cyan.xaml.cs">
+      <DependentUpon>Cyan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Edward.xaml.cs">
+      <DependentUpon>Edward.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Cecil.xaml.cs">
+      <DependentUpon>Cecil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Beatrix.xaml.cs">
+      <DependentUpon>Beatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Elayne.xaml.cs">
+      <DependentUpon>Elayne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Mikoto.xaml.cs">
+      <DependentUpon>Mikoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Paine.xaml.cs">
+      <DependentUpon>Paine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Remiel.xaml.cs">
+      <DependentUpon>Remiel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Surito.xaml.cs">
+      <DependentUpon>Surito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Vivi.xaml.cs">
+      <DependentUpon>Vivi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Shadow.xaml.cs">
+      <DependentUpon>Shadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Sabin.xaml.cs">
+      <DependentUpon>Sabin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Freya.xaml.cs">
+      <DependentUpon>Freya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\Eiko.xaml.cs">
+      <DependentUpon>Eiko.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enemy Overlays\EnemyInfoOverlay.xaml.cs">
+      <DependentUpon>EnemyInfoOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Info Overlays\Eiko.xaml.cs">
+      <DependentUpon>Eiko.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Info Overlays\Cyan.xaml.cs">
+      <DependentUpon>Cyan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Cyan_Opener.xaml.cs">
+      <DependentUpon>Cyan_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Elayne_Opener.xaml.cs">
+      <DependentUpon>Elayne_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Barret.xaml.cs">
+      <DependentUpon>Barret.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Cyan.xaml.cs">
+      <DependentUpon>Cyan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Elayne.xaml.cs">
+      <DependentUpon>Elayne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Mikoto.xaml.cs">
+      <DependentUpon>Mikoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Remiel.xaml.cs">
+      <DependentUpon>Remiel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Surito.xaml.cs">
+      <DependentUpon>Surito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Elayne.xaml.cs">
+      <DependentUpon>Elayne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\KefkaBoundToggleOverlay.xaml.cs">
+      <DependentUpon>KefkaBoundToggleOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Info Overlays\KefkaBoundInfoOverlay.xaml.cs">
+      <DependentUpon>KefkaBoundInfoOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Beatrix_Opener.xaml.cs">
+      <DependentUpon>Beatrix_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Cecil_Opener.xaml.cs">
+      <DependentUpon>Cecil_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Edward_Opener.xaml.cs">
+      <DependentUpon>Edward_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Eiko_Opener.xaml.cs">
+      <DependentUpon>Eiko_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Freya_Opener.xaml.cs">
+      <DependentUpon>Freya_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Paine_Opener.xaml.cs">
+      <DependentUpon>Paine_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Sabin_Opener.xaml.cs">
+      <DependentUpon>Sabin_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Shadow_Opener.xaml.cs">
+      <DependentUpon>Shadow_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Vivi_Opener.xaml.cs">
+      <DependentUpon>Vivi_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Openers\Barret_Opener.xaml.cs">
+      <DependentUpon>Barret_Opener.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Advanced\TankBusters.xaml.cs">
+      <DependentUpon>TankBusters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KefkaWindow.xaml.cs">
+      <DependentUpon>KefkaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Info Overlays\Sabin.xaml.cs">
+      <DependentUpon>Sabin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Info Overlays\Freya.xaml.cs">
+      <DependentUpon>Freya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Info Overlays\Shadow.xaml.cs">
+      <DependentUpon>Shadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Barret.xaml.cs">
+      <DependentUpon>Barret.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Beatrix.xaml.cs">
+      <DependentUpon>Beatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Cecil.xaml.cs">
+      <DependentUpon>Cecil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Edward.xaml.cs">
+      <DependentUpon>Edward.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Eiko.xaml.cs">
+      <DependentUpon>Eiko.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Freya.xaml.cs">
+      <DependentUpon>Freya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Mikoto.xaml.cs">
+      <DependentUpon>Mikoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Paine.xaml.cs">
+      <DependentUpon>Paine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Remiel.xaml.cs">
+      <DependentUpon>Remiel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Sabin.xaml.cs">
+      <DependentUpon>Sabin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Cyan.xaml.cs">
+      <DependentUpon>Cyan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Shadow.xaml.cs">
+      <DependentUpon>Shadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Surito.xaml.cs">
+      <DependentUpon>Surito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toggle Overlays\Vivi.xaml.cs">
+      <DependentUpon>Vivi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Paine.xaml.cs">
+      <DependentUpon>Paine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Vivi.xaml.cs">
+      <DependentUpon>Vivi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Sabin.xaml.cs">
+      <DependentUpon>Sabin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Cecil.xaml.cs">
+      <DependentUpon>Cecil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Freya.xaml.cs">
+      <DependentUpon>Freya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Eiko.xaml.cs">
+      <DependentUpon>Eiko.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Edward.xaml.cs">
+      <DependentUpon>Edward.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Beatrix.xaml.cs">
+      <DependentUpon>Beatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Routines\Shadow.xaml.cs">
+      <DependentUpon>Shadow.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.zh-CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="Resources\StatusList.json" />
+    <EmbeddedResource Include="Resources\OpenerActions.json" />
+    <EmbeddedResource Include="Resources\DPS_Potions.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Edward_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Barret_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Vivi_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Sabin_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Paine_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Shadow_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Freya_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Eiko_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Cecil_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Beatrix_Opener.json" />
+    <EmbeddedResource Include="Resources\Interrupts.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Cyan_Opener.json" />
+    <EmbeddedResource Include="Resources\DefaultOpeners\Elayne_Opener.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Controls\DoubleNumeric.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\HotkeyControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\IntNumeric.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Advanced\AdvancedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Advanced\ChangeLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Advanced\Cleanses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Advanced\CombatSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Advanced\HealBusters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Advanced\UIOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Advanced\SpellLog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Advanced\Interrupts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Barret.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Cyan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Edward.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Cecil.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Beatrix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Elayne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Mikoto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Paine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Remiel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Surito.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Vivi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Shadow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Sabin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Freya.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\Eiko.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Enemy Overlays\EnemyInfoOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Info Overlays\Eiko.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Info Overlays\Cyan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Cyan_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Elayne_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Barret.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Cyan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Elayne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Mikoto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Routines\Remiel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Routines\Surito.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Elayne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\KefkaBoundToggleOverlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Info Overlays\KefkaBoundInfoOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Openers\Beatrix_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Cecil_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Edward_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Eiko_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Freya_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Paine_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Sabin_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Shadow_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Vivi_Opener.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Openers\Barret_Opener.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Advanced\TankBusters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KefkaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Info Overlays\Sabin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Info Overlays\Freya.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Info Overlays\Shadow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Barret.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Beatrix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Cecil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Edward.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Eiko.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Freya.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Mikoto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Paine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Remiel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Sabin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Cyan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Shadow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Surito.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Toggle Overlays\Vivi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Routines\Paine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Vivi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Sabin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Cecil.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Freya.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Eiko.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Edward.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Beatrix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Routines\Shadow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\GreyMagic.dll" />
+    <Content Include="Libraries\KefkaUI.Metro.dll" />
+    <Content Include="Libraries\KefkaUI.Metro.IconPacks.dll" />
+    <Content Include="Libraries\RebornBuddy.exe" />
+    <Content Include="Libraries\System.Windows.Interactivity.dll" />
+    <Resource Include="Resources\Ability Icons\Color\samurai\higanbana.png" />
+    <Resource Include="Resources\Ability Icons\Color\white_mage\aero.png" />
+    <Resource Include="Resources\Ability Icons\Color\white_mage\aero_ii.png" />
+    <Resource Include="Resources\Ability Icons\Color\white_mage\aero_iii.png" />
+    <Resource Include="Resources\Ability Icons\Color\astrologian\combust.png" />
+    <Resource Include="Resources\Ability Icons\Color\astrologian\combust_ii.png" />
+    <Resource Include="Resources\Ability Icons\Color\astrologian\stella.png" />
+    <Resource Include="Properties\version.txt" />
+    <Resource Include="Resources\Ability Icons\Color\arcanist\bio.png" />
+    <Resource Include="Resources\Ability Icons\Color\arcanist\bio_ii.png" />
+    <Resource Include="Resources\Ability Icons\Color\arcanist\miasma.png" />
+    <Resource Include="Resources\Ability Icons\Color\bard\venomous_bite.png" />
+    <Resource Include="Resources\Ability Icons\Color\bard\windbite.png" />
+    <Resource Include="Resources\Ability Icons\Color\black_mage\thunder.png" />
+    <Resource Include="Resources\Ability Icons\Color\black_mage\thunder_ii.png" />
+    <Resource Include="Resources\Ability Icons\Color\black_mage\thunder_iii.png" />
+    <Resource Include="Resources\Ability Icons\Color\dark_knight\delirium.png" />
+    <Resource Include="Resources\Ability Icons\Color\dark_knight\scourge.png" />
+    <Resource Include="Resources\Ability Icons\Color\dragoon\chaos_thrust.png" />
+    <Resource Include="Resources\Ability Icons\Color\dragoon\disembowel.png" />
+    <Resource Include="Resources\Ability Icons\Color\dragoon\phlebotomize.png" />
+    <Resource Include="Resources\Ability Icons\Color\machinist\lead_shot.png" />
+    <Resource Include="Resources\Ability Icons\Color\machinist\wildfire.png" />
+    <Resource Include="Resources\Ability Icons\Color\monk\demolish.png" />
+    <Resource Include="Resources\Ability Icons\Color\monk\dragon_kick.png" />
+    <Resource Include="Resources\Ability Icons\Color\monk\touch_of_death.png" />
+    <Resource Include="Resources\Ability Icons\Color\ninja\shadow_fang.png" />
+    <Resource Include="Resources\Ability Icons\Color\paladin\goring_blade.png" />
+    <Resource Include="Resources\Ability Icons\Color\paladin\rage_of_halone.png" />
+    <Resource Include="Resources\Ability Icons\Color\warrior\storm%27s_eye.png" />
+    <Resource Include="Resources\Ability Icons\Color\warrior\storm%27s_path.png" />
+    <EmbeddedResource Include="Resources\DutyReady.wav" />
+    <Resource Include="Resources\KefkaBanner.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Resource.Embedder.1.2.4\build\Resource.Embedder.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Resource.Embedder.1.2.4\build\Resource.Embedder.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.2.2.1.0\build\net452\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.2.1.0\build\net452\Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
+  <Import Project="..\packages\Resource.Embedder.1.2.4\build\Resource.Embedder.targets" Condition="Exists('..\packages\Resource.Embedder.1.2.4\build\Resource.Embedder.targets')" />
+  <Import Project="..\packages\Fody.2.2.1.0\build\net452\Fody.targets" Condition="Exists('..\packages\Fody.2.2.1.0\build\net452\Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

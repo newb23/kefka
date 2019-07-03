@@ -1,0 +1,146 @@
+[
+  {
+    "SpellName": "Foe Requiem",
+    "SpellId": 115,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Quelling Strikes",
+    "SpellId": 104,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Battle Voice",
+    "SpellId": 118,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Hawk's Eye",
+    "SpellId": 99,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Blood for Blood",
+    "SpellId": 85,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Raging Strikes",
+    "SpellId": 101,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Empyreal Arrow",
+    "SpellId": 3558,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Bloodletter",
+    "SpellId": 110,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "the Wanderer's Minuet",
+    "SpellId": 3559,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Straight Shot",
+    "SpellId": 98,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Internal Release",
+    "SpellId": 59,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Windbite",
+    "SpellId": 113,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "the Wanderer's Minuet",
+    "SpellId": 3559,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Blunt Arrow",
+    "SpellId": 109,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Venomous Bite",
+    "SpellId": 100,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Flaming Arrow",
+    "SpellId": 102,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Straight Shot",
+    "SpellId": 98,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Barrage",
+    "SpellId": 107,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Empyreal Arrow",
+    "SpellId": 3558,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Iron Jaws",
+    "SpellId": 3560,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Bloodletter",
+    "SpellId": 110,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Feint",
+    "SpellId": 76,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Bloodletter",
+    "SpellId": 110,
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "SpellName": "Straight Shot",
+    "SpellId": 98,
+    "IsPet": false,
+    "IsItem": false
+  }
+]

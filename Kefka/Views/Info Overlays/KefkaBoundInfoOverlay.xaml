@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Kefka.Views.KefkaBoundInfoOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+        xmlns:infoOverlays="clr-namespace:Kefka.Views.Info_Overlays">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <infoOverlays:Shadow x:Key="Shadow" />
+            <infoOverlays:Freya x:Key="Freya" />
+            <infoOverlays:Sabin x:Key="Sabin" />
+            <infoOverlays:Eiko x:Key="Eiko" />
+            <infoOverlays:Cyan x:Key="Cyan" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border MouseWheel="UIElement_OnMouseWheel" MouseRightButtonDown="Close">
+        <Grid>
+            <Viewbox Stretch="Uniform" Width="{Binding Settings.InfoOverlaySize, Mode=TwoWay}">
+                <Grid>
+                    <Border Background="Black" CornerRadius="1.5" Opacity="{Binding Settings.InfoOverlayOpacity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <ContentControl Margin="1.5">
+                        <ContentControl.Style>
+                            <Style TargetType="{x:Type ContentControl}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Shadow">
+                                        <Setter Property="Content" Value="{StaticResource Shadow}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Cyan">
+                                        <Setter Property="Content" Value="{StaticResource Cyan}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Eiko">
+                                        <Setter Property="Content" Value="{StaticResource Eiko}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Freya">
+                                        <Setter Property="Content" Value="{StaticResource Freya}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Sabin">
+                                        <Setter Property="Content" Value="{StaticResource Sabin}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ContentControl.Style>
+                    </ContentControl>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Border>
+</UserControl>

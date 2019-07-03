@@ -1,0 +1,707 @@
+﻿<UserControl x:Class="Kefka.Views.Routines.Remiel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Kefka.Views.Routines"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:enums="clr-namespace:Kefka.Models"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <mahAppsControls:MetroAnimatedTabControl>
+        <mahAppsControls:MetroTabItem Header="Healing">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="General">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="Auto" />
+                            <ColumnDefinition  Width="Auto" />
+                            <ColumnDefinition  Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="1" Grid.Row="0">
+                            <Label HorizontalAlignment="Center" Content="Solo Sect Mode" />
+                            <ComboBox  Margin="2" SelectedValue="{Binding Remiel.SelectedSectMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={utilities:EnumBindingSource {x:Type enums:SoloSectMode}}}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="Auto Stop Healing" IsChecked="{Binding Remiel.AutoStopHeal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Benefic" IsChecked="{Binding Remiel.UseBenefic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="Benefic 2" IsChecked="{Binding Remiel.UseBenefic2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Essential Dignity" IsChecked="{Binding Remiel.UseEssentialDignity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="5" Content="Helios" IsChecked="{Binding Remiel.UseHelios, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="Collective Unconscious" IsChecked="{Binding Remiel.UseCollectiveUnconscious, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="7" Content="Earthly Star" IsChecked="{Binding Remiel.UseEarthlyStar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="7" Content="Use ES For Damage" IsChecked="{Binding Remiel.UseEarthlyStarForDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="9" Content="Ascend" IsChecked="{Binding Remiel.UseAscend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="9" Content="Swiftcast Ascend" IsChecked="{Binding Remiel.UseSwiftcastAscend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="9" Content="Ascend with Lighspeed" IsChecked="{Binding Remiel.UseAscendWithLightspeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="1" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.StopHealHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="2" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.BeneficHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="3" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.Benefic2HpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="4" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.EssentialDignityHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="5" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.HeliosHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.CollectiveUnconsciousHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="0" Grid.Row="8" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.EarthlyStarHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <CheckBox Grid.Column="2" Grid.Row="4" Content="Tank Only" IsChecked="{Binding Remiel.UseEssentialDignityOnTankOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="2" Grid.Row="5" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Players" Value="{Binding Remiel.HeliosPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="2" Grid.Row="6" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Players" Value="{Binding Remiel.CollectiveUnconsciousPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="8" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Players" Value="{Binding Remiel.EarthlyStarPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="1" Header="Diurnal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Row="0" Grid.Column="0" Content="Aspected Benefic With Diurnal" IsChecked="{Binding Remiel.UseAspectedBeneficWithDiurnal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Aspected Benefic Max Health %" Value="{Binding Remiel.DiurnalAspectedBeneficHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Benfic only if enabled and HP % &lt; " Value="{Binding Remiel.AspectedBeneficFloorPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="0" Grid.Column="0" Content="On Tanks" IsChecked="{Binding Remiel.DiurnalAspectedBeneficTanks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="1" Content="On Healers" IsChecked="{Binding Remiel.DiurnalAspectedBeneficHealers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="2" Content="On DPS" IsChecked="{Binding Remiel.DiurnalAspectedBeneficDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="0" Grid.Column="0" Content="Keep Up On Tanks" IsChecked="{Binding Remiel.KeepDiurnalAspectedBeneficOnTanks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="1" Content="Keep Up On Healer" IsChecked="{Binding Remiel.KeepDiurnalAspectedBeneficOnHealers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="2" Content="Keep Up On DPS" IsChecked="{Binding Remiel.KeepDiurnalAspectedBeneficOnDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="0" Grid.Column="0" Content="Tank Aspect + Benefic" IsChecked="{Binding Remiel.AspectedBeneficFloorTanks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="1" Content="Healer Aspect + Benefic" IsChecked="{Binding Remiel.AspectedBeneficFloorHealers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="2" Content="DPS Aspect + Benefic" IsChecked="{Binding Remiel.AspectedBeneficFloorDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="1" Grid.Column="0" Content="Diurnal Apected Helios" IsChecked="{Binding Remiel.UseDiurnalAspectedHelios, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.DiurnalAspectedHeliosHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="25"  Increment="1"  LabelContent="Min Players" Value="{Binding Remiel.DiurnalAspectedHeliosPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="Nocturnal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Row="0" Grid.Column="0" Content="Aspected Benefic With Nocurnal" IsChecked="{Binding Remiel.UseAspectedBeneficWithNocturnal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Aspected Benefic Health %" Value="{Binding Remiel.NocturnalAspectedBeneficHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Benfic only if enabled and HP % &lt; " Value="{Binding Remiel.AspectedBeneficFloorPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="0" Grid.Column="0" Content="On Tanks" IsChecked="{Binding Remiel.NocturnalAspectedBeneficTanks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="1" Content="On Healers" IsChecked="{Binding Remiel.NocturnalAspectedBeneficHealers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="2" Content="On DPS" IsChecked="{Binding Remiel.NocturnalAspectedBeneficDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="0" Grid.Column="0" Content="Keep Up On Tanks" IsChecked="{Binding Remiel.KeepNocturnalAspectedBeneficOnTanks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="1" Content="Keep Up On Healer" IsChecked="{Binding Remiel.KeepNocturnalAspectedBeneficOnHealers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="2" Content="Keep Up On DPS" IsChecked="{Binding Remiel.KeepNocturnalAspectedBeneficOnDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="0" Grid.Column="0" Content="Tank Aspect + Benefic" IsChecked="{Binding Remiel.AspectedBeneficFloorTanks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="1" Content="Healer Aspect + Benefic" IsChecked="{Binding Remiel.AspectedBeneficFloorHealers, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Row="0" Grid.Column="2" Content="DPS Aspect + Benefic" IsChecked="{Binding Remiel.AspectedBeneficFloorDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+
+                        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Row="1" Grid.Column="0" Content="Nocturnal Aspected Helios" IsChecked="{Binding Remiel.UseNocturnalAspectedHelios, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.NocturnalAspectedHeliosHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Players" Value="{Binding Remiel.NocturnalAspectedHeliosPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="Cards" HorizontalAlignment="Left">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="General">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="Use Cards" IsChecked="{Binding Remiel.UseCards, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="Card Prep Out of Combat" IsChecked="{Binding Remiel.UseCardPrepOutOfCombat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="Bole Tank Only" IsChecked="{Binding Remiel.BoleTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Ewer Healers Only" IsChecked="{Binding Remiel.EwerHealer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Lady Hp%" Value="{Binding Remiel.LadyofCrownsHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                       
+                        <CheckBox Grid.Column="1" Grid.Row="0" Content="Only Draw" IsChecked="{Binding Remiel.OnlyDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Combat Draw Time" Value="{Binding Remiel.CardDrawTimeMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="Only in Party" IsChecked="{Binding Remiel.UseCardPrepOutOfCombatOnlyInParty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Bole Hp%" Value="{Binding Remiel.BoleHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Ewer Mp%" Value="{Binding Remiel.EwerMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Spire Tp%" Value="{Binding Remiel.SpireTpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="Use Sleeve Draw" IsChecked="{Binding Remiel.UseSleeveDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="6" Content="Use Undraw" IsChecked="{Binding Remiel.UseUndraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="7" Content="Cast Cards W/ RR Only" IsChecked="{Binding Remiel.UseHeldAndRoyalRoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="1" Header="Cast Card">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column ="0" Grid.Row="0" Text="Balance w/ :"></TextBlock>
+                        <CheckBox Grid.Column="1" Grid.Row="0" Content="Enhanced" IsChecked="{Binding Remiel.EnhancedBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="0" Content="Extended" IsChecked="{Binding Remiel.ExtendedBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="0" Content="Expanded" IsChecked="{Binding Remiel.ExpandedBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column ="0" Grid.Row="1" Text="Bole w/ :"></TextBlock>
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="Enhanced" IsChecked="{Binding Remiel.EnhancedBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="1" Content="Extended" IsChecked="{Binding Remiel.ExtendedBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="1" Content="Expanded" IsChecked="{Binding Remiel.ExpandedBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column ="0" Grid.Row="2" Text="Arrow w/"></TextBlock>
+                        <CheckBox Grid.Column="1" Grid.Row="2" Content="Enhanced" IsChecked="{Binding Remiel.EnhancedArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="2" Content="Extended" IsChecked="{Binding Remiel.ExtendedArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="2" Content="Expanded" IsChecked="{Binding Remiel.ExpandedArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column ="0" Grid.Row="3" Text="Spear w/ :"></TextBlock>
+                        <CheckBox Grid.Column="1" Grid.Row="3" Content="Enhanced" IsChecked="{Binding Remiel.EnhancedSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="3" Content="Extended" IsChecked="{Binding Remiel.ExtendedSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="3" Content="Expanded" IsChecked="{Binding Remiel.ExpandedSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column ="0" Grid.Row="4" Text="Ewer w/ :"></TextBlock>
+                        <CheckBox Grid.Column="1" Grid.Row="4" Content="Enhanced" IsChecked="{Binding Remiel.EnhancedEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="4" Content="Extended" IsChecked="{Binding Remiel.ExtendedEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="4" Content="Expanded" IsChecked="{Binding Remiel.ExpandedEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column ="0" Grid.Row="5" Text="Spire w/ :"></TextBlock>
+                        <CheckBox Grid.Column="1" Grid.Row="5" Content="Enhanced" IsChecked="{Binding Remiel.EnhancedSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="5" Content="Extended" IsChecked="{Binding Remiel.ExtendedSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="5" Content="Expanded" IsChecked="{Binding Remiel.ExpandedSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="Redraw">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="Use Redraw" IsChecked="{Binding Remiel.UseRedraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="0" Content="Cast Unused Cards After Redraw" IsChecked="{Binding Remiel.CastTrashCards, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Redraw First :" />
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Balance" IsChecked="{Binding Remiel.RedrawBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="2" Content="Bole" IsChecked="{Binding Remiel.RedrawBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="Arrow" IsChecked="{Binding Remiel.RedrawArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="3" Content="Spear" IsChecked="{Binding Remiel.RedrawSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Ewer" IsChecked="{Binding Remiel.RedrawEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="4" Content="Spire" IsChecked="{Binding Remiel.RedrawSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="3" Header="Spread">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="Use Spread" IsChecked="{Binding Remiel.UseSpread, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="Hold Unused Balance" IsChecked="{Binding Remiel.SpreadBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="Hold Unused Bole" IsChecked="{Binding Remiel.SpreadBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Hold Unused Arrow" IsChecked="{Binding Remiel.SpreadArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="2" Content="Hold Unused Spear" IsChecked="{Binding Remiel.SpreadSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="Hold Unused Ewer" IsChecked="{Binding Remiel.SpreadEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="3" Content="Hold Unused Spire" IsChecked="{Binding Remiel.SpreadSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="4" Header="Royal Road">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="Use for Potency" IsChecked="{Binding Remiel.RoyalRoadEnhanced, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="0" Content="Balance" IsChecked="{Binding Remiel.RoyalRoadBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="0" Content="Bole" IsChecked="{Binding Remiel.RoyalRoadBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="Use for Duration" IsChecked="{Binding Remiel.RoyalRoadExtended, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="Arrow" IsChecked="{Binding Remiel.RoyalRoadArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="1" Content="Spear" IsChecked="{Binding Remiel.RoyalRoadSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Use for AoE" IsChecked="{Binding Remiel.RoyalRoadExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="2" Content="Ewer" IsChecked="{Binding Remiel.RoyalRoadEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="2" Content="Spire" IsChecked="{Binding Remiel.RoyalRoadSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="0" Grid.Row="3" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Players" Value="{Binding Remiel.ExpandedPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="General">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="1" Header="Combat">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="Do Damage" IsChecked="{Binding Remiel.DoDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="0" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Mana %" Value="{Binding Remiel.DamageMinMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Malefic" IsChecked="{Binding Remiel.UseMalefic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Combust" IsChecked="{Binding Remiel.UseCombust, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="4" Margin="2"  MinValue="0" MaxValue="20000"  Increment="250"  LabelContent="Refresh" Value="{Binding Remiel.CombustRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="Gravity" IsChecked="{Binding Remiel.UseGravity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Min Enemies" Value="{Binding Remiel.GravityMinTargets, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="2" Grid.Row="6" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Mana %" Value="{Binding Remiel.GravityMinMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="Buffs">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="Esuna" IsChecked="{Binding Remiel.UseCleanse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="0" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Min Party HP" Value="{Binding Remiel.CleanseHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="Protect" IsChecked="{Binding Remiel.UseProtect, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="Protect in Combat" IsChecked="{Binding Remiel.UseProtectInCombat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Lucid Dreaming" IsChecked="{Binding Remiel.UseLucidDreaming, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="2" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Mana %" Value="{Binding Remiel.LucidDreamingMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="Synastry" IsChecked="{Binding Remiel.UseSynastry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="3" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.SynastryHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="2" Grid.Row="3" Content="Tank Only" IsChecked="{Binding Remiel.UseSynastryOnTankOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Lightspeed" IsChecked="{Binding Remiel.UseLightspeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="4" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.LightspeedHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="2" Grid.Row="4" Margin="2"  MinValue="1" MaxValue="24"  Increment="1"  LabelContent="Player Count" Value="{Binding Remiel.LightspeedPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="4" Content="Tank Only" IsChecked="{Binding Remiel.UseLightspeedOnTankOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="5" Content="Largesse" IsChecked="{Binding Remiel.UseLargesse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="5" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.LargesseHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="2" Grid.Row="5" Margin="2"  MinValue="1" MaxValue="24"  Increment="1"  LabelContent="Player Count" Value="{Binding Remiel.LargessePlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Column="3" Grid.Row="5" Content="Tank Only" IsChecked="{Binding Remiel.UseLargesseOnTankOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="Eye For An Eye" IsChecked="{Binding Remiel.UseEyeforanEye, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" Margin="2"  MinValue="0" MaxValue="100"  Increment="5"  LabelContent="Health %" Value="{Binding Remiel.EyeforanEyeHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                    </Grid>
+                </Expander>
+                <Expander Margin="2" Grid.Row="4" Header="Time Dilation">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Row="0" Grid.Column="0" Content="Use Time Dilation" IsChecked="{Binding Remiel.UseTimeDilation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="0" Grid.Column="1" Content="Follow Synastry" IsChecked="{Binding Remiel.UseTimeDilationAfterSynastry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="0" Grid.Column="2" Content="Tank Diurnal Benefic" IsChecked="{Binding Remiel.UseTimeDilationAfterTankDiurnalBenefic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="1" Grid.Column="0" Content="Follow Balance" IsChecked="{Binding Remiel.UseTimeDilationAfterBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="0" Content="Follow Bole" IsChecked="{Binding Remiel.UseTimeDilationAfterBole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="1" Grid.Column="1" Content="Follow Arrow" IsChecked="{Binding Remiel.UseTimeDilationAfterArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="1" Content="Follow Spear" IsChecked="{Binding Remiel.UseTimeDilationAfterSpear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="1" Grid.Column="2" Content="Follow Spire" IsChecked="{Binding Remiel.UseTimeDilationAfterSpire, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="2" Content="Follow Ewer" IsChecked="{Binding Remiel.UseTimeDilationAfterEwer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+                <Expander Margin="2" Grid.Row="5" Header="Celestial Opposition">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Grid.Row="0" Grid.Column="0" Content="Use Celestial Opposition" IsChecked="{Binding Remiel.UseCelestialOpposition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="0" Margin="2"  MinValue="0" MaxValue="100"  Increment="1"  LabelContent="Player Count" Value="{Binding Remiel.CelestialOppositionPlayerCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="1" Grid.Column="0" Content="Follow Collective Unconsciousness" IsChecked="{Binding Remiel.UseCelestialOppositionAfterCollectiveUnconsciousness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="1" Grid.Column="1" Content="Follow Lucid Dreaming" IsChecked="{Binding Remiel.UseCelestialOppositionAfterLucidDreaming, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="0" Content="Follow AoE Card" IsChecked="{Binding Remiel.UseCelestialOppositionAfterExpandedCard, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="3" Grid.Column="0" Content="Follow Expanded Balance" IsChecked="{Binding Remiel.UseCelestialOppositionAfterBalanceExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="4" Grid.Column="0" Content="Follow Expanded Bole" IsChecked="{Binding Remiel.UseCelestialOppositionAfterBoleExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="3" Grid.Column="1" Content="Follow Expanded Arrow" IsChecked="{Binding Remiel.UseCelestialOppositionAfterArrowExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="4" Grid.Column="1" Content="Follow Expanded Spear" IsChecked="{Binding Remiel.UseCelestialOppositionAfterSpearExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="3" Grid.Column="2" Content="Follow Expanded Spire" IsChecked="{Binding Remiel.UseCelestialOppositionAfterSpireExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="4" Grid.Column="2" Content="Follow Expanded Ewer" IsChecked="{Binding Remiel.UseCelestialOppositionAfterEwerExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="Overlay">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" Content="Show Overlay" IsChecked="{Binding Settings.UseToggleOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.OverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Potion}" IsChecked="{Binding Remiel.ShowPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Do Damage" IsChecked="{Binding Remiel.ShowDoDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Gravity}" IsChecked="{Binding Remiel.ShowGravity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.EssentialDignity}" IsChecked="{Binding Remiel.ShowEssentialDignity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Lightspeed}" IsChecked="{Binding Remiel.ShowLightspeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Synastry}" IsChecked="{Binding Remiel.ShowSynastry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Eye for an Eye" IsChecked="{Binding Remiel.ShowEyeforanEye, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Largesse" IsChecked="{Binding Remiel.ShowLargesse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Cards" IsChecked="{Binding Remiel.ShowCards, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Only Draw" IsChecked="{Binding Remiel.ShowOnlyDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Sleeve Draw" IsChecked="{Binding Remiel.ShowSleeveDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Royal Road" IsChecked="{Binding Remiel.ShowRoyalRoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Spread" IsChecked="{Binding Remiel.ShowSpread, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Hotkeys}">
+            <mahAppsControls:MetroTabItem.DataContext>
+                <viewModels:HotkeysViewModel />
+            </mahAppsControls:MetroTabItem.DataContext>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Columns="5" HorizontalAlignment="Center">
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Potion}" ModKeySetting="{Binding Remiel.PotionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.PotionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.DoDamage}" ModKeySetting="{Binding Remiel.DoDamageModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.DoDamageKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Gravity}" ModKeySetting="{Binding Remiel.GravityModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.GravityKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.EssentialDignity}" ModKeySetting="{Binding Remiel.EssentialDignityModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.EssentialDignityKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Lightspeed}" ModKeySetting="{Binding Remiel.LightspeedModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.LightspeedKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Synastry}" ModKeySetting="{Binding Remiel.SynastryModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.SynastryKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Eye for an Eye" ModKeySetting="{Binding Remiel.EyeforanEyeModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.EyeforanEyeKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Largesse" ModKeySetting="{Binding Remiel.LargesseModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.LargesseKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Cards}" ModKeySetting="{Binding Remiel.CardsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.CardsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Only Draw" ModKeySetting="{Binding Remiel.OnlyDrawModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.OnlyDrawKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Sleeve Draw" ModKeySetting="{Binding Remiel.SleeveDrawModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.SleeveDrawKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Royal Road" ModKeySetting="{Binding Remiel.RoyalRoadModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.RoyalRoadKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Spread}" ModKeySetting="{Binding Remiel.SpreadModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.SpreadKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+                <Separator Grid.Row="1" Margin="10" />
+                <Label Grid.Row="2" HorizontalAlignment="Center" Content="Preset Hotkeys" />
+                <UniformGrid Grid.Row="3" Columns="5" VerticalAlignment="Top">
+                    <controls:HotkeyControl Text="{Binding Remiel.PresetNames.Preset1Name}" ModKeySetting="{Binding Remiel.Preset1Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.Preset1Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Remiel.PresetNames.Preset2Name}" ModKeySetting="{Binding Remiel.Preset2Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.Preset2Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Remiel.PresetNames.Preset3Name}" ModKeySetting="{Binding Remiel.Preset3Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.Preset3Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Remiel.PresetNames.Preset4Name}" ModKeySetting="{Binding Remiel.Preset4Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.Preset4Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Remiel.PresetNames.Preset5Name}" ModKeySetting="{Binding Remiel.Preset5Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Remiel.Preset5Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="Presets">
+            <Grid Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.DataContext>
+                    <viewModels:RemielPresetsViewModel />
+                </Grid.DataContext>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Load" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadSettings}" />
+                    <Button Grid.Column="1" Content="Save" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SaveSettingsAs}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Set Preset 1" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset1}" />
+                    <Button Grid.Column="1" Content="Set Preset 2" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset2}" />
+                    <Button Grid.Column="2" Content="Set Preset 3" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset3}" />
+                    <Button Grid.Column="3" Content="Set Preset 4" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset4}" />
+                    <Button Grid.Column="4" Content="Set Preset 5" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset5}" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset1}" />
+                    <Button Grid.Column="1" Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset2}" />
+                    <Button Grid.Column="2" Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset3}" />
+                    <Button Grid.Column="3" Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset4}" />
+                    <Button Grid.Column="4" Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset5}" />
+                </Grid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

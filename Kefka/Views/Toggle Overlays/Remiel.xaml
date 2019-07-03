@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Kefka.Views.Toggle_Overlays.Remiel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:loc="clr-namespace:Kefka.Properties">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <UniformGrid Grid.Column="0" Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <CheckBox Content="{x:Static loc:Strings.Potion}" Visibility="{Binding Remiel.ShowPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UsePotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DoDamage}" Visibility="{Binding Remiel.ShowDoDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.DoDamage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Gravity}" Visibility="{Binding Remiel.ShowGravity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseGravity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.EssentialDignity}" Visibility="{Binding Remiel.ShowEssentialDignity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseEssentialDignity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Lightspeed}" Visibility="{Binding Remiel.ShowLightspeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseLightspeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Synastry}" Visibility="{Binding Remiel.ShowSynastry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseSynastry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Eye for an Eye" Visibility="{Binding Remiel.ShowEyeforanEye, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseEyeforanEye, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Largesse" Visibility="{Binding Remiel.ShowLargesse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseLargesse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Cards}" Visibility="{Binding Remiel.ShowCards, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseCards, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Only Draw" Visibility="{Binding Remiel.ShowOnlyDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.OnlyDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Sleeve Draw" Visibility="{Binding Remiel.ShowSleeveDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseSleeveDraw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="Royal Road" Visibility="{Binding Remiel.ShowRoyalRoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseRoyalRoad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.Spread}" Visibility="{Binding Remiel.ShowSpread, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Remiel.UseSpread, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            <CheckBox Content="{x:Static loc:Strings.DestroyTarget}" IsChecked="{Binding Settings.DestroyTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+        </UniformGrid>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel.DataContext>
+                <viewModels:RemielPresetsViewModel />
+            </StackPanel.DataContext>
+            <Button Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset1, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset1}" />
+            <Button Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset2, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset2}" />
+            <Button Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset3, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset3}" />
+            <Button Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset4, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset4}" />
+            <Button Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset5, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset5}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row ="2">
+            <Label HorizontalAlignment="Center" Content="DPS Card Target" />
+            <ComboBox Margin="4" SelectedItem="{Binding Instance.CardTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Instance.CardTargetCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox.DataContext>
+                    <viewModels:CardTargetViewModel />
+                </ComboBox.DataContext>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

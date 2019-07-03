@@ -1,0 +1,321 @@
+﻿<UserControl x:Class="Kefka.Views.Routines.Cecil"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:openers="clr-namespace:Kefka.Views.Openers"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <mahAppsControls:MetroAnimatedTabControl>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="{x:Static loc:Strings.General}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="GritButton" Grid.Column="0" Grid.Row="0" Content="Grit" Click="GritButton_Click" ToolTip="Whether or not to use Grit"/>
+                        <Button x:Name="TankButton" Grid.Column="1" Grid.Row="0" Content="Tank Status" Click="TankButton_Click" ToolTip="Switches between Main Tanking and Off Tanking"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Cecil.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use an Opener (Set in the Opener Tab)"/>
+                        <CheckBox Grid.Column="1" Grid.Row="1" Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Cecil.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Potions Increasing DPS (Set in the Advanced Side Tab)"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="ExProvoke" IsChecked="{Binding Cecil.UseProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Provoke/Ultimatum/Shirk According to Routine Logic"/>
+                        <CheckBox Grid.Column="1" Grid.Row="2" Content="{x:Static loc:Strings.Unmend}" IsChecked="{Binding Cecil.UseUnmend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Unmend"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="{x:Static loc:Strings.Plunge}" IsChecked="{Binding Cecil.UsePlunge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Plunge"/>
+                        <CheckBox Grid.Column="1" Grid.Row="3" Content="{x:Static loc:Strings.SoleSurvivor}" IsChecked="{Binding Cecil.UseSoleSurvivor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Sole Survivor"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Min Enmity Lead"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="4" MinValue="0" MaxValue="200000" Increment="100"  LabelContent="ST" Value="{Binding Cecil.PowerSlashCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum Enmity Lead to Stop Using Power Slash Rotation"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="5" Text="AoE Min Enemies"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="5" MinValue="0" MaxValue="30"  Increment="1" Value="{Binding Cecil.AoEMinEnemies, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum Enemies to Use AoE Abilities (Unleash/Abyssal Drain/Salted Earth/Quietus/Dark Passenger)"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="{x:Static loc:Strings.Unleash}" IsChecked="{Binding Cecil.UseUnleash, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Unleash"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" MinValue="0" MaxValue="10"  Increment="1" Value="{Binding Cecil.UnleashCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Number of Unleashes Used to Gain Enmity"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="7" Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Cecil.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Blood Weapon/Blood Price/Delirium"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="7" MinValue="0" MaxValue="100"  Increment="5" Value="{Binding Cecil.BloodWeaponMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum MP Percentage to Use Blood Weapon/Blood Price"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="8" Content="AoE Spam" IsChecked="{Binding Cecil.AoESpam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Spam AoE Abilites When Enemy Count is Met"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="8" MinValue="0" MaxValue="50"  Increment="1" Value="{Binding Cecil.AoESpamCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum Enemies to Spam AoE Abilities"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="9" Content="{x:Static loc:Strings.SaltedEarth}" IsChecked="{Binding Cecil.UseSaltedEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Salted Earth"/>
+                        <CheckBox Grid.Column="1" Grid.Row="9" Content="Abyssal Drain" IsChecked="{Binding Cecil.UseAbyssalDrain, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Abyssal Drain"/>
+
+                        <CheckBox Grid.Column="0" Grid.Row="10" Content="ST" IsChecked="{Binding Cecil.SingleTargetSaltedEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Salted Earth on Single Targets"/>
+
+                        <CheckBox Grid.Column="1" Grid.Row="11" Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Cecil.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Cecil.UncheckUseInterruptListCommand}" ToolTip="Whether or not to use Interrupts Manually, or in the Rotation"/>
+                        <CheckBox Grid.Column="0" Grid.Row="11" Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Cecil.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Cecil.UncheckUseManualInterruptCommand}" ToolTip="Whether or not to use the Interrupt List when casting Interrupts"/>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="1" Header="Dark Arts">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="{x:Static loc:Strings.DarkArts}" IsChecked="{Binding Cecil.UseDarkArts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to Use Dark Arts"/>
+                        
+                        <controls:KefkaIntNumeric Grid.Column="0" Grid.Row="1" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Start %" Value="{Binding Cecil.DarkArtsStartMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum MP Percent to Start Using Dark Arts"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="1" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Stop %" Value="{Binding Cecil.DarkArtsStopMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="MP Percentage to Stop Using Dark Arts; for Mana Recovery"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="Souleater" IsChecked="{Binding Cecil.UseDASouleater, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Souleater"/>
+                        <CheckBox Grid.Column="1" Grid.Row="2" Content="Dark Passenger" IsChecked="{Binding Cecil.UseDarkPassenger, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Dark Passenger"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="Syphon Strike" IsChecked="{Binding Cecil.UseDASyphonStrike, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Syphon Strike"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="3" MinValue="0" MaxValue="100"  Increment="10" Value="{Binding Cecil.DASyphonStrikeMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum MP to Use Dark Arts with Syphon Strike"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="Bloodspiller" IsChecked="{Binding Cecil.UseDABloodspiller, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Bloodspiller"/>
+                        <CheckBox Grid.Column="1" Grid.Row="4" Content="Quietus" IsChecked="{Binding Cecil.UseDAQuietus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Quietus"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="5" Content="Carve and Spit" IsChecked="{Binding Cecil.UseDACarveandSpit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Carve and Spit"/>
+                        <CheckBox Grid.Column="1" Grid.Row="5" Content="Carve and Spit for Mp" IsChecked="{Binding Cecil.UseCarveandSpitMpRegen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Carve and Spit for MP Regeneration"/>
+                        
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="Abyssal Drain" IsChecked="{Binding Cecil.UseDAAbyssalDrain, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or Not to Use Dark Arts With Abyssal Drain"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" MinValue="0" MaxValue="100"  Increment="5" Value="{Binding Cecil.AbyssalDrainHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum Health Percent to Use Dark Arts With Abyssal Drain"/>
+                        
+                        
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="3" Header="{x:Static loc:Strings.Defensives}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox Grid.Column="0" Grid.Row="0" Content="{x:Static loc:Strings.Defensives}" IsChecked="{Binding Cecil.UseDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Defensive Abilities"/>
+                        <CheckBox Grid.Column="1" Grid.Row="0" Content="{x:Static loc:Strings.BusterDefense}" IsChecked="{Binding Cecil.UseBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Defensive abilities for Tank Busters (Set in the Advanced Settings)"/>
+                        <CheckBox Grid.Column="0" Grid.Row="1" Content="{x:Static loc:Strings.LivingDead}" IsChecked="{Binding Cecil.UseLivingDead, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Living Dead"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="1" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.LivingDeadHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Living Dead"/>
+                        <CheckBox Grid.Column="0" Grid.Row="2" Content="{x:Static loc:Strings.DarkMind}" IsChecked="{Binding Cecil.UseDarkMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Dark Mind"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="2" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.DarkMindHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Dark Mind"/>
+                        <CheckBox Grid.Column="0" Grid.Row="3" Content="{x:Static loc:Strings.ShadowWall}" IsChecked="{Binding Cecil.UseShadowWall, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Shadow Wall"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="3" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.ShadowWallHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Shadow Wall"/>
+                        <CheckBox Grid.Column="0" Grid.Row="4" Content="{x:Static loc:Strings.TheBlackestNight}" IsChecked="{Binding Cecil.UseBlackestNight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use The Blackest Night"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="4" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.BlackestNightHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use The Blackest Night"/>
+                        <CheckBox Grid.Column="0" Grid.Row="5" Content="{x:Static loc:Strings.Rampart}" IsChecked="{Binding Cecil.UseRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Rampart"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="5" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.RampartHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Rampart"/>
+                        <CheckBox Grid.Column="0" Grid.Row="6" Content="{x:Static loc:Strings.Anticipation}" IsChecked="{Binding Cecil.UseAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Anticipation"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="6" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.AnticipationHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Anticipation"/>
+                        <CheckBox Grid.Column="0" Grid.Row="7" Content="{x:Static loc:Strings.Convalescence}" IsChecked="{Binding Cecil.UseConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Convalescence"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="7" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.ConvalescenceHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Convalescence"/>
+                        <CheckBox Grid.Column="0" Grid.Row="8" Content="{x:Static loc:Strings.Awareness}" IsChecked="{Binding Cecil.UseAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Awareness"/>
+                        <controls:KefkaIntNumeric Grid.Column="1" Grid.Row="8" Margin="2" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="HP %" Value="{Binding Cecil.AwarenessHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Minimum health percentage to use Awareness"/>
+                        <CheckBox Grid.Column="0" Grid.Row="9" Content="{x:Static loc:Strings.Reprisal}" IsChecked="{Binding Cecil.UseReprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Whether or not to use Reprisal"/>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="Overlay">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CheckBox Grid.Row="0" Content="Show Overlay" IsChecked="{Binding Settings.UseToggleOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.OverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Cecil.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Cecil.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Grit}" IsChecked="{Binding Cecil.ShowGrit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Swap" IsChecked="{Binding Cecil.ShowSwap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Tank Status" IsChecked="{Binding Cecil.ShowProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Damage Override" IsChecked="{Binding Cecil.ShowProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Unmend}" IsChecked="{Binding Cecil.ShowUnmend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Plunge}" IsChecked="{Binding Cecil.ShowPlunge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.SaltedEarth}" IsChecked="{Binding Cecil.ShowSaltedEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="AoE Spam" IsChecked="{Binding Cecil.ShowAoESpam, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DarkArts}" IsChecked="{Binding Cecil.ShowDarkArts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.SoleSurvivor}" IsChecked="{Binding Cecil.ShowSoleSurvivor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Cecil.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Cecil.ShowManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Cecil.ShowInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="{x:Static loc:Strings.DefensiveOverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Defensives}" IsChecked="{Binding Cecil.ShowDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.BusterDefense}" IsChecked="{Binding Cecil.ShowBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Awareness}" IsChecked="{Binding Cecil.ShowAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DarkMind}" IsChecked="{Binding Cecil.ShowDarkMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.LivingDead}" IsChecked="{Binding Cecil.ShowLivingDead, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ShadowWall}" IsChecked="{Binding Cecil.ShowShadowWall, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="The Blackest Night" IsChecked="{Binding Cecil.ShowTheBlackestNight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Rampart}" IsChecked="{Binding Cecil.ShowRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Anticipation}" IsChecked="{Binding Cecil.ShowAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Convalescence}" IsChecked="{Binding Cecil.ShowConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Reprisal}" IsChecked="{Binding Cecil.ShowReprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Hotkeys}">
+            <mahAppsControls:MetroTabItem.DataContext>
+                <viewModels:HotkeysViewModel />
+            </mahAppsControls:MetroTabItem.DataContext>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Columns="5" HorizontalAlignment="Center">
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Opener}" ModKeySetting="{Binding Cecil.OpenerModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.OpenerKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Potion}" ModKeySetting="{Binding Cecil.PotionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.PotionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Tank Swap" ModKeySetting="{Binding Cecil.TankSwapModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.TankSwapKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Grit}" ModKeySetting="{Binding Cecil.GritModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.GritKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Tank Status" ModKeySetting="{Binding Cecil.EnmityOverrideModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.EnmityOverrideKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Damage Override" ModKeySetting="{Binding Cecil.DamageOverrideModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.DamageOverrideKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Unmend}" ModKeySetting="{Binding Cecil.UnmendModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.UnmendKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Plunge}" ModKeySetting="{Binding Cecil.PlungeModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.PlungeKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.SaltedEarth}" ModKeySetting="{Binding Cecil.SaltedEarthModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.SaltedEarthKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="AoE Spam" ModKeySetting="{Binding Cecil.AoESpamModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.AoESpamKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.DarkArts}" ModKeySetting="{Binding Cecil.DarkArtsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.DarkArtsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Buffs}" ModKeySetting="{Binding Cecil.BuffsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.BuffsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Defensives}" ModKeySetting="{Binding Cecil.DefensivesModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.DefensivesKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.TankBusters}" ModKeySetting="{Binding Cecil.ConvalescenceModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.ConvalescenceKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.LivingDead}" ModKeySetting="{Binding Cecil.LivingDeadModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.LivingDeadKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.DarkMind}" ModKeySetting="{Binding Cecil.DarkMindModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.DarkMindKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.ShadowWall}" ModKeySetting="{Binding Cecil.ShadowWallModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.ShadowWallKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.TheBlackestNight}" ModKeySetting="{Binding Cecil.BlackestNightModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.BlackestNightyKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Rampart}" ModKeySetting="{Binding Cecil.RampartModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.RampartKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Anticipation}" ModKeySetting="{Binding Cecil.AnticipationModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.AnticipationKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Awareness}" ModKeySetting="{Binding Cecil.AwarenessModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.AwarenessKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Convalescence}" ModKeySetting="{Binding Cecil.ConvalescenceModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.ConvalescenceKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Reprisal}" ModKeySetting="{Binding Cecil.ReprisalModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.ReprisalKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Interrupt}" ModKeySetting="{Binding Cecil.InterruptModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.InterruptKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+                <Separator Grid.Row="1" Margin="10" />
+                <Label Grid.Row="2" HorizontalAlignment="Center" Content="Preset Hotkeys" />
+                <UniformGrid Grid.Row="3" Columns="5" VerticalAlignment="Top">
+                    <controls:HotkeyControl Text="{Binding Cecil.PresetNames.Preset1Name}" ModKeySetting="{Binding Cecil.Preset1Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.Preset1Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Cecil.PresetNames.Preset2Name}" ModKeySetting="{Binding Cecil.Preset2Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.Preset2Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Cecil.PresetNames.Preset3Name}" ModKeySetting="{Binding Cecil.Preset3Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.Preset3Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Cecil.PresetNames.Preset4Name}" ModKeySetting="{Binding Cecil.Preset4Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.Preset4Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Cecil.PresetNames.Preset5Name}" ModKeySetting="{Binding Cecil.Preset5Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Cecil.Preset5Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Opener}">
+            <openers:Cecil_Opener />
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="Presets">
+            <Grid Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.DataContext>
+                    <viewModels:CecilPresetsViewModel />
+                </Grid.DataContext>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Load" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadSettings}" />
+                    <Button Grid.Column="1" Content="Save" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SaveSettingsAs}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Set Preset 1" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset1}" />
+                    <Button Grid.Column="1" Content="Set Preset 2" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset2}" />
+                    <Button Grid.Column="2" Content="Set Preset 3" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset3}" />
+                    <Button Grid.Column="3" Content="Set Preset 4" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset4}" />
+                    <Button Grid.Column="4" Content="Set Preset 5" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset5}" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset1}" />
+                    <Button Grid.Column="1" Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset2}" />
+                    <Button Grid.Column="2" Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset3}" />
+                    <Button Grid.Column="3" Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset4}" />
+                    <Button Grid.Column="4" Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset5}" />
+                </Grid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Kefka.Views.Advanced.ChangeLog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rss="clr-namespace:Kefka.Utilities.RSS"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <rss:Feeds x:Key="feeds">
+            <rss:Feed Title="feed 1" Content="this is description feed 1" />
+            <rss:Feed Title="this is bold feed 2 and this has a long title" Content="this is description feed 2" />
+        </rss:Feeds>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <ItemsControl ItemsSource="{StaticResource feeds}" Grid.Row="0" Grid.Column="1" Margin="5" Width="450" x:Name="icFeeds">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="5" BorderThickness="2,2,2,2" CornerRadius="2,2,2,2" BorderBrush="#FF0A0000">
+                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" Margin="10" Text="{Binding Path=Content}" />
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </StackPanel>
+</UserControl>

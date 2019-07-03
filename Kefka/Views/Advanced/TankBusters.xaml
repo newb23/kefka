@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Kefka.Views.Advanced.TankBusters"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:TankBustersViewModel />
+    </UserControl.DataContext>
+
+    <Grid HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <ComboBox x:Name="LstTankBusters" Tag="Tank Busters:" HorizontalAlignment="Stretch" SelectedIndex="0" ItemsSource="{Binding Instance.GuiTankBustersList}" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1" />
+
+            <Border BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+
+                <StackPanel Margin="0,5,0,0" Orientation="Horizontal" DataContext="{Binding ElementName=LstTankBusters, Path=SelectedItem}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
+                            <CheckBox Content="Bulwark" IsChecked="{Binding Bulwark, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Sentinel" IsChecked="{Binding Sentinel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Sheltron" IsChecked="{Binding Sheltron, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Rampart" IsChecked="{Binding Rampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Foresight" IsChecked="{Binding Foresight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Awareness" IsChecked="{Binding Awareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Divine Veil" IsChecked="{Binding DivineVeil, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="H. Ground" IsChecked="{Binding HallowedGround, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Convalescence" IsChecked="{Binding Convalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,5,0">
+                            <CheckBox Content="Holmgang" IsChecked="{Binding Holmgang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Vengeance" IsChecked="{Binding Vengeance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Equilibrium" IsChecked="{Binding Equilibrium, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Thrill of Battle" IsChecked="{Binding ThrillofBattle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Reprisal" IsChecked="{Binding Reprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,5,0">
+                            <CheckBox Content="Dark Mind" IsChecked="{Binding DarkMind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Dark Dance" IsChecked="{Binding DarkDance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Living Dead" IsChecked="{Binding LivingDead, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Shadowskin" IsChecked="{Binding Shadowskin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="Shadow Wall" IsChecked="{Binding ShadowWall, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                        
+                        <Separator Grid.Row="1" Grid.ColumnSpan="3" />
+                        <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,5,5,0">
+                            <CheckBox Content="Palisade" IsChecked="{Binding Palisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Width="165" Margin="5,0,0,0" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="SearchAction" FontSize="10" Text="Enter Spell Name and Press Enter..." GotFocus="SearchAction_OnGotFocus" LostFocus="SearchAction_OnLostFocus">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding Instance.Search}" CommandParameter="{Binding ElementName=SearchAction, Path=Text}" />
+                </TextBox.InputBindings>
+            </TextBox>
+
+            <ListBox Name="LstActions" MaxHeight="200" Height="200" ItemsSource="{Binding Instance.SearchList}" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="{Binding Id}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <StackPanel Margin="0,5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Width="75" Height="25" Content="Add" Command="{Binding Instance.Add}" CommandParameter="{Binding ElementName=LstActions, Path=SelectedValue}" />
+                <Button Width="75" Height="25" Content="Remove" Margin="2,0,0,0" Command="{Binding Instance.Remove}" CommandParameter="{Binding ElementName=LstTankBusters, Path=SelectedValue}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

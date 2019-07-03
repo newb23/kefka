@@ -1,0 +1,6862 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Petrification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 2,
+    "Name": "Stun",
+    "CanCleanse": true
+  },
+  {
+    "Id": 3,
+    "Name": "Sleep",
+    "CanCleanse": true
+  },
+  {
+    "Id": 4,
+    "Name": "Daze",
+    "CanCleanse": false
+  },
+  {
+    "Id": 5,
+    "Name": "Amnesia",
+    "CanCleanse": true
+  },
+  {
+    "Id": 6,
+    "Name": "Pacification",
+    "CanCleanse": true
+  },
+  {
+    "Id": 7,
+    "Name": "Silence",
+    "CanCleanse": true
+  },
+  {
+    "Id": 8,
+    "Name": "Haste",
+    "CanCleanse": false
+  },
+  {
+    "Id": 9,
+    "Name": "Slow",
+    "CanCleanse": true
+  },
+  {
+    "Id": 10,
+    "Name": "Slow",
+    "CanCleanse": true
+  },
+  {
+    "Id": 11,
+    "Name": "Confused",
+    "CanCleanse": false
+  },
+  {
+    "Id": 12,
+    "Name": "Levitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 13,
+    "Name": "Bind",
+    "CanCleanse": true
+  },
+  {
+    "Id": 14,
+    "Name": "Heavy",
+    "CanCleanse": true
+  },
+  {
+    "Id": 15,
+    "Name": "Blind",
+    "CanCleanse": true
+  },
+  {
+    "Id": 17,
+    "Name": "Paralysis",
+    "CanCleanse": true
+  },
+  {
+    "Id": 18,
+    "Name": "Poison",
+    "CanCleanse": true
+  },
+  {
+    "Id": 19,
+    "Name": "Pollen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 20,
+    "Name": "TP Bleed",
+    "CanCleanse": true
+  },
+  {
+    "Id": 21,
+    "Name": "HP Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 22,
+    "Name": "HP Penalty",
+    "CanCleanse": true
+  },
+  {
+    "Id": 23,
+    "Name": "MP Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 24,
+    "Name": "MP Penalty",
+    "CanCleanse": true
+  },
+  {
+    "Id": 25,
+    "Name": "Attack Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 26,
+    "Name": "Attack Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 27,
+    "Name": "Accuracy Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 28,
+    "Name": "Accuracy Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 29,
+    "Name": "Defense Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 30,
+    "Name": "Defense Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 31,
+    "Name": "Evasion Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 32,
+    "Name": "Evasion Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 33,
+    "Name": "Attack Magic Potency Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 34,
+    "Name": "Attack Magic Potency Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 35,
+    "Name": "Healing Potency Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 36,
+    "Name": "Healing Potency Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 37,
+    "Name": "Magic Defense Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 38,
+    "Name": "Magic Defense Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 39,
+    "Name": "Stun Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 40,
+    "Name": "Silence Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 41,
+    "Name": "Crafting Facility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 42,
+    "Name": "The Echo",
+    "CanCleanse": false
+  },
+  {
+    "Id": 43,
+    "Name": "Weakness",
+    "CanCleanse": false
+  },
+  {
+    "Id": 44,
+    "Name": "Brink of Death",
+    "CanCleanse": false
+  },
+  {
+    "Id": 45,
+    "Name": "Crafter's Grace",
+    "CanCleanse": false
+  },
+  {
+    "Id": 46,
+    "Name": "Gatherer's Grace",
+    "CanCleanse": false
+  },
+  {
+    "Id": 47,
+    "Name": "Stealth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 48,
+    "Name": "Well Fed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 49,
+    "Name": "Medicated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 50,
+    "Name": "Sprint",
+    "CanCleanse": false
+  },
+  {
+    "Id": 51,
+    "Name": "Strength Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 52,
+    "Name": "Vitality Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 53,
+    "Name": "Physical Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 54,
+    "Name": "Physical Damage Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 55,
+    "Name": "Physical Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 56,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 57,
+    "Name": "Magic Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 58,
+    "Name": "Magic Damage Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 59,
+    "Name": "Magic Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 60,
+    "Name": "Magic Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 61,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 62,
+    "Name": "Damage Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 63,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 64,
+    "Name": "Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 65,
+    "Name": "Critical Skill",
+    "CanCleanse": false
+  },
+  {
+    "Id": 66,
+    "Name": "Terror",
+    "CanCleanse": false
+  },
+  {
+    "Id": 67,
+    "Name": "Leaden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 68,
+    "Name": "Drainstrikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 69,
+    "Name": "Aspirstrikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 70,
+    "Name": "Stunstrikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 71,
+    "Name": "Rampart",
+    "CanCleanse": false
+  },
+  {
+    "Id": 72,
+    "Name": "Convalescence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 73,
+    "Name": "Awareness",
+    "CanCleanse": false
+  },
+  {
+    "Id": 74,
+    "Name": "Sentinel",
+    "CanCleanse": false
+  },
+  {
+    "Id": 75,
+    "Name": "Tempered Will",
+    "CanCleanse": false
+  },
+  {
+    "Id": 76,
+    "Name": "Fight or Flight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 77,
+    "Name": "Bulwark",
+    "CanCleanse": false
+  },
+  {
+    "Id": 78,
+    "Name": "Sword Oath",
+    "CanCleanse": false
+  },
+  {
+    "Id": 79,
+    "Name": "Shield Oath",
+    "CanCleanse": false
+  },
+  {
+    "Id": 80,
+    "Name": "Cover",
+    "CanCleanse": false
+  },
+  {
+    "Id": 81,
+    "Name": "Covered",
+    "CanCleanse": false
+  },
+  {
+    "Id": 82,
+    "Name": "Hallowed Ground",
+    "CanCleanse": false
+  },
+  {
+    "Id": 83,
+    "Name": "Foresight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 84,
+    "Name": "Bloodbath",
+    "CanCleanse": false
+  },
+  {
+    "Id": 85,
+    "Name": "Maim",
+    "CanCleanse": false
+  },
+  {
+    "Id": 86,
+    "Name": "Berserk",
+    "CanCleanse": false
+  },
+  {
+    "Id": 87,
+    "Name": "Thrill of Battle",
+    "CanCleanse": false
+  },
+  {
+    "Id": 88,
+    "Name": "Holmgang",
+    "CanCleanse": false
+  },
+  {
+    "Id": 89,
+    "Name": "Vengeance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 90,
+    "Name": "Storm's Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 91,
+    "Name": "Defiance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 92,
+    "Name": "Unchained",
+    "CanCleanse": false
+  },
+  {
+    "Id": 93,
+    "Name": "Wrath",
+    "CanCleanse": false
+  },
+  {
+    "Id": 94,
+    "Name": "Wrath II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 95,
+    "Name": "Wrath III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 96,
+    "Name": "Wrath IV",
+    "CanCleanse": false
+  },
+  {
+    "Id": 97,
+    "Name": "Infuriated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 98,
+    "Name": "Dragon Kick",
+    "CanCleanse": true
+  },
+  {
+    "Id": 99,
+    "Name": "Featherfoot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 100,
+    "Name": "Internal Release",
+    "CanCleanse": false
+  },
+  {
+    "Id": 101,
+    "Name": "Twin Snakes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 102,
+    "Name": "Mantra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 103,
+    "Name": "Fists of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 104,
+    "Name": "Fists of Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 105,
+    "Name": "Fists of Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 106,
+    "Name": "Touch of Death",
+    "CanCleanse": true
+  },
+  {
+    "Id": 107,
+    "Name": "Opo-opo Form",
+    "CanCleanse": false
+  },
+  {
+    "Id": 108,
+    "Name": "Raptor Form",
+    "CanCleanse": false
+  },
+  {
+    "Id": 109,
+    "Name": "Coeurl Form",
+    "CanCleanse": false
+  },
+  {
+    "Id": 110,
+    "Name": "Perfect Balance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 111,
+    "Name": "Greased Lightning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 112,
+    "Name": "Greased Lightning II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 113,
+    "Name": "Greased Lightning III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 114,
+    "Name": "Keen Flurry",
+    "CanCleanse": false
+  },
+  {
+    "Id": 115,
+    "Name": "Heavy Thrust",
+    "CanCleanse": false
+  },
+  {
+    "Id": 116,
+    "Name": "Life Surge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 117,
+    "Name": "Blood for Blood",
+    "CanCleanse": false
+  },
+  {
+    "Id": 118,
+    "Name": "Chaos Thrust",
+    "CanCleanse": true
+  },
+  {
+    "Id": 119,
+    "Name": "Phlebotomize",
+    "CanCleanse": true
+  },
+  {
+    "Id": 120,
+    "Name": "Power Surge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 121,
+    "Name": "Disembowel",
+    "CanCleanse": true
+  },
+  {
+    "Id": 122,
+    "Name": "Straighter Shot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 123,
+    "Name": "Hawk's Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 124,
+    "Name": "Venomous Bite",
+    "CanCleanse": true
+  },
+  {
+    "Id": 125,
+    "Name": "Raging Strikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 126,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 127,
+    "Name": "Diversion",
+    "CanCleanse": false
+  },
+  {
+    "Id": 128,
+    "Name": "Barrage",
+    "CanCleanse": false
+  },
+  {
+    "Id": 129,
+    "Name": "Windbite",
+    "CanCleanse": true
+  },
+  {
+    "Id": 130,
+    "Name": "Straight Shot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 131,
+    "Name": "Downpour of Death",
+    "CanCleanse": false
+  },
+  {
+    "Id": 132,
+    "Name": "Quicker Nock",
+    "CanCleanse": false
+  },
+  {
+    "Id": 133,
+    "Name": "Swiftsong",
+    "CanCleanse": false
+  },
+  {
+    "Id": 134,
+    "Name": "Swiftsong",
+    "CanCleanse": false
+  },
+  {
+    "Id": 135,
+    "Name": "Mage's Ballad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 136,
+    "Name": "Mage's Ballad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 137,
+    "Name": "Army's Paeon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 138,
+    "Name": "Army's Paeon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 139,
+    "Name": "Foe Requiem",
+    "CanCleanse": false
+  },
+  {
+    "Id": 140,
+    "Name": "Foe Requiem",
+    "CanCleanse": false
+  },
+  {
+    "Id": 141,
+    "Name": "Battle Voice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 142,
+    "Name": "Stun",
+    "CanCleanse": false
+  },
+  {
+    "Id": 143,
+    "Name": "Aero",
+    "CanCleanse": true
+  },
+  {
+    "Id": 144,
+    "Name": "Aero II",
+    "CanCleanse": true
+  },
+  {
+    "Id": 145,
+    "Name": "Cleric Stance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 146,
+    "Name": "Protect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 147,
+    "Name": "Protect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 148,
+    "Name": "Raise",
+    "CanCleanse": false
+  },
+  {
+    "Id": 149,
+    "Name": "Stun",
+    "CanCleanse": false
+  },
+  {
+    "Id": 150,
+    "Name": "Medica II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 151,
+    "Name": "Stoneskin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 152,
+    "Name": "Stoneskin (Physical)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 153,
+    "Name": "Stoneskin (Magical)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 154,
+    "Name": "Shroud of Saints",
+    "CanCleanse": false
+  },
+  {
+    "Id": 155,
+    "Name": "Freecure",
+    "CanCleanse": false
+  },
+  {
+    "Id": 156,
+    "Name": "Overcure",
+    "CanCleanse": false
+  },
+  {
+    "Id": 157,
+    "Name": "Presence of Mind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 158,
+    "Name": "Regen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 159,
+    "Name": "Divine Seal",
+    "CanCleanse": false
+  },
+  {
+    "Id": 160,
+    "Name": "Surecast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 161,
+    "Name": "Thunder",
+    "CanCleanse": true
+  },
+  {
+    "Id": 162,
+    "Name": "Thunder II",
+    "CanCleanse": true
+  },
+  {
+    "Id": 163,
+    "Name": "Thunder III",
+    "CanCleanse": true
+  },
+  {
+    "Id": 164,
+    "Name": "Thundercloud",
+    "CanCleanse": false
+  },
+  {
+    "Id": 165,
+    "Name": "Firestarter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 166,
+    "Name": "Succor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 167,
+    "Name": "Swiftcast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 168,
+    "Name": "Manaward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 169,
+    "Name": "Manawall",
+    "CanCleanse": false
+  },
+  {
+    "Id": 170,
+    "Name": "Apocatastasis",
+    "CanCleanse": false
+  },
+  {
+    "Id": 171,
+    "Name": "Ekpyrosis",
+    "CanCleanse": false
+  },
+  {
+    "Id": 172,
+    "Name": "Infirmity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 173,
+    "Name": "Astral Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 174,
+    "Name": "Astral Fire II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 175,
+    "Name": "Astral Fire III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 176,
+    "Name": "Umbral Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 177,
+    "Name": "Umbral Ice II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 178,
+    "Name": "Umbral Ice III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 179,
+    "Name": "Bio",
+    "CanCleanse": true
+  },
+  {
+    "Id": 180,
+    "Name": "Miasma",
+    "CanCleanse": true
+  },
+  {
+    "Id": 181,
+    "Name": "Disease",
+    "CanCleanse": true
+  },
+  {
+    "Id": 182,
+    "Name": "Virus",
+    "CanCleanse": true
+  },
+  {
+    "Id": 183,
+    "Name": "Fever",
+    "CanCleanse": true
+  },
+  {
+    "Id": 184,
+    "Name": "Sustain",
+    "CanCleanse": false
+  },
+  {
+    "Id": 185,
+    "Name": "Eye for an Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 186,
+    "Name": "Eye for an Eye",
+    "CanCleanse": true
+  },
+  {
+    "Id": 187,
+    "Name": "Rouse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 188,
+    "Name": "Miasma II",
+    "CanCleanse": true
+  },
+  {
+    "Id": 189,
+    "Name": "Bio II",
+    "CanCleanse": true
+  },
+  {
+    "Id": 190,
+    "Name": "Shadow Flare",
+    "CanCleanse": false
+  },
+  {
+    "Id": 191,
+    "Name": "Malady",
+    "CanCleanse": true
+  },
+  {
+    "Id": 192,
+    "Name": "Spur",
+    "CanCleanse": false
+  },
+  {
+    "Id": 193,
+    "Name": "Slow",
+    "CanCleanse": true
+  },
+  {
+    "Id": 194,
+    "Name": "Shield Wall",
+    "CanCleanse": false
+  },
+  {
+    "Id": 195,
+    "Name": "Mighty Guard",
+    "CanCleanse": false
+  },
+  {
+    "Id": 196,
+    "Name": "Last Bastion",
+    "CanCleanse": false
+  },
+  {
+    "Id": 197,
+    "Name": "Blaze Spikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 198,
+    "Name": "Ice Spikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 199,
+    "Name": "Shock Spikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 200,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 201,
+    "Name": "Stun",
+    "CanCleanse": false
+  },
+  {
+    "Id": 202,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 203,
+    "Name": "Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 204,
+    "Name": "Enfire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 205,
+    "Name": "Enblizzard",
+    "CanCleanse": false
+  },
+  {
+    "Id": 206,
+    "Name": "Enaero",
+    "CanCleanse": false
+  },
+  {
+    "Id": 207,
+    "Name": "Enstone",
+    "CanCleanse": false
+  },
+  {
+    "Id": 208,
+    "Name": "Enthunder",
+    "CanCleanse": false
+  },
+  {
+    "Id": 209,
+    "Name": "Enwater",
+    "CanCleanse": false
+  },
+  {
+    "Id": 210,
+    "Name": "Doom",
+    "CanCleanse": false
+  },
+  {
+    "Id": 211,
+    "Name": "Sharpened Knife",
+    "CanCleanse": false
+  },
+  {
+    "Id": 212,
+    "Name": "True Sight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 213,
+    "Name": "Pacification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 214,
+    "Name": "Agitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 215,
+    "Name": "Damage Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 216,
+    "Name": "Paralysis",
+    "CanCleanse": false
+  },
+  {
+    "Id": 217,
+    "Name": "Triangulate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 218,
+    "Name": "Gathering Rate Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 219,
+    "Name": "Gathering Yield Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 220,
+    "Name": "Gathering Fortune Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 221,
+    "Name": "Truth of Forests",
+    "CanCleanse": false
+  },
+  {
+    "Id": 222,
+    "Name": "Truth of Mountains",
+    "CanCleanse": false
+  },
+  {
+    "Id": 223,
+    "Name": "Byregot's Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 224,
+    "Name": "Nophica's Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 225,
+    "Name": "Prospect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 226,
+    "Name": "Haste",
+    "CanCleanse": false
+  },
+  {
+    "Id": 227,
+    "Name": "Seduced",
+    "CanCleanse": false
+  },
+  {
+    "Id": 228,
+    "Name": "Menphina's Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 229,
+    "Name": "Nald'thal's Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 230,
+    "Name": "Llymlaen's Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 231,
+    "Name": "Thaliak's Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 232,
+    "Name": "Preparation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 233,
+    "Name": "Arbor Call",
+    "CanCleanse": false
+  },
+  {
+    "Id": 234,
+    "Name": "Lay of the Land",
+    "CanCleanse": false
+  },
+  {
+    "Id": 235,
+    "Name": "Windburn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 236,
+    "Name": "Choco Beak",
+    "CanCleanse": false
+  },
+  {
+    "Id": 237,
+    "Name": "Choco Regen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 238,
+    "Name": "Choco Surge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 239,
+    "Name": "The Echo",
+    "CanCleanse": false
+  },
+  {
+    "Id": 240,
+    "Name": "Heavy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 241,
+    "Name": "Blessing of Light",
+    "CanCleanse": false
+  },
+  {
+    "Id": 242,
+    "Name": "Arbor Call II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 243,
+    "Name": "Lay of the Land II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 244,
+    "Name": "Fracture",
+    "CanCleanse": true
+  },
+  {
+    "Id": 245,
+    "Name": "Sanction",
+    "CanCleanse": false
+  },
+  {
+    "Id": 246,
+    "Name": "Demolish",
+    "CanCleanse": true
+  },
+  {
+    "Id": 247,
+    "Name": "Rain of Death",
+    "CanCleanse": true
+  },
+  {
+    "Id": 248,
+    "Name": "Circle of Scorn",
+    "CanCleanse": true
+  },
+  {
+    "Id": 249,
+    "Name": "Flaming Arrow",
+    "CanCleanse": false
+  },
+  {
+    "Id": 250,
+    "Name": "Burns",
+    "CanCleanse": false
+  },
+  {
+    "Id": 251,
+    "Name": "Inner Quiet",
+    "CanCleanse": false
+  },
+  {
+    "Id": 252,
+    "Name": "Waste Not",
+    "CanCleanse": false
+  },
+  {
+    "Id": 253,
+    "Name": "Steady Hand",
+    "CanCleanse": false
+  },
+  {
+    "Id": 254,
+    "Name": "Great Strides",
+    "CanCleanse": false
+  },
+  {
+    "Id": 255,
+    "Name": "Ingenuity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 256,
+    "Name": "Ingenuity II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 257,
+    "Name": "Waste Not II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 258,
+    "Name": "Manipulation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 259,
+    "Name": "Innovation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 260,
+    "Name": "Reclaim",
+    "CanCleanse": false
+  },
+  {
+    "Id": 261,
+    "Name": "Comfort Zone",
+    "CanCleanse": false
+  },
+  {
+    "Id": 262,
+    "Name": "Steady Hand II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 263,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 264,
+    "Name": "Flesh Wound",
+    "CanCleanse": true
+  },
+  {
+    "Id": 265,
+    "Name": "Stab Wound",
+    "CanCleanse": true
+  },
+  {
+    "Id": 266,
+    "Name": "Concussion",
+    "CanCleanse": true
+  },
+  {
+    "Id": 267,
+    "Name": "Burns",
+    "CanCleanse": true
+  },
+  {
+    "Id": 268,
+    "Name": "Frostbite",
+    "CanCleanse": true
+  },
+  {
+    "Id": 269,
+    "Name": "Windburn",
+    "CanCleanse": true
+  },
+  {
+    "Id": 270,
+    "Name": "Sludge",
+    "CanCleanse": true
+  },
+  {
+    "Id": 271,
+    "Name": "Electrocution",
+    "CanCleanse": true
+  },
+  {
+    "Id": 272,
+    "Name": "Dropsy",
+    "CanCleanse": true
+  },
+  {
+    "Id": 273,
+    "Name": "Bleeding",
+    "CanCleanse": true
+  },
+  {
+    "Id": 274,
+    "Name": "Recuperation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 275,
+    "Name": "Poison +1",
+    "CanCleanse": true
+  },
+  {
+    "Id": 276,
+    "Name": "Voice of Valor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 277,
+    "Name": "Voice of Fortitude",
+    "CanCleanse": false
+  },
+  {
+    "Id": 278,
+    "Name": "Relentless March",
+    "CanCleanse": false
+  },
+  {
+    "Id": 279,
+    "Name": "Rehabilitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 280,
+    "Name": "Bind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 281,
+    "Name": "Physical Damage Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 282,
+    "Name": "Mana Modulation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 283,
+    "Name": "Dropsy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 284,
+    "Name": "Burns",
+    "CanCleanse": false
+  },
+  {
+    "Id": 285,
+    "Name": "Frostbite",
+    "CanCleanse": false
+  },
+  {
+    "Id": 286,
+    "Name": "Windburn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 287,
+    "Name": "Sludge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 288,
+    "Name": "Electrocution",
+    "CanCleanse": false
+  },
+  {
+    "Id": 289,
+    "Name": "Dropsy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 290,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 291,
+    "Name": "Hundred Fists",
+    "CanCleanse": false
+  },
+  {
+    "Id": 292,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 293,
+    "Name": "Skill Speed Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 294,
+    "Name": "Spell Speed Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 295,
+    "Name": "Goldbile",
+    "CanCleanse": false
+  },
+  {
+    "Id": 296,
+    "Name": "Hysteria",
+    "CanCleanse": false
+  },
+  {
+    "Id": 297,
+    "Name": "Galvanize",
+    "CanCleanse": false
+  },
+  {
+    "Id": 298,
+    "Name": "Sacred Soil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 299,
+    "Name": "Sacred Soil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 300,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 301,
+    "Name": "Critical Strikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 302,
+    "Name": "Gold Lung",
+    "CanCleanse": false
+  },
+  {
+    "Id": 303,
+    "Name": "Burrs",
+    "CanCleanse": false
+  },
+  {
+    "Id": 304,
+    "Name": "Aetherflow",
+    "CanCleanse": false
+  },
+  {
+    "Id": 305,
+    "Name": "The Dragon's Curse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 306,
+    "Name": "Inner Dragon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 307,
+    "Name": "Voice of Valor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 308,
+    "Name": "Voice of Fortitude",
+    "CanCleanse": false
+  },
+  {
+    "Id": 309,
+    "Name": "Relentless March",
+    "CanCleanse": false
+  },
+  {
+    "Id": 310,
+    "Name": "Curl",
+    "CanCleanse": false
+  },
+  {
+    "Id": 311,
+    "Name": "Earthen Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 312,
+    "Name": "Razed Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 313,
+    "Name": "Radiant Shield",
+    "CanCleanse": false
+  },
+  {
+    "Id": 314,
+    "Name": "Inferno",
+    "CanCleanse": true
+  },
+  {
+    "Id": 315,
+    "Name": "Whispering Dawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 316,
+    "Name": "Fey Covenant",
+    "CanCleanse": false
+  },
+  {
+    "Id": 317,
+    "Name": "Fey Illumination",
+    "CanCleanse": false
+  },
+  {
+    "Id": 318,
+    "Name": "Fey Glow",
+    "CanCleanse": false
+  },
+  {
+    "Id": 319,
+    "Name": "Fey Light",
+    "CanCleanse": false
+  },
+  {
+    "Id": 320,
+    "Name": "Bleeding",
+    "CanCleanse": false
+  },
+  {
+    "Id": 321,
+    "Name": "Gungnir",
+    "CanCleanse": false
+  },
+  {
+    "Id": 322,
+    "Name": "Crystal Veil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 323,
+    "Name": "Reduced Immunity",
+    "CanCleanse": true
+  },
+  {
+    "Id": 324,
+    "Name": "Greenwrath",
+    "CanCleanse": false
+  },
+  {
+    "Id": 325,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 326,
+    "Name": "Lightning Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 327,
+    "Name": "Ice Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 328,
+    "Name": "Heart of the Mountain",
+    "CanCleanse": false
+  },
+  {
+    "Id": 329,
+    "Name": "Modification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 330,
+    "Name": "Haste",
+    "CanCleanse": false
+  },
+  {
+    "Id": 331,
+    "Name": "Magic Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 332,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 333,
+    "Name": "Allagan Rot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 334,
+    "Name": "Allagan Immunity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 335,
+    "Name": "Firestream",
+    "CanCleanse": false
+  },
+  {
+    "Id": 336,
+    "Name": "Sequence AB1",
+    "CanCleanse": false
+  },
+  {
+    "Id": 337,
+    "Name": "Sequence AP1",
+    "CanCleanse": false
+  },
+  {
+    "Id": 338,
+    "Name": "Sequence AS1",
+    "CanCleanse": false
+  },
+  {
+    "Id": 339,
+    "Name": "Bleeding",
+    "CanCleanse": false
+  },
+  {
+    "Id": 340,
+    "Name": "Physical Field",
+    "CanCleanse": false
+  },
+  {
+    "Id": 341,
+    "Name": "Aetherial Field",
+    "CanCleanse": false
+  },
+  {
+    "Id": 342,
+    "Name": "Repelling Spray",
+    "CanCleanse": false
+  },
+  {
+    "Id": 343,
+    "Name": "Bleeding",
+    "CanCleanse": false
+  },
+  {
+    "Id": 344,
+    "Name": "Neurolink",
+    "CanCleanse": false
+  },
+  {
+    "Id": 345,
+    "Name": "Recharge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 346,
+    "Name": "Waxen Flesh",
+    "CanCleanse": false
+  },
+  {
+    "Id": 347,
+    "Name": "Pox",
+    "CanCleanse": false
+  },
+  {
+    "Id": 348,
+    "Name": "Disseminate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 349,
+    "Name": "Steel Scales",
+    "CanCleanse": false
+  },
+  {
+    "Id": 350,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 351,
+    "Name": "Rancor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 352,
+    "Name": "Spjot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 353,
+    "Name": "Brave New World",
+    "CanCleanse": false
+  },
+  {
+    "Id": 354,
+    "Name": "Live off the Land",
+    "CanCleanse": false
+  },
+  {
+    "Id": 355,
+    "Name": "What You See",
+    "CanCleanse": false
+  },
+  {
+    "Id": 356,
+    "Name": "Eat from the Hand",
+    "CanCleanse": false
+  },
+  {
+    "Id": 357,
+    "Name": "In Control",
+    "CanCleanse": false
+  },
+  {
+    "Id": 358,
+    "Name": "Snowman",
+    "CanCleanse": false
+  },
+  {
+    "Id": 359,
+    "Name": "Fey Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 360,
+    "Name": "Meat and Mead",
+    "CanCleanse": false
+  },
+  {
+    "Id": 361,
+    "Name": "That Which Binds Us",
+    "CanCleanse": false
+  },
+  {
+    "Id": 362,
+    "Name": "Proper Care",
+    "CanCleanse": false
+  },
+  {
+    "Id": 363,
+    "Name": "Back on Your Feet",
+    "CanCleanse": false
+  },
+  {
+    "Id": 364,
+    "Name": "Reduced Rates",
+    "CanCleanse": false
+  },
+  {
+    "Id": 365,
+    "Name": "The Heat of Battle",
+    "CanCleanse": false
+  },
+  {
+    "Id": 366,
+    "Name": "A Man's Best Friend",
+    "CanCleanse": false
+  },
+  {
+    "Id": 367,
+    "Name": "Earth and Water",
+    "CanCleanse": false
+  },
+  {
+    "Id": 368,
+    "Name": "Helping Hand",
+    "CanCleanse": false
+  },
+  {
+    "Id": 369,
+    "Name": "Viscous Aetheroplasm",
+    "CanCleanse": false
+  },
+  {
+    "Id": 370,
+    "Name": "Siren Song",
+    "CanCleanse": false
+  },
+  {
+    "Id": 371,
+    "Name": "Zombification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 372,
+    "Name": "Brood Rage",
+    "CanCleanse": false
+  },
+  {
+    "Id": 373,
+    "Name": "Blight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 374,
+    "Name": "Corrupted Crystal",
+    "CanCleanse": false
+  },
+  {
+    "Id": 375,
+    "Name": "Suppuration",
+    "CanCleanse": false
+  },
+  {
+    "Id": 376,
+    "Name": "Searing Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 377,
+    "Name": "Infernal Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 378,
+    "Name": "Death Throes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 379,
+    "Name": "Thermal Low",
+    "CanCleanse": false
+  },
+  {
+    "Id": 380,
+    "Name": "Thermal High",
+    "CanCleanse": false
+  },
+  {
+    "Id": 381,
+    "Name": "Testudo",
+    "CanCleanse": false
+  },
+  {
+    "Id": 384,
+    "Name": "Thrill of War",
+    "CanCleanse": false
+  },
+  {
+    "Id": 385,
+    "Name": "Full Swing",
+    "CanCleanse": false
+  },
+  {
+    "Id": 386,
+    "Name": "Somersault",
+    "CanCleanse": false
+  },
+  {
+    "Id": 387,
+    "Name": "Fetter Ward",
+    "CanCleanse": false
+  },
+  {
+    "Id": 388,
+    "Name": "Impulse Rush",
+    "CanCleanse": false
+  },
+  {
+    "Id": 389,
+    "Name": "Skewer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 390,
+    "Name": "Sacred Prism",
+    "CanCleanse": false
+  },
+  {
+    "Id": 391,
+    "Name": "Phantom Dart",
+    "CanCleanse": false
+  },
+  {
+    "Id": 392,
+    "Name": "Misty Veil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 393,
+    "Name": "Wither",
+    "CanCleanse": false
+  },
+  {
+    "Id": 394,
+    "Name": "Focalization",
+    "CanCleanse": false
+  },
+  {
+    "Id": 395,
+    "Name": "Aetheric Burst",
+    "CanCleanse": false
+  },
+  {
+    "Id": 396,
+    "Name": "Concentration",
+    "CanCleanse": false
+  },
+  {
+    "Id": 397,
+    "Name": "Safeguard",
+    "CanCleanse": false
+  },
+  {
+    "Id": 398,
+    "Name": "Astral Realignment",
+    "CanCleanse": false
+  },
+  {
+    "Id": 399,
+    "Name": "Corporeal Return",
+    "CanCleanse": false
+  },
+  {
+    "Id": 400,
+    "Name": "Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 401,
+    "Name": "Seized",
+    "CanCleanse": false
+  },
+  {
+    "Id": 402,
+    "Name": "Thrown for a Loop",
+    "CanCleanse": true
+  },
+  {
+    "Id": 403,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 404,
+    "Name": "Transporting",
+    "CanCleanse": false
+  },
+  {
+    "Id": 405,
+    "Name": "Bewildered",
+    "CanCleanse": false
+  },
+  {
+    "Id": 406,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 407,
+    "Name": "Dust Poisoning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 408,
+    "Name": "Storm's Path",
+    "CanCleanse": true
+  },
+  {
+    "Id": 409,
+    "Name": "Holmgang",
+    "CanCleanse": false
+  },
+  {
+    "Id": 410,
+    "Name": "Antibody",
+    "CanCleanse": false
+  },
+  {
+    "Id": 411,
+    "Name": "Inner Beast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 412,
+    "Name": "Hover",
+    "CanCleanse": false
+  },
+  {
+    "Id": 413,
+    "Name": "Mark Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 414,
+    "Name": "Seal Sweetener",
+    "CanCleanse": false
+  },
+  {
+    "Id": 415,
+    "Name": "Regain",
+    "CanCleanse": false
+  },
+  {
+    "Id": 416,
+    "Name": "Transparent",
+    "CanCleanse": false
+  },
+  {
+    "Id": 417,
+    "Name": "Protect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 418,
+    "Name": "Physical Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 419,
+    "Name": "Misty Veil",
+    "CanCleanse": true
+  },
+  {
+    "Id": 420,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 421,
+    "Name": "Devoured",
+    "CanCleanse": false
+  },
+  {
+    "Id": 422,
+    "Name": "Healing Magic Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 423,
+    "Name": "Nightmare",
+    "CanCleanse": true
+  },
+  {
+    "Id": 424,
+    "Name": "Diabolic Curse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 425,
+    "Name": "Eerie Air",
+    "CanCleanse": false
+  },
+  {
+    "Id": 426,
+    "Name": "Noctoshield",
+    "CanCleanse": false
+  },
+  {
+    "Id": 427,
+    "Name": "Slow+",
+    "CanCleanse": false
+  },
+  {
+    "Id": 428,
+    "Name": "Haste+",
+    "CanCleanse": false
+  },
+  {
+    "Id": 429,
+    "Name": "Scale Flakes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 430,
+    "Name": "Misery",
+    "CanCleanse": false
+  },
+  {
+    "Id": 431,
+    "Name": "Water Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 432,
+    "Name": "Briny Mirror",
+    "CanCleanse": false
+  },
+  {
+    "Id": 433,
+    "Name": "Briny Veil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 434,
+    "Name": "Absolute Bind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 435,
+    "Name": "Demon Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 436,
+    "Name": "Briar",
+    "CanCleanse": false
+  },
+  {
+    "Id": 437,
+    "Name": "Stone Curse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 438,
+    "Name": "Minimum",
+    "CanCleanse": false
+  },
+  {
+    "Id": 439,
+    "Name": "Toad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 440,
+    "Name": "Minimum",
+    "CanCleanse": false
+  },
+  {
+    "Id": 441,
+    "Name": "Toad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 442,
+    "Name": "Slow",
+    "CanCleanse": false
+  },
+  {
+    "Id": 443,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 444,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 445,
+    "Name": "Thorny Vine",
+    "CanCleanse": false
+  },
+  {
+    "Id": 446,
+    "Name": "Honey-glazed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 447,
+    "Name": "Potent Acid",
+    "CanCleanse": false
+  },
+  {
+    "Id": 448,
+    "Name": "Swarmed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 449,
+    "Name": "Stung",
+    "CanCleanse": false
+  },
+  {
+    "Id": 450,
+    "Name": "Petrification Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 451,
+    "Name": "Cursed Voice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 452,
+    "Name": "Cursed Shriek",
+    "CanCleanse": false
+  },
+  {
+    "Id": 453,
+    "Name": "Allagan Venom",
+    "CanCleanse": true
+  },
+  {
+    "Id": 454,
+    "Name": "Allagan Field",
+    "CanCleanse": false
+  },
+  {
+    "Id": 455,
+    "Name": "Languishing",
+    "CanCleanse": false
+  },
+  {
+    "Id": 456,
+    "Name": "HP Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 457,
+    "Name": "Bind+",
+    "CanCleanse": false
+  },
+  {
+    "Id": 458,
+    "Name": "Raven Blight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 459,
+    "Name": "Normal Stance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 460,
+    "Name": "Aggressive Stance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 461,
+    "Name": "Subversive Stance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 462,
+    "Name": "Garrote Twist",
+    "CanCleanse": false
+  },
+  {
+    "Id": 463,
+    "Name": "Garrote",
+    "CanCleanse": false
+  },
+  {
+    "Id": 464,
+    "Name": "Firescorched",
+    "CanCleanse": false
+  },
+  {
+    "Id": 465,
+    "Name": "Icebitten",
+    "CanCleanse": false
+  },
+  {
+    "Id": 466,
+    "Name": "Thunderstruck",
+    "CanCleanse": false
+  },
+  {
+    "Id": 467,
+    "Name": "Briny Veil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 468,
+    "Name": "Voidbound",
+    "CanCleanse": false
+  },
+  {
+    "Id": 469,
+    "Name": "High and Mighty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 470,
+    "Name": "Pombination",
+    "CanCleanse": false
+  },
+  {
+    "Id": 471,
+    "Name": "Moglight Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 472,
+    "Name": "Mogdark Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 473,
+    "Name": "Bemoggled",
+    "CanCleanse": true
+  },
+  {
+    "Id": 474,
+    "Name": "Royal Rouse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 475,
+    "Name": "Slippery Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 476,
+    "Name": "Gloam",
+    "CanCleanse": true
+  },
+  {
+    "Id": 477,
+    "Name": "Mantle of the Whorl",
+    "CanCleanse": false
+  },
+  {
+    "Id": 478,
+    "Name": "Veil of the Whorl",
+    "CanCleanse": false
+  },
+  {
+    "Id": 479,
+    "Name": "Rehabilitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 480,
+    "Name": "Haste+",
+    "CanCleanse": false
+  },
+  {
+    "Id": 481,
+    "Name": "Sprint",
+    "CanCleanse": false
+  },
+  {
+    "Id": 482,
+    "Name": "Paralysis",
+    "CanCleanse": true
+  },
+  {
+    "Id": 483,
+    "Name": "HP Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 484,
+    "Name": "Ink",
+    "CanCleanse": false
+  },
+  {
+    "Id": 485,
+    "Name": "Dropsy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 486,
+    "Name": "Watery Grave",
+    "CanCleanse": false
+  },
+  {
+    "Id": 487,
+    "Name": "Deep Freeze",
+    "CanCleanse": false
+  },
+  {
+    "Id": 488,
+    "Name": "Shade Shift",
+    "CanCleanse": false
+  },
+  {
+    "Id": 489,
+    "Name": "Kiss of the Wasp",
+    "CanCleanse": false
+  },
+  {
+    "Id": 490,
+    "Name": "Kiss of the Viper",
+    "CanCleanse": false
+  },
+  {
+    "Id": 491,
+    "Name": "Dancing Edge",
+    "CanCleanse": true
+  },
+  {
+    "Id": 492,
+    "Name": "Mutilation",
+    "CanCleanse": true
+  },
+  {
+    "Id": 493,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 494,
+    "Name": "Magic Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 495,
+    "Name": "Goad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 496,
+    "Name": "Mudra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 497,
+    "Name": "Kassatsu",
+    "CanCleanse": false
+  },
+  {
+    "Id": 498,
+    "Name": "Infirmity",
+    "CanCleanse": true
+  },
+  {
+    "Id": 500,
+    "Name": "Huton",
+    "CanCleanse": false
+  },
+  {
+    "Id": 501,
+    "Name": "Doton",
+    "CanCleanse": false
+  },
+  {
+    "Id": 502,
+    "Name": "Doton Heavy",
+    "CanCleanse": true
+  },
+  {
+    "Id": 503,
+    "Name": "Burns",
+    "CanCleanse": false
+  },
+  {
+    "Id": 504,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 505,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 506,
+    "Name": "Vertigo",
+    "CanCleanse": false
+  },
+  {
+    "Id": 507,
+    "Name": "Suiton",
+    "CanCleanse": false
+  },
+  {
+    "Id": 508,
+    "Name": "Shadow Fang",
+    "CanCleanse": true
+  },
+  {
+    "Id": 509,
+    "Name": "Aetherochemical Bomb",
+    "CanCleanse": true
+  },
+  {
+    "Id": 510,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 511,
+    "Name": "Fire Toad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 512,
+    "Name": "Electroconductivity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 513,
+    "Name": "Static Condensation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 514,
+    "Name": "Causality",
+    "CanCleanse": false
+  },
+  {
+    "Id": 515,
+    "Name": "Thunderclap",
+    "CanCleanse": false
+  },
+  {
+    "Id": 516,
+    "Name": "Chaos",
+    "CanCleanse": false
+  },
+  {
+    "Id": 517,
+    "Name": "Surge Protection",
+    "CanCleanse": false
+  },
+  {
+    "Id": 518,
+    "Name": "Reflect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 519,
+    "Name": "Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 520,
+    "Name": "Fire Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 521,
+    "Name": "Water Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 522,
+    "Name": "Wind Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 523,
+    "Name": "Lightning Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 524,
+    "Name": "Earth Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 525,
+    "Name": "Ice Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 526,
+    "Name": "Frost Blade",
+    "CanCleanse": false
+  },
+  {
+    "Id": 527,
+    "Name": "Frost Brand",
+    "CanCleanse": false
+  },
+  {
+    "Id": 528,
+    "Name": "Frost Bow",
+    "CanCleanse": false
+  },
+  {
+    "Id": 529,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 530,
+    "Name": "Burns",
+    "CanCleanse": false
+  },
+  {
+    "Id": 531,
+    "Name": "Dropsy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 532,
+    "Name": "Windburn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 533,
+    "Name": "Electrocution",
+    "CanCleanse": false
+  },
+  {
+    "Id": 534,
+    "Name": "Sludge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 535,
+    "Name": "Frostbite",
+    "CanCleanse": false
+  },
+  {
+    "Id": 536,
+    "Name": "Companion EXP Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 537,
+    "Name": "Companion EXP Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 538,
+    "Name": "Companion Attack Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 539,
+    "Name": "Companion Attack Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 540,
+    "Name": "Companion Healing Potency Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 541,
+    "Name": "Companion Healing Potency Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 542,
+    "Name": "Companion Maximum HP Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 543,
+    "Name": "Companion Maximum HP Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 544,
+    "Name": "Companion Enmity Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 545,
+    "Name": "Companion Enmity Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 546,
+    "Name": "Enervation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 547,
+    "Name": "Facility Access: Production",
+    "CanCleanse": false
+  },
+  {
+    "Id": 548,
+    "Name": "Facility Access: Finishing",
+    "CanCleanse": false
+  },
+  {
+    "Id": 549,
+    "Name": "Facility Access: Detailing",
+    "CanCleanse": false
+  },
+  {
+    "Id": 550,
+    "Name": "Facility Access: Production II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 551,
+    "Name": "Facility Access: Specialization",
+    "CanCleanse": false
+  },
+  {
+    "Id": 552,
+    "Name": "Facility Access: Specialization II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 553,
+    "Name": "Facility Access: Detailing II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 554,
+    "Name": "Facility Access: Finishing II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 555,
+    "Name": "Repelling Spray",
+    "CanCleanse": false
+  },
+  {
+    "Id": 556,
+    "Name": "Repelling Spray",
+    "CanCleanse": false
+  },
+  {
+    "Id": 557,
+    "Name": "Repelling Spray",
+    "CanCleanse": false
+  },
+  {
+    "Id": 558,
+    "Name": "Repelling Spray",
+    "CanCleanse": false
+  },
+  {
+    "Id": 559,
+    "Name": "Poison",
+    "CanCleanse": true
+  },
+  {
+    "Id": 560,
+    "Name": "Poison",
+    "CanCleanse": true
+  },
+  {
+    "Id": 561,
+    "Name": "Slow",
+    "CanCleanse": true
+  },
+  {
+    "Id": 562,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 563,
+    "Name": "Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 564,
+    "Name": "Bind",
+    "CanCleanse": true
+  },
+  {
+    "Id": 565,
+    "Name": "Transfiguration",
+    "CanCleanse": false
+  },
+  {
+    "Id": 566,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 567,
+    "Name": "6 Fulms Under",
+    "CanCleanse": false
+  },
+  {
+    "Id": 568,
+    "Name": "Fisher's Intuition",
+    "CanCleanse": false
+  },
+  {
+    "Id": 569,
+    "Name": "Slime",
+    "CanCleanse": true
+  },
+  {
+    "Id": 570,
+    "Name": "In the Line of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 571,
+    "Name": "Blind",
+    "CanCleanse": true
+  },
+  {
+    "Id": 572,
+    "Name": "Slashing Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 573,
+    "Name": "Blunt Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 574,
+    "Name": "Erratic Blaster",
+    "CanCleanse": false
+  },
+  {
+    "Id": 575,
+    "Name": "Static Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 576,
+    "Name": "Lightning Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 577,
+    "Name": "Barofield",
+    "CanCleanse": false
+  },
+  {
+    "Id": 578,
+    "Name": "In the Headlights",
+    "CanCleanse": false
+  },
+  {
+    "Id": 579,
+    "Name": "Critical Strikes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 580,
+    "Name": "Aetherochemical Nanospores ?",
+    "CanCleanse": false
+  },
+  {
+    "Id": 581,
+    "Name": "Aetherochemical Nanospores ?",
+    "CanCleanse": false
+  },
+  {
+    "Id": 582,
+    "Name": "Magic Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 583,
+    "Name": "Physical Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 584,
+    "Name": "Energy Field",
+    "CanCleanse": false
+  },
+  {
+    "Id": 585,
+    "Name": "Energy Field Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 586,
+    "Name": "HP Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 587,
+    "Name": "Forked Lightning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 588,
+    "Name": "Revelation Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 589,
+    "Name": "Chain of Purgatory",
+    "CanCleanse": false
+  },
+  {
+    "Id": 590,
+    "Name": "Arm of Purgatory",
+    "CanCleanse": false
+  },
+  {
+    "Id": 591,
+    "Name": "Bluefire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 592,
+    "Name": "Ring of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 593,
+    "Name": "Rise of the Phoenix",
+    "CanCleanse": false
+  },
+  {
+    "Id": 594,
+    "Name": "Harvest",
+    "CanCleanse": false
+  },
+  {
+    "Id": 595,
+    "Name": "Cloak of Death",
+    "CanCleanse": false
+  },
+  {
+    "Id": 596,
+    "Name": "Suffocated Will",
+    "CanCleanse": false
+  },
+  {
+    "Id": 597,
+    "Name": "Flare Dampening",
+    "CanCleanse": false
+  },
+  {
+    "Id": 598,
+    "Name": "(?)??????(??????)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 599,
+    "Name": "(?)??????(??????)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 600,
+    "Name": "Magic Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 601,
+    "Name": "Physical Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 602,
+    "Name": "Curse of the Mummy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 603,
+    "Name": "Mummification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 604,
+    "Name": "Thin Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 605,
+    "Name": "Frostbite",
+    "CanCleanse": false
+  },
+  {
+    "Id": 606,
+    "Name": "Frozen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 607,
+    "Name": "Snowball",
+    "CanCleanse": false
+  },
+  {
+    "Id": 608,
+    "Name": "Death Throes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 609,
+    "Name": "Seized",
+    "CanCleanse": false
+  },
+  {
+    "Id": 610,
+    "Name": "Petrification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 611,
+    "Name": "Invigoration",
+    "CanCleanse": false
+  },
+  {
+    "Id": 612,
+    "Name": "Wet Plate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 613,
+    "Name": "Imp",
+    "CanCleanse": false
+  },
+  {
+    "Id": 614,
+    "Name": "Hidden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 615,
+    "Name": "Hidden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 616,
+    "Name": "Invisible",
+    "CanCleanse": false
+  },
+  {
+    "Id": 617,
+    "Name": "Irradiated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 618,
+    "Name": "Area of Influence Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 619,
+    "Name": "Burns",
+    "CanCleanse": false
+  },
+  {
+    "Id": 620,
+    "Name": "Pacification",
+    "CanCleanse": true
+  },
+  {
+    "Id": 621,
+    "Name": "Fire Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 622,
+    "Name": "Rotting Lungs",
+    "CanCleanse": false
+  },
+  {
+    "Id": 623,
+    "Name": "Disease",
+    "CanCleanse": true
+  },
+  {
+    "Id": 624,
+    "Name": "Flesh Wound",
+    "CanCleanse": false
+  },
+  {
+    "Id": 625,
+    "Name": "Down for the Count",
+    "CanCleanse": false
+  },
+  {
+    "Id": 626,
+    "Name": "Out of the Action",
+    "CanCleanse": false
+  },
+  {
+    "Id": 627,
+    "Name": "",
+    "CanCleanse": false
+  },
+  {
+    "Id": 628,
+    "Name": "",
+    "CanCleanse": false
+  },
+  {
+    "Id": 629,
+    "Name": "Infirmity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 630,
+    "Name": "Heavy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 631,
+    "Name": "Tireless",
+    "CanCleanse": false
+  },
+  {
+    "Id": 632,
+    "Name": "Frenzied",
+    "CanCleanse": false
+  },
+  {
+    "Id": 633,
+    "Name": "Lamed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 634,
+    "Name": "Silenced",
+    "CanCleanse": false
+  },
+  {
+    "Id": 635,
+    "Name": "Distracted",
+    "CanCleanse": false
+  },
+  {
+    "Id": 636,
+    "Name": "Brand of the Sullen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 637,
+    "Name": "Brand of the Ireful",
+    "CanCleanse": false
+  },
+  {
+    "Id": 638,
+    "Name": "Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 639,
+    "Name": "Pyretic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 640,
+    "Name": "Poison Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 641,
+    "Name": "Choco Reflect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 642,
+    "Name": "Bleeding",
+    "CanCleanse": false
+  },
+  {
+    "Id": 643,
+    "Name": "Bleeding",
+    "CanCleanse": false
+  },
+  {
+    "Id": 644,
+    "Name": "Chicken",
+    "CanCleanse": false
+  },
+  {
+    "Id": 645,
+    "Name": "Digesting",
+    "CanCleanse": false
+  },
+  {
+    "Id": 646,
+    "Name": "Abandonment",
+    "CanCleanse": false
+  },
+  {
+    "Id": 647,
+    "Name": "Atrophy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 648,
+    "Name": "Rehabilitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 649,
+    "Name": "Attack Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 650,
+    "Name": "Attack Magic Potency Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 651,
+    "Name": "Haste",
+    "CanCleanse": false
+  },
+  {
+    "Id": 652,
+    "Name": "HP & MP Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 653,
+    "Name": "Battle High",
+    "CanCleanse": false
+  },
+  {
+    "Id": 654,
+    "Name": "Battle Fever",
+    "CanCleanse": false
+  },
+  {
+    "Id": 655,
+    "Name": "Aegis Boon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 656,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 657,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 658,
+    "Name": "Magic Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 659,
+    "Name": "Blight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 660,
+    "Name": "Extend",
+    "CanCleanse": false
+  },
+  {
+    "Id": 661,
+    "Name": "Double",
+    "CanCleanse": false
+  },
+  {
+    "Id": 662,
+    "Name": "Triple",
+    "CanCleanse": false
+  },
+  {
+    "Id": 663,
+    "Name": "Red Light",
+    "CanCleanse": false
+  },
+  {
+    "Id": 664,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 665,
+    "Name": "Slippery Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 666,
+    "Name": "Electrocution",
+    "CanCleanse": false
+  },
+  {
+    "Id": 667,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 668,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 669,
+    "Name": "Movement Speed Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 670,
+    "Name": "Fire Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 671,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 672,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 673,
+    "Name": "Nanoparticles",
+    "CanCleanse": false
+  },
+  {
+    "Id": 674,
+    "Name": "Resin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 675,
+    "Name": "",
+    "CanCleanse": false
+  },
+  {
+    "Id": 676,
+    "Name": "Concealed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 677,
+    "Name": "Concentrated Poison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 678,
+    "Name": "Tailwind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 679,
+    "Name": "Windwall",
+    "CanCleanse": false
+  },
+  {
+    "Id": 680,
+    "Name": "Directional Parry",
+    "CanCleanse": false
+  },
+  {
+    "Id": 681,
+    "Name": "Offensive Optimization",
+    "CanCleanse": false
+  },
+  {
+    "Id": 682,
+    "Name": "Defensive Optimization",
+    "CanCleanse": false
+  },
+  {
+    "Id": 683,
+    "Name": "Blessing of Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 684,
+    "Name": "Blessing of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 685,
+    "Name": "Wind Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 686,
+    "Name": "Poison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 687,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 688,
+    "Name": "Hypercharge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 689,
+    "Name": "Mana Capacitor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 690,
+    "Name": "Muscle Activator",
+    "CanCleanse": false
+  },
+  {
+    "Id": 691,
+    "Name": "Marked for Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 692,
+    "Name": "Marked for Damage Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 693,
+    "Name": "Marked for Healing Magic Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 694,
+    "Name": "Hard Marked",
+    "CanCleanse": false
+  },
+  {
+    "Id": 695,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 696,
+    "Name": "Damage Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 697,
+    "Name": "Healing Magic Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 698,
+    "Name": "Positive Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 699,
+    "Name": "Negative Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 700,
+    "Name": "Throttle",
+    "CanCleanse": true
+  },
+  {
+    "Id": 701,
+    "Name": "Battle Efficiency Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 702,
+    "Name": "Bloated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 703,
+    "Name": "Draconian Gaze",
+    "CanCleanse": false
+  },
+  {
+    "Id": 704,
+    "Name": "Draconian Light",
+    "CanCleanse": false
+  },
+  {
+    "Id": 705,
+    "Name": "Transfiguration",
+    "CanCleanse": false
+  },
+  {
+    "Id": 706,
+    "Name": "Luminous Aetheroplasm",
+    "CanCleanse": false
+  },
+  {
+    "Id": 707,
+    "Name": "Decree Nisi A",
+    "CanCleanse": false
+  },
+  {
+    "Id": 708,
+    "Name": "Decree Nisi B",
+    "CanCleanse": false
+  },
+  {
+    "Id": 709,
+    "Name": "Heavy Feet",
+    "CanCleanse": false
+  },
+  {
+    "Id": 710,
+    "Name": "Charge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 711,
+    "Name": "Temporary Insanity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 712,
+    "Name": "Tempered Will",
+    "CanCleanse": false
+  },
+  {
+    "Id": 713,
+    "Name": "Severe Damage",
+    "CanCleanse": false
+  },
+  {
+    "Id": 714,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 715,
+    "Name": "Staggered",
+    "CanCleanse": false
+  },
+  {
+    "Id": 716,
+    "Name": "Turbulence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 717,
+    "Name": "Will of the Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 718,
+    "Name": "Will of the Water",
+    "CanCleanse": false
+  },
+  {
+    "Id": 719,
+    "Name": "Whaleback",
+    "CanCleanse": false
+  },
+  {
+    "Id": 720,
+    "Name": "Slashing Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 721,
+    "Name": "Piercing Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 722,
+    "Name": "Blunt Resistance Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 723,
+    "Name": "Aetherochemical Bomb",
+    "CanCleanse": true
+  },
+  {
+    "Id": 724,
+    "Name": "Strength Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 725,
+    "Name": "Goring Blade",
+    "CanCleanse": true
+  },
+  {
+    "Id": 726,
+    "Name": "Divine Veil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 727,
+    "Name": "Divine Veil",
+    "CanCleanse": false
+  },
+  {
+    "Id": 728,
+    "Name": "Sheltron",
+    "CanCleanse": false
+  },
+  {
+    "Id": 729,
+    "Name": "Deliverance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 730,
+    "Name": "Abandon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 731,
+    "Name": "Abandon II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 732,
+    "Name": "Abandon III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 733,
+    "Name": "Abandon IV",
+    "CanCleanse": false
+  },
+  {
+    "Id": 734,
+    "Name": "Uncontrollable",
+    "CanCleanse": false
+  },
+  {
+    "Id": 735,
+    "Name": "Raw Intuition",
+    "CanCleanse": false
+  },
+  {
+    "Id": 736,
+    "Name": "Blood of the Dragon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 737,
+    "Name": "Ley Lines",
+    "CanCleanse": false
+  },
+  {
+    "Id": 738,
+    "Name": "Circle of Power",
+    "CanCleanse": false
+  },
+  {
+    "Id": 739,
+    "Name": "Asylum",
+    "CanCleanse": false
+  },
+  {
+    "Id": 740,
+    "Name": "Shadowskin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 741,
+    "Name": "Scourge",
+    "CanCleanse": true
+  },
+  {
+    "Id": 742,
+    "Name": "Blood Weapon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 743,
+    "Name": "Grit",
+    "CanCleanse": false
+  },
+  {
+    "Id": 744,
+    "Name": "Dark Dance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 745,
+    "Name": "Blood Price",
+    "CanCleanse": false
+  },
+  {
+    "Id": 746,
+    "Name": "Dark Mind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 747,
+    "Name": "Shadow Wall",
+    "CanCleanse": false
+  },
+  {
+    "Id": 748,
+    "Name": "Delirium",
+    "CanCleanse": true
+  },
+  {
+    "Id": 749,
+    "Name": "Salted Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 750,
+    "Name": "Another Victim",
+    "CanCleanse": false
+  },
+  {
+    "Id": 751,
+    "Name": "Darkside",
+    "CanCleanse": false
+  },
+  {
+    "Id": 752,
+    "Name": "Dark Arts",
+    "CanCleanse": false
+  },
+  {
+    "Id": 753,
+    "Name": "Reprisal",
+    "CanCleanse": true
+  },
+  {
+    "Id": 754,
+    "Name": "Gathering Rate Up (Limited)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 755,
+    "Name": "Gathering Fortune Up (Limited)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 756,
+    "Name": "Gathering Yield Up (Limited)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 757,
+    "Name": "Discerning Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 758,
+    "Name": "Utmost Caution",
+    "CanCleanse": false
+  },
+  {
+    "Id": 759,
+    "Name": "",
+    "CanCleanse": false
+  },
+  {
+    "Id": 760,
+    "Name": "Single Mind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 761,
+    "Name": "Snagging",
+    "CanCleanse": false
+  },
+  {
+    "Id": 762,
+    "Name": "Fish Eyes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 763,
+    "Name": "Chum",
+    "CanCleanse": false
+  },
+  {
+    "Id": 764,
+    "Name": "Inefficient Hooking",
+    "CanCleanse": false
+  },
+  {
+    "Id": 765,
+    "Name": "Catch and Release",
+    "CanCleanse": false
+  },
+  {
+    "Id": 766,
+    "Name": "Anthropomorph",
+    "CanCleanse": false
+  },
+  {
+    "Id": 767,
+    "Name": "Chiromorph",
+    "CanCleanse": false
+  },
+  {
+    "Id": 768,
+    "Name": "Anemomorph",
+    "CanCleanse": false
+  },
+  {
+    "Id": 769,
+    "Name": "Burning Chains",
+    "CanCleanse": false
+  },
+  {
+    "Id": 770,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 773,
+    "Name": "Enliven",
+    "CanCleanse": false
+  },
+  {
+    "Id": 774,
+    "Name": "Down for the Count",
+    "CanCleanse": false
+  },
+  {
+    "Id": 775,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 776,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 777,
+    "Name": "Blessing of the Void",
+    "CanCleanse": false
+  },
+  {
+    "Id": 778,
+    "Name": "Earthen Accord",
+    "CanCleanse": false
+  },
+  {
+    "Id": 779,
+    "Name": "Out of Body",
+    "CanCleanse": false
+  },
+  {
+    "Id": 780,
+    "Name": "Resonant",
+    "CanCleanse": false
+  },
+  {
+    "Id": 781,
+    "Name": "Aether Sickness",
+    "CanCleanse": false
+  },
+  {
+    "Id": 782,
+    "Name": "Unbridled",
+    "CanCleanse": false
+  },
+  {
+    "Id": 783,
+    "Name": "Down for the Count",
+    "CanCleanse": false
+  },
+  {
+    "Id": 784,
+    "Name": "Voidblood",
+    "CanCleanse": true
+  },
+  {
+    "Id": 785,
+    "Name": "Nymian Plague",
+    "CanCleanse": true
+  },
+  {
+    "Id": 786,
+    "Name": "Battle Litany",
+    "CanCleanse": false
+  },
+  {
+    "Id": 787,
+    "Name": "Silhouette",
+    "CanCleanse": false
+  },
+  {
+    "Id": 788,
+    "Name": "Shadewalker",
+    "CanCleanse": false
+  },
+  {
+    "Id": 789,
+    "Name": "Smoke Screen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 790,
+    "Name": "Duality",
+    "CanCleanse": false
+  },
+  {
+    "Id": 791,
+    "Name": "Dissipation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 792,
+    "Name": "Emergency Tactics",
+    "CanCleanse": false
+  },
+  {
+    "Id": 793,
+    "Name": "First Chakra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 794,
+    "Name": "Second Chakra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 795,
+    "Name": "Third Chakra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 796,
+    "Name": "Fourth Chakra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 797,
+    "Name": "Fifth Chakra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 798,
+    "Name": "Aero III",
+    "CanCleanse": true
+  },
+  {
+    "Id": 799,
+    "Name": "Fey Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 800,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 801,
+    "Name": "Poison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 802,
+    "Name": "Sharper Fang and Claw",
+    "CanCleanse": false
+  },
+  {
+    "Id": 803,
+    "Name": "Enhanced Wheeling Thrust",
+    "CanCleanse": false
+  },
+  {
+    "Id": 804,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 805,
+    "Name": "Collector's Glove",
+    "CanCleanse": false
+  },
+  {
+    "Id": 806,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 807,
+    "Name": "Aethertrail Attunement",
+    "CanCleanse": false
+  },
+  {
+    "Id": 808,
+    "Name": "Dreadwyrm Trance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 809,
+    "Name": "Slime",
+    "CanCleanse": false
+  },
+  {
+    "Id": 810,
+    "Name": "Living Dead",
+    "CanCleanse": false
+  },
+  {
+    "Id": 811,
+    "Name": "Walking Dead",
+    "CanCleanse": false
+  },
+  {
+    "Id": 812,
+    "Name": "Magic Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 813,
+    "Name": "Dark Dance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 814,
+    "Name": "Enhanced Unleash",
+    "CanCleanse": false
+  },
+  {
+    "Id": 815,
+    "Name": "Enhanced Benefic II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 816,
+    "Name": "Enhanced Royal Road",
+    "CanCleanse": false
+  },
+  {
+    "Id": 817,
+    "Name": "Expanded Royal Road",
+    "CanCleanse": false
+  },
+  {
+    "Id": 818,
+    "Name": "Extended Royal Road",
+    "CanCleanse": false
+  },
+  {
+    "Id": 819,
+    "Name": "Slashing Resistance Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 820,
+    "Name": "Piercing Resistance Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 821,
+    "Name": "Blunt Resistance Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 826,
+    "Name": "Card Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 827,
+    "Name": "Royal Road",
+    "CanCleanse": false
+  },
+  {
+    "Id": 828,
+    "Name": "Card Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 829,
+    "Name": "The Balance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 830,
+    "Name": "The Bole",
+    "CanCleanse": false
+  },
+  {
+    "Id": 831,
+    "Name": "The Arrow",
+    "CanCleanse": false
+  },
+  {
+    "Id": 832,
+    "Name": "The Spear",
+    "CanCleanse": false
+  },
+  {
+    "Id": 833,
+    "Name": "The Ewer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 834,
+    "Name": "The Spire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 835,
+    "Name": "Aspected Benefic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 836,
+    "Name": "Aspected Helios",
+    "CanCleanse": false
+  },
+  {
+    "Id": 837,
+    "Name": "Nocturnal Field",
+    "CanCleanse": false
+  },
+  {
+    "Id": 838,
+    "Name": "Combust",
+    "CanCleanse": true
+  },
+  {
+    "Id": 839,
+    "Name": "Diurnal Sect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 840,
+    "Name": "Nocturnal Sect",
+    "CanCleanse": false
+  },
+  {
+    "Id": 841,
+    "Name": "Lightspeed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 842,
+    "Name": "Luminiferous Aether",
+    "CanCleanse": false
+  },
+  {
+    "Id": 843,
+    "Name": "Combust II",
+    "CanCleanse": true
+  },
+  {
+    "Id": 844,
+    "Name": "Disabled",
+    "CanCleanse": true
+  },
+  {
+    "Id": 845,
+    "Name": "Synastry",
+    "CanCleanse": false
+  },
+  {
+    "Id": 846,
+    "Name": "Synastry",
+    "CanCleanse": false
+  },
+  {
+    "Id": 847,
+    "Name": "Collective Unconscious",
+    "CanCleanse": false
+  },
+  {
+    "Id": 848,
+    "Name": "Collective Unconscious",
+    "CanCleanse": false
+  },
+  {
+    "Id": 849,
+    "Name": "Collective Unconscious",
+    "CanCleanse": false
+  },
+  {
+    "Id": 850,
+    "Name": "Gathering Fortune Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 851,
+    "Name": "Reassembled",
+    "CanCleanse": false
+  },
+  {
+    "Id": 852,
+    "Name": "Promotion",
+    "CanCleanse": false
+  },
+  {
+    "Id": 853,
+    "Name": "Rapid Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 854,
+    "Name": "Lead Shot",
+    "CanCleanse": true
+  },
+  {
+    "Id": 855,
+    "Name": "Hot Shot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 856,
+    "Name": "Enhanced Slug Shot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 857,
+    "Name": "Cleaner Shot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 858,
+    "Name": "Gauss Barrel",
+    "CanCleanse": false
+  },
+  {
+    "Id": 859,
+    "Name": "Rent Mind",
+    "CanCleanse": true
+  },
+  {
+    "Id": 860,
+    "Name": "Dismantled",
+    "CanCleanse": true
+  },
+  {
+    "Id": 861,
+    "Name": "Wildfire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 862,
+    "Name": "Ammunition Loaded",
+    "CanCleanse": false
+  },
+  {
+    "Id": 863,
+    "Name": "Land Waker",
+    "CanCleanse": false
+  },
+  {
+    "Id": 864,
+    "Name": "Dark Force",
+    "CanCleanse": false
+  },
+  {
+    "Id": 865,
+    "Name": "The Wanderer's Minuet",
+    "CanCleanse": false
+  },
+  {
+    "Id": 866,
+    "Name": "The Warden's Paean",
+    "CanCleanse": false
+  },
+  {
+    "Id": 867,
+    "Name": "Sharpcast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 868,
+    "Name": "Enochian",
+    "CanCleanse": false
+  },
+  {
+    "Id": 869,
+    "Name": "Carnal Chill",
+    "CanCleanse": true
+  },
+  {
+    "Id": 870,
+    "Name": "Push Back",
+    "CanCleanse": false
+  },
+  {
+    "Id": 871,
+    "Name": "Name of the Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 872,
+    "Name": "Name of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 873,
+    "Name": "Name of Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 874,
+    "Name": "Name of Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 875,
+    "Name": "Name of Lightning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 876,
+    "Name": "Name of Water",
+    "CanCleanse": false
+  },
+  {
+    "Id": 877,
+    "Name": "Nameless",
+    "CanCleanse": false
+  },
+  {
+    "Id": 878,
+    "Name": "Maker's Mark",
+    "CanCleanse": false
+  },
+  {
+    "Id": 879,
+    "Name": "Crafter's Soul",
+    "CanCleanse": false
+  },
+  {
+    "Id": 880,
+    "Name": "Whistle",
+    "CanCleanse": false
+  },
+  {
+    "Id": 881,
+    "Name": "Traders' Favor (Coerthas Western Highlands)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 882,
+    "Name": "Traders' Favor (Dravanian Forelands)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 883,
+    "Name": "Traders' Favor (Dravanian Hinterlands)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 884,
+    "Name": "Traders' Favor (The Churning Mists)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 885,
+    "Name": "Traders' Favor (The Sea of Clouds)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 886,
+    "Name": "Traders' Favor (Azys Lla)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 887,
+    "Name": "Matron's Favor (Coerthas Western Highlands)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 888,
+    "Name": "Matron's Favor (Dravanian Forelands)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 889,
+    "Name": "Matron's Favor (Dravanian Hinterlands)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 890,
+    "Name": "Matron's Favor (The Churning Mists)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 891,
+    "Name": "Matron's Favor (The Sea of Clouds)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 892,
+    "Name": "Matron's Favor (Azys Lla)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 893,
+    "Name": "Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 894,
+    "Name": "Wind Resistance Down",
+    "CanCleanse": true
+  },
+  {
+    "Id": 895,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 896,
+    "Name": "",
+    "CanCleanse": false
+  },
+  {
+    "Id": 897,
+    "Name": "Regen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 898,
+    "Name": "Lightning Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 899,
+    "Name": "Physical Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 900,
+    "Name": "Temporal Displacement",
+    "CanCleanse": false
+  },
+  {
+    "Id": 901,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 902,
+    "Name": "Jackpot",
+    "CanCleanse": false
+  },
+  {
+    "Id": 903,
+    "Name": "Collectable Synthesis",
+    "CanCleanse": false
+  },
+  {
+    "Id": 904,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 905,
+    "Name": "Thin Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 906,
+    "Name": "Darkness",
+    "CanCleanse": false
+  },
+  {
+    "Id": 907,
+    "Name": "Arcanum Blessing",
+    "CanCleanse": false
+  },
+  {
+    "Id": 908,
+    "Name": "Aethertrail Attunement",
+    "CanCleanse": false
+  },
+  {
+    "Id": 909,
+    "Name": "Refresh",
+    "CanCleanse": false
+  },
+  {
+    "Id": 910,
+    "Name": "Doom",
+    "CanCleanse": true
+  },
+  {
+    "Id": 911,
+    "Name": "Thin Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 912,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 913,
+    "Name": "Balance Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 914,
+    "Name": "Bole Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 915,
+    "Name": "Arrow Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 916,
+    "Name": "Spear Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 917,
+    "Name": "Ewer Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 918,
+    "Name": "Spire Drawn",
+    "CanCleanse": false
+  },
+  {
+    "Id": 919,
+    "Name": "Heightened Visibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 920,
+    "Name": "Balance Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 921,
+    "Name": "Bole Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 922,
+    "Name": "Arrow Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 923,
+    "Name": "Spear Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 924,
+    "Name": "Ewer Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 925,
+    "Name": "Spire Held",
+    "CanCleanse": false
+  },
+  {
+    "Id": 926,
+    "Name": "Sleep",
+    "CanCleanse": true
+  },
+  {
+    "Id": 927,
+    "Name": "Nectar",
+    "CanCleanse": false
+  },
+  {
+    "Id": 928,
+    "Name": "Black Menace",
+    "CanCleanse": false
+  },
+  {
+    "Id": 929,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 930,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 931,
+    "Name": "Blunt Resistance Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 932,
+    "Name": "Quarantine",
+    "CanCleanse": false
+  },
+  {
+    "Id": 933,
+    "Name": "Healing Potency Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 934,
+    "Name": "Physical Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 937,
+    "Name": "Unwilling Host",
+    "CanCleanse": false
+  },
+  {
+    "Id": 938,
+    "Name": "Throttle",
+    "CanCleanse": false
+  },
+  {
+    "Id": 939,
+    "Name": "Out of the Action",
+    "CanCleanse": false
+  },
+  {
+    "Id": 940,
+    "Name": "Bleeding",
+    "CanCleanse": false
+  },
+  {
+    "Id": 941,
+    "Name": "Ranged Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 942,
+    "Name": "Magic Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 943,
+    "Name": "Light of Ascalon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 944,
+    "Name": "Sword of the Heavens",
+    "CanCleanse": false
+  },
+  {
+    "Id": 945,
+    "Name": "Shield of the Heavens",
+    "CanCleanse": false
+  },
+  {
+    "Id": 946,
+    "Name": "Legs of the Spider",
+    "CanCleanse": false
+  },
+  {
+    "Id": 947,
+    "Name": "Wings of the Raptor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 948,
+    "Name": "Shocking Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 949,
+    "Name": "Burning Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 950,
+    "Name": "Freezing Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 951,
+    "Name": "Cutting Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 952,
+    "Name": "Burying Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 953,
+    "Name": "Drowning Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 954,
+    "Name": "Unrelenting Counter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 955,
+    "Name": "Healing Potency Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 956,
+    "Name": "Wheel of Fortune",
+    "CanCleanse": false
+  },
+  {
+    "Id": 957,
+    "Name": "Digestive Enzymes",
+    "CanCleanse": false
+  },
+  {
+    "Id": 958,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 959,
+    "Name": "Strings of the Marionette",
+    "CanCleanse": false
+  },
+  {
+    "Id": 960,
+    "Name": "Pyretic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 961,
+    "Name": "Seized",
+    "CanCleanse": false
+  },
+  {
+    "Id": 962,
+    "Name": "ATK Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 963,
+    "Name": "ATK Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 964,
+    "Name": "DEF Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 965,
+    "Name": "DEF Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 966,
+    "Name": "SPD Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 967,
+    "Name": "SPD Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 968,
+    "Name": "Arcana Breaker",
+    "CanCleanse": false
+  },
+  {
+    "Id": 969,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 970,
+    "Name": "Critter Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 971,
+    "Name": "Monster Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 972,
+    "Name": "Poppet Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 973,
+    "Name": "Gadget Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 974,
+    "Name": "Critter Vulnerability",
+    "CanCleanse": false
+  },
+  {
+    "Id": 975,
+    "Name": "Monster Vulnerability",
+    "CanCleanse": false
+  },
+  {
+    "Id": 976,
+    "Name": "Poppet Vulnerability",
+    "CanCleanse": false
+  },
+  {
+    "Id": 977,
+    "Name": "Forced Withdrawal",
+    "CanCleanse": false
+  },
+  {
+    "Id": 978,
+    "Name": "ATK & DEF Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 979,
+    "Name": "Damage Over Time",
+    "CanCleanse": false
+  },
+  {
+    "Id": 980,
+    "Name": "Expanded Attack",
+    "CanCleanse": false
+  },
+  {
+    "Id": 981,
+    "Name": "Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 982,
+    "Name": "Critter Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 983,
+    "Name": "Monster Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 984,
+    "Name": "Poppet Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 985,
+    "Name": "Gadget Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 986,
+    "Name": "Bind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 987,
+    "Name": "Trapper",
+    "CanCleanse": false
+  },
+  {
+    "Id": 988,
+    "Name": "Paralysis",
+    "CanCleanse": false
+  },
+  {
+    "Id": 989,
+    "Name": "Rehabilitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 990,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 991,
+    "Name": "Seduced",
+    "CanCleanse": false
+  },
+  {
+    "Id": 992,
+    "Name": "Offense Kit",
+    "CanCleanse": false
+  },
+  {
+    "Id": 993,
+    "Name": "Defense Kit",
+    "CanCleanse": false
+  },
+  {
+    "Id": 994,
+    "Name": "Marked for Culling",
+    "CanCleanse": false
+  },
+  {
+    "Id": 995,
+    "Name": "Headache",
+    "CanCleanse": false
+  },
+  {
+    "Id": 996,
+    "Name": "Concussion",
+    "CanCleanse": false
+  },
+  {
+    "Id": 997,
+    "Name": "Concussion",
+    "CanCleanse": true
+  },
+  {
+    "Id": 998,
+    "Name": "Bigbulge Goblixer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 999,
+    "Name": "Swiftkicks Goblixer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1000,
+    "Name": "Blankface Goblixer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1001,
+    "Name": "Goblixer Overgulp",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1002,
+    "Name": "Goblixer Grumblygut",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1003,
+    "Name": "Bigbulge Biggerbrain",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1004,
+    "Name": "Anti-coagulant",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1005,
+    "Name": "Force Against Might",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1006,
+    "Name": "Force Against Magic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1007,
+    "Name": "Invisible",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1008,
+    "Name": "Nohurts Goblixer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1009,
+    "Name": "Road to Toad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1010,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1011,
+    "Name": "Concentrated Poison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1012,
+    "Name": "High Wire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1013,
+    "Name": "Reverse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1014,
+    "Name": "Rehabilitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1015,
+    "Name": "Seed of Life",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1016,
+    "Name": "Damage Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1017,
+    "Name": "Physical Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1018,
+    "Name": "Physical Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1019,
+    "Name": "Magic Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1020,
+    "Name": "Allied Arithmeticks",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1021,
+    "Name": "Low Arithmeticks",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1022,
+    "Name": "High Arithmeticks",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1023,
+    "Name": "Compressed Water",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1024,
+    "Name": "Compressed Lightning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1025,
+    "Name": "Water Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1026,
+    "Name": "Lightning Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1027,
+    "Name": "Final Punishment",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1028,
+    "Name": "Direct Attack",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1029,
+    "Name": "Final Decree Nisi A",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1030,
+    "Name": "Final Decree Nisi B",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1031,
+    "Name": "Final Judgment: Max HP",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1032,
+    "Name": "Final Judgment: Min HP",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1033,
+    "Name": "Final Judgment: Penalty I",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1034,
+    "Name": "Final Judgment: Penalty II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1035,
+    "Name": "Final Judgment: Penalty III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1036,
+    "Name": "Final Judgment: Decree Nisi A",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1037,
+    "Name": "Final Judgment: Decree Nisi B",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1038,
+    "Name": "Final Flight",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1039,
+    "Name": "Brilliant Conviction",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1040,
+    "Name": "Brilliant Conviction",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1041,
+    "Name": "Brilliant Conviction",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1042,
+    "Name": "Direct Attack",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1043,
+    "Name": "Direct Attack",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1044,
+    "Name": "Magnetic Levitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1045,
+    "Name": "Gradual Zombification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1046,
+    "Name": "Concentrated Poison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1047,
+    "Name": "Confused",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1048,
+    "Name": "Direct Attack",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1049,
+    "Name": "Pyretic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1050,
+    "Name": "EXP Bonus",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1051,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1052,
+    "Name": "Wind Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1053,
+    "Name": "Earth Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1054,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1055,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1056,
+    "Name": "Mimic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1057,
+    "Name": "Feather Field",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1058,
+    "Name": "Super Sprint",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1059,
+    "Name": "Enervation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1060,
+    "Name": "Silence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1061,
+    "Name": "Priority Aetheryte Pass",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1062,
+    "Name": "Heavy Medal",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1063,
+    "Name": "Healing Potency Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1064,
+    "Name": "Off-balance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1065,
+    "Name": "Brand of the Fallen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1066,
+    "Name": "Bitter Hate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1067,
+    "Name": "Dirty Venom",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1068,
+    "Name": "Assimilation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1069,
+    "Name": "Assimilated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1070,
+    "Name": "Cube",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1071,
+    "Name": "Pyramid",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1072,
+    "Name": "Acceleration Bomb",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1073,
+    "Name": "Digestive Fluid",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1074,
+    "Name": "Bleeding",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1075,
+    "Name": "Heart of Man",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1076,
+    "Name": "Heart of Dragon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1077,
+    "Name": "Lightning Chain",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1078,
+    "Name": "Priority Seal Allowance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1079,
+    "Name": "Gold Saucer VIP Card",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1080,
+    "Name": "Squadron Battle Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1081,
+    "Name": "Squadron Survival Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1082,
+    "Name": "Squadron Engineering Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1083,
+    "Name": "Squadron Spiritbonding Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1084,
+    "Name": "Squadron Rationing Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1085,
+    "Name": "Squadron Gear Maintenance Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1086,
+    "Name": "Squadron Enlistment Manual",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1087,
+    "Name": "Accursed Pox",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1088,
+    "Name": "Blind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1089,
+    "Name": "HP Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1090,
+    "Name": "Damage Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1091,
+    "Name": "Haste",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1092,
+    "Name": "Amnesia",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1093,
+    "Name": "HP & MP Boost",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1094,
+    "Name": "Item Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1095,
+    "Name": "Sprint Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1096,
+    "Name": "Knockback Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1097,
+    "Name": "Auto-heal Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1098,
+    "Name": "Aetherial Surge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1099,
+    "Name": "Healing Potency Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1100,
+    "Name": "Vulnerability Down",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1101,
+    "Name": "Toad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1102,
+    "Name": "Chicken",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1103,
+    "Name": "Imp",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1104,
+    "Name": "Obfuscated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1105,
+    "Name": "Pumpkin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1106,
+    "Name": "Obfuscated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1107,
+    "Name": "Heavy",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1108,
+    "Name": "Hidden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1109,
+    "Name": "Impervious",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1110,
+    "Name": "Clawbound",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1111,
+    "Name": "Fangbound",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1112,
+    "Name": "Movement Speed Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1113,
+    "Name": "Out of the Action",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1114,
+    "Name": "Disease",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1115,
+    "Name": "Eternal Doom",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1116,
+    "Name": "Haste",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1117,
+    "Name": "Stab Wound",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1118,
+    "Name": "Passenger",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1119,
+    "Name": "Temporal Displacement",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1120,
+    "Name": "Defamation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1121,
+    "Name": "Aggravated Assault",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1122,
+    "Name": "Shared Sentence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1123,
+    "Name": "House Arrest",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1124,
+    "Name": "Restraining Order",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1125,
+    "Name": "Directional Invincibility",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1126,
+    "Name": "Main Hull Reassembly",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1127,
+    "Name": "Right Arm Reassembly",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1128,
+    "Name": "Left Arm Reassembly",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1129,
+    "Name": "Main Hull Operational",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1130,
+    "Name": "Right Arm Operational",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1131,
+    "Name": "Left Arm Operational",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1132,
+    "Name": "Extreme Caution",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1133,
+    "Name": "Pyretic",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1134,
+    "Name": "Imp",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1135,
+    "Name": "Sunseal",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1136,
+    "Name": "Moonseal",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1137,
+    "Name": "Fire Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1138,
+    "Name": "Magic Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1139,
+    "Name": "Physical Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1140,
+    "Name": "Raise",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1141,
+    "Name": "Heavy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1142,
+    "Name": "Aetherial Surge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1143,
+    "Name": "Infinite Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1144,
+    "Name": "Infinite Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1145,
+    "Name": "Keen Edge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1146,
+    "Name": "Riled",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1147,
+    "Name": "Shadow Links",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1148,
+    "Name": "Shadow Limb",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1149,
+    "Name": "Wolf's Heart Kit",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1150,
+    "Name": "Deep Freeze",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1151,
+    "Name": "??????????",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1152,
+    "Name": "??????????",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1153,
+    "Name": "??????????",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1154,
+    "Name": "Beastking's Boon",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1155,
+    "Name": "Aetherial Enhancement",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1156,
+    "Name": "Magic Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1157,
+    "Name": "Water Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1158,
+    "Name": "Nose for Battle",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1159,
+    "Name": "Infinite Anguish",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1160,
+    "Name": "Enfeebled",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1161,
+    "Name": "Damage Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1162,
+    "Name": "Infinite Anguish",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1163,
+    "Name": "Stroke of Genius",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1164,
+    "Name": "Manipulation II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1165,
+    "Name": "Initial Preparations",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1166,
+    "Name": "Fathom",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1167,
+    "Name": "Shark Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1168,
+    "Name": "Shark Eye II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1169,
+    "Name": "Veteran Trade",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1170,
+    "Name": "Bountiful Catch",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1171,
+    "Name": "Nature's Bounty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1172,
+    "Name": "Salvage",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1173,
+    "Name": "Truth of Oceans",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1174,
+    "Name": "Intervention",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1175,
+    "Name": "Passage of Arms",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1176,
+    "Name": "Arms Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1177,
+    "Name": "Inner Release",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1178,
+    "Name": "Blackest Night",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1179,
+    "Name": "Riddle of Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1180,
+    "Name": "Earth's Reply",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1181,
+    "Name": "Riddle of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1182,
+    "Name": "Brotherhood",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1183,
+    "Name": "Right Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1184,
+    "Name": "Left Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1186,
+    "Name": "Ten Chi Jin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1187,
+    "Name": "Troubador's Ballad",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1188,
+    "Name": "Critical Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1189,
+    "Name": "Troubador's Paean",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1190,
+    "Name": "Troubador's Minuet",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1191,
+    "Name": "Rampart",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1192,
+    "Name": "Convalescence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1193,
+    "Name": "Reprisal",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1194,
+    "Name": "Anticipation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1195,
+    "Name": "Feint",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1196,
+    "Name": "Palisade",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1197,
+    "Name": "Tactician",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1198,
+    "Name": "Refresh",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1199,
+    "Name": "Peloton",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1200,
+    "Name": "Caustic Bite",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1201,
+    "Name": "Storm Bite",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1202,
+    "Name": "Nature's NaturesMinne",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1203,
+    "Name": "Addle",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1204,
+    "Name": "Lucid Dreaming",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1205,
+    "Name": "Flamethrower",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1207,
+    "Name": "Largesse",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1208,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1209,
+    "Name": "Arm's Length",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1210,
+    "Name": "Thunder IV",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1211,
+    "Name": "Triplecast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1212,
+    "Name": "Further Ruin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1213,
+    "Name": "Devotion",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1214,
+    "Name": "Bio III",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1215,
+    "Name": "Miasma III",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1217,
+    "Name": "Thin Air",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1218,
+    "Name": "Divine Benison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1219,
+    "Name": "Confession",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1220,
+    "Name": "Excogitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1221,
+    "Name": "Chain Stratagem",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1222,
+    "Name": "Fey Union",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1223,
+    "Name": "Fey Union",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1224,
+    "Name": "Earthly Dominance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1227,
+    "Name": "Yukikaze",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1228,
+    "Name": "Higanbana",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1229,
+    "Name": "Kaiten",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1231,
+    "Name": "Meditate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1232,
+    "Name": "Third Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1233,
+    "Name": "Meikyo Shisui",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1234,
+    "Name": "Verfire Ready",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1235,
+    "Name": "Verstone Ready",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1236,
+    "Name": "Enhanced Enpi",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1237,
+    "Name": "Enhanced Scatter",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1238,
+    "Name": "Acceleration",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1239,
+    "Name": "Embolden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1240,
+    "Name": "Chiten",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1241,
+    "Name": "Monomachy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1242,
+    "Name": "Monomachy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1243,
+    "Name": "Dive Ready",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1244,
+    "Name": "Riddle of Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1248,
+    "Name": "Giant Dominance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1249,
+    "Name": "Dualcast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1250,
+    "Name": "True North",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1251,
+    "Name": "Turret Reset",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1252,
+    "Name": "Eyes Open",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1253,
+    "Name": "Prey",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1254,
+    "Name": "Deep Freeze",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1255,
+    "Name": "Fire Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1256,
+    "Name": "Wounded",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1257,
+    "Name": "Forced March",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1258,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1259,
+    "Name": "Old",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1260,
+    "Name": "Lightning Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1262,
+    "Name": "Gathering Fortune Up II (Limited)",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1263,
+    "Name": "Rehabilitation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1264,
+    "Name": "Brilliant Conviction",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1265,
+    "Name": "Brilliant Conviction",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1266,
+    "Name": "Transparent II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1267,
+    "Name": "Affixed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1268,
+    "Name": "In Event",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1269,
+    "Name": "Extreme Caution",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1270,
+    "Name": "Churning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1271,
+    "Name": "Clashing",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1272,
+    "Name": "Slashing Resistance Down II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1273,
+    "Name": "Sinking",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1274,
+    "Name": "Bardam's Price",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1275,
+    "Name": "Fire Convergence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1276,
+    "Name": "Ice Convergence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1277,
+    "Name": "Lightning Convergence",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1278,
+    "Name": "Aspected to Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1279,
+    "Name": "Aspected to Ice",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1280,
+    "Name": "Aspected to Lightning",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1281,
+    "Name": "Empowered Rahu",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1282,
+    "Name": "Empowered Ketu",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1283,
+    "Name": "Confused",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1284,
+    "Name": "Out of the Action",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1285,
+    "Name": "Gathering Fortune Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1286,
+    "Name": "Gathering Yield Up II",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1287,
+    "Name": "Seized",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1288,
+    "Name": "Twist of Fate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1289,
+    "Name": "Twist of Fate",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1290,
+    "Name": "Vril",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1291,
+    "Name": "Ruination",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1292,
+    "Name": "Piggy",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1297,
+    "Name": "Embolden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1298,
+    "Name": "Jinpu",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1299,
+    "Name": "Shifu",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1300,
+    "Name": "Cover",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1301,
+    "Name": "Covered",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1302,
+    "Name": "Hallowed Ground",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1303,
+    "Name": "Inner Release",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1304,
+    "Name": "Holmgang",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1305,
+    "Name": "Holmgang",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1306,
+    "Name": "Soul Survivor",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1308,
+    "Name": "Blackest Night",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1309,
+    "Name": "Demolish",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1310,
+    "Name": "Riddle of Earth",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1311,
+    "Name": "Earth's Reply",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1312,
+    "Name": "Chaos Thrust",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1313,
+    "Name": "Shadow Fang",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1314,
+    "Name": "Assassinated",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1315,
+    "Name": "Kakuremi",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1316,
+    "Name": "Hidden",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1317,
+    "Name": "Three Mudra",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1318,
+    "Name": "Yukikaze",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1319,
+    "Name": "Higanbana",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1320,
+    "Name": "Meikyo Shisui",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1321,
+    "Name": "Caustic Bite",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1322,
+    "Name": "Storm Bite",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1323,
+    "Name": "Wildfire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1324,
+    "Name": "Thunder",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1325,
+    "Name": "Swiftcast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1326,
+    "Name": "Bio III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1327,
+    "Name": "Miasma III",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1330,
+    "Name": "Regen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1331,
+    "Name": "Galvanize",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1333,
+    "Name": "Eye for an Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1334,
+    "Name": "Eye for an Eye",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1335,
+    "Name": "Abridged",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1336,
+    "Name": "Synastry",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1337,
+    "Name": "Synastry",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1338,
+    "Name": "The Balance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1339,
+    "Name": "The Bole",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1340,
+    "Name": "The Ewer",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1341,
+    "Name": "The Spire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1343,
+    "Name": "Stun",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1344,
+    "Name": "Heavy",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1345,
+    "Name": "Bind",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1346,
+    "Name": "Slow",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1347,
+    "Name": "Silence",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1348,
+    "Name": "Sleep",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1349,
+    "Name": "Stun Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1350,
+    "Name": "Heavy Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1351,
+    "Name": "Bind Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1352,
+    "Name": "Slow Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1353,
+    "Name": "Silence Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1354,
+    "Name": "Sleep Resistance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1355,
+    "Name": "Knockback Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1356,
+    "Name": "Imp",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1357,
+    "Name": "Gravity Flip",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1359,
+    "Name": "Gradual Petrification",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1360,
+    "Name": "Unstable Gravity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1362,
+    "Name": "",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1363,
+    "Name": "Sleep",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1364,
+    "Name": "Riddle of Wind",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1365,
+    "Name": "Thunder III Ready",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1367,
+    "Name": "Impactful",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1368,
+    "Name": "Requiescat",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1369,
+    "Name": "Requiescat",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1370,
+    "Name": "Rage of Halone",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1371,
+    "Name": "Butcher's Block",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1372,
+    "Name": "Power Slash",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1373,
+    "Name": "Immaterialized",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1374,
+    "Name": "Target Right",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1375,
+    "Name": "Target Left",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1376,
+    "Name": "Kyoshin",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1377,
+    "Name": "Life Drain",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1383,
+    "Name": "HP Penalty",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1386,
+    "Name": "Sludge",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1387,
+    "Name": "Altered States",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1388,
+    "Name": "Ashen",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1389,
+    "Name": "Seduced",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1391,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1392,
+    "Name": "Shining Moonstone",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1393,
+    "Name": "Dualcast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1394,
+    "Name": "Limp",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1395,
+    "Name": "Shield Oath",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1396,
+    "Name": "Defiance",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1397,
+    "Name": "Grit",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1398,
+    "Name": "Inner Beast",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1399,
+    "Name": "Fetters",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1400,
+    "Name": "Terror",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1401,
+    "Name": "Enervation",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1402,
+    "Name": "Vulnerability Up",
+    "CanCleanse": true
+  },
+  {
+    "Id": 1403,
+    "Name": "Lightspeed",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1404,
+    "Name": "Divine Benison",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1405,
+    "Name": "Disabled",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1406,
+    "Name": "Chain Stratagem",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1407,
+    "Name": "Barrage",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1408,
+    "Name": "Vulnerability Up",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1409,
+    "Name": "Infirmity",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1410,
+    "Name": "Chanchala",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1411,
+    "Name": "The Road to 60",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1413,
+    "Name": "Riddle of Fire",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1414,
+    "Name": "Battle Litany",
+    "CanCleanse": false
+  },
+  {
+    "Id": 1415,
+    "Name": "Protect",
+    "CanCleanse": false
+  }
+]

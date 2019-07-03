@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Kefka.Views.Toggle_Overlays.Paine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <mahAppsControls:MetroAnimatedTabControl HorizontalAlignment="Stretch" Background="Transparent">
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Button x:Name="StanceButton" Visibility="{Binding Paine.ShowDeliverance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" Content="Deliverance" MinWidth="10" Click="StanceButton_Click" />
+                    <Button x:Name="TankButton" Visibility="{Binding Paine.ShowDeliverance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" Content="Main Tank" MinWidth="10" Click="TankButton_Click" />
+                    <Button x:Name="Swap" Visibility="{Binding Paine.ShowSwap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" Content="Swap" Click="Swap_Click" />
+                    <CheckBox Content="ExProvoke" Visibility="{Binding Paine.ShowProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseProvoke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Opener}" Visibility="{Binding Paine.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.DPSPotion}" Visibility="{Binding Paine.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Tomahawk}" Visibility="{Binding Paine.ShowTomahawk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseTomahawk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="Onslaught" Visibility="{Binding Paine.ShowOnslaught, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseOnslaught, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.Buffs}" Visibility="{Binding Paine.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                    <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" Visibility="{Binding Paine.ShowManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" Checked="UncheckInterruptList" />
+                    <CheckBox Content="{x:Static loc:Strings.InterruptList}" Visibility="{Binding Paine.ShowInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" Checked="UncheckManualInterrupt" />
+                    <CheckBox Content="{x:Static loc:Strings.DestroyTarget}" IsChecked="{Binding Settings.DestroyTarget, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                </UniformGrid>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <StackPanel.DataContext>
+                        <viewModels:PainePresetsViewModel />
+                    </StackPanel.DataContext>
+                    <Button Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset1, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset1}" />
+                    <Button Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset2, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset2}" />
+                    <Button Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset3, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset3}" />
+                    <Button Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset4, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset4}" />
+                    <Button Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Visibility="{Binding Presets.ShowPreset5, Converter={StaticResource BoolToVis}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding LoadPreset5}" />
+                </StackPanel>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Defensives}">
+            <UniformGrid Grid.Column="0" Rows="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <CheckBox Content="{x:Static loc:Strings.Defensives}" Visibility="{Binding Paine.ShowDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseDefensives, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.BusterDefense}" Visibility="{Binding Paine.ShowBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseBusterDefense, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Holmgang}" Visibility="{Binding Paine.ShowHolmgang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseHolmgang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Equilibrium}" Visibility="{Binding Paine.ShowEquilibrium, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseEquilibrium, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.InnerBeast}" Visibility="{Binding Paine.ShowInnerBeast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseInnerBeast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Vengeance}" Visibility="{Binding Paine.ShowVengeance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseVengeance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.ThrillofBattle}" Visibility="{Binding Paine.ShowThrillofBattle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseThrillofBattle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.RawIntuition}" Visibility="{Binding Paine.ShowRawIntuition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseRawIntuition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Rampart}" Visibility="{Binding Paine.ShowRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseRampart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Anticipation}" Visibility="{Binding Paine.ShowAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseAnticipation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Awareness}" Visibility="{Binding Paine.ShowAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseAwareness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Convalescence}" Visibility="{Binding Paine.ShowConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseConvalescence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+                <CheckBox Content="{x:Static loc:Strings.Reprisal}" Visibility="{Binding Paine.ShowReprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVis}}" IsChecked="{Binding Paine.UseReprisal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ActivateFFXIVCommand}" />
+            </UniformGrid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

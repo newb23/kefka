@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Kefka.Views.Advanced.Interrupts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:InterruptViewModel />
+    </UserControl.DataContext>
+
+    <Grid HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ListBox Name="LstInterrupts" Grid.Column="0" Grid.Row="1" MaxHeight="300" ItemsSource="{Binding Instance.GuiInterruptsList}" LostFocus="LstInterrupts_OnLostFocus" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="70" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" FontSize="12" Text="{Binding Path=SpellName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="1" FontSize="12" Text="{Binding Path=SpellId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Column="2" Content="Silence" IsChecked="{Binding Path=CanSilence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Grid.Column="3" Content="Stun" IsChecked="{Binding Path=CanStun, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+            <StackPanel Width="180" Margin="5,0,0,0">
+                <TextBox x:Name="SearchAction" FontSize="10" Text="Enter Spell Name and Press Enter..." GotFocus="SearchAction_OnGotFocus" LostFocus="SearchAction_OnLostFocus" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding Instance.Search}" CommandParameter="{Binding ElementName=SearchAction, Path=Text}" />
+                    </TextBox.InputBindings>
+                </TextBox>
+
+                <ListBox Name="LstActions" MaxHeight="200" Height="200" ItemsSource="{Binding Instance.SearchList}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="{Binding Id}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Name}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <StackPanel Margin="0,5" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Width="75" Height="25" Content="Add" Command="{Binding Instance.Add}" CommandParameter="{Binding ElementName=LstActions, Path=SelectedValue}" />
+                    <Button Width="75" Height="25" Content="Remove" Margin="2,0,0,0" Command="{Binding Instance.Remove}" CommandParameter="{Binding ElementName=LstInterrupts, Path=SelectedValue}" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

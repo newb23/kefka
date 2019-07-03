@@ -1,0 +1,162 @@
+[
+  {
+    "PotionId": 4594,
+    "PotionName": "Potion of Strength"
+  },
+  {
+    "PotionId": 4595,
+    "PotionName": "Potion of Dexterity"
+  },
+  {
+    "PotionId": 4596,
+    "PotionName": "Potion of Vitality"
+  },
+  {
+    "PotionId": 4597,
+    "PotionName": "Potion of Intelligence"
+  },
+  {
+    "PotionId": 4598,
+    "PotionName": "Potion of Mind"
+  },
+  {
+    "PotionId": 4599,
+    "PotionName": "Hi-Potion of Strength"
+  },
+  {
+    "PotionId": 4600,
+    "PotionName": "Hi-Potion of Dexterity"
+  },
+  {
+    "PotionId": 4601,
+    "PotionName": "Hi-Potion of Vitality"
+  },
+  {
+    "PotionId": 4602,
+    "PotionName": "Hi-Potion of Intelligence"
+  },
+  {
+    "PotionId": 4603,
+    "PotionName": "Hi-Potion of Mind"
+  },
+  {
+    "PotionId": 4604,
+    "PotionName": "Mega-Potion of Strength"
+  },
+  {
+    "PotionId": 4605,
+    "PotionName": "Mega-Potion of Dexterity"
+  },
+  {
+    "PotionId": 4606,
+    "PotionName": "Mega-Potion of Vitality"
+  },
+  {
+    "PotionId": 4607,
+    "PotionName": "Mega-Potion of Intelligence"
+  },
+  {
+    "PotionId": 4608,
+    "PotionName": "Mega-Potion of Mind"
+  },
+  {
+    "PotionId": 4609,
+    "PotionName": "X-Potion of Strength"
+  },
+  {
+    "PotionId": 4610,
+    "PotionName": "X-Potion of Dexterity"
+  },
+  {
+    "PotionId": 4611,
+    "PotionName": "X-Potion of Vitality"
+  },
+  {
+    "PotionId": 4612,
+    "PotionName": "X-Potion of Intelligence"
+  },
+  {
+    "PotionId": 4613,
+    "PotionName": "X-Potion of Mind"
+  },
+  {
+    "PotionId": 12622,
+    "PotionName": "Draconian Potion of Strength"
+  },
+  {
+    "PotionId": 12623,
+    "PotionName": "Draconian Potion of Dexterity"
+  },
+  {
+    "PotionId": 12624,
+    "PotionName": "Draconian Potion of Vitality"
+  },
+  {
+    "PotionId": 12625,
+    "PotionName": "Draconian Potion of Intelligence"
+  },
+  {
+    "PotionId": 12626,
+    "PotionName": "Draconian Potion of Mind"
+  },
+  {
+    "PotionId": 14176,
+    "PotionName": "Max-Potion of Strength"
+  },
+  {
+    "PotionId": 14177,
+    "PotionName": "Max-Potion of Dexterity"
+  },
+  {
+    "PotionId": 14178,
+    "PotionName": "Max-Potion of Vitality"
+  },
+  {
+    "PotionId": 14179,
+    "PotionName": "Max-Potion of Intelligence"
+  },
+  {
+    "PotionId": 14180,
+    "PotionName": "Max-Potion of Mind"
+  },
+  {
+    "PotionId": 16716,
+    "PotionName": "Supramax-Potion of Strength"
+  },
+  {
+    "PotionId": 16717,
+    "PotionName": "Supramax-Potion of Dexterity"
+  },
+  {
+    "PotionId": 16718,
+    "PotionName": "Supramax-Potion of Vitality"
+  },
+  {
+    "PotionId": 16719,
+    "PotionName": "Supramax-Potion of Intelligence"
+  },
+  {
+    "PotionId": 16720,
+    "PotionName": "Supramax-Potion of Mind"
+  },
+  {
+    "PotionId": 19886,
+    "PotionName": "Infusion of Strength"
+  },
+  {
+    "PotionId": 19887,
+    "PotionName": "Infusion of Dexterity"
+  },
+  {
+    "PotionId": 19888,
+    "PotionName": "Infusion of Vitality"
+  },
+  {
+    "PotionId": 19889,
+    "PotionName": "Infusion of Intelligence"
+  },
+  {
+    "PotionId": 19890,
+    "PotionName": "Infusion of Mind"
+  }
+]

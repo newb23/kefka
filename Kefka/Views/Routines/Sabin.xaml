@@ -1,0 +1,226 @@
+﻿<UserControl x:Class="Kefka.Views.Routines.Sabin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:enums="clr-namespace:Kefka.Models"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:openers="clr-namespace:Kefka.Views.Openers"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <mahAppsControls:MetroAnimatedTabControl>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="{x:Static loc:Strings.RoutineToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Sabin.UseAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Sabin.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DoTs}" IsChecked="{Binding Sabin.UseDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Mantra}" IsChecked="{Binding Sabin.UseMantra, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Sabin.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Sabin.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.HoldOGCDs}" IsChecked="{Binding Sabin.UseHoldoGcDs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Riddle of Earth" IsChecked="{Binding Sabin.UseRiddleofEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Bloodbath}" IsChecked="{Binding Sabin.UseBloodbath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Second Wind" IsChecked="{Binding Sabin.UseSecondWind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.FormShift}" IsChecked="{Binding Sabin.UseFormShift, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.TornadoKick}" IsChecked="{Binding Sabin.UseTornadoKick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.HowlingFist}" IsChecked="{Binding Sabin.UseHowlingFist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ElixirField}" IsChecked="{Binding Sabin.UseElixirField, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Sabin.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Sabin.UncheckUseManualInterruptCommand}" />
+                        <CheckBox Content="{x:Static loc:Strings.PerfectBalance}" IsChecked="{Binding Sabin.UsePerfectBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ShoulderTackle}" IsChecked="{Binding Sabin.UseShoulderTackle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.HoldPositionals}" IsChecked="{Binding Sabin.UseHoldPositionals, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Sabin.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Sabin.UncheckUseInterruptListCommand}" />
+                        <CheckBox Content="{x:Static loc:Strings.OoCFistsOfWind}" IsChecked="{Binding Sabin.UseOocFistsofWind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ArmoftheDestroyer}" IsChecked="{Binding Sabin.UseArmoftheDestroyer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Feint" IsChecked="{Binding Sabin.UseFeint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.OverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Sabin.ShowAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Sabin.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DoTs}" IsChecked="{Binding Sabin.ShowDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Mantra}" IsChecked="{Binding Sabin.ShowMantra, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Sabin.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Sabin.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.HoldOGCDs}" IsChecked="{Binding Sabin.ShowHoldoGcDs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Riddle of Earth" IsChecked="{Binding Sabin.ShowRiddleofEarth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Bloodbath}" IsChecked="{Binding Sabin.ShowBloodbath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Second Wind" IsChecked="{Binding Sabin.ShowSecondWind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.FormShift}" IsChecked="{Binding Sabin.ShowFormShift, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.TornadoKick}" IsChecked="{Binding Sabin.ShowTornadoKick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.HowlingFist}" IsChecked="{Binding Sabin.ShowHowlingFist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ElixirField}" IsChecked="{Binding Sabin.ShowElixerField, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Sabin.ShowInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.PerfectBalance}" IsChecked="{Binding Sabin.ShowPerfectBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ShoulderTackle}" IsChecked="{Binding Sabin.ShowShoulderTackle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.HoldPositionals}" IsChecked="{Binding Sabin.ShowHoldPositionals, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Sabin.ShowManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.OoCFistsOfWind}" IsChecked="{Binding Sabin.ShowOocFistsofWind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ArmoftheDestroyer}" IsChecked="{Binding Sabin.ShowArmoftheDestroyer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Feint" IsChecked="{Binding Sabin.ShowFeint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="3" Header="{x:Static loc:Strings.RefreshValuesAndFistMode}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Label HorizontalAlignment="Center" Content="{x:Static loc:Strings.FistMode}" />
+                            <ComboBox  HorizontalAlignment="Center" MinWidth="230"  Margin="2" SelectedValue="{Binding Sabin.Fist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={utilities:EnumBindingSource {x:Type enums:FistMode}}}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <UniformGrid Grid.Row="1" Columns="2" HorizontalAlignment="Center">
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.TwinSnakesRefresh}" Value="{Binding Sabin.TwinSnakesRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.DemolishRefresh}" Value="{Binding Sabin.DemolishRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.TouchOfDeathRefresh}" Value="{Binding Sabin.TouchofDeathRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.DragonKickRefresh}" Value="{Binding Sabin.DragonKickRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.BloodbathHPPct}" Value="{Binding Sabin.BloodbathHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.SecondWindHP}" Value="{Binding Sabin.SecondWindHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20"  Increment="1"  LabelContent="Shoulder Tackle min Dist" Value="{Binding Sabin.ShoulderTackleMinDistance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="4" Header="{x:Static loc:Strings.AoESettings}">
+                    <StackPanel HorizontalAlignment="Center">
+                        <CheckBox HorizontalAlignment="Center" Margin="2" Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Sabin.UseAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Margin="2" HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="{x:Static loc:Strings.AoETargets}" Value="{Binding Sabin.MobCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <controls:KefkaIntNumeric Margin="2" HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="1000"  Increment="10"  LabelContent="{x:Static loc:Strings.TPLimit}" Value="{Binding Sabin.TpLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Hotkeys}">
+            <mahAppsControls:MetroTabItem.DataContext>
+                <viewModels:HotkeysViewModel />
+            </mahAppsControls:MetroTabItem.DataContext>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Columns="5" HorizontalAlignment="Center">
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Mantra}" ModKeySetting="{Binding Sabin.MantraModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.MantraKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Buffs}" ModKeySetting="{Binding Sabin.BuffsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.BuffsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.HoldOGCDs}" ModKeySetting="{Binding Sabin.HoldoGcDsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.HoldoGcDsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Potion}" ModKeySetting="{Binding Sabin.PotionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.PotionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.AoE}" ModKeySetting="{Binding Sabin.AoEModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.AoEKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.ShoulderTackle}" ModKeySetting="{Binding Sabin.ShoulderTackleModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.ShoulderTackleKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.SteelPeak}" ModKeySetting="{Binding Sabin.AutoInterruptModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.AutoInterruptKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.DoTs}" ModKeySetting="{Binding Sabin.DotsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.DotsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Positionals}" ModKeySetting="{Binding Sabin.PositionalsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.PositionalsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.PerfectBalance}" ModKeySetting="{Binding Sabin.PerfectBalanceModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.PerfectBalanceKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Destroyer}" ModKeySetting="{Binding Sabin.ArmoftheDestroyerModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.ArmoftheDestroyerKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Opener}" ModKeySetting="{Binding Sabin.OpenerModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.OpenerKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.TornadoKick}" ModKeySetting="{Binding Sabin.TornadoKickModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.TornadoKickKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.FistMode}" ModKeySetting="{Binding Sabin.ChangeFistModeModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.ChangeFistModeKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.HowlingFist}" ModKeySetting="{Binding Sabin.HowlingFistModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.HowlingFistKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.ElixirField}" ModKeySetting="{Binding Sabin.ElixirFieldModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.ElixirFieldKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.AoECDs}" ModKeySetting="{Binding Sabin.AoeCDsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.AoeCDsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.FormShift}" ModKeySetting="{Binding Sabin.FormShiftModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.FormShiftKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Riddle of Earth" ModKeySetting="{Binding Sabin.RiddleofEarthModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.RiddleofEartKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+                <Separator Grid.Row="1" Margin="10" />
+                <Label Grid.Row="2" HorizontalAlignment="Center" Content="Preset Hotkeys" />
+                <UniformGrid Grid.Row="3" Columns="5" VerticalAlignment="Top">
+                    <controls:HotkeyControl Text="{Binding Sabin.PresetNames.Preset1Name}" ModKeySetting="{Binding Sabin.Preset1Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.Preset1Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Sabin.PresetNames.Preset2Name}" ModKeySetting="{Binding Sabin.Preset2Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.Preset2Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Sabin.PresetNames.Preset3Name}" ModKeySetting="{Binding Sabin.Preset3Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.Preset3Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Sabin.PresetNames.Preset4Name}" ModKeySetting="{Binding Sabin.Preset4Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.Preset4Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Sabin.PresetNames.Preset5Name}" ModKeySetting="{Binding Sabin.Preset5Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Sabin.Preset5Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Opener}">
+            <openers:Sabin_Opener />
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="Presets">
+            <Grid Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.DataContext>
+                    <viewModels:SabinPresetsViewModel />
+                </Grid.DataContext>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Load" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadSettings}" />
+                    <Button Grid.Column="1" Content="Save" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SaveSettingsAs}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Set Preset 1" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset1}" />
+                    <Button Grid.Column="1" Content="Set Preset 2" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset2}" />
+                    <Button Grid.Column="2" Content="Set Preset 3" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset3}" />
+                    <Button Grid.Column="3" Content="Set Preset 4" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset4}" />
+                    <Button Grid.Column="4" Content="Set Preset 5" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset5}" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset1}" />
+                    <Button Grid.Column="1" Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset2}" />
+                    <Button Grid.Column="2" Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset3}" />
+                    <Button Grid.Column="3" Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset4}" />
+                    <Button Grid.Column="4" Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset5}" />
+                </Grid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

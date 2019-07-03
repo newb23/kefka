@@ -1,0 +1,789 @@
+﻿<Window x:Class="Kefka.Views.KefkaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+        xmlns:routines="clr-namespace:Kefka.Views.Routines"
+        xmlns:local="clr-namespace:Kefka.Views"
+        ResizeMode="NoResize"
+        xmlns:enums="clr-namespace:Kefka.Models"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:utilities="clr-namespace:Kefka.Utilities"
+        xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Left="{Binding Settings.MainWindowX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Top="{Binding Settings.MainWindowY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        WindowStyle="None"
+        MinHeight="600"
+        MinWidth="800"
+        SizeToContent="WidthAndHeight"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Title="Kefka">
+
+    <Window.DataContext>
+        <viewModels:SettingsViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <utilities:BooleanToVisibilityConverter x:Key="BoolToVis" />
+            <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="SelectedTheme">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="enums:SelectedTheme" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/KefkaUI.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KefkaUI.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KefkaUI.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KefkaUI.Metro;component/Styles/Accents/Cyan.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KefkaUI.Metro;component/Styles/Accents/BaseDark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <mahAppsControls:MetroContentControl>
+        <Grid MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Kefka;component/Resources/KefkaBanner.png" Opacity="0.1" />
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Click="HideWindow" Content="{iconPacks:PackIconMaterial WindowClose}" />
+                    </StackPanel>
+                </Grid>
+                <Rectangle Height="2" />
+            </StackPanel>
+
+            <mahAppsControls:MetroAnimatedSingleRowTabControl TabStripPlacement="Left" Grid.Row="1">
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowBarret, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M398.6,299.6C396.1,298,197.1,160.8,148,126.2c-27.2-19.2,6.4-60.1,33.2-40.1,45.6,34.1,263.9,195.5,276,204.7s15.2,25.1-.1,31.8c0,0-59,24.5-66.8,28.3s-6.8,8.8-.2,16.2l48.2,54.4c9.7,11,6.3,13.2-1.2,23.2l-50.1,66.9c-10.2,13.7-20.4,8.3-25.6,0s-52.1-82.6-58.8-92.7c-9.3-14,17.9-30.2,26.4-17.6,7.1,10.6,27.1,39.2,32.7,47.3s15.7,15.2,30.1,3.5,11.1-23.8,6-30.4-38.8-49-47-58.5-11.3-17-1.6-24.4,45.4-27,49-30.2S401.1,301.2,398.6,299.6Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="M151.3,161.2s132.9,91.7,149.4,103.2c20.8,14.6,22.5,37.8,14,62.2-13.1,37.4-83.8,54.7-85.7,31.7-0.7-8.2,0-46.4,0-56.3,0-14.9,23-15.9,23-.5,0,10.5-.3,28.9,0,37s29.7-1.2,38-18.5c6.3-13.1,1.7-29.7-8.2-36.6C274.2,278.2,131.1,183,131.1,183,116.7,172.1,132.5,150.9,151.3,161.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Barret" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Barret />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowBeatrix, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M455,72s-25,17.1-25,40H330c0-28.6-30-50-30-50s-30,21.4-30,50H170c0-22.9-25-40-25-40s-25,17.1-25,40V297c5,135,180,220,180,220s175-85,180-220V112C480,89.1,455,72,455,72ZM285,462S160,402,155,282V152a5,5,0,0,1,5-5H285V462ZM445,282c-5,120-130,180-130,180V147H440a5,5,0,0,1,5,5V282Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Beatrix" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Beatrix />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowCecil, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M469.6,274.7c-5.9-4.1-97.8-63.8-97.8-63.8a16.7,16.7,0,0,1-5.1-11.8,18.8,18.8,0,0,1,5.1-12.4l57.9-33.6c4.1-2.5,14.4-13.8,6-23.9S413,128,413,128s-60.2,34.7-68,37.6-14.8,1.8-20.3-2.3-8.2-12.9-8.2-20.3-4.4-84.2-4.9-95.1c-0.4-9.2-11.1-9-11.1-9s-10.7-.1-11.1,9c-0.5,10.9-4.9,87.7-4.9,95.1s-2.7,16.2-8.2,20.3-12.5,5.1-20.3,2.3S188,128,188,128s-14.2-8.8-22.6,1.2,1.8,21.4,6,23.9l57.9,33.6a18.8,18.8,0,0,1,5.1,12.4,16.7,16.7,0,0,1-5.1,11.8s-92,59.7-97.8,63.8-10.2,9-7.9,12.3,8.8,4,17.3,1.5,112.9-52,112.9-52,7.4-3.1,11.1-2.5,5.3,3.5,7,7,4.9,15.3,4.1,20.7-0.8,4.6-3.7,12.3-8.6,14.8-33.1,33.3c-16.5,12.5-51.6,23.6-51.6,23.6s-2,.8-2,2.1,1.9,2.5,1.9,2.5,41.8,29.9,51.5,41c13.6,15.6,33.3,59.5,41.1,93.2s20.5,92,20.5,92,12.7-58.3,20.5-92,27.5-77.6,41.1-93.2c9.7-11.1,51.5-41,51.5-41s1.9-1.2,1.9-2.5-2-2.1-2-2.1-35.2-11.1-51.6-23.6c-24.4-18.6-30.2-25.7-33.1-33.3s-2.9-7-3.7-12.3,2.5-17.2,4.1-20.7,3.3-6.4,7-7,11.1,2.5,11.1,2.5,104.5,49.5,112.9,52,15,1.8,17.3-1.5S475.4,278.7,469.6,274.7ZM348.1,319a3.9,3.9,0,0,1,2.4,3.6c0,1.8-2.5,3.9-2.5,3.9s-13.7,12.4-24,26c-12.1,16.2-21.1,34-22,34.8s-1.7,1.2-1.7,1.2-0.3.2-1.7-1.2-10.9-18.6-23.1-34.8a268.2,268.2,0,0,0-22.8-26s-2.5-2-2.5-3.9a4.1,4.1,0,0,1,2.4-3.6,169.7,169.7,0,0,0,22.3-15.9c10.8-9.2,21.5-21.4,22.7-22.4a4.5,4.5,0,0,1,5.2,0c1.3,1,10.8,12.9,21.6,22.1A158.7,158.7,0,0,0,348.1,319Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Cecil" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Cecil />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowCyan, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="F1 M 233.125,200.128C 232.763,200.112 232.4,200.096 232.039,200.079C 226.752,237.033 221.465,273.989 216.147,311.169L 248.992,311.169C 243.64,273.715 238.381,236.92 233.125,200.128 Z M 268,461.333L 228,461.333C 226.581,460.891 225.189,460.217 223.737,460.04C 191.635,456.149 162.164,445.239 135.641,426.707C 129.653,422.523 123.685,418.024 118.811,412.669C 116.747,410.404 115.987,404.669 117.447,402.117C 118.905,399.564 123.789,398.211 127.329,397.844C 130.144,397.551 133.208,399.5 136.137,400.519C 169.143,412.013 202.969,416.437 237.739,411.924C 291.943,404.888 336.388,380.355 370.901,337.745C 377.952,329.041 382.549,320.3 380.295,308.743C 379.196,303.109 379.408,297.231 378.56,291.531C 376.103,274.996 372.553,258.785 363.007,244.573C 355.599,233.545 345.432,227.329 332.061,226.439C 311.624,225.079 293.233,232.144 275.232,240.467C 273.887,241.088 273.212,244.964 273.544,247.125C 276.211,264.445 279.323,281.697 282.045,299.011C 285,317.789 287.683,336.611 290.545,355.832L 175.148,355.832C 180.335,322.116 185.44,288.931 190.637,255.152C 134.033,273.135 86.7773,265.587 56.4893,207.667C 49.7294,245.988 52.2053,282.161 64.9693,317.263C 70.2507,331.789 77.56,345.587 84.128,359.631C 86.3493,364.38 86.7413,368.727 82.416,372.241C 78.1147,375.739 73.7547,374.764 69.728,371.397C 69.216,370.968 68.72,370.523 68.2107,370.093C 33.8133,341.009 13.3613,303.769 4.08535,260.068C 2.39734,252.115 1.34534,244.025 0,236L 0,198.667C 1.57601,190.025 2.64801,181.257 4.80534,172.765C 28.088,81.1494 85.6227,24.4707 178.023,3.58806C 184.404,2.14534 190.895,1.18401 197.333,-1.52588e-005L 237.333,-1.52588e-005C 238.976,0.457352 240.589,1.12132 242.263,1.34001C 281.088,6.42805 315.832,20.728 345.564,46.6213C 350.081,50.5547 352.856,54.8214 349.737,60.4294C 346.453,66.3347 341.207,65.356 335.743,63.3493C 315.883,56.0547 295.556,50.568 274.369,48.9947C 200.197,43.488 138.927,68.0907 92.2427,126.968C 87.248,133.267 85.0693,139.359 86.5,147.589C 89.712,166.071 93.3173,184.283 104.395,199.988C 112.736,211.813 124.191,218.096 138.707,218.799C 155.321,219.604 170.487,214.064 185.916,208.932C 197.291,205.149 202.012,198.455 204.473,186.629C 209.116,164.34 215.916,142.461 222.683,120.679C 224.221,115.725 228.779,108.872 232.833,108.193C 239.121,107.141 241.441,115.015 243.123,120.257C 248.665,137.549 253.667,155.02 258.588,172.504C 260.727,180.105 262.161,187.905 263.737,194.823C 277.849,190.852 291.115,186.325 304.728,183.433C 350.653,173.673 388.053,192.124 408.855,234.1C 409.38,235.16 410.123,236.112 411.341,238.017C 414.395,217.381 413.156,198.021 409.976,178.752C 405.744,153.121 396.787,129.116 384.609,106.221C 383.017,103.228 381.539,99.4373 381.941,96.264C 382.964,88.2253 391.66,86.8614 399.001,93.164C 427.632,117.745 446.587,148.577 457.105,184.553C 460.744,196.996 462.641,209.948 465.333,222.667L 465.333,264C 464.775,267.445 464.161,270.881 463.665,274.336C 450.537,365.64 379.799,440.012 289.435,457.461C 282.307,458.839 275.147,460.047 268,461.333 Z " Canvas.Left="35" Canvas.Top="67">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Cyan" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Cyan />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowEdward, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M211,188.2a15,15,0,0,1,15,15v180a15,15,0,0,1-30,0v-180A15,15,0,0,1,211,188.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="M286,188.2a15,15,0,0,1,15,15v180a15,15,0,0,1-30,0v-180A15,15,0,0,1,286,188.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="M361,188.2a15,15,0,0,1,15,15v180a15,15,0,0,1-30,0v-180A15,15,0,0,1,361,188.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="M161,163.2a15,15,0,0,0,15-15,10,10,0,0,1,10-10H406a15,15,0,0,1,15,15V380.9c-6.4,70.8-135,132.3-255,47.3,100,160,295,70.3,300-47.3V158.2a10,10,0,0,0,10-10v-50a30,30,0,1,0-60,0H191a50,50,0,0,0-50,50C141,156.5,150,163.2,161,163.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Edward" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Edward />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowEiko, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M151,115S326,265,421,285c8.3,0,15-15,15-15,5-5,0-60,0-60a10,10,0,0,1,10-10c8.3,0,15,5,15,10,5,15,5,50,5,50,0,121.5-98.5,220-220,220-52.5,0-95-9-95-20s6.7-15,15-15c0,0,55,5,60,0C236,330,151,115,151,115Zm65,85s45,145,45,245c74.6,0,155-85,160-125C366,320,216,200,216,200Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Eiko" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Eiko />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowRemiel, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="533" Height="900">
+                                    <Path Data="F1 M 370.667,790.667C 360.789,788.447 350.803,786.627 341.052,783.945C 261.479,762.068 203.264,692.34 195.743,610.143C 187.539,520.503 238.571,437.957 322.655,405.229C 327.212,403.456 328.485,400.981 328.759,396.481C 331.055,358.825 333.245,321.159 336.08,283.54C 339.597,236.843 343.109,190.131 347.74,143.535C 351.401,106.679 356.251,69.9173 361.635,33.2693C 363.303,21.9173 368.447,11.076 372,-2.28882e-005L 374.667,-2.28882e-005C 376.903,5.00394 380.297,9.81199 381.177,15.044C 385.521,40.8293 390.811,66.6013 392.812,92.6053C 399.384,177.975 404.719,263.44 410.419,348.875C 411.373,363.173 411.787,377.508 412.452,391.904C 415.092,392.38 417.032,392.851 419.003,393.065C 441.049,395.475 462.233,401.281 481.871,411.449C 506.724,424.316 530.879,438.405 545.333,464L 545.333,484C 541.328,491.976 536.728,499.397 528.547,503.909C 515.387,511.167 499.419,509.091 488.008,498.115C 457.691,468.949 421.475,455.673 379.805,460.448C 291.971,470.513 239.367,561.215 273.328,642.831C 294.187,692.952 346.493,726.088 400.305,722.772C 410.869,722.121 421.365,719.951 431.828,718.104C 449.488,714.987 466.615,725.941 470.849,743.361C 475.135,760.988 465.421,778.931 448.273,783.912C 438.569,786.729 428.547,788.451 418.667,790.667L 370.667,790.667 Z ">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="F1 M 0,557.333C 13.5347,553.368 26.86,548.288 40.652,545.693C 62.8693,541.512 85.3813,538.861 107.804,535.823C 112.777,535.149 115.221,533.651 116.307,528.093C 121.352,502.277 130.323,477.749 142.707,454.285C 130.076,442.571 117.405,431.156 105.145,419.319C 97.8107,412.239 90.864,404.709 84.284,396.924C 82.1347,394.381 81.692,390.395 80.4693,387.068C 83.8707,386.755 87.5,385.523 90.6307,386.299C 100.503,388.747 110.525,391.137 119.876,395.024C 140.536,403.613 161.008,412.713 181.197,422.357C 195.445,429.161 198.372,441.625 189.787,454.941C 169.871,485.832 157.333,519.405 153.041,555.944C 145.348,621.433 161.627,680.372 201.459,732.915C 204.316,736.685 207.007,741.191 207.893,745.72C 209.767,755.299 204.767,763.849 196.487,767.576C 187.903,771.439 177.856,769.503 171.943,761.503C 163.384,749.92 155.641,737.735 147.577,725.789C 146.591,724.327 145.765,722.753 144.489,720.597C 142.321,721.175 140.057,721.799 137.783,722.377C 110.3,729.376 82.8333,736.436 55.3107,743.277C 51.928,744.117 48.24,744.057 44.72,743.877C 42.9373,743.787 40.2827,742.904 39.728,741.636C 39.1667,740.352 40.1933,737.592 41.4227,736.439C 47.716,730.535 53.836,724.279 60.868,719.363C 81.7707,704.755 103.071,690.716 124.195,676.469C 120.703,661.157 116.303,645.583 113.767,629.707C 111.257,613.999 110.631,597.989 109.119,581.465C 92.5187,579.292 74.9107,577.271 57.4,574.617C 37.9467,571.669 18.2347,569.631 0,561.333L 0,557.333 Z ">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="F1 M 391.602,526.885C 427.1,526.915 455.887,555.852 455.78,591.397C 455.675,626.937 426.892,655.395 391.106,655.341C 355.526,655.288 326.688,626.352 326.888,590.905C 327.088,555.32 355.86,526.856 391.602,526.885 Z ">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Elayne" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Elayne />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowFreya, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M357.5,63.4L369.2,102,375,223.4c5,5,11.2,10,25,10,5-5,20.1-30,45-30l-125,325c0,2.8-9,5-20,5h0c-11,0-20-2.2-20-5l-125-325c24.9,0,40,25,45,30,13.8,0,20-5,25-10L230.8,102l11.7-38.6L254.2,102,260,223.4c0,5.5,15.7,10,35,10h10c19.3,0,35-4.5,35-10L345.8,102Zm2.5,180c-11,0-20,10-20,10-8,16.7-26.9,20-40,20s-32-3.3-40-20c0,0-9-10-20-10-19.3,0-35,10-35,30,0,30,50,85,75,80,0,19.3-15,30-20,35,0,55.2,35,100,40,100s40-44.8,40-100c-5-5-20-15.7-20-35,19,2.1,38.4-17.1,49.8-30.1s24.3-31.1,25.2-49.9S379.3,243.4,360,243.4Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Freya" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Freya />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowMikoto, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M277,252.9a42.5,42.5,0,1,1,42.5-42.5A42.5,42.5,0,0,1,277,252.9ZM327.5,66.1h-0.9l-4.4.2a22.8,22.8,0,0,0-18,14.3,22.5,22.5,0,0,0,13,29,104.1,104.1,0,1,1-108.6,173,22.5,22.5,0,0,0-30.9,32.7c27.4,24.9,54.4,37.5,91.8,37.7,0,0,5,0,8,10,2,5,0,145.5,0,145.5a22.5,22.5,0,0,0,45,0s-2-135.5,0-145.5,7-15,7-15c6.4-1.8,5.6-2.3,11.7-5a149.1,149.1,0,0,0-7.9-275.5A24.2,24.2,0,0,0,327.5,66.1Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Mikoto" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Mikoto />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowPaine, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M377.5,81.4A208,208,0,0,1,415.8,100h0c67.7,41,105,112.4,107.2,190.5-0.1,76.4-38.4,144.4-101.3,186.9h0c-12.1,8.2-25.3,14.5-38.7,20.2,6.6-12.5,9.1-26.8,9.5-40.8a54.3,54.3,0,0,0-.5-8.2h0c-4.4-48.6-43.9-83.1-92-84.3-48.5.6-87.2,36.3-92,84.3a54.3,54.3,0,0,0-.5,8.2c0.3,13.8,2.9,28.6,9.5,40.8a212.1,212.1,0,0,1-38.7-20.2h0C114.6,435.5,78,366.4,77,290.5S118.2,140.1,184.2,100h0c-1.4,3.4-2.7,7.2,0,0a206.9,206.9,0,0,1,38.3-18.6c-10.2,14.8-14.5,32.6-15,50.3a45.4,45.4,0,0,0,.3,6.4h0c4.2,49.4,42.9,84.8,92.2,86.1,50.2-.9,87.2-36.6,92.2-86.1a45.4,45.4,0,0,0,.3-6.4C392.3,114,387.5,96.2,377.5,81.4ZM422,159.2c5.5,4-3.1-1.6,1.9,2.9-7,63.9-61,108-123.9,109.6-61.4-.3-117.6-47.5-123.9-109.6h0l-0.2-1.9,0.2,1.9c-36.6,33.4-56,82.2-56.6,131.2s20.9,98.8,57.9,132.4h0c12-60.3,61.8-99.9,122.6-101.5l6.4,0.2c58.4,4.6,104.4,43.6,116.2,101.3,0.4,1.5.5,2.3,0,0,37.3-33.6,57.2-82.6,57.9-132.4s-20.1-98.1-56.6-131.2h0C419.1,157.4,427.4,163.3,422,159.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Paine" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Paine />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowRemiel, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M195.5,359.5v56.9c0,5.6,3.2,9.4,8,9.4h98.2c5.3,0,8.6-4.4,8.6-9.4,0,0,0-199.5,0-204.7s-3.5-7.3-8.6-7.3H203.5c-3.9,0-8,3.7-8,7.3v96.4c0,5.6-2.2,7.9-7.6,7.9H152.4c-5,0-7.1-2.4-7.1-7.9v-140c0-7.1,4.9-11.8,12.7-11.8H348.3c9.1,0,12.7,4.6,12.7,11.8,0,10.3,0,290.1,0,295.9s-4,11.7-12.7,11.7H157.9c-8.7,0-10.9-3.7-10.9-11.7v-35s-5.2-2.5-33.7,25.9-40.6,53.5-40.6,53.5,2.6-60.8,47.9-106.2c35.7-35.7,66-46.8,71-46.8A4,4,0,0,1,195.5,359.5Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                    <Path Data="M384.9,135.9H234.2c-4.2,0-6.1-2.1-6.1-6.5V103.1c0-7.4,2.2-11,9.7-11H430.1c7.8,0,11.1,3.7,11.1,11v86.5s14.9-13.5,47.5-24.2,73.4-9.3,73.4-9.3-27.8,12-68.8,38.8-52,49-52,58.7V376.8c0,6-6.3,10.4-11.1,10.4H400.7c-3.9,0-5.6-1.9-5.6-5.5V146.2C395.1,139.8,391.6,135.9,384.9,135.9Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Remiel" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Remiel />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowSabin, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="652" Height="652">
+                                    <Path Data="F1 M 577.919,309.465L 633.377,294.744L 607.447,345.931L 295.457,598.573L 240,613.295L 265.931,562.109L 577.919,309.465 Z M 456.3,160.912L 511.76,146.191L 485.829,197.377L 173.84,450.019L 118.383,464.74L 144.312,413.555L 456.3,160.912 Z M 337.919,14.7214L 25.9307,267.364L 0,318.551L 55.4587,303.829L 367.447,51.1867L 393.377,2.00272e-005L 337.919,14.7214 Z " Stretch="Fill" Canvas.Left="91.565" Canvas.Top="77.087" Height="494.825" Width="510.969">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Sabin" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Sabin />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowShadow, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M532.1,410.3s-58.5,14.3-121.3,25.3a164.2,164.2,0,0,0,39-145.9C428.1,173.2,293.9,66.3,293.9,66.3s32.6,52.2,62.9,109a164.2,164.2,0,0,0-191.9,43.2c-91.4,91.8-60.8,298-60.8,298s13.3-68.3,31.6-134.5a164.5,164.5,0,0,0,102.1,98.7C359.3,523.6,532.1,410.3,532.1,410.3ZM289.9,212.9A112.3,112.3,0,1,1,177.6,325.2,112.3,112.3,0,0,1,289.9,212.9Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Shadow" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Shadow />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowSurito, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M298.4,179.1a237.2,237.2,0,0,1,122.8,34.7c5,3.1,9.8,6.6,14.7,9.9h0c4.6,3.1,1.3.8,9.8,7.4-44,11.4-80.6,41.5-87.1,88.2a54.8,54.8,0,0,0-1,11h0V331a70.4,70.4,0,1,0,140.9,0c0.1-13.8-4.4-27.1-11.8-38.7l-2.2-3c-12.9-20.4,5.1-40.6,24.5-28.4l0.3-.3c17.4,19.2,25.3,45,26.5,70.4a107.8,107.8,0,1,1-215.5,0c0.2-38.3,19.1-70,50.4-91.2h0c-20.8-16.3-46.1-24.2-72.3-24.8s-50.8,9.7-72.7,25.1L231,244c28.6,22.2,43.4,50.9,44.7,87.1a107.8,107.8,0,1,1-215.5,0c1.2-25.4,9.1-51.3,26.5-70.4l0.3,0.3c10.4-7.1,26.5-2.5,28.8,10.6,1.1,6.4-1.2,12.4-4.2,17.8l-2.2,3A70.4,70.4,0,1,0,238.4,331c0.1-6.3-.3-10.6-0.3-11.8C231.6,272.6,195,242.4,151,231c8.5-6.6,5.2-4.3,9.8-7.4,1.1-.2,3.4-0.4.1-0.1,40.8-29.5,87.4-43.4,137.4-44.5h0Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Surito" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Surito />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem Visibility="{Binding Key.Instance.ShowVivi, Converter={StaticResource BoolToVis}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Canvas Width="500" Height="600">
+                                    <Path Data="M536,60S399.7,227.2,425.3,277.8c24.3,23.7,90.3-26.3,90.3-26.3-31.5,83.5-99,151.3-170.8,201.6-28.2,44-76.4,68.4-128.1,69.7A152.8,152.8,0,0,1,64,370c0.4-49.3,24.3-97.4,65.6-125.3C181,173.1,260.6,92.6,345.2,60c0,0-43.6,50.6-32,109.5,34.4,15.7,112.1-67.9,199.1-104.4C510.2,64.1,536,60,536,60ZM216.8,262.4A107.6,107.6,0,1,0,324.4,370,107.6,107.6,0,0,0,216.8,262.4ZM463.3,121.2S349.4,223.5,297,200c-21.6-8.2-13.9-67.7-13.9-67.7-33.9,24.4-66.9,52.1-90.4,87,7.9-1.7,16.1-1.7,24.1-1.9A152.8,152.8,0,0,1,369.6,370a135.7,135.7,0,0,1-2.5,27c37.6-22.1,67.4-56.5,92.4-91.9-53.8,25-70.1-11.5-70.1-11.5C371,231.7,463.3,121.2,463.3,121.2Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Vivi" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <routines:Vivi />
+                </mahAppsControls:MetroTabItem>
+                <mahAppsControls:MetroTabItem>
+                    <mahAppsControls:MetroTabItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Viewbox Width="40" Height="40">
+                                <Grid>
+                                    <Path Data="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Setter Property="Fill" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                        <Setter Property="Fill" Value="{DynamicResource AccentBaseColorBrush}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+                                </Grid>
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Text="Advanced" FontSize="30">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="{DynamicResource NonActiveWindowTitleColorBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type mahAppsControls:MetroTabItem}}, Path=IsSelected}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </mahAppsControls:MetroTabItem.Header>
+                    <local:AdvancedControl />
+                </mahAppsControls:MetroTabItem>
+            </mahAppsControls:MetroAnimatedSingleRowTabControl>
+
+            <StackPanel  Grid.Row="2">
+                <Rectangle Height="2" />
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <ComboBox Width="100"  SelectedValue="{Binding Settings.Theme}" ItemsSource="{Binding Source={StaticResource SelectedTheme}}" SelectionChanged="CmbSwitchTheme" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </mahAppsControls:MetroContentControl>
+</Window>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Kefka.Views.Advanced.SpellLog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:spellLog="clr-namespace:Kefka.ViewModels"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <spellLog:SpellLogViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <DataGrid Name="SpellLogGrid" IsReadOnly="True" Width="Auto" CanUserDeleteRows="False" ItemsSource="{Binding SpellLogCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" RowHeaderWidth="0" SelectionMode="Single" SelectionUnit="FullRow" BorderBrush="{DynamicResource AccentBaseColorBrush}" BorderThickness="1">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="SnapsToDevicePixels" Value="True" />
+                            <Style.Triggers>
+                                <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                    <Setter Property="BorderBrush" Value="Black" />
+                                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                                    <Setter Property="Background" Value="Transparent" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFace}" />
+                            <Setter Property="SnapsToDevicePixels" Value="True" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header=" NPC Name " Width="auto" Binding="{Binding NpcName}" />
+                        <DataGridTextColumn Header=" NPC ID " Width="auto" Binding="{Binding NpcId}" />
+                        <DataGridTextColumn Header=" Spell Name " Width="auto" Binding="{Binding SpellName}" />
+                        <DataGridTextColumn Header=" Spell ID " Width="auto" Binding="{Binding SpellId}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Width="75" Height="25" Content="Interrupt" Command="{Binding Instance.TransferSpellToInterruptsCommand}" CommandParameter="{Binding ElementName=SpellLogGrid, Path=SelectedValue}" />
+                <Button Width="75" Height="25" Content="Tankbuster" Margin="2,0,0,0" Command="{Binding Instance.TransferSpellToTankbustersCommand}" CommandParameter="{Binding ElementName=SpellLogGrid, Path=SelectedValue}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

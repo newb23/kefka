@@ -1,0 +1,3958 @@
+[
+
+  {
+    "Id": 1,
+    "Name": "Delay 1s",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2,
+    "Name": "Delay 2s",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3,
+    "Name": "Delay 3s",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4,
+    "Name": "Delay 4s",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 9,
+    "Name": "Fast Blade",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 11,
+    "Name": "Savage Blade",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 14,
+    "Name": "Flash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 15,
+    "Name": "Riot Blade",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 16,
+    "Name": "Shield Bash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 17,
+    "Name": "Sentinel",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 19,
+    "Name": "Tempered Will",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 20,
+    "Name": "Fight or Flight",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 21,
+    "Name": "Rage of Halone",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 22,
+    "Name": "Bulwark",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 23,
+    "Name": "Circle of Scorn",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 24,
+    "Name": "Shield Lob",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 25,
+    "Name": "Shield Swipe",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 26,
+    "Name": "Sword Oath",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 27,
+    "Name": "Cover",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 28,
+    "Name": "Shield Oath",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 29,
+    "Name": "Spirits Within",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 30,
+    "Name": "Hallowed Ground",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 31,
+    "Name": "Heavy Swing",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 35,
+    "Name": "Skull Sunder",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 37,
+    "Name": "Maim",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 38,
+    "Name": "Berserk",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 40,
+    "Name": "Thrill of Battle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 41,
+    "Name": "Overpower",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 42,
+    "Name": "Storm's Path",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 43,
+    "Name": "Holmgang",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 44,
+    "Name": "Vengeance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 45,
+    "Name": "Storm's Eye",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 46,
+    "Name": "Tomahawk",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 47,
+    "Name": "Butcher's Block",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 48,
+    "Name": "Defiance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 49,
+    "Name": "Inner Beast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 50,
+    "Name": "Unchained",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 51,
+    "Name": "Steel Cyclone",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 52,
+    "Name": "Infuriate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 53,
+    "Name": "Bootshine",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 54,
+    "Name": "True Strike",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 56,
+    "Name": "Snap Punch",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 59,
+    "Name": "Internal Release",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 60,
+    "Name": "Fists of Earth",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 61,
+    "Name": "Twin Snakes",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 62,
+    "Name": "Arm of the Destroyer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 63,
+    "Name": "Fists of Fire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 64,
+    "Name": "Steel Peak",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 65,
+    "Name": "Mantra",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 66,
+    "Name": "Demolish",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 67,
+    "Name": "Howling Fist",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 69,
+    "Name": "Perfect Balance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 70,
+    "Name": "Rockbreaker",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 71,
+    "Name": "Shoulder Tackle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 72,
+    "Name": "One Ilm Punch",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 73,
+    "Name": "Fists of Wind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 74,
+    "Name": "Dragon Kick",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 75,
+    "Name": "True Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 78,
+    "Name": "Vorpal Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 79,
+    "Name": "Heavy Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 81,
+    "Name": "Impulse Drive",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 83,
+    "Name": "Life Surge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 84,
+    "Name": "Full Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 85,
+    "Name": "Blood for Blood",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 86,
+    "Name": "Doom Spike",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 87,
+    "Name": "Disembowel",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 88,
+    "Name": "Chaos Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 90,
+    "Name": "Piercing Talon",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 92,
+    "Name": "Jump",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 94,
+    "Name": "Elusive Jump",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 95,
+    "Name": "Spineshatter Dive",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 96,
+    "Name": "Dragonfire Dive",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 97,
+    "Name": "Heavy Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 98,
+    "Name": "Straight Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 100,
+    "Name": "Venomous Bite",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 101,
+    "Name": "Raging Strikes",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 103,
+    "Name": "Misery's End",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 106,
+    "Name": "Quick Nock",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 107,
+    "Name": "Barrage",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 110,
+    "Name": "Bloodletter",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 112,
+    "Name": "Repelling Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 113,
+    "Name": "Windbite",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 114,
+    "Name": "Mage's Ballad",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 115,
+    "Name": "Foe Requiem",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 116,
+    "Name": "Army's Paeon",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 117,
+    "Name": "Rain of Death",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 118,
+    "Name": "Battle Voice",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 119,
+    "Name": "Stone",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 120,
+    "Name": "Cure",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 121,
+    "Name": "Aero",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 124,
+    "Name": "Medica",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 125,
+    "Name": "Raise",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 127,
+    "Name": "Stone II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 128,
+    "Name": "Repose",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 131,
+    "Name": "Cure III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 132,
+    "Name": "Aero II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 133,
+    "Name": "Medica II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 134,
+    "Name": "Fluid Aura",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 135,
+    "Name": "Cure II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 136,
+    "Name": "Presence of Mind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 137,
+    "Name": "Regen",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 139,
+    "Name": "Holy",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 140,
+    "Name": "Benediction",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 141,
+    "Name": "Fire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 142,
+    "Name": "Blizzard",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 144,
+    "Name": "Thunder",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 145,
+    "Name": "Sleep",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 146,
+    "Name": "Blizzard II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 147,
+    "Name": "Fire II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 149,
+    "Name": "Transpose",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 152,
+    "Name": "Fire III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 153,
+    "Name": "Thunder III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 154,
+    "Name": "Blizzard III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 155,
+    "Name": "Aetherial Manipulation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 156,
+    "Name": "Scathe",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 157,
+    "Name": "Manaward",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 158,
+    "Name": "Convert",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 159,
+    "Name": "Freeze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 162,
+    "Name": "Flare",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 163,
+    "Name": "Ruin",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 164,
+    "Name": "Bio",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 165,
+    "Name": "Summon",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 166,
+    "Name": "Aetherflow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 167,
+    "Name": "Energy Drain",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 168,
+    "Name": "Miasma",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 170,
+    "Name": "Summon II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 172,
+    "Name": "Ruin II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 173,
+    "Name": "Resurrection",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 174,
+    "Name": "Bane",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 176,
+    "Name": "Rouse",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 178,
+    "Name": "Bio II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 179,
+    "Name": "Shadow Flare",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 180,
+    "Name": "Summon III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 181,
+    "Name": "Fester",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 182,
+    "Name": "Tri-bind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 184,
+    "Name": "Enkindle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 185,
+    "Name": "Adloquium",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 186,
+    "Name": "Succor",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 188,
+    "Name": "Sacred Soil",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 189,
+    "Name": "Lustrate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 190,
+    "Name": "Physick",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 244,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 245,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 246,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 247,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 248,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 249,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 250,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 251,
+    "Name": "Steady Hand",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 252,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 253,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 254,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 255,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 256,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 257,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 258,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 259,
+    "Name": "Inner Quiet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 260,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 261,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 262,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 263,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 264,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 265,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 266,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 267,
+    "Name": "Great Strides",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 276,
+    "Name": "Rumination",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 277,
+    "Name": "Ingenuity",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 278,
+    "Name": "Manipulation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 279,
+    "Name": "Waste Not",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 281,
+    "Name": "Steady Hand II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 283,
+    "Name": "Ingenuity II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 284,
+    "Name": "Innovation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 285,
+    "Name": "Waste Not II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 286,
+    "Name": "Comfort Zone",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 287,
+    "Name": "Reclaim",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 633,
+    "Name": "Gouge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 634,
+    "Name": "Shining Topaz",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 635,
+    "Name": "Curl",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 636,
+    "Name": "Storm",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 637,
+    "Name": "Gust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 638,
+    "Name": "Backdraft",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 639,
+    "Name": "Downburst",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 640,
+    "Name": "Shining Emerald",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 787,
+    "Name": "Rock Buster",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 788,
+    "Name": "Mountain Buster",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 789,
+    "Name": "Earthen Ward",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 790,
+    "Name": "Landslide",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 791,
+    "Name": "Earthen Fury",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 792,
+    "Name": "Wind Blade",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 793,
+    "Name": "Shockwave",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 794,
+    "Name": "Aerial Slash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 795,
+    "Name": "Contagion",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 796,
+    "Name": "Aerial Blast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 797,
+    "Name": "Crimson Cyclone",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 798,
+    "Name": "Burning Strike",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 799,
+    "Name": "Radiant Shield",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 800,
+    "Name": "Flaming Crush",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 801,
+    "Name": "Inferno",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 802,
+    "Name": "Embrace",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 803,
+    "Name": "Whispering Dawn",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 804,
+    "Name": "Fey Covenant",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 805,
+    "Name": "Fey Illumination",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 806,
+    "Name": "Embrace",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 807,
+    "Name": "Silent Dusk",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 808,
+    "Name": "Fey Glow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 809,
+    "Name": "Fey Light",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 810,
+    "Name": "Fey Caress",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 811,
+    "Name": "Fey Wind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1564,
+    "Name": "Somersault",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1567,
+    "Name": "Skewer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1568,
+    "Name": "Battlefield March",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1577,
+    "Name": "Aura Blast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1591,
+    "Name": "Between the Eyes",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1592,
+    "Name": "Stun Gun",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 1593,
+    "Name": "Report",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2240,
+    "Name": "Spinning Edge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2241,
+    "Name": "Shade Shift",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2242,
+    "Name": "Gust Slash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2245,
+    "Name": "Hide",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2246,
+    "Name": "Assassinate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2247,
+    "Name": "Throwing Dagger",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2248,
+    "Name": "Mug",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2254,
+    "Name": "Death Blossom",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2255,
+    "Name": "Aeolian Edge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2256,
+    "Name": "Jugulate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2257,
+    "Name": "Shadow Fang",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2258,
+    "Name": "Trick Attack",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2259,
+    "Name": "Ten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2260,
+    "Name": "Ninjutsu",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2261,
+    "Name": "Chi",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2262,
+    "Name": "Shukuchi",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2263,
+    "Name": "Jin",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2264,
+    "Name": "Kassatsu",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2265,
+    "Name": "Fuma Shuriken",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2266,
+    "Name": "Katon",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2267,
+    "Name": "Raiton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2268,
+    "Name": "Hyoton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2269,
+    "Name": "Huton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2270,
+    "Name": "Doton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2271,
+    "Name": "Suiton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2272,
+    "Name": "Rabbit Medium",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2864,
+    "Name": "Rook Autoturret",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2865,
+    "Name": "Bishop Autoturret",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2866,
+    "Name": "Split Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2867,
+    "Name": "Reload",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2868,
+    "Name": "Slug Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2870,
+    "Name": "Spread Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2872,
+    "Name": "Hot Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2873,
+    "Name": "Clean Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2874,
+    "Name": "Gauss Round",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2875,
+    "Name": "Heartbreak",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2876,
+    "Name": "Reassemble",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2878,
+    "Name": "Wildfire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2879,
+    "Name": "Quick Reload",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2880,
+    "Name": "Gauss Barrel",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2881,
+    "Name": "Rapid Fire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2885,
+    "Name": "Hypercharge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2887,
+    "Name": "Dismantle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2888,
+    "Name": "Blank",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 2890,
+    "Name": "Ricochet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3487,
+    "Name": "Turret Retrieval",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3538,
+    "Name": "Goring Blade",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3539,
+    "Name": "Royal Authority",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3540,
+    "Name": "Divine Veil",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3541,
+    "Name": "Clemency",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3542,
+    "Name": "Sheltron",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3543,
+    "Name": "Tornado Kick",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3544,
+    "Name": "Purification",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3545,
+    "Name": "Elixir Field",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3546,
+    "Name": "Meditation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3547,
+    "Name": "the Forbidden Chakra",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3548,
+    "Name": "Deliverance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3549,
+    "Name": "Fell Cleave",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3550,
+    "Name": "Decimate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3551,
+    "Name": "Raw Intuition",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3552,
+    "Name": "Equilibrium",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3553,
+    "Name": "Blood of the Dragon",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3554,
+    "Name": "Fang and Claw",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3555,
+    "Name": "Geirskogul",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3556,
+    "Name": "Wheeling Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3557,
+    "Name": "Battle Litany",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3558,
+    "Name": "Empyreal Arrow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3559,
+    "Name": "the Wanderer's Minuet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3560,
+    "Name": "Iron Jaws",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3561,
+    "Name": "the Warden's Paean",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3562,
+    "Name": "Sidewinder",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3563,
+    "Name": "Armor Crush",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3564,
+    "Name": "Shadewalker",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3565,
+    "Name": "Smoke Screen",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3566,
+    "Name": "Dream Within a Dream",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3567,
+    "Name": "Duality",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3568,
+    "Name": "Stone III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3569,
+    "Name": "Asylum",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3570,
+    "Name": "Tetragrammaton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3571,
+    "Name": "Assize",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3572,
+    "Name": "Aero III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3573,
+    "Name": "Ley Lines",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3574,
+    "Name": "Sharpcast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3575,
+    "Name": "Enochian",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3576,
+    "Name": "Blizzard IV",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3577,
+    "Name": "Fire IV",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3578,
+    "Name": "Painflare",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3579,
+    "Name": "Ruin III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3580,
+    "Name": "Tri-disaster",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3581,
+    "Name": "Dreadwyrm Trance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3582,
+    "Name": "Deathflare",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3583,
+    "Name": "Indomitability",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3584,
+    "Name": "Broil",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3585,
+    "Name": "Deployment Tactics",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3586,
+    "Name": "Emergency Tactics",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3587,
+    "Name": "Dissipation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3590,
+    "Name": "Draw",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3591,
+    "Name": "Royal Road",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3592,
+    "Name": "Spread",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3593,
+    "Name": "Redraw",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3594,
+    "Name": "Benefic",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3595,
+    "Name": "Aspected Benefic",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3596,
+    "Name": "Malefic",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3598,
+    "Name": "Malefic II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3599,
+    "Name": "Combust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3600,
+    "Name": "Helios",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3601,
+    "Name": "Aspected Helios",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3603,
+    "Name": "Ascend",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3604,
+    "Name": "Diurnal Sect",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3605,
+    "Name": "Nocturnal Sect",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3606,
+    "Name": "Lightspeed",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3608,
+    "Name": "Combust II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3610,
+    "Name": "Benefic II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3611,
+    "Name": "Time Dilation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3612,
+    "Name": "Synastry",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3613,
+    "Name": "Collective Unconscious",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3614,
+    "Name": "Essential Dignity",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3615,
+    "Name": "Gravity",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3616,
+    "Name": "Celestial Opposition",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3617,
+    "Name": "Hard Slash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3619,
+    "Name": "Spinning Slash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3621,
+    "Name": "Unleash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3623,
+    "Name": "Syphon Strike",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3624,
+    "Name": "Unmend",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3625,
+    "Name": "Blood Weapon",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3627,
+    "Name": "Power Slash",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3628,
+    "Name": "Darkside",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3629,
+    "Name": "Grit",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3631,
+    "Name": "Blood Price",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3632,
+    "Name": "Souleater",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3633,
+    "Name": "Dark Passenger",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3634,
+    "Name": "Dark Mind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3635,
+    "Name": "Dark Arts",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3636,
+    "Name": "Shadow Wall",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3638,
+    "Name": "Living Dead",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3639,
+    "Name": "Salted Earth",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3640,
+    "Name": "Plunge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3641,
+    "Name": "Abyssal Drain",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3642,
+    "Name": "Sole Survivor",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 3643,
+    "Name": "Carve and Spit",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4262,
+    "Name": "Form Shift",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4401,
+    "Name": "the Balance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4402,
+    "Name": "the Bole",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4403,
+    "Name": "the Arrow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4404,
+    "Name": "the Spear",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4405,
+    "Name": "the Ewer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4406,
+    "Name": "the Spire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4407,
+    "Name": "the Balance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4408,
+    "Name": "the Bole",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4409,
+    "Name": "the Arrow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4410,
+    "Name": "the Spear",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4411,
+    "Name": "the Ewer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4412,
+    "Name": "the Spire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4413,
+    "Name": "the Balance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4414,
+    "Name": "the Bole",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4415,
+    "Name": "the Arrow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4416,
+    "Name": "the Spear",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4417,
+    "Name": "the Ewer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4418,
+    "Name": "the Spire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4419,
+    "Name": "the Balance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4420,
+    "Name": "the Bole",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4421,
+    "Name": "the Arrow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4422,
+    "Name": "the Spear",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4423,
+    "Name": "the Ewer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4424,
+    "Name": "the Spire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4560,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4561,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4562,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4563,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4564,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4565,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4566,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4567,
+    "Name": "Collectable Synthesis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4568,
+    "Name": "Name of the Wind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4569,
+    "Name": "Name of Fire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4570,
+    "Name": "Name of Ice",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4571,
+    "Name": "Name of Earth",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4572,
+    "Name": "Name of Lightning",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4573,
+    "Name": "Name of Water",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4574,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4575,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4576,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4577,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4578,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4579,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4580,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 4581,
+    "Name": "Manipulation II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7381,
+    "Name": "Total Eclipse",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7382,
+    "Name": "Intervention",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7383,
+    "Name": "Requiescat",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7384,
+    "Name": "Holy Spirit",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7385,
+    "Name": "Passage of Arms",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7386,
+    "Name": "Onslaught",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7387,
+    "Name": "Upheaval",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7388,
+    "Name": "Shake it Off",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7389,
+    "Name": "Inner Release",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7390,
+    "Name": "Delirium",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7391,
+    "Name": "Quietus",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7392,
+    "Name": "Bloodspiller",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7393,
+    "Name": "The Blackest Night",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7394,
+    "Name": "Riddle of Earth",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7395,
+    "Name": "Riddle of Fire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7396,
+    "Name": "Brotherhood",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7397,
+    "Name": "Sonic Thrust",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7398,
+    "Name": "Dragon Sight",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7399,
+    "Name": "Mirage Dive",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7400,
+    "Name": "Nastrond",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7401,
+    "Name": "Hellfrog Medium",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7402,
+    "Name": "Bhavacakra",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7403,
+    "Name": "Ten Chi Jin",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7404,
+    "Name": "Pitch Perfect",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7405,
+    "Name": "Troubadour",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7406,
+    "Name": "Caustic Bite",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7407,
+    "Name": "Stormbite",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7408,
+    "Name": "Nature's NaturesMinne",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7409,
+    "Name": "Refulgent Arrow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7410,
+    "Name": "Cooldown",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7411,
+    "Name": "Heated Split Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7412,
+    "Name": "Heated Slug Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7413,
+    "Name": "Heated Clean Shot",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7414,
+    "Name": "Barrel Stabilizer",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7415,
+    "Name": "Rook Overdrive",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7416,
+    "Name": "Rook Overload",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7417,
+    "Name": "Bishop Overload",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7418,
+    "Name": "Flamethrower",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7419,
+    "Name": "Between the Lines",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7420,
+    "Name": "Thunder IV",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7421,
+    "Name": "Triplecast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7422,
+    "Name": "Foul",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7423,
+    "Name": "Aetherpact",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7424,
+    "Name": "Bio III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7425,
+    "Name": "Miasma III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7426,
+    "Name": "Ruin IV",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7427,
+    "Name": "Summon Bahamut",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7428,
+    "Name": "Wyrmwave",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7429,
+    "Name": "Enkindle Bahamut",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7430,
+    "Name": "Thin Air",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7431,
+    "Name": "Stone IV",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7432,
+    "Name": "Divine Benison",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7433,
+    "Name": "Plenary Indulgence",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7434,
+    "Name": "Excogitation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7435,
+    "Name": "Broil II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7436,
+    "Name": "Chain Strategem",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7437,
+    "Name": "Aetherpact",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7438,
+    "Name": "Fey Union",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7439,
+    "Name": "Earthly Star",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7442,
+    "Name": "Malefic III",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7443,
+    "Name": "Minor Arcana",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7444,
+    "Name": "Lord of Crowns",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7445,
+    "Name": "Lady of Crowns",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7447,
+    "Name": "Thunder II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7448,
+    "Name": "Sleeve Draw",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7449,
+    "Name": "Akh Morn",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7450,
+    "Name": "Devotion",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7477,
+    "Name": "Hakaze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7478,
+    "Name": "Jinpu",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7479,
+    "Name": "Shifu",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7480,
+    "Name": "Yukikaze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7481,
+    "Name": "Gekko",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7482,
+    "Name": "Kasha",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7483,
+    "Name": "Fuga",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7484,
+    "Name": "Mangetsu",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7485,
+    "Name": "Oka",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7486,
+    "Name": "Enpi",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7487,
+    "Name": "Midare Setsugekka",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7488,
+    "Name": "Tenka Goken",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7489,
+    "Name": "Higanbana",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7490,
+    "Name": "Hissatsu: Shinten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7491,
+    "Name": "Hissatsu: Kyuten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7492,
+    "Name": "Hissatsu: Gyoten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7493,
+    "Name": "Hissatsu: Yaten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7494,
+    "Name": "Hissatsu: Kaiten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7495,
+    "Name": "Hagakure",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7496,
+    "Name": "Hissatsu: Guren",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7497,
+    "Name": "Meditate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7498,
+    "Name": "Third Eye",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7499,
+    "Name": "Meikyo Shisui",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7500,
+    "Name": "Ageha",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7501,
+    "Name": "Hissatsu: Seigan",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7502,
+    "Name": "Merciful Eyes",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7503,
+    "Name": "Jolt",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7504,
+    "Name": "Riposte",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7505,
+    "Name": "Verthunder",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7506,
+    "Name": "Corps-a-corps",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7507,
+    "Name": "Veraero",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7508,
+    "Name": "Tether",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7509,
+    "Name": "Scatter",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7510,
+    "Name": "Verfire",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7511,
+    "Name": "Verstone",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7512,
+    "Name": "Zwerchhau",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7513,
+    "Name": "Moulinet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7514,
+    "Name": "Vercure",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7515,
+    "Name": "Displacement",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7516,
+    "Name": "Redoublement",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7517,
+    "Name": "Fleche",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7518,
+    "Name": "Acceleration",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7519,
+    "Name": "Contre Sixte",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7520,
+    "Name": "Embolden",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7521,
+    "Name": "Manafication",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7522,
+    "Name": "Impact",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7523,
+    "Name": "Verraise",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7524,
+    "Name": "Jolt II",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7525,
+    "Name": "Verflare",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7526,
+    "Name": "Verholy",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7527,
+    "Name": "Enchanted Riposte",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7528,
+    "Name": "Enchanted Zwerchhau",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7529,
+    "Name": "Enchanted Redoublement",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7530,
+    "Name": "Enchanted Moulinet",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7531,
+    "Name": "Rampart",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7532,
+    "Name": "Convalescence",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7533,
+    "Name": "Provoke",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7534,
+    "Name": "Awareness",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7535,
+    "Name": "Reprisal",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7536,
+    "Name": "Anticipation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7537,
+    "Name": "Shirk",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7538,
+    "Name": "Interject",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7539,
+    "Name": "Ultimatum",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7540,
+    "Name": "Low Blow",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7541,
+    "Name": "Second Wind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7542,
+    "Name": "Bloodbath",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7543,
+    "Name": "Goad",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7544,
+    "Name": "Invigorate",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7545,
+    "Name": "Diversion",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7546,
+    "Name": "True North",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7547,
+    "Name": "Crutch",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7548,
+    "Name": "Arm's Length",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7549,
+    "Name": "Feint",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7550,
+    "Name": "Palisade",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7551,
+    "Name": "Head Graze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7552,
+    "Name": "Arm Graze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7553,
+    "Name": "Foot Graze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7554,
+    "Name": "Leg Graze",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7555,
+    "Name": "Tactician",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7556,
+    "Name": "Refresh",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7557,
+    "Name": "Peloton",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7558,
+    "Name": "Break",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7559,
+    "Name": "Surecast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7560,
+    "Name": "Addle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7561,
+    "Name": "Swiftcast",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7562,
+    "Name": "Lucid Dreaming",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7563,
+    "Name": "Apocatastasis",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7564,
+    "Name": "Drain",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7565,
+    "Name": "Mana Shift",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7566,
+    "Name": "Erase",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7567,
+    "Name": "Cleric Stance",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7568,
+    "Name": "Esuna",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7569,
+    "Name": "Eye for an Eye",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7570,
+    "Name": "Largesse",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7571,
+    "Name": "Rescue",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7572,
+    "Name": "Protect",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7855,
+    "Name": "Hissatsu: Chiten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7857,
+    "Name": "Hissatsu: Soten",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7858,
+    "Name": "Monomachy",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7859,
+    "Name": "Flunge",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7863,
+    "Name": "Leg Sweep",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7864,
+    "Name": "Earth Tackle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7865,
+    "Name": "Wind Tackle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7866,
+    "Name": "Fire Tackle",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7867,
+    "Name": "Iaijutsu",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7868,
+    "Name": "Riddle of Wind",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 7869,
+    "Name": "Dissolve Union",
+    "IsPet": false,
+    "IsItem": false
+  },
+  {
+    "Id": 8324,
+    "Name": "Stellar Detonation",
+    "IsPet": false,
+    "IsItem": false
+  },
+  //Pets
+  {
+    "Id": 0,
+    "Name": "",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 1,
+    "Name": "Away",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 2,
+    "Name": "Heel",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 3,
+    "Name": "Place",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 4,
+    "Name": "Stay",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 5,
+    "Name": "Guard",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 6,
+    "Name": "Steady",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 7,
+    "Name": "Sic",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 8,
+    "Name": "Obey",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 9,
+    "Name": "Gust",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 10,
+    "Name": "Backdraft",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 11,
+    "Name": "Downburst",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 12,
+    "Name": "Shining Emerald",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 13,
+    "Name": "Gouge",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 14,
+    "Name": "Shining Topaz",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 15,
+    "Name": "Curl",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 16,
+    "Name": "Storm",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 17,
+    "Name": "Wind Blade",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 18,
+    "Name": "Shockwave",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 19,
+    "Name": "Aerial Slash",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 20,
+    "Name": "Contagion",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 21,
+    "Name": "Aerial Blast",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 22,
+    "Name": "Rock Buster",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 23,
+    "Name": "Mountain Buster",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 24,
+    "Name": "Earthen Ward",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 25,
+    "Name": "Landslide",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 26,
+    "Name": "Earthen Fury",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 27,
+    "Name": "Crimson Cyclone",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 28,
+    "Name": "Burning Strike",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 29,
+    "Name": "Radiant Shield",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 30,
+    "Name": "Flaming Crush",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 31,
+    "Name": "Inferno",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 32,
+    "Name": "Embrace",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 33,
+    "Name": "Whispering Dawn",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 34,
+    "Name": "Fey Covenant",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 35,
+    "Name": "Fey Illumination",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 36,
+    "Name": "Embrace",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 37,
+    "Name": "Silent Dusk",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 38,
+    "Name": "Fey Caress",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 39,
+    "Name": "Fey Wind",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 40,
+    "Name": "Offensive Mode",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 41,
+    "Name": "Defensive Mode",
+    "IsPet": true,
+    "IsItem": false
+  },
+  {
+    "Id": 4594,
+    "Name": "Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4595,
+    "Name": "Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4596,
+    "Name": "Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4597,
+    "Name": "Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4598,
+    "Name": "Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4599,
+    "Name": "Hi-Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4600,
+    "Name": "Hi-Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4601,
+    "Name": "Hi-Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4602,
+    "Name": "Hi-Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4603,
+    "Name": "Hi-Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4604,
+    "Name": "Mega-Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4605,
+    "Name": "Mega-Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4606,
+    "Name": "Mega-Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4607,
+    "Name": "Mega-Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4608,
+    "Name": "Mega-Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4609,
+    "Name": "X-Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4610,
+    "Name": "X-Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4611,
+    "Name": "X-Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4612,
+    "Name": "X-Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 4613,
+    "Name": "X-Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 12622,
+    "Name": "Draconian Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 12623,
+    "Name": "Draconian Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 12624,
+    "Name": "Draconian Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 12625,
+    "Name": "Draconian Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 12626,
+    "Name": "Draconian Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 14176,
+    "Name": "Max-Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 14177,
+    "Name": "Max-Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 14178,
+    "Name": "Max-Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 14179,
+    "Name": "Max-Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 14180,
+    "Name": "Max-Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 16716,
+    "Name": "Supramax-Potion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 16717,
+    "Name": "Supramax-Potion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 16718,
+    "Name": "Supramax-Potion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 16719,
+    "Name": "Supramax-Potion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 16720,
+    "Name": "Supramax-Potion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 19886,
+    "Name": "Infusion of Strength",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 19887,
+    "Name": "Infusion of Dexterity",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 19888,
+    "Name": "Infusion of Vitality",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 19889,
+    "Name": "Infusion of Intelligence",
+    "IsPet": false,
+    "IsItem": true
+  },
+  {
+    "Id": 19890,
+    "Name": "Infusion of Mind",
+    "IsPet": false,
+    "IsItem": true
+  }
+]

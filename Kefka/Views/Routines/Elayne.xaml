@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="Kefka.Views.Routines.Elayne"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:enums="clr-namespace:Kefka.Models"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:openers="clr-namespace:Kefka.Views.Openers"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <mahAppsControls:MetroAnimatedTabControl>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="{x:Static loc:Strings.RoutineToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Elayne.UseAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DoTs}" IsChecked="{Binding Elayne.UseDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Elayne.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Vercure" IsChecked="{Binding Elayne.UseVercure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Elayne.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Swiftcast}" IsChecked="{Binding Elayne.UseSwiftcast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Elayne.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Contre Sixte" IsChecked="{Binding Elayne.UseContraSixte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Embolden" IsChecked="{Binding Elayne.UseEmbolden, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Displacement" IsChecked="{Binding Elayne.UseDisplacement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Corps-a-corps" IsChecked="{Binding Elayne.UseCorpsacorps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Vercure in CAssist" IsChecked="{Binding Elayne.UseVercureInNonAutonomous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Diversion" IsChecked="{Binding Elayne.UseDiversion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Verraise" IsChecked="{Binding Elayne.UseVerraise, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Save SC for Verraise" IsChecked="{Binding Elayne.UseSwiftcastForVerraise, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.OverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Elayne.ShowAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Elayne.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DoTs}" IsChecked="{Binding Elayne.ShowDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Vercure" IsChecked="{Binding Elayne.ShowVercure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Elayne.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Swiftcast}" IsChecked="{Binding Elayne.ShowSwiftcast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Elayne.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Contre Sixte" IsChecked="{Binding Elayne.ShowContreSixte, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Embolden" IsChecked="{Binding Elayne.ShowEmbolden, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Displacement" IsChecked="{Binding Elayne.ShowDisplacement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Corps-a-corps" IsChecked="{Binding Elayne.ShowCorpsacorps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Vercure in CAssist" IsChecked="{Binding Elayne.ShowVercureInNonAutonomous, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Diversion" IsChecked="{Binding Elayne.ShowDiversion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Verraise" IsChecked="{Binding Elayne.ShowVerraise, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Save SC for Verraise" IsChecked="{Binding Elayne.ShowUseSwiftcastForVerraise, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="{x:Static loc:Strings.RefreshTimersMiscSettings}">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <UniformGrid Grid.Row="0">
+                        </UniformGrid>
+
+                        <Separator Grid.Row="1" Margin="0, 0, 0, 10" />
+
+                        <UniformGrid Grid.Row="2" Columns="2" HorizontalAlignment="Center">
+                            <CheckBox HorizontalAlignment="Center" Content="Melee Combo" IsChecked="{Binding Elayne.UseMelee, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="50"  Increment="5"  LabelContent="Manafication levels" Value="{Binding Elayne.ManaficationLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Melee Combo Min Mana" Value="{Binding Elayne.MeleeComboMinManaInt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="{x:Static loc:Strings.SelfHealPct}" Value="{Binding Elayne.SelfHealPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Verraise Min MP %" Value="{Binding Elayne.VerraiseMinMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="3" Header="{x:Static loc:Strings.AoESettings}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+                            <CheckBox HorizontalAlignment="Center" Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Elayne.UseAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="{x:Static loc:Strings.AoETargets}" Value="{Binding Elayne.MobCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Hotkeys}">
+            <mahAppsControls:MetroTabItem.DataContext>
+                <viewModels:HotkeysViewModel />
+            </mahAppsControls:MetroTabItem.DataContext>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Columns="5" HorizontalAlignment="Center">
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.AoE}" ModKeySetting="{Binding Elayne.AoEModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.AoEKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Buffs}" ModKeySetting="{Binding Elayne.BuffsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.BuffsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.DoTs}" ModKeySetting="{Binding Elayne.DoTsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.DoTsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Contre Sixte" ModKeySetting="{Binding Elayne.ContreSixteModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.ContreSixteKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Potion}" ModKeySetting="{Binding Elayne.PotionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.PotionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Swiftcast}" ModKeySetting="{Binding Elayne.SwiftcastModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.SwiftcastKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Vercure" ModKeySetting="{Binding Elayne.VercureModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.VercureKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Opener}" ModKeySetting="{Binding Elayne.OpenerModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.OpenerKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Embolden" ModKeySetting="{Binding Elayne.EmboldenModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.EmboldenKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Displacement" ModKeySetting="{Binding Elayne.DisplacementModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.DisplacementKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Corps-a-corps" ModKeySetting="{Binding Elayne.CorpsacorpsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.CorpsacorpsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Melee" ModKeySetting="{Binding Elayne.MeleeModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.MeleeKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Diversion" ModKeySetting="{Binding Elayne.DiversionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.DiversionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Verraise" ModKeySetting="{Binding Elayne.VerraiseModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.VerraiseKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+                <Separator Grid.Row="1" Margin="10" />
+                <Label Grid.Row="2" HorizontalAlignment="Center" Content="Preset Hotkeys" />
+                <UniformGrid Grid.Row="3" Columns="5" VerticalAlignment="Top">
+                    <controls:HotkeyControl Text="{Binding Elayne.PresetNames.Preset1Name}" ModKeySetting="{Binding Elayne.Preset1Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.Preset1Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Elayne.PresetNames.Preset2Name}" ModKeySetting="{Binding Elayne.Preset2Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.Preset2Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Elayne.PresetNames.Preset3Name}" ModKeySetting="{Binding Elayne.Preset3Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.Preset3Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Elayne.PresetNames.Preset4Name}" ModKeySetting="{Binding Elayne.Preset4Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.Preset4Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Elayne.PresetNames.Preset5Name}" ModKeySetting="{Binding Elayne.Preset5Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Elayne.Preset5Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Opener}">
+            <openers:Elayne_Opener />
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="Presets">
+            <Grid Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.DataContext>
+                    <viewModels:ElaynePresetsViewModel />
+                </Grid.DataContext>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Load" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadSettings}" />
+                    <Button Grid.Column="1" Content="Save" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SaveSettingsAs}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Set Preset 1" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset1}" />
+                    <Button Grid.Column="1" Content="Set Preset 2" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset2}" />
+                    <Button Grid.Column="2" Content="Set Preset 3" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset3}" />
+                    <Button Grid.Column="3" Content="Set Preset 4" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset4}" />
+                    <Button Grid.Column="4" Content="Set Preset 5" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset5}" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset1}" />
+                    <Button Grid.Column="1" Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset2}" />
+                    <Button Grid.Column="2" Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset3}" />
+                    <Button Grid.Column="3" Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset4}" />
+                    <Button Grid.Column="4" Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset5}" />
+                </Grid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

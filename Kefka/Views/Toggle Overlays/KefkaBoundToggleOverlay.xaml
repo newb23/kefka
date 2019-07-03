@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="Kefka.Views.KefkaBoundToggleOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+        xmlns:toggleOverlays="clr-namespace:Kefka.Views.Toggle_Overlays"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+
+    <UserControl.Background>
+        <SolidColorBrush Color="Black" Opacity="{Binding Settings.ToggleOverlayOpacity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+    </UserControl.Background>
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <toggleOverlays:Shadow x:Key="Shadow" />
+            <toggleOverlays:Barret x:Key="Barret" />
+            <toggleOverlays:Beatrix x:Key="Beatrix" />
+            <toggleOverlays:Cecil x:Key="Cecil" />
+            <toggleOverlays:Cyan x:Key="Cyan" />
+            <toggleOverlays:Edward x:Key="Edward" />
+            <toggleOverlays:Eiko x:Key="Eiko" />
+            <toggleOverlays:Elayne x:Key="Elayne" />
+            <toggleOverlays:Freya x:Key="Freya" />
+            <toggleOverlays:Mikoto x:Key="Mikoto" />
+            <toggleOverlays:Paine x:Key="Paine" />
+            <toggleOverlays:Remiel x:Key="Remiel" />
+            <toggleOverlays:Sabin x:Key="Sabin" />
+            <toggleOverlays:Surito x:Key="Surito" />
+            <toggleOverlays:Vivi x:Key="Vivi" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border MouseWheel="UIElement_OnMouseWheel">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <CheckBox Grid.Row="0" Grid.Column="2" Content="Info" IsChecked="{Binding Settings.UsePositionalOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+                <CheckBox Grid.Row="0" Grid.Column="3" Content="Enemy" IsChecked="{Binding Settings.UseEnemyOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+                <Button Grid.Row="0" Grid.Column="4" Content="{iconPacks:PackIconMaterial Palette}" Click="ChangeColors" />
+                <Button Grid.Row="0" Grid.Column="5" Content="{iconPacks:PackIconMaterial Settings}" Command="{Binding OpenSettingsForm}" />
+                <Button Grid.Row="0" Grid.Column="6" Content="{iconPacks:PackIconMaterial WindowClose}" Click="Close" Command="{Binding DisableToggleOverlayCommand}" />
+            </Grid>
+
+            <ContentControl>
+                <ContentControl.Style>
+                    <Style TargetType="{x:Type ContentControl}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Shadow">
+                                <Setter Property="Content" Value="{StaticResource Shadow}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Barret">
+                                <Setter Property="Content" Value="{StaticResource Barret}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Beatrix">
+                                <Setter Property="Content" Value="{StaticResource Beatrix}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Cecil">
+                                <Setter Property="Content" Value="{StaticResource Cecil}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Cyan">
+                                <Setter Property="Content" Value="{StaticResource Cyan}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Edward">
+                                <Setter Property="Content" Value="{StaticResource Edward}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Eiko">
+                                <Setter Property="Content" Value="{StaticResource Eiko}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Elayne">
+                                <Setter Property="Content" Value="{StaticResource Elayne}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Freya">
+                                <Setter Property="Content" Value="{StaticResource Freya}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Mikoto">
+                                <Setter Property="Content" Value="{StaticResource Mikoto}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Paine">
+                                <Setter Property="Content" Value="{StaticResource Paine}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Remiel">
+                                <Setter Property="Content" Value="{StaticResource Remiel}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Sabin">
+                                <Setter Property="Content" Value="{StaticResource Sabin}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Surito">
+                                <Setter Property="Content" Value="{StaticResource Surito}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Settings.CurrentRoutine}" Value="Vivi">
+                                <Setter Property="Content" Value="{StaticResource Vivi}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+        </StackPanel>
+    </Border>
+</UserControl>

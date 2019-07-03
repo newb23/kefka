@@ -1,0 +1,278 @@
+﻿<UserControl x:Class="Kefka.Views.Routines.Edward"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:enums="clr-namespace:Kefka.Models"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:openers="clr-namespace:Kefka.Views.Openers"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:utilities="clr-namespace:Kefka.Utilities"
+             xmlns:mahAppsControls="clr-namespace:KefkaUI.Metro.Controls;assembly=KefkaUI.Metro"
+             mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <utilities:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <mahAppsControls:MetroAnimatedTabControl>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.General}">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Expander Margin="2" Grid.Row="0" Header="{x:Static loc:Strings.RoutineToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Sing}" IsChecked="{Binding Edward.UseSongs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Edward.UseBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Feint}" IsChecked="{Binding Edward.UseFeint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DoTs}" IsChecked="{Binding Edward.UseDots, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Paean}" IsChecked="{Binding Edward.UsePaean, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Foe Requiem" IsChecked="{Binding Edward.UseFoeRequiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Edward.UseOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Peloton}" IsChecked="{Binding Edward.UsePeloton, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Sidewinder}" IsChecked="{Binding Edward.UseSidewinder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Edward.UseDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Battle Voice" IsChecked="{Binding Edward.UseBattleVoice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.MiserysEnd}" IsChecked="{Binding Edward.UseMiserysEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Edward.UseInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Edward.UncheckUseManualInterruptCommand}" />
+                        <CheckBox Content="{x:Static loc:Strings.RepellingShot}" IsChecked="{Binding Edward.UseRepellingShot, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Edward.UseManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Edward.UncheckUseInterruptListCommand}" />
+                        <CheckBox Content="Manual Minne" IsChecked="{Binding Edward.UseManualNaturesMinne, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Edward.UncheckUseTargetNaturesMinneCommand}" />
+                        <CheckBox Content="Minne Target" IsChecked="{Binding Edward.UseTargetNaturesMinne, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Edward.UncheckUseManualNaturesMinneCommand}" />
+                        <CheckBox Content="Manual Palisade" IsChecked="{Binding Edward.UseManualPalisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Edward.UncheckUsePalisadeTargetCommand}" />
+                        <CheckBox Content="Palisade Target" IsChecked="{Binding Edward.UseTargetPalisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding Edward.UncheckUseManualPalisadeCommand}" />
+                        <CheckBox Content="Buster Palisade" IsChecked="{Binding Edward.UseBusterPalisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+                <Expander Margin="2" Grid.Row="1" Header="{x:Static loc:Strings.OverlayToggles}">
+                    <UniformGrid Columns="3" HorizontalAlignment="Center">
+                        <CheckBox Content="{x:Static loc:Strings.Sing}" IsChecked="{Binding Edward.ShowSongs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Cure}" IsChecked="{Binding Edward.ShowCure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Buffs}" IsChecked="{Binding Edward.ShowBuffs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Feint}" IsChecked="{Binding Edward.ShowFeint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DoTs}" IsChecked="{Binding Edward.ShowDots, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Paean}" IsChecked="{Binding Edward.ShowPaean, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Foe Requiem" IsChecked="{Binding Edward.ShowFoeRequiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Opener}" IsChecked="{Binding Edward.ShowOpener, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Peloton}" IsChecked="{Binding Edward.ShowPeloton, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.Sidewinder}" IsChecked="{Binding Edward.ShowSidewinder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.DPSPotion}" IsChecked="{Binding Edward.ShowDpsPotion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Battle Voice" IsChecked="{Binding Edward.ShowBattleVoice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.MiserysEnd}" IsChecked="{Binding Edward.ShowMiserysEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.InterruptList}" IsChecked="{Binding Edward.ShowInterruptList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.RepellingShot}" IsChecked="{Binding Edward.ShowRepellingShot, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="{x:Static loc:Strings.ManualInterrupt}" IsChecked="{Binding Edward.ShowManualInterrupt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Manual Minne" IsChecked="{Binding Edward.ShowManualNaturesMinne, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Minne Target" IsChecked="{Binding Edward.ShowTargetNaturesMinne, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Manual Palisade" IsChecked="{Binding Edward.ShowManualPalisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Palisade Target" IsChecked="{Binding Edward.ShowTargetPalisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Content="Buster Palisade" IsChecked="{Binding Edward.ShowBusterPalisade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </UniformGrid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="2" Header="{x:Static loc:Strings.AoESettings}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Margin="2" Grid.Row="0" HorizontalAlignment="Center">
+                            <CheckBox HorizontalAlignment="Center" Content="{x:Static loc:Strings.AoE}" IsChecked="{Binding Edward.UseAoE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+
+                        <UniformGrid Margin="2" Grid.Row="1" HorizontalAlignment="Center">
+                            <CheckBox Content="{x:Static loc:Strings.MultiDoT}" IsChecked="{Binding Edward.UseMultiDoT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="{x:Static loc:Strings.RainofDeath}" IsChecked="{Binding Edward.UseRainofDeath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox Content="{x:Static loc:Strings.AoEBeforeDoTs}" IsChecked="{Binding Edward.UseAoEBeforeDoTs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+
+                        <UniformGrid Margin="2" Grid.Row="2" HorizontalAlignment="Center" Columns="2">
+                            <controls:KefkaIntNumeric Margin="2" HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="1000"  Increment="10"  LabelContent="{x:Static loc:Strings.MinimumTP}" Value="{Binding Edward.TpLimit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="{x:Static loc:Strings.MultiDoTTargetMax}" Value="{Binding Edward.MultiDoTTargetMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="{x:Static loc:Strings.RoDMobCount}" Value="{Binding Edward.RoDMobCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="10"  Increment="1"  LabelContent="{x:Static loc:Strings.AoETargets}" Value="{Binding Edward.MobCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+                    </Grid>
+                </Expander>
+
+                <Expander Margin="2" Grid.Row="3" Header="Misc Settings">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Margin="2" Grid.Row="0" HorizontalAlignment="Center">
+                            <CheckBox HorizontalAlignment="Center" Content="{x:Static loc:Strings.Sing}" IsChecked="{Binding Edward.UseSongs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox HorizontalAlignment="Center" Content="Troubadour" IsChecked="{Binding Edward.UseTroubadour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <StackPanel Margin="2" HorizontalAlignment="Center">
+                                <ComboBox Tag="Troubadour Song Selection" Margin="2" MinWidth="230" SelectedValue="{Binding Edward.TroubadourSongSelection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={utilities:EnumBindingSource {x:Type enums:TroubadourSongSelection}}}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="5000" LabelContent="Foes MP %" Value="{Binding Edward.FoesMpRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+
+                        <Separator Margin="0, 10, 0, 10" Grid.Row="2" />
+
+                        <UniformGrid Margin="2" Grid.Row="3" Columns="2" HorizontalAlignment="Center">
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.WindbiteRefresh}" Value="{Binding Edward.WindBiteRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="20000"  Increment="100"  LabelContent="{x:Static loc:Strings.VenomousBiteRefresh}" Value="{Binding Edward.VenomBiteRfsh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="5000"  Increment="100"  LabelContent="Iron Jaws RS Refresh" Value="{Binding Edward.IronJawsRsRefresh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+
+                        <Separator Margin="0, 10, 0, 10" Grid.Row="4" />
+
+                        <UniformGrid Margin="2" Grid.Row="5" Columns="2" HorizontalAlignment="Center">
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Nature's Minne HP %" Value="{Binding Edward.NaturesMinneHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Palisade HP %" Value="{Binding Edward.PalisadeHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="{x:Static loc:Strings.SecondWindHP}" Value="{Binding Edward.SecondWindHpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="3"  Increment="1"  LabelContent="Repertoire Count" Value="{Binding Edward.RepertoireCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+
+                        <Separator Margin="0, 10, 0, 10" Grid.Row="6" />
+
+                        <UniformGrid Margin="2" Grid.Row="7" Columns="2" HorizontalAlignment="Center">
+                            <CheckBox HorizontalAlignment="Center" Content="Tactician" IsChecked="{Binding Edward.UseTactician, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox HorizontalAlignment="Center" Content="Refresh" IsChecked="{Binding Edward.UseRefresh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Tactician TP %" Value="{Binding Edward.TacticianTpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="100"  Increment="10"  LabelContent="Refresh MP %" Value="{Binding Edward.RefreshMpPct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="8"  Increment="1"  LabelContent="Tactician Member Count" Value="{Binding Edward.TacticianMemberCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:KefkaIntNumeric Margin="2" MinWidth="230" MinValue="0" MaxValue="8"  Increment="1"  LabelContent="Refresh Member Count" Value="{Binding Edward.RefreshMemberCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </UniformGrid>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Hotkeys}">
+            <mahAppsControls:MetroTabItem.DataContext>
+                <viewModels:HotkeysViewModel />
+            </mahAppsControls:MetroTabItem.DataContext>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <UniformGrid Columns="5" HorizontalAlignment="Center">
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.RepelShot}" ModKeySetting="{Binding Edward.RepellingShotModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.RepellingShotKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Buffs}" ModKeySetting="{Binding Edward.BuffsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.BuffsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.MiserysEnd}" ModKeySetting="{Binding Edward.MiserysEndModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.MiserysEndKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Foe Requiem" ModKeySetting="{Binding Edward.FoeRequiemModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.FoeRequiemKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Potion}" ModKeySetting="{Binding Edward.PotionModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.PotionKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Sidewinder}" ModKeySetting="{Binding Edward.SidewinderModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.SidewinderKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.AoE}" ModKeySetting="{Binding Edward.AoEModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.AoEKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Feint}" ModKeySetting="{Binding Edward.FeintModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.FeintKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.BluntArrow}" ModKeySetting="{Binding Edward.InterruptModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.InterruptKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.DoTs}" ModKeySetting="{Binding Edward.DotsModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.DotsKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Sing}" ModKeySetting="{Binding Edward.SingModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.SingKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Opener}" ModKeySetting="{Binding Edward.OpenerModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.OpenerKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.RoDBloodletter}" ModKeySetting="{Binding Edward.RoDModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.RoDKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{x:Static loc:Strings.Peloton}" ModKeySetting="{Binding Edward.PelotonModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.PelotonKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Troubadour" ModKeySetting="{Binding Edward.TroubadourModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.TroubadourKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Refresh" ModKeySetting="{Binding Edward.RefreshModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.RefreshKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="Tactician" ModKeySetting="{Binding Edward.TacticianModifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.TacticianKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+                <Separator Grid.Row="1" Margin="10" />
+                <Label Grid.Row="2" HorizontalAlignment="Center" Content="Preset Hotkeys" />
+                <UniformGrid Grid.Row="3" Columns="5" VerticalAlignment="Top">
+                    <controls:HotkeyControl Text="{Binding Edward.PresetNames.Preset1Name}" ModKeySetting="{Binding Edward.Preset1Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.Preset1Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Edward.PresetNames.Preset2Name}" ModKeySetting="{Binding Edward.Preset2Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.Preset2Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Edward.PresetNames.Preset3Name}" ModKeySetting="{Binding Edward.Preset3Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.Preset3Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Edward.PresetNames.Preset4Name}" ModKeySetting="{Binding Edward.Preset4Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.Preset4Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls:HotkeyControl Text="{Binding Edward.PresetNames.Preset5Name}" ModKeySetting="{Binding Edward.Preset5Modifier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeySetting="{Binding Edward.Preset5Key, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </UniformGrid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.Opener}">
+            <openers:Edward_Opener />
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="Presets">
+            <Grid Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.DataContext>
+                    <viewModels:EdwardPresetsViewModel />
+                </Grid.DataContext>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Load" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadSettings}" />
+                    <Button Grid.Column="1" Content="Save" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SaveSettingsAs}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Set Preset 1" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset1}" />
+                    <Button Grid.Column="1" Content="Set Preset 2" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset2}" />
+                    <Button Grid.Column="2" Content="Set Preset 3" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset3}" />
+                    <Button Grid.Column="3" Content="Set Preset 4" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset4}" />
+                    <Button Grid.Column="4" Content="Set Preset 5" HorizontalAlignment="Center" MinWidth="80" Command="{Binding SetPreset5}" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="{Binding Presets.Preset1Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset1}" />
+                    <Button Grid.Column="1" Content="{Binding Presets.Preset2Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset2}" />
+                    <Button Grid.Column="2" Content="{Binding Presets.Preset3Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset3}" />
+                    <Button Grid.Column="3" Content="{Binding Presets.Preset4Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset4}" />
+                    <Button Grid.Column="4" Content="{Binding Presets.Preset5Name}" HorizontalAlignment="Center" MinWidth="80" Command="{Binding LoadPreset5}" />
+                </Grid>
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        <mahAppsControls:MetroTabItem Header="PvP">
+            <Grid HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <CheckBox Content="Manual Blunt Arrow" IsChecked="{Binding Edward.PvPManualBluntArrow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </mahAppsControls:MetroTabItem>
+        
+    </mahAppsControls:MetroAnimatedTabControl>
+</UserControl>

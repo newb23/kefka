@@ -1,0 +1,714 @@
+[
+  {
+    "NpcName": "Fire Sprite",
+    "NpcId": 116,
+    "SpellName": "Fire",
+    "SpellId": 966,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Lightning Sprite",
+    "NpcId": 117,
+    "SpellName": "Thunder",
+    "SpellId": 968,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Owlbear",
+    "NpcId": 3533,
+    "SpellName": "Gust",
+    "SpellId": 917,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Young Melia",
+    "NpcId": 4713,
+    "SpellName": "Rise and Fall",
+    "SpellId": 4700,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Young Melia",
+    "NpcId": 4713,
+    "SpellName": "Canopy",
+    "SpellId": 4701,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Firedrone Scout",
+    "NpcId": 4724,
+    "SpellName": "Grenado",
+    "SpellId": 4484,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Mark II Limpet Bomb",
+    "NpcId": 2749,
+    "SpellName": "Blaze Spikes",
+    "SpellId": 311,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "U'Ghamaro Patrolman",
+    "NpcId": 2715,
+    "SpellName": "Titan's Boon",
+    "SpellId": 553,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Mark II Limpet Bomb",
+    "NpcId": 2749,
+    "SpellName": "Detonator",
+    "SpellId": 1007,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Shelfclaw Reaver",
+    "NpcId": 345,
+    "SpellName": "Footwork",
+    "SpellId": 476,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Shelftooth Guard",
+    "NpcId": 2681,
+    "SpellName": "Water",
+    "SpellId": 971,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Giant Banestool",
+    "NpcId": 2316,
+    "SpellName": "Poison Spore",
+    "SpellId": 1784,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Violet Snarl",
+    "NpcId": 2318,
+    "SpellName": "Paralyze",
+    "SpellId": 308,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Sylpheed Wail",
+    "NpcId": 2320,
+    "SpellName": "Shock Spikes",
+    "SpellId": 313,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Sleet Trap",
+    "NpcId": 3488,
+    "SpellName": "Swift Sough",
+    "SpellId": 346,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Coldwind Bateleur",
+    "NpcId": 3477,
+    "SpellName": "Wing Cutter",
+    "SpellId": 331,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Desert Peiste",
+    "NpcId": 305,
+    "SpellName": "Body Slam",
+    "SpellId": 497,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Desert Peiste",
+    "NpcId": 305,
+    "SpellName": "Cold Gaze",
+    "SpellId": 498,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Doomed Gigantoad",
+    "NpcId": 865,
+    "SpellName": "Labored Leap",
+    "SpellId": 1006,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Tamed Hropken",
+    "NpcId": 4797,
+    "SpellName": "Foul Waters",
+    "SpellId": 4490,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Zuro Roggo",
+    "NpcId": 4805,
+    "SpellName": "Water Bomb",
+    "SpellId": 5537,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Zuro Roggo",
+    "NpcId": 4805,
+    "SpellName": "Toy Hammer",
+    "SpellId": 5539,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Spriggan Doorkeeper",
+    "NpcId": 4800,
+    "SpellName": "Romp",
+    "SpellId": 399,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Massive Marolith",
+    "NpcId": 4798,
+    "SpellName": "Isle Drop",
+    "SpellId": 4456,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Ziggy",
+    "NpcId": 4808,
+    "SpellName": "Jittering Glare",
+    "SpellId": 5545,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Stardust",
+    "NpcId": 4810,
+    "SpellName": "Mystic Light",
+    "SpellId": 5549,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Ziggy",
+    "NpcId": 4808,
+    "SpellName": "Gyrating Glare",
+    "SpellId": 5547,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Centaur",
+    "NpcId": 4804,
+    "SpellName": "Rear",
+    "SpellId": 5889,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Centaur",
+    "NpcId": 4804,
+    "SpellName": "Berserk",
+    "SpellId": 5888,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Wind-up Viking",
+    "NpcId": 4802,
+    "SpellName": "Raging Axe",
+    "SpellId": 5891,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Wind-up Magus",
+    "NpcId": 4803,
+    "SpellName": "Starstorm",
+    "SpellId": 5892,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Calca",
+    "NpcId": 4811,
+    "SpellName": "Heat Gaze",
+    "SpellId": 5551,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Brina",
+    "NpcId": 4812,
+    "SpellName": "Heat Gaze",
+    "SpellId": 5552,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Calcabrina",
+    "NpcId": 4813,
+    "SpellName": "Knockout",
+    "SpellId": 5556,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Calcabrina",
+    "NpcId": 4813,
+    "SpellName": "Brace",
+    "SpellId": 5557,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Calcabrina",
+    "NpcId": 4813,
+    "SpellName": "Dollhouse",
+    "SpellId": 5561,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Grenade",
+    "NpcId": 270,
+    "SpellName": "Enfire",
+    "SpellId": 426,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Grenade",
+    "NpcId": 270,
+    "SpellName": "Detonator",
+    "SpellId": 1007,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Earth Sprite",
+    "NpcId": 113,
+    "SpellName": "Stone",
+    "SpellId": 970,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Quartz Doblyn",
+    "NpcId": 275,
+    "SpellName": "Shatter",
+    "SpellId": 516,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Basilisk",
+    "NpcId": 304,
+    "SpellName": "Stone Gaze",
+    "SpellId": 499,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Blaster",
+    "NpcId": 4699,
+    "SpellName": "Mind Blast",
+    "SpellId": 5619,
+    "CanStun": false,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Glassy-eyed Cobra",
+    "NpcId": 4690,
+    "SpellName": "Steel Scales",
+    "SpellId": 5794,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Gobbledygawker",
+    "NpcId": 4701,
+    "SpellName": "Oogle",
+    "SpellId": 5788,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Dexter",
+    "NpcId": 4634,
+    "SpellName": "Serpentine Strike",
+    "SpellId": 5150,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Ark Morbol",
+    "NpcId": 4619,
+    "SpellName": "Bad Breath",
+    "SpellId": 604,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Ark Anzu",
+    "NpcId": 4607,
+    "SpellName": "Transonic Blast",
+    "SpellId": 4706,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Cloudlarker",
+    "NpcId": 4608,
+    "SpellName": "Alpine Draft",
+    "SpellId": 5167,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Hybodus Pup",
+    "NpcId": 4610,
+    "SpellName": "Bite and Run",
+    "SpellId": 5166,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Hydrocore",
+    "NpcId": 4612,
+    "SpellName": "Water",
+    "SpellId": 5168,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "The Pagan's Knot",
+    "NpcId": 4614,
+    "SpellName": "Venom Puff",
+    "SpellId": 5372,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Teredo Moth",
+    "NpcId": 4617,
+    "SpellName": "Poison Dust",
+    "SpellId": 4657,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "The Pagan's Vine",
+    "NpcId": 4616,
+    "SpellName": "Clearout",
+    "SpellId": 5302,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "The Pagan's Vine",
+    "NpcId": 4616,
+    "SpellName": "Wallop",
+    "SpellId": 5303,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Blackguard",
+    "NpcId": 4622,
+    "SpellName": "Deathstrike",
+    "SpellId": 5195,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Violet Sigh",
+    "NpcId": 2317,
+    "SpellName": "Thunder",
+    "SpellId": 968,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Violet Sigh",
+    "NpcId": 2317,
+    "SpellName": "Shock Spikes",
+    "SpellId": 313,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Violet Screech",
+    "NpcId": 2319,
+    "SpellName": "Enthunder",
+    "SpellId": 430,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Axolotl",
+    "NpcId": 1831,
+    "SpellName": "Bog Bomb",
+    "SpellId": 978,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Elite Roundsman",
+    "NpcId": 2518,
+    "SpellName": "Titan's Boon",
+    "SpellId": 553,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Outloth Steeldrone",
+    "NpcId": 4720,
+    "SpellName": "Heart Breach",
+    "SpellId": 4482,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Espertype Magitek Vangob G-III",
+    "NpcId": 3602,
+    "SpellName": "Bomb Spread",
+    "SpellId": 4498,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Goblin Glider",
+    "NpcId": 3601,
+    "SpellName": "Bomb Toss",
+    "SpellId": 405,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Great Morbol",
+    "NpcId": 3605,
+    "SpellName": "Offal Breath",
+    "SpellId": 4532,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Great Morbol",
+    "NpcId": 3605,
+    "SpellName": "Quaver",
+    "SpellId": 4531,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Hellhound",
+    "NpcId": 4620,
+    "SpellName": "Abyssal Cry",
+    "SpellId": 5197,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Melia",
+    "NpcId": 3568,
+    "SpellName": "Rise and Fall",
+    "SpellId": 4700,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Melia",
+    "NpcId": 3568,
+    "SpellName": "Canopy",
+    "SpellId": 4701,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Sturm Doll",
+    "NpcId": 3746,
+    "SpellName": "Kugelblitz",
+    "SpellId": 5815,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Quickthinx Allthoughts",
+    "NpcId": 3376,
+    "SpellName": "Sizzlespark",
+    "SpellId": 5615,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Loaghtan",
+    "NpcId": 3571,
+    "SpellName": "Head Butt",
+    "SpellId": 520,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Snipper",
+    "NpcId": 560,
+    "SpellName": "Bubble Shower",
+    "SpellId": 566,
+    "CanStun": true,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Kokoroon Quickfingers",
+    "NpcId": 858,
+    "SpellName": "Faze",
+    "SpellId": 495,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Rutting Buffalo",
+    "NpcId": 894,
+    "SpellName": "Pulverizing Pound",
+    "SpellId": 545,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Rutting Buffalo",
+    "NpcId": 894,
+    "SpellName": "Seismic Rift",
+    "SpellId": 547,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Large Buffalo",
+    "NpcId": 1313,
+    "SpellName": "Pulverizing Pound",
+    "SpellId": 545,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Butting Buffalo",
+    "NpcId": 1608,
+    "SpellName": "Seismic Rift",
+    "SpellId": 547,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Goobbue",
+    "NpcId": 353,
+    "SpellName": "Moldy Sneeze",
+    "SpellId": 579,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Grass Raptor",
+    "NpcId": 411,
+    "SpellName": "Foul Breath",
+    "SpellId": 317,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Celphie",
+    "NpcId": 4519,
+    "SpellName": "Ä§ÑÛ",
+    "SpellId": 5434,
+    "CanStun": false,
+    "CanSilence": true
+  },
+  {
+    "NpcName": "Blaster Mirage",
+    "NpcId": 4700,
+    "SpellName": "Mind Blast",
+    "SpellId": 5630,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Mirka",
+    "NpcId": 4362,
+    "SpellName": "Northerlies",
+    "SpellId": 4939,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Glassy-eyed Cobra",
+    "NpcId": 4690,
+    "SpellName": "Steel Scales",
+    "SpellId": 5517,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Gaelicat",
+    "NpcId": 3494,
+    "SpellName": "Yowl",
+    "SpellId": 4507,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Dravanian Outwalker",
+    "NpcId": 1673,
+    "SpellName": "Levinshower",
+    "SpellId": 518,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Carrier Ziz",
+    "NpcId": 1674,
+    "SpellName": "Poison Breath",
+    "SpellId": 507,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Crawler",
+    "NpcId": 3603,
+    "SpellName": "Sticky Thread",
+    "SpellId": 4452,
+    "CanStun": false,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Crawler",
+    "NpcId": 3603,
+    "SpellName": "Poison Breath",
+    "SpellId": 4453,
+    "CanStun": true,
+    "CanSilence": false
+  },
+  {
+    "NpcName": "Sun Bear",
+    "NpcId": 3606,
+    "SpellName": "Savage Swipe",
+    "SpellId": 4708,
+    "CanStun": true,
+    "CanSilence": false
+  }
+]

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Kefka.Views.Advanced.UIOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Kefka.Controls"
+             xmlns:loc="clr-namespace:Kefka.Properties"
+             xmlns:viewModels="clr-namespace:Kefka.ViewModels">
+
+    <UserControl.DataContext>
+        <viewModels:SettingsViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <StackPanel>
+            <CheckBox Content="{x:Static loc:Strings.UseEnemyOverlay}" IsChecked="{Binding Settings.UseEnemyOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+            <CheckBox Content="Show Enemy Overlay DPS" IsChecked="{Binding Settings.ShowEnemyOverlayDps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+            <CheckBox Content="Show Enemy Overlay TTD" IsChecked="{Binding Settings.ShowEnemyOverlayTtd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+            <CheckBox Content="{x:Static loc:Strings.UseToggleOverlay}" IsChecked="{Binding Settings.UseToggleOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+            <CheckBox Content="{x:Static loc:Strings.UsePositionalInformationOverlay}" IsChecked="{Binding Settings.UsePositionalOverlay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding OverlayViewUpdate}" />
+            <CheckBox Content="{x:Static loc:Strings.HideUnauthorizedProducts}" IsChecked="{Binding Settings.HideUnauthorizedProducts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox Content="Show Toast Messages" IsChecked="{Binding Settings.ShowToastMessages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox Content="{x:Static loc:Strings.OverrideLogColor}" IsChecked="{Binding Settings.OverrideLogColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="{x:Static loc:Strings.LogColor}" Margin="2" Width="80" Command="{Binding OpenColorPickerLogCommand}" />
+            <Button Content="{x:Static loc:Strings.HotkeyColor}" Margin="2" Width="80" Command="{Binding OpenColorPickerToastCommand}" />
+            <Button Content="Overlay Reset" Margin="0,2,0,20" Width="80" Command="{Binding OverlayResetCommand}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="25" LabelContent="{x:Static loc:Strings.RowsInToggleOverlay}" Value="{Binding Settings.GridRows, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <controls:KefkaIntNumeric HorizontalAlignment="Left" MinWidth="230" MinValue="0" MaxValue="500" Increment="5" LabelContent="Info Overlay Size" Value="{Binding Settings.InfoOverlaySize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </Grid>
+</UserControl>
