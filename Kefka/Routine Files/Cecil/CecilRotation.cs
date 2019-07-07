@@ -1,14 +1,12 @@
-﻿using Buddy.Coroutines;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using Kefka.Models;
-using static Kefka.Utilities.Constants;
-using System.Linq;
-using System.Threading.Tasks;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
-using static Kefka.Utilities.Extensions.GameObjectExtensions;
-using Auras = Kefka.Routine_Files.General.Auras;
+using static Kefka.Utilities.Constants;
 
 namespace Kefka.Routine_Files.Cecil
 {

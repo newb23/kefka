@@ -11,7 +11,6 @@ namespace Kefka.ViewModels
     {
         private static SpellLogViewModel _instance;
         public static SpellLogViewModel Instance => _instance ?? (_instance = new SpellLogViewModel());
-        public ICommand TransferSpellToInterruptsCommand => new DelegateCommand<SpellInfo>(TransferSpellToInterrupts);
         public ICommand TransferSpellToTankbustersCommand => new DelegateCommand<SpellInfo>(TransferSpellToTankbusters);
 
         private static ThreadSafeObservableCollection<SpellInfo> spellLogCollection;
@@ -47,24 +46,7 @@ namespace Kefka.ViewModels
             });
         }
 
-        private void TransferSpellToInterrupts(SpellInfo spell)
-        {
-            if (spell == null)
-                return;
-
-            if (InterruptViewModel.Instance.GuiInterruptsList.Any(r => r.SpellId == spell.SpellId))
-                return;
-
-            Logger.KefkaLog(@"Adding {0} to the Interrupt List.", spell.SpellName);
-
-            var newSpell = new SpellInfo { CanStun = true, CanSilence = false, SpellId = spell.SpellId, SpellName = spell.SpellName };
-
-            InterruptViewModel.Instance.GuiInterruptsList.Add(newSpell);
-            InterruptViewModel.Instance.Save();
-        }
-
         private void TransferSpellToTankbusters(SpellInfo spell)
-
         {
             if (spell == null)
                 return;

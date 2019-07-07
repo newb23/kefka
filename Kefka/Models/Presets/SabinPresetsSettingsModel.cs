@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static SabinPresetsSettingsModel _instance;
         public static SabinPresetsSettingsModel Instance => _instance ?? (_instance = new SabinPresetsSettingsModel());
 
-        private SabinPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Sabin/Sabin_Preset_Settings.json")
+        private SabinPresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Sabin/Sabin_Preset_Settings.json")
         {
         }
 

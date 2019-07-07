@@ -222,7 +222,6 @@ namespace Kefka.Views
                 return;
 
             Core.OverlayManager.RemoveUIComponent(KefkaOverlayComponent);
-            InterruptManager.ResetInterrupts();
             TankBusterManager.ResetTankBusters();
             FormManager.SaveFormInstances();
             KefkaBoundToggleOverlayIsVisible = false;

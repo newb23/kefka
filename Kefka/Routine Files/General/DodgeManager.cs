@@ -5,10 +5,10 @@ using Buddy.Coroutines;
 using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
 using Kefka.Models;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
+using static Kefka.Utilities.Constants;
 
 namespace Kefka.Routine_Files.General
 {

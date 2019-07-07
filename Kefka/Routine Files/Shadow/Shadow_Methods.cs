@@ -1,17 +1,4 @@
-﻿using Buddy.Coroutines;
-using Clio.Utilities;
-using ff14bot;
-using ff14bot.Enums;
-using ff14bot.Managers;
-using ff14bot.Navigation;
-using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using Kefka.Models;
-using Kefka.Routine_Files.General;
-using Kefka.Utilities;
-using Kefka.Utilities.Extensions;
-using Kefka.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,6 +6,18 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
+using Buddy.Coroutines;
+using Clio.Utilities;
+using ff14bot.Enums;
+using ff14bot.Managers;
+using ff14bot.Navigation;
+using ff14bot.Objects;
+using Kefka.Models;
+using Kefka.Routine_Files.General;
+using Kefka.Utilities;
+using Kefka.Utilities.Extensions;
+using Kefka.ViewModels;
+using static Kefka.Utilities.Constants;
 using Auras = Kefka.Routine_Files.General.Auras;
 
 namespace Kefka.Routine_Files.Shadow

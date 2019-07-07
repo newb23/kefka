@@ -1,16 +1,16 @@
 ﻿using System;
-using ff14bot.Enums;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using Kefka.Models;
-using Kefka.Routine_Files.General;
-using Kefka.Utilities;
-using Kefka.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Buddy.Coroutines;
+using ff14bot.Enums;
+using ff14bot.Managers;
+using ff14bot.Objects;
+using Kefka.Models;
+using Kefka.Routine_Files.General;
+using Kefka.Utilities;
+using Kefka.ViewModels;
+using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Auras = Kefka.Routine_Files.General.Auras;
 
@@ -104,7 +104,7 @@ namespace Kefka.Routine_Files.Edward
             if (PartyMembers.Count(pm => pm.IsAlive && pm.IsPhysical() && pm.CurrentTPPercent <= EdwardSettingsModel.Instance.TacticianTpPct) >= EdwardSettingsModel.Instance.TacticianMemberCount)
                 return await Spells.Tactician.Use(Me, true);
 
-            return await Spells.Tactician.Use(Me, await KefkaEnmityManager.TargetingMeCount() > 0);
+            return await Spells.Tactician.Use(Me, true);
         }
 
         private static async Task<bool> Refresh()
@@ -114,7 +114,7 @@ namespace Kefka.Routine_Files.Edward
             if (PartyMembers.Count(pm => pm.IsCaster() && pm.IsAlive && pm.CurrentManaPercent <= EdwardSettingsModel.Instance.RefreshMpPct) >= EdwardSettingsModel.Instance.RefreshMemberCount)
                 return await Spells.Refresh.Use(Me, true);
 
-            return await Spells.Refresh.Use(Me, await KefkaEnmityManager.TargetingMeCount() > 0);
+            return await Spells.Refresh.Use(Me, true);
         }
 
         private static async Task<bool> SecondWind()
@@ -129,7 +129,7 @@ namespace Kefka.Routine_Files.Edward
 
         private static async Task<bool> RagingStrikes()
         {
-            return await Spells.RagingStrikes.CastBuff(Me, EdwardSettingsModel.Instance.UseBuffs && 
+            return await Spells.RagingStrikes.CastBuff(Me, EdwardSettingsModel.Instance.UseBuffs &&
                 (ActionResourceManager.Bard.ActiveSong == ActionResourceManager.Bard.BardSong.WanderersMinuet
                     || (ActionResourceManager.Bard.ActiveSong == ActionResourceManager.Bard.BardSong.MagesBallad
                     && EdwardSettingsModel.Instance.UseAoE

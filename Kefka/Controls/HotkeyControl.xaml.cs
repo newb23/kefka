@@ -3,14 +3,13 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
-using UserControl = System.Windows.Controls.UserControl;
 
 namespace Kefka.Controls
 {
     /// <summary>
     /// Interaction logic for HotkeyControl.xaml
     /// </summary>
-    public partial class HotkeyControl : UserControl
+    public partial class HotkeyControl
 
     {
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(HotkeyControl), new UIPropertyMetadata("Hotkey"));
@@ -26,7 +25,6 @@ namespace Kefka.Controls
         }
 
         public HotkeyControl()
-
         {
             InitializeComponent();
             PreviewKeyDown += OnPreviewKeyDown;
@@ -34,32 +32,28 @@ namespace Kefka.Controls
         }
 
         private void OnLostFocus(object sender, RoutedEventArgs routedEventArgs)
-
         {
             // Re - Registering Code
         }
 
         public string Text
-
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get => (string)GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
         }
 
         public string HkText => ModKeySetting + " + " + KeySetting;
 
         public Keys KeySetting
-
         {
-            get { return (Keys)GetValue(KeySettingProperty); }
-            set { SetValue(KeySettingProperty, value); }
+            get => (Keys)GetValue(KeySettingProperty);
+            set => SetValue(KeySettingProperty, value);
         }
 
         public ModifierKeys ModKeySetting
-
         {
-            get { return (ModifierKeys)GetValue(ModKeySettingProperty); }
-            set { SetValue(ModKeySettingProperty, value); }
+            get => (ModifierKeys)GetValue(ModKeySettingProperty);
+            set => SetValue(ModKeySettingProperty, value);
         }
 
         private void OnPreviewKeyDown(object sender, KeyEventArgs e)
@@ -83,9 +77,7 @@ namespace Kefka.Controls
                 || key == Key.LeftCtrl || key == Key.RightCtrl
                 || key == Key.LeftAlt || key == Key.RightAlt
                 || key == Key.LWin || key == Key.RWin)
-            {
                 return;
-            }
 
             // Build the shortcut key name.
             var shortcutText = new StringBuilder();
@@ -115,6 +107,7 @@ namespace Kefka.Controls
 
             var newKey = (Keys)KeyInterop.VirtualKeyFromKey(key);
             KeySetting = newKey;
+
             // Update the text box.
             TxtHk.Text = shortcutText.ToString();
         }

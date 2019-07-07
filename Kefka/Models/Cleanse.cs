@@ -4,60 +4,60 @@ namespace Kefka.Models
 {
     public class Cleanse : BaseViewModel
     {
-        private string spellName;
-        private uint spellId;
+        private string _spellName;
+        private uint _spellId;
 
         private bool
-            leeches,
-            esuna,
-            exaltedDetriment;
+            _leeches,
+            _esuna,
+            _exaltedDetriment;
 
         public string SpellName
         {
-            get { return spellName; }
+            get => _spellName;
             set
             {
-                spellName = value;
+                _spellName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint SpellId
         {
-            get { return spellId; }
+            get => _spellId;
             set
             {
-                spellId = value;
+                _spellId = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Leeches
         {
-            get { return leeches; }
+            get => _leeches;
             set
             {
-                leeches = value;
+                _leeches = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Esuna
         {
-            get { return esuna; }
+            get => _esuna;
             set
             {
-                esuna = value;
+                _esuna = value;
                 OnPropertyChanged();
             }
         }
 
         public bool ExaltedDetriment
         {
-            get { return exaltedDetriment; }
+            get => _exaltedDetriment;
             set
             {
-                exaltedDetriment = value;
+                _exaltedDetriment = value;
                 OnPropertyChanged();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
@@ -7,7 +8,6 @@ using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
 using static Kefka.Utilities.Constants;
-using System.Threading.Tasks;
 
 namespace Kefka.Routine_Files.Sabin
 {

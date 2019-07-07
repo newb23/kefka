@@ -1,13 +1,12 @@
-﻿using ff14bot.Managers;
-using static Kefka.Utilities.Constants;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using ff14bot.Managers;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
 using Kefka.ViewModels;
-using System.Linq;
-using System.Threading.Tasks;
-using Auras = Kefka.Routine_Files.General.Auras;
+using static Kefka.Utilities.Constants;
 
 namespace Kefka.Routine_Files.Sabin
 {

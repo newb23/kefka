@@ -113,7 +113,7 @@ namespace Kefka.Utilities
                     return null;
             }
 
-            Logger.KefkaLog(@"Loading: {0} : {1}", currentClass, Me.ClassLevel);
+            Logger.KefkaLog(@"Loading: {0} : {1}", CurrentClass, Me.ClassLevel);
             return new RoutineComposites();
         }
 

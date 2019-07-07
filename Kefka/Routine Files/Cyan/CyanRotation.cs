@@ -1,13 +1,13 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
-using static Kefka.Utilities.Constants;
-using System.Threading.Tasks;
 using Kefka.Utilities.Extensions;
+using static Kefka.Utilities.Constants;
 using static ff14bot.Managers.ActionResourceManager.Samurai;
 using static ff14bot.Managers.ActionResourceManager.Samurai.Iaijutsu;
 

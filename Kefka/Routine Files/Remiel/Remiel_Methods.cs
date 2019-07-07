@@ -1,13 +1,13 @@
-﻿using ff14bot.Enums;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using Kefka.Routine_Files.General;
-using System.Linq;
-using System.Threading.Tasks;
 using Kefka.Models;
+using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.ViewModels;
+using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Auras = Kefka.Routine_Files.General.Auras;
 
@@ -20,7 +20,7 @@ namespace Kefka.Routine_Files.Remiel
         internal static string RoyalRoadEffect;
         internal static string CurrentArcana;
         internal static bool NewCard;
-        
+
         public static int HighestHealSetting => RemielSettingsModel.Instance.BeneficHpPct / RemielSettingsModel.Instance.Benefic2HpPct;
         public static int HighestFloorSetting => RemielSettingsModel.Instance.AspectedBeneficFloorPct / RemielSettingsModel.Instance.Benefic2HpPct;
 
@@ -656,7 +656,7 @@ namespace Kefka.Routine_Files.Remiel
                     if (RemielSettingsModel.Instance.UseHeldAndRoyalRoad) return false;
                     switch (DrawnCard)
                     {
-                        case "Balance":                            
+                        case "Balance":
                             CardTarget = await CardTargeter();
                             if (CardTarget == null)
                                 break;
@@ -1399,8 +1399,8 @@ namespace Kefka.Routine_Files.Remiel
                 if (await UseCard()) return true;
 
             await CardCheck();
-            if (NewCard == true && DrawnCard != "None" && (RoyalRoadEffect == "None" || 
-                ((DrawnCard == "Ewer" || DrawnCard == "Spire") &&  RoyalRoadEffect != "Shared" && HealManager.Count() >= RemielSettingsModel.Instance.ExpandedPlayerCount) || 
+            if (NewCard == true && DrawnCard != "None" && (RoyalRoadEffect == "None" ||
+                ((DrawnCard == "Ewer" || DrawnCard == "Spire") &&  RoyalRoadEffect != "Shared" && HealManager.Count() >= RemielSettingsModel.Instance.ExpandedPlayerCount) ||
                 ((DrawnCard != "Ewer" && DrawnCard != "Spire") && RoyalRoadEffect == "Shared" && HealManager.Count() < RemielSettingsModel.Instance.ExpandedPlayerCount)))
             {
                 if (await RoyalRoad()) return true;

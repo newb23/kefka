@@ -6,9 +6,9 @@ namespace Kefka.Models
     {
         #region Fields
 
-        private string npcName, spellName;
-        private uint npcId, spellId;
-        private bool canStun, canSilence;
+        private string _npcName, _spellName;
+        private uint _npcId, _spellId;
+        private bool _canStun, _canSilence;
 
         #endregion Fields
 
@@ -16,60 +16,60 @@ namespace Kefka.Models
 
         public string NpcName
         {
-            get { return npcName; }
+            get => _npcName;
             set
             {
-                npcName = value;
+                _npcName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint NpcId
         {
-            get { return npcId; }
+            get => _npcId;
             set
             {
-                npcId = value;
+                _npcId = value;
                 OnPropertyChanged();
             }
         }
 
         public string SpellName
         {
-            get { return spellName; }
+            get => _spellName;
             set
             {
-                spellName = value;
+                _spellName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint SpellId
         {
-            get { return spellId; }
+            get => _spellId;
             set
             {
-                spellId = value;
+                _spellId = value;
                 OnPropertyChanged();
             }
         }
 
         public bool CanStun
         {
-            get { return canStun; }
+            get => _canStun;
             set
             {
-                canStun = value;
+                _canStun = value;
                 OnPropertyChanged();
             }
         }
 
         public bool CanSilence
         {
-            get { return canSilence; }
+            get => _canSilence;
             set
             {
-                canSilence = value;
+                _canSilence = value;
                 OnPropertyChanged();
             }
         }

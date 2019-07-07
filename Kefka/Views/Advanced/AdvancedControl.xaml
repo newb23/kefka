@@ -86,9 +86,6 @@
                     </StackPanel>
                 </Grid>
             </mahAppsControls:MetroTabItem>
-            <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.InterruptsAndStuns}">
-                <advanced:Interrupts />
-            </mahAppsControls:MetroTabItem>
             <mahAppsControls:MetroTabItem Header="{x:Static loc:Strings.CombatSettings}">
                 <advanced:CombatSettings />
             </mahAppsControls:MetroTabItem>

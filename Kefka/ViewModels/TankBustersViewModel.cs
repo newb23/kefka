@@ -7,7 +7,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Windows.Input;
+using Kefka.Properties;
 
 namespace Kefka.ViewModels
 {
@@ -124,30 +126,19 @@ namespace Kefka.ViewModels
         {
             get
             {
-                var actionListDir = @"Settings/" + Me.Name + "/Kefka/ActionList.json";
+                var assembly = Assembly.GetExecutingAssembly();
+                const string resourceName = "Kefka.Resources.ActionList.json";
 
-                //ToDo: Figure out a better solution for auto-XIVDB downloading.
+                string result;
 
-                var json = new WebClient().DownloadString("https://api.xivdb.com/action?columns=id,name,classjob");
+                using (var stream = assembly.GetManifestResourceStream(resourceName))
 
-                var tempActionCollection = JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Action>>(json);
-
-                var data = JsonConvert.SerializeObject(tempActionCollection, Formatting.Indented);
-                File.WriteAllText(actionListDir, data);
-
-                var tempCollection = new ThreadSafeObservableCollection<Action>();
-
-                foreach (var action in tempActionCollection)
+                using (var reader = new StreamReader(stream))
                 {
-                    if (!action.HasClassJob && !action.Name.Any(x => char.IsLetter(x) && !(x >= 63 && x <= 126)))
-                    {
-                        tempCollection.Add(action);
-                    }
+                    result = reader.ReadToEnd();
                 }
 
-                var jsonString = JsonConvert.SerializeObject(tempCollection);
-
-                return JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Action>>(jsonString);
+                return JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Action>>(result);
             }
         }
 

@@ -1,16 +1,18 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
     public class BarretPresetsSettingsModel : BaseModel
     {
         private static BarretPresetsSettingsModel _instance;
-        public static BarretPresetsSettingsModel Instance => _instance ?? (_instance = new BarretPresetsSettingsModel());
 
-        private BarretPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Barret/Barret_Preset_Settings.json")
+        public static BarretPresetsSettingsModel Instance =>
+            _instance ?? (_instance = new BarretPresetsSettingsModel());
+
+        private BarretPresetsSettingsModel() : base(CharacterSettingsDirectory +
+                                                    "/Kefka/Routine Settings/Barret/Barret_Preset_Settings.json")
         {
         }
 

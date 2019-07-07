@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
-using static Kefka.Utilities.Constants;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
-
-using System.Threading.Tasks;
+using static Kefka.Utilities.Constants;
 
 namespace Kefka.Routine_Files.Barret
 {
@@ -37,11 +36,6 @@ namespace Kefka.Routine_Files.Barret
         {
             if (await Peloton()) return true;
             if (await GaussBarrel()) return true;
-            if (BarretSettingsModel.Instance.UseAutoAmmo)
-                if (AmmunitionLoadedStacks < 3 || !AmmunitionLoaded)
-                {
-                    return await Spells.QuickReload.Use(Me, true);
-                }
             return false;
         }
 
@@ -126,28 +120,15 @@ namespace Kefka.Routine_Files.Barret
         {
             if (Target == null || !Target.CanAttack)
                 return false;
-
-            if (await PvPSpells.Wildfire.Use(Target, ActionResourceManager.Machinist.Timer != TimeSpan.Zero)) return true;
-
-            if (await PvPSpells.HotShot.Use(Target, ActionResourceManager.Machinist.Heat < 50 && ActionResourceManager.Machinist.GaussBarrel)) return true;
-
+            
             if (await PvPSpells.Cooldown.Use(Target, ActionResourceManager.Machinist.Heat > 50 && PvPSpells.Wildfire.Cooldown.TotalMilliseconds > 5000)) return true;
-
-            if (await PvPSpells.GaussBarrel.Use(Me, !ActionResourceManager.Machinist.GaussBarrel)) return true;
-
-            if (await PvPSpells.StunGun.Use(Me, ActionResourceManager.Machinist.Timer != TimeSpan.Zero)) return true;
 
             if (await PvPSpells.Blank.Use(Target, true)) return true;
 
             if (await PvPSpells.BetweentheEyes.Use(Target, true)) return true;
 
-            if (await PvPSpells.QuickReload.Use(Me, ActionResourceManager.Machinist.Ammo < 3 && ActionResourceManager.Machinist.Heat >= 50 || ActionResourceManager.Machinist.Timer != TimeSpan.Zero)) return true;
-
             if (DateTime.Now < _pvpComboTimer || DateTime.Now < _pvpLimiterTimer) return false;
             _pvpLimiterTimer = DateTime.Now.AddMilliseconds(500);
-
-            if (ActionResourceManager.Machinist.Heat < 50 && ActionResourceManager.Machinist.GaussBarrel)
-                return await PvPSpells.HotShot.Use(Target, true);
 
             if (ActionManager.DoPvPCombo(PvPCombos.CleanShotCombo, Target))
             {

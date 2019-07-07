@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,8 @@ namespace Kefka.Models
         private static CyanPresetsSettingsModel _instance;
         public static CyanPresetsSettingsModel Instance => _instance ?? (_instance = new CyanPresetsSettingsModel());
 
-        private CyanPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Cyan/Cyan_Preset_Settings.json")
+        private CyanPresetsSettingsModel() : base(CharacterSettingsDirectory +
+                                                  "/Kefka/Routine Settings/Cyan/Cyan_Preset_Settings.json")
         {
         }
 
@@ -93,8 +93,7 @@ namespace Kefka.Models
         }
 
         [Setting]
-        [DefaultValue("Preset 3")]
-        public string Preset3Name
+        [DefaultValue("Preset 3")] public string Preset3Name
         {
             get => _preset3Name;
             set

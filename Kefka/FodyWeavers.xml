@@ -1,11 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Weavers>
-  <Costura>
-    <ExcludeAssemblies>
-      greymagic
-      rebornbuddy
-      KefkaUI.Metro
-      KefkaUI.Metro.IconPacks
-    </ExcludeAssemblies>
-  </Costura>
-</Weavers>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Weavers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FodyWeavers.xsd"></Weavers>

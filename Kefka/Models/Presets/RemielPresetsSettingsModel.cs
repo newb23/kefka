@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static RemielPresetsSettingsModel _instance;
         public static RemielPresetsSettingsModel Instance => _instance ?? (_instance = new RemielPresetsSettingsModel());
 
-        private RemielPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Remiel/Remiel_Preset_Settings.json")
+        private RemielPresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Remiel/Remiel_Preset_Settings.json")
         {
         }
 

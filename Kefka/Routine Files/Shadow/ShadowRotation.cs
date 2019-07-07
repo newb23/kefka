@@ -1,11 +1,11 @@
-﻿using Buddy.Coroutines;
+﻿using System.Threading.Tasks;
+using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
-using static Kefka.Utilities.Constants;
 using Kefka.Utilities;
-using System.Threading.Tasks;
+using static Kefka.Utilities.Constants;
 
 namespace Kefka.Routine_Files.Shadow
 {

@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Buddy.Coroutines;
+using ff14bot.Behavior;
+using ff14bot.Managers;
+using ff14bot.Objects;
 using Kefka.Models;
 using Kefka.Routine_Files.Barret;
 using Kefka.Routine_Files.Beatrix;
@@ -10,22 +15,18 @@ using Kefka.Routine_Files.Eiko;
 using Kefka.Routine_Files.Elayne;
 using Kefka.Routine_Files.Freya;
 using Kefka.Routine_Files.General;
+using Kefka.Routine_Files.Mikoto;
 using Kefka.Routine_Files.Paine;
 using Kefka.Routine_Files.Remiel;
 using Kefka.Routine_Files.Sabin;
 using Kefka.Routine_Files.Shadow;
+using Kefka.Routine_Files.Surito;
 using Kefka.Routine_Files.Vivi;
 using Kefka.Utilities;
-using System.Threading.Tasks;
-using Buddy.Coroutines;
-using ff14bot.Behavior;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using Kefka.Routine_Files.Mikoto;
-using Kefka.Routine_Files.Surito;
 using static Kefka.Routine_Files.Ability;
 using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
+using RoutineManager = ff14bot.Managers.RoutineManager;
 
 namespace Kefka.Routine_Files
 {
@@ -176,7 +177,7 @@ namespace Kefka.Routine_Files
         {
             if (!Common_Utils.InActiveInstance() || Target == null) return false;
 
-            if (BotManager.Current.IsAutonomous && !ff14bot.Managers.RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement))
+            if (BotManager.Current.IsAutonomous && !RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement))
             {
                 if (await Movement.MovementComposite().ExecuteCoroutine())
                     return false;
@@ -391,7 +392,7 @@ namespace Kefka.Routine_Files
         {
             if (!Common_Utils.InActiveInstance() || Target == null) return false;
 
-            if (BotManager.Current.IsAutonomous && !ff14bot.Managers.RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement))
+            if (BotManager.Current.IsAutonomous && !RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement))
             {
                 if (await Movement.MovementComposite().ExecuteCoroutine())
                     return false;

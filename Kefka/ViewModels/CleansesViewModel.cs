@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Windows.Input;
 
 namespace Kefka.ViewModels
@@ -106,34 +107,19 @@ namespace Kefka.ViewModels
         {
             get
             {
-                var statusListDir = @"Settings/" + Me.Name + "/Kefka/StatusList.json";
+                var assembly = Assembly.GetExecutingAssembly();
+                const string resourceName = "Kefka.Resources.StatusList.json";
 
-                //ToDo: Figure out a better solution for auto-XIVDB downloading.
-                if (File.Exists(statusListDir))
+                string result;
+
+                using (var stream = assembly.GetManifestResourceStream(resourceName))
+
+                using (var reader = new StreamReader(stream))
                 {
-                    return JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Status>>(File.ReadAllText(statusListDir));
+                    result = reader.ReadToEnd();
                 }
 
-                var json = new WebClient().DownloadString("https://xivapi.com/status?columns=ID,Name&limit=3000");
-
-                var tempStatusCollection = JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Status>>(json);
-
-                var data = JsonConvert.SerializeObject(tempStatusCollection, Formatting.Indented);
-                File.WriteAllText(statusListDir, data);
-
-                var tempCollection = new ThreadSafeObservableCollection<Status>();
-
-                foreach (var action in tempStatusCollection)
-                {
-                    if (!action.Name.Any(x => char.IsLetter(x) && !(x >= 63 && x <= 126)))
-                    {
-                        tempCollection.Add(action);
-                    }
-                }
-
-                var jsonString = JsonConvert.SerializeObject(tempCollection);
-
-                return JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Status>>(jsonString);
+                return JsonConvert.DeserializeObject<ThreadSafeObservableCollection<Status>>(result);
             }
         }
 

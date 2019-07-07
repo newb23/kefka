@@ -76,7 +76,7 @@ namespace Kefka.Utilities.Extensions
             if (unitAsCharacter == null)
                 return false;
 
-            return unitAsCharacter.IsCasting && InterruptManager.SilenceInterrupts.Contains(unitAsCharacter.CastingSpellId);
+            return unitAsCharacter.IsCasting;
         }
 
         public static bool CanStun(this GameObject unit)
@@ -86,7 +86,7 @@ namespace Kefka.Utilities.Extensions
             if (unitAsCharacter == null)
                 return false;
 
-            return unitAsCharacter.IsCasting && InterruptManager.StunInterrupts.Contains(unitAsCharacter.CastingSpellId);
+            return unitAsCharacter.IsCasting;
         }
 
         internal static bool HasAura(this GameObject unit, uint spell, bool isMyAura = true, double msLeft = 0, bool belowZeroValid = true)

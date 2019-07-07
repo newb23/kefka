@@ -8,14 +8,13 @@ using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
-using Kefka.Utilities.Extensions;
 using Kefka.ViewModels;
 using Kefka.ViewModels.Openers;
+using static Kefka.Utilities.Constants;
+using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Auras = Kefka.Routine_Files.General.Auras;
 
 namespace Kefka.Routine_Files.Cecil
@@ -38,7 +37,7 @@ namespace Kefka.Routine_Files.Cecil
 
         private static async Task<bool> SpinningSlash()
         {
-            if (!CecilSettingsModel.Instance.MainTank || await KefkaEnmityManager.EnmityDifference() > CecilSettingsModel.Instance.PowerSlashCount) return false;
+            if (!CecilSettingsModel.Instance.MainTank) return false;
 
             if (CombatHelper.LastSpell != Spells.HardSlash && ActionManager.LastSpell != Spells.HardSlash) return false;
 
@@ -56,7 +55,7 @@ namespace Kefka.Routine_Files.Cecil
         {
             if (CombatHelper.LastSpell != Spells.HardSlash && ActionManager.LastSpell != Spells.HardSlash) return false;
 
-            if ((Me.ClassLevel >= 38 && await KefkaEnmityManager.EnmityDifference() < CecilSettingsModel.Instance.PowerSlashCount && CecilSettingsModel.Instance.MainTank) || (Me.ClassLevel < 38 && Me.CurrentManaPercent >= 65)) return false;
+            if ((Me.ClassLevel >= 38 && CecilSettingsModel.Instance.MainTank) || (Me.ClassLevel < 38 && Me.CurrentManaPercent >= 65)) return false;
 
             return await Spells.SyphonStrike.Use(Target, true);
         }
@@ -143,7 +142,7 @@ namespace Kefka.Routine_Files.Cecil
 
             if (Recovering == false)
             {
-                if (CecilSettingsModel.Instance.UseDASyphonStrike && ((CombatHelper.LastSpell == Spells.HardSlash || ActionManager.LastSpell == Spells.HardSlash) && CecilSettingsModel.Instance.PowerSlashCount > await KefkaEnmityManager.EnmityDifference()) && Me.CurrentManaPercent >= CecilSettingsModel.Instance.DASyphonStrikeMpPct)
+                if (CecilSettingsModel.Instance.UseDASyphonStrike && (CombatHelper.LastSpell == Spells.HardSlash || ActionManager.LastSpell == Spells.HardSlash) && Me.CurrentManaPercent >= CecilSettingsModel.Instance.DASyphonStrikeMpPct)
                     return await Spells.DarkArts.CastBuff(Me, true, Auras.DarkArts);
 
                 if (CecilSettingsModel.Instance.UseDASouleater && (CombatHelper.LastSpell == Spells.SyphonStrike || ActionManager.LastSpell == Spells.SyphonStrike))
@@ -155,7 +154,7 @@ namespace Kefka.Routine_Files.Cecil
                 if (CecilSettingsModel.Instance.UseDAQuietus && Me.ClassLevel >= 64 && Me.EnemiesInRange(5) >= CecilSettingsModel.Instance.AoEMinEnemies && ActionResourceManager.DarkKnight.BlackBlood >= 50)
                     return await Spells.DarkArts.CastBuff(Me, true, Auras.DarkArts);
 
-                if (CecilSettingsModel.Instance.UseDACarveandSpit && Spells.CarveandSpit.Cooldown.TotalMilliseconds < 2000 && (CecilSettingsModel.Instance.PowerSlashCount > await KefkaEnmityManager.EnmityDifference() || !CecilSettingsModel.Instance.MainTank))
+                if (CecilSettingsModel.Instance.UseDACarveandSpit && Spells.CarveandSpit.Cooldown.TotalMilliseconds < 2000 && !CecilSettingsModel.Instance.MainTank)
                     return await Spells.DarkArts.CastBuff(Me, true, Auras.DarkArts);
 
                 if (CecilSettingsModel.Instance.UseDAAbyssalDrain && CecilSettingsModel.Instance.UseAbyssalDrain && Me.ClassLevel >= 56 && Me.CurrentHealthPercent <= CecilSettingsModel.Instance.AbyssalDrainHpPct && Target.EnemiesInRange(5) >= CecilSettingsModel.Instance.AoEMinEnemies)

@@ -1,15 +1,11 @@
-﻿using ff14bot;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using Kefka.Utilities;
 using Kefka.ViewModels;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
@@ -20,7 +16,7 @@ namespace Kefka.Models
         private static ViviHotkeysModel _instance;
         public static ViviHotkeysModel Instance => _instance ?? (_instance = new ViviHotkeysModel());
 
-        private ViviHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Vivi_Hotkeys.json")
+        private ViviHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Vivi_Hotkeys.json")
         {
         }
 

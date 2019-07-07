@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ff14bot.Enums;
 using ff14bot.Managers;
-using static Kefka.Utilities.Constants;
+using ff14bot.Objects;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
 using Kefka.ViewModels;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ff14bot.Enums;
-using ff14bot.Objects;
+using static Kefka.Utilities.Constants;
 using Auras = Kefka.Routine_Files.General.Auras;
 
 namespace Kefka.Routine_Files.Freya

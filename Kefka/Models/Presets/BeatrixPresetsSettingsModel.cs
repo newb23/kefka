@@ -1,16 +1,18 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
     public class BeatrixPresetsSettingsModel : BaseModel
     {
         private static BeatrixPresetsSettingsModel _instance;
-        public static BeatrixPresetsSettingsModel Instance => _instance ?? (_instance = new BeatrixPresetsSettingsModel());
 
-        private BeatrixPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Beatrix/Beatrix_Preset_Settings.json")
+        public static BeatrixPresetsSettingsModel Instance =>
+            _instance ?? (_instance = new BeatrixPresetsSettingsModel());
+
+        private BeatrixPresetsSettingsModel() : base(CharacterSettingsDirectory +
+                                                     "/Kefka/Routine Settings/Beatrix/Beatrix_Preset_Settings.json")
         {
         }
 
@@ -21,8 +23,7 @@ namespace Kefka.Models
         private bool _showPreset1, _showPreset2, _showPreset3, _showPreset4, _showPreset5;
 
         [Setting]
-        [DefaultValue("Preset 1")]
-        public string Preset1Name
+        [DefaultValue("Preset 1")] public string Preset1Name
         {
             get => _preset1Name;
             set
@@ -45,8 +46,7 @@ namespace Kefka.Models
         }
 
         [JsonIgnore]
-        [DefaultValue(false)]
-        public bool ShowPreset1
+        [DefaultValue(false)] public bool ShowPreset1
         {
             get => _showPreset1;
             set
@@ -57,8 +57,7 @@ namespace Kefka.Models
         }
 
         [Setting]
-        [DefaultValue("Preset 2")]
-        public string Preset2Name
+        [DefaultValue("Preset 2")] public string Preset2Name
         {
             get => _preset2Name;
             set
@@ -81,8 +80,7 @@ namespace Kefka.Models
         }
 
         [JsonIgnore]
-        [DefaultValue(false)]
-        public bool ShowPreset2
+        [DefaultValue(false)] public bool ShowPreset2
         {
             get => _showPreset2;
             set
@@ -93,8 +91,7 @@ namespace Kefka.Models
         }
 
         [Setting]
-        [DefaultValue("Preset 3")]
-        public string Preset3Name
+        [DefaultValue("Preset 3")] public string Preset3Name
         {
             get => _preset3Name;
             set
@@ -117,8 +114,7 @@ namespace Kefka.Models
         }
 
         [JsonIgnore]
-        [DefaultValue(false)]
-        public bool ShowPreset3
+        [DefaultValue(false)] public bool ShowPreset3
         {
             get => _showPreset3;
             set
@@ -129,8 +125,7 @@ namespace Kefka.Models
         }
 
         [Setting]
-        [DefaultValue("Preset 4")]
-        public string Preset4Name
+        [DefaultValue("Preset 4")] public string Preset4Name
         {
             get => _preset4Name;
             set
@@ -153,8 +148,7 @@ namespace Kefka.Models
         }
 
         [JsonIgnore]
-        [DefaultValue(false)]
-        public bool ShowPreset4
+        [DefaultValue(false)] public bool ShowPreset4
         {
             get => _showPreset4;
             set
@@ -165,8 +159,7 @@ namespace Kefka.Models
         }
 
         [Setting]
-        [DefaultValue("Preset 5")]
-        public string Preset5Name
+        [DefaultValue("Preset 5")] public string Preset5Name
         {
             get => _preset5Name;
             set
@@ -189,8 +182,7 @@ namespace Kefka.Models
         }
 
         [JsonIgnore]
-        [DefaultValue(false)]
-        public bool ShowPreset5
+        [DefaultValue(false)] public bool ShowPreset5
         {
             get => _showPreset5;
             set

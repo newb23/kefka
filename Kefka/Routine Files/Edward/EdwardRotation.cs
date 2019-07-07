@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
@@ -7,7 +8,6 @@ using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
 using static Kefka.Utilities.Constants;
-using System.Threading.Tasks;
 
 namespace Kefka.Routine_Files.Edward
 {
@@ -125,10 +125,10 @@ namespace Kefka.Routine_Files.Edward
             if (await PvPSpells.ArmysPaeon.Use(Target, true)) return true;
 
             if (await PvPSpells.BluntArrow.Use(Target, !EdwardSettingsModel.Instance.PvPManualBluntArrow)) return true;
-            
+
             if (await PvPSpells.Barrage.Use(Me, ActionResourceManager.Bard.ActiveSong == ActionResourceManager.Bard.BardSong.ArmysPaeon && Me.CurrentTP > 250))
                 return await PvPSpells.EmpyrealArrow.Use(Target, true);
-            
+
             if (await PvPSpells.PitchPerfect.Use(Target, ActionResourceManager.Bard.ActiveSong == ActionResourceManager.Bard.BardSong.WanderersMinuet && (ActionResourceManager.Bard.Repertoire == 3) || ActionResourceManager.Bard.Timer.TotalMilliseconds < 3000)) return true;
 
             if (await PvPSpells.EmpyrealArrow.Use(Target, Me.CurrentTP > 250)) return true;

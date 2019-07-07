@@ -1,5 +1,4 @@
-﻿using static Kefka.Utilities.Constants;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Configuration;
 using System.IO;
 using Kefka.Properties;
@@ -12,32 +11,192 @@ namespace Kefka.Models
         private static RemielSettingsModel _instance;
         public static RemielSettingsModel Instance => _instance ?? (_instance = new RemielSettingsModel());
 
-        private RemielSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Remiel/Remiel_Settings.json")
+        private RemielSettingsModel() : base(CharacterSettingsDirectory +
+                                             "/Kefka/Routine Settings/Remiel/Remiel_Settings.json")
         {
         }
 
-        private bool _useShitButton, _manualCardTarget, _useCleanse, _usePotion, _useHelios, _nocturnalAspectedBeneficTanks, _useCards, _royalRoadEnhanced, _royalRoadExtended, _royalRoadExpanded, _useAspectedBeneficWithNocturnal, _keepNocturnalAspectedBeneficOnTanks, _nocturnalAspectedBeneficDps, _useBenefic, _useEssentialDignity, 
-            _keepNocturnalAspectedBeneficOnDps, _keepNocturnalAspectedBeneficOnHealers, _useCollectiveUnconscious, _useGravity, _nocturnalAspectedBeneficHealers, _stopHeliosIfConditionsUnmet, _useSwiftcastAscend, _useSwiftcastRaise, _useBenefic2, _autoStopHeal, _useAscendWithLightspeed, _useNocturnalAspectedHelios, _useCelestialOpposition, 
-            _useLucidDreaming, _useMalefic, _useCardPrepOutOfCombat, _useProtectInCombat, _useLightspeed, _useProtect, _useLightspeedOnTankOnly, _useSynastry, _useSynastryOnTankOnly, _useCardPrepOutOfCombatOnlyInParty, _doDamage, _useAscend, _useEssentialDignityOnTankOnly, 
-            _useAspectedBeneficWithDiurnal, _diurnalAspectedBeneficTanks, _diurnalAspectedBeneficHealers, _diurnalAspectedBeneficDps, _keepDiurnalAspectedBeneficOnTanks, _keepDiurnalAspectedBeneficOnHealers, _keepDiurnalAspectedBeneficOnDps, _useDiurnalAspectedHelios, _useCombust,
-            _useCelestialOppositionAfterCollectiveUnconsciousness, _useCelestialOppositionAfterExpandedCard, _useCelestialOppositionAfterSpearExpanded, _useCelestialOppositionAfterBoleExpanded, _useCelestialOppositionAfterBalanceExpanded, _useCelestialOppositionAfterArrowExpanded, _useCelestialOppositionAfterSpireExpanded, 
-            _useCelestialOppositionAfterEwerExpanded, _useTimeDilation, _useTimeDilationAfterBole, _useTimeDilationAfterBalance, _useTimeDilationAfterArrow, _useTimeDilationAfterSpear, _useTimeDilationAfterSpire, _useTimeDilationAfterEwer, _useTimeDilationAfterSynastry, _useTimeDilationAfterTankDiurnalBenefic, _aspectedBeneficFloorTanks, 
-            _aspectedBeneficFloorHealers, _aspectedBeneficFloorDps, _useEarthlyStar, _useEarthlyStarForDamage, _useEyeforanEye, _useLargesse, _useLargesseOnTankOnly, _onlyDraw, _useRedraw, _useSpread, _ewerHealer, _boleTank, _useUndraw, _useSleeveDraw, _spreadBalance, _spreadBole, _spreadArrow, _spreadSpear, _spreadEwer, _spreadSpire, _useHeldAndRoyalRoad, _royalRoadBalance, _royalRoadBole, _royalRoadArrow, _royalRoadSpear, _royalRoadEwer, 
-            _royalRoadSpire, _castTrashCards, _useCelestialOppositionAfterLucidDreaming, _redrawBalance, _redrawBole, _redrawArrow, _redrawSpear, _redrawEwer, _redrawSpire, _enhancedBalance, _extendedBalance, _expandedBalance, _enhancedBole, _extendedBole, _expandedBole, _enhancedArrow, _extendedArrow, _expandedArrow, _enhancedSpear, _extendedSpear, 
-            _expandedSpear, _enhancedEwer, _extendedEwer, _expandedEwer, _enhancedSpire, _extendedSpire, _expandedSpire;
+        private bool
+            _useShitButton,
+            _manualCardTarget,
+            _useCleanse,
+            _usePotion,
+            _useHelios,
+            _nocturnalAspectedBeneficTanks,
+            _useCards,
+            _royalRoadEnhanced,
+            _royalRoadExtended,
+            _royalRoadExpanded,
+            _useAspectedBeneficWithNocturnal,
+            _keepNocturnalAspectedBeneficOnTanks,
+            _nocturnalAspectedBeneficDps,
+            _useBenefic,
+            _useEssentialDignity,
+            _keepNocturnalAspectedBeneficOnDps,
+            _keepNocturnalAspectedBeneficOnHealers,
+            _useCollectiveUnconscious,
+            _useGravity,
+            _nocturnalAspectedBeneficHealers,
+            _stopHeliosIfConditionsUnmet,
+            _useSwiftcastAscend,
+            _useSwiftcastRaise,
+            _useBenefic2,
+            _autoStopHeal,
+            _useAscendWithLightspeed,
+            _useNocturnalAspectedHelios,
+            _useCelestialOpposition,
+            _useLucidDreaming,
+            _useMalefic,
+            _useCardPrepOutOfCombat,
+            _useProtectInCombat,
+            _useLightspeed,
+            _useProtect,
+            _useLightspeedOnTankOnly,
+            _useSynastry,
+            _useSynastryOnTankOnly,
+            _useCardPrepOutOfCombatOnlyInParty,
+            _doDamage,
+            _useAscend,
+            _useEssentialDignityOnTankOnly,
+            _useAspectedBeneficWithDiurnal,
+            _diurnalAspectedBeneficTanks,
+            _diurnalAspectedBeneficHealers,
+            _diurnalAspectedBeneficDps,
+            _keepDiurnalAspectedBeneficOnTanks,
+            _keepDiurnalAspectedBeneficOnHealers,
+            _keepDiurnalAspectedBeneficOnDps,
+            _useDiurnalAspectedHelios,
+            _useCombust,
+            _useCelestialOppositionAfterCollectiveUnconsciousness,
+            _useCelestialOppositionAfterExpandedCard,
+            _useCelestialOppositionAfterSpearExpanded,
+            _useCelestialOppositionAfterBoleExpanded,
+            _useCelestialOppositionAfterBalanceExpanded,
+            _useCelestialOppositionAfterArrowExpanded,
+            _useCelestialOppositionAfterSpireExpanded,
+            _useCelestialOppositionAfterEwerExpanded,
+            _useTimeDilation,
+            _useTimeDilationAfterBole,
+            _useTimeDilationAfterBalance,
+            _useTimeDilationAfterArrow,
+            _useTimeDilationAfterSpear,
+            _useTimeDilationAfterSpire,
+            _useTimeDilationAfterEwer,
+            _useTimeDilationAfterSynastry,
+            _useTimeDilationAfterTankDiurnalBenefic,
+            _aspectedBeneficFloorTanks,
+            _aspectedBeneficFloorHealers,
+            _aspectedBeneficFloorDps,
+            _useEarthlyStar,
+            _useEarthlyStarForDamage,
+            _useEyeforanEye,
+            _useLargesse,
+            _useLargesseOnTankOnly,
+            _onlyDraw,
+            _useRedraw,
+            _useSpread,
+            _ewerHealer,
+            _boleTank,
+            _useUndraw,
+            _useSleeveDraw,
+            _spreadBalance,
+            _spreadBole,
+            _spreadArrow,
+            _spreadSpear,
+            _spreadEwer,
+            _spreadSpire,
+            _useHeldAndRoyalRoad,
+            _royalRoadBalance,
+            _royalRoadBole,
+            _royalRoadArrow,
+            _royalRoadSpear,
+            _royalRoadEwer,
+            _royalRoadSpire,
+            _castTrashCards,
+            _useCelestialOppositionAfterLucidDreaming,
+            _redrawBalance,
+            _redrawBole,
+            _redrawArrow,
+            _redrawSpear,
+            _redrawEwer,
+            _redrawSpire,
+            _enhancedBalance,
+            _extendedBalance,
+            _expandedBalance,
+            _enhancedBole,
+            _extendedBole,
+            _expandedBole,
+            _enhancedArrow,
+            _extendedArrow,
+            _expandedArrow,
+            _enhancedSpear,
+            _extendedSpear,
+            _expandedSpear,
+            _enhancedEwer,
+            _extendedEwer,
+            _expandedEwer,
+            _enhancedSpire,
+            _extendedSpire,
+            _expandedSpire;
 
-        private bool _showPotion, _showDoDamage, _showGravity, _showEssentialDignity, _showLightspeed, _showSynastry, _showEyeforanEye, _showLargesse, _showCard, _showOnlyDraw, _showSleeveDraw, _showRoyalRoad, _showSpread;
+        private bool
+            _showPotion,
+            _showDoDamage,
+            _showGravity,
+            _showEssentialDignity,
+            _showLightspeed,
+            _showSynastry,
+            _showEyeforanEye,
+            _showLargesse,
+            _showCard,
+            _showOnlyDraw,
+            _showSleeveDraw,
+            _showRoyalRoad,
+            _showSpread;
 
-        private int _cleanseHpPct, _beneficHpPct, _benefic2HpPct, _essentialDignityHpPct, _heliosHpPct, _collectiveUnconsciousHpPct, _cardDrawTimeMin, _nocturnalAspectedHeliosHpPct, _nocturnalAspectedHeliosPlayerCount, _collectiveUnconsciousPlayerCount, _lucidDreamingMpPct, _lightspeedHpPct, _lightspeedPlayerCount, _synastryHpPct,
-            _damageMinMpPct, _combustRfsh, _combust2Rfsh, _gravityMinTargets, _stopHealHpPct, _diurnalAspectedBeneficHpPct, _nocturnalAspectedBeneficHpPct, _diurnalAspectedHeliosHpPct, _diurnalAspectedHeliosPlayerCount, _aspectedBeneficFloorPct, _ewerMpPct, _spireTpPct, _boleHpPct, _heliosPlayerCount, _expandedPlayerCount, _celestialOppositionPlayerCount, 
-            _gravityMinMpPct, _earthlyStarPlayerCount, _earthlyStarHpPct, _ladyofCrownsHpPct, _eyeforanEyeHpPct, _largesseHpPct, _largessePlayerCount;
+        private int
+            _cleanseHpPct,
+            _beneficHpPct,
+            _benefic2HpPct,
+            _essentialDignityHpPct,
+            _heliosHpPct,
+            _collectiveUnconsciousHpPct,
+            _cardDrawTimeMin,
+            _nocturnalAspectedHeliosHpPct,
+            _nocturnalAspectedHeliosPlayerCount,
+            _collectiveUnconsciousPlayerCount,
+            _lucidDreamingMpPct,
+            _lightspeedHpPct,
+            _lightspeedPlayerCount,
+            _synastryHpPct,
+            _damageMinMpPct,
+            _combustRfsh,
+            _combust2Rfsh,
+            _gravityMinTargets,
+            _stopHealHpPct,
+            _diurnalAspectedBeneficHpPct,
+            _nocturnalAspectedBeneficHpPct,
+            _diurnalAspectedHeliosHpPct,
+            _diurnalAspectedHeliosPlayerCount,
+            _aspectedBeneficFloorPct,
+            _ewerMpPct,
+            _spireTpPct,
+            _boleHpPct,
+            _heliosPlayerCount,
+            _expandedPlayerCount,
+            _celestialOppositionPlayerCount,
+            _gravityMinMpPct,
+            _earthlyStarPlayerCount,
+            _earthlyStarHpPct,
+            _ladyofCrownsHpPct,
+            _eyeforanEyeHpPct,
+            _largesseHpPct,
+            _largessePlayerCount;
 
         public void Load(string path)
         {
             if (File.Exists(path))
-            {
                 LoadFrom(path);
-            }
         }
 
         [Setting]
@@ -45,7 +204,11 @@ namespace Kefka.Models
         public bool UseShitButton
         {
             get => _useShitButton;
-            set { _useShitButton = value; OnPropertyChanged(); }
+            set
+            {
+                _useShitButton = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -53,25 +216,47 @@ namespace Kefka.Models
         public bool ManualCardTarget
         {
             get => _manualCardTarget;
-            set { _manualCardTarget = value; OnPropertyChanged(); }
+            set
+            {
+                _manualCardTarget = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseCleanse
-        { get { return _useCleanse; } set { _useCleanse = value; OnPropertyChanged(); } }
+        {
+            get => _useCleanse;
+            set
+            {
+                _useCleanse = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(75)]
         public int CleanseHP
-        { get { return _cleanseHpPct; } set { _cleanseHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _cleanseHpPct;
+            set
+            {
+                _cleanseHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UsePotion
         {
             get => _usePotion;
-            set { _usePotion = value; OnPropertyChanged(); }
+            set
+            {
+                _usePotion = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -79,7 +264,11 @@ namespace Kefka.Models
         public bool UseMalefic
         {
             get => _useMalefic;
-            set { _useMalefic = value; OnPropertyChanged(); }
+            set
+            {
+                _useMalefic = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -87,7 +276,11 @@ namespace Kefka.Models
         public bool UseHelios
         {
             get => _useHelios;
-            set { _useHelios = value; OnPropertyChanged(); }
+            set
+            {
+                _useHelios = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -95,7 +288,11 @@ namespace Kefka.Models
         public bool NocturnalAspectedBeneficTanks
         {
             get => _nocturnalAspectedBeneficTanks;
-            set { _nocturnalAspectedBeneficTanks = value; OnPropertyChanged(); }
+            set
+            {
+                _nocturnalAspectedBeneficTanks = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -103,7 +300,11 @@ namespace Kefka.Models
         public bool UseAspectedBeneficWithNocturnal
         {
             get => _useAspectedBeneficWithNocturnal;
-            set { _useAspectedBeneficWithNocturnal = value; OnPropertyChanged(); }
+            set
+            {
+                _useAspectedBeneficWithNocturnal = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -111,7 +312,11 @@ namespace Kefka.Models
         public bool KeepNocturnalAspectedBeneficOnTanks
         {
             get => _keepNocturnalAspectedBeneficOnTanks;
-            set { _keepNocturnalAspectedBeneficOnTanks = value; OnPropertyChanged(); }
+            set
+            {
+                _keepNocturnalAspectedBeneficOnTanks = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -119,7 +324,11 @@ namespace Kefka.Models
         public bool NocturnalAspectedBeneficDps
         {
             get => _nocturnalAspectedBeneficDps;
-            set { _nocturnalAspectedBeneficDps = value; OnPropertyChanged(); }
+            set
+            {
+                _nocturnalAspectedBeneficDps = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -127,7 +336,11 @@ namespace Kefka.Models
         public bool UseEssentialDignity
         {
             get => _useEssentialDignity;
-            set { _useEssentialDignity = value; OnPropertyChanged(); }
+            set
+            {
+                _useEssentialDignity = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -135,7 +348,11 @@ namespace Kefka.Models
         public int BeneficHpPct
         {
             get => _beneficHpPct;
-            set { _beneficHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _beneficHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -143,7 +360,11 @@ namespace Kefka.Models
         public int Benefic2HpPct
         {
             get => _benefic2HpPct;
-            set { _benefic2HpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _benefic2HpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -151,7 +372,11 @@ namespace Kefka.Models
         public int EssentialDignityHpPct
         {
             get => _essentialDignityHpPct;
-            set { _essentialDignityHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _essentialDignityHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -159,7 +384,11 @@ namespace Kefka.Models
         public int HeliosHpPct
         {
             get => _heliosHpPct;
-            set { _heliosHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _heliosHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -167,7 +396,11 @@ namespace Kefka.Models
         public int CollectiveUnconsciousHpPct
         {
             get => _collectiveUnconsciousHpPct;
-            set { _collectiveUnconsciousHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _collectiveUnconsciousHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -175,7 +408,11 @@ namespace Kefka.Models
         public bool UseBenefic
         {
             get => _useBenefic;
-            set { _useBenefic = value; OnPropertyChanged(); }
+            set
+            {
+                _useBenefic = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -183,7 +420,11 @@ namespace Kefka.Models
         public bool KeepNocturnalAspectedBeneficOnDps
         {
             get => _keepNocturnalAspectedBeneficOnDps;
-            set { _keepNocturnalAspectedBeneficOnDps = value; OnPropertyChanged(); }
+            set
+            {
+                _keepNocturnalAspectedBeneficOnDps = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -191,7 +432,11 @@ namespace Kefka.Models
         public bool KeepNocturnalAspectedBeneficOnHealers
         {
             get => _keepNocturnalAspectedBeneficOnHealers;
-            set { _keepNocturnalAspectedBeneficOnHealers = value; OnPropertyChanged(); }
+            set
+            {
+                _keepNocturnalAspectedBeneficOnHealers = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -199,7 +444,11 @@ namespace Kefka.Models
         public bool UseCollectiveUnconscious
         {
             get => _useCollectiveUnconscious;
-            set { _useCollectiveUnconscious = value; OnPropertyChanged(); }
+            set
+            {
+                _useCollectiveUnconscious = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -207,7 +456,11 @@ namespace Kefka.Models
         public bool UseGravity
         {
             get => _useGravity;
-            set { _useGravity = value; OnPropertyChanged(); }
+            set
+            {
+                _useGravity = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -215,7 +468,11 @@ namespace Kefka.Models
         public bool UseSwiftcastAscend
         {
             get => _useSwiftcastAscend;
-            set { _useSwiftcastAscend = value; OnPropertyChanged(); }
+            set
+            {
+                _useSwiftcastAscend = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -223,7 +480,11 @@ namespace Kefka.Models
         public bool UseSwiftcastRaise
         {
             get => _useSwiftcastRaise;
-            set { _useSwiftcastRaise = value; OnPropertyChanged(); }
+            set
+            {
+                _useSwiftcastRaise = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -231,7 +492,11 @@ namespace Kefka.Models
         public bool UseAscendWithLightspeed
         {
             get => _useAscendWithLightspeed;
-            set { _useAscendWithLightspeed = value; OnPropertyChanged(); }
+            set
+            {
+                _useAscendWithLightspeed = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -239,7 +504,11 @@ namespace Kefka.Models
         public bool UseNocturnalAspectedHelios
         {
             get => _useNocturnalAspectedHelios;
-            set { _useNocturnalAspectedHelios = value; OnPropertyChanged(); }
+            set
+            {
+                _useNocturnalAspectedHelios = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -247,7 +516,11 @@ namespace Kefka.Models
         public bool UseCelestialOpposition
         {
             get => _useCelestialOpposition;
-            set { _useCelestialOpposition = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOpposition = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -255,7 +528,11 @@ namespace Kefka.Models
         public bool UseLucidDreaming
         {
             get => _useLucidDreaming;
-            set { _useLucidDreaming = value; OnPropertyChanged(); }
+            set
+            {
+                _useLucidDreaming = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -263,7 +540,11 @@ namespace Kefka.Models
         public bool UseCardPrepOutOfCombat
         {
             get => _useCardPrepOutOfCombat;
-            set { _useCardPrepOutOfCombat = value; OnPropertyChanged(); }
+            set
+            {
+                _useCardPrepOutOfCombat = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -271,7 +552,11 @@ namespace Kefka.Models
         public bool UseProtectInCombat
         {
             get => _useProtectInCombat;
-            set { _useProtectInCombat = value; OnPropertyChanged(); }
+            set
+            {
+                _useProtectInCombat = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -279,7 +564,11 @@ namespace Kefka.Models
         public bool NocturnalAspectedBeneficHealers
         {
             get => _nocturnalAspectedBeneficHealers;
-            set { _nocturnalAspectedBeneficHealers = value; OnPropertyChanged(); }
+            set
+            {
+                _nocturnalAspectedBeneficHealers = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -287,7 +576,11 @@ namespace Kefka.Models
         public int NocturnalAspectedHeliosHpPct
         {
             get => _nocturnalAspectedHeliosHpPct;
-            set { _nocturnalAspectedHeliosHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _nocturnalAspectedHeliosHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -295,7 +588,11 @@ namespace Kefka.Models
         public bool StopHeliosIfConditionsUnmet
         {
             get => _stopHeliosIfConditionsUnmet;
-            set { _stopHeliosIfConditionsUnmet = value; OnPropertyChanged(); }
+            set
+            {
+                _stopHeliosIfConditionsUnmet = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -303,7 +600,11 @@ namespace Kefka.Models
         public int NocturnalAspectedHeliosPlayerCount
         {
             get => _nocturnalAspectedHeliosPlayerCount;
-            set { _nocturnalAspectedHeliosPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _nocturnalAspectedHeliosPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -311,7 +612,11 @@ namespace Kefka.Models
         public int CollectiveUnconsciousPlayerCount
         {
             get => _collectiveUnconsciousPlayerCount;
-            set { _collectiveUnconsciousPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _collectiveUnconsciousPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -319,7 +624,11 @@ namespace Kefka.Models
         public bool UseBenefic2
         {
             get => _useBenefic2;
-            set { _useBenefic2 = value; OnPropertyChanged(); }
+            set
+            {
+                _useBenefic2 = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -327,7 +636,11 @@ namespace Kefka.Models
         public bool UseProtect
         {
             get => _useProtect;
-            set { _useProtect = value; OnPropertyChanged(); }
+            set
+            {
+                _useProtect = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -335,7 +648,11 @@ namespace Kefka.Models
         public bool AutoStopHeal
         {
             get => _autoStopHeal;
-            set { _autoStopHeal = value; OnPropertyChanged(); }
+            set
+            {
+                _autoStopHeal = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -343,7 +660,11 @@ namespace Kefka.Models
         public int HeliosPlayerCount
         {
             get => _heliosPlayerCount;
-            set { _heliosPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _heliosPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -351,7 +672,11 @@ namespace Kefka.Models
         public int LucidDreamingMpPct
         {
             get => _lucidDreamingMpPct;
-            set { _lucidDreamingMpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _lucidDreamingMpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -359,7 +684,11 @@ namespace Kefka.Models
         public bool UseLightspeed
         {
             get => _useLightspeed;
-            set { _useLightspeed = value; OnPropertyChanged(); }
+            set
+            {
+                _useLightspeed = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -367,7 +696,11 @@ namespace Kefka.Models
         public int LightspeedPlayerCount
         {
             get => _lightspeedPlayerCount;
-            set { _lightspeedPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _lightspeedPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -375,7 +708,11 @@ namespace Kefka.Models
         public int LightspeedHpPct
         {
             get => _lightspeedHpPct;
-            set { _lightspeedHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _lightspeedHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -383,7 +720,11 @@ namespace Kefka.Models
         public bool UseLightspeedOnTankOnly
         {
             get => _useLightspeedOnTankOnly;
-            set { _useLightspeedOnTankOnly = value; OnPropertyChanged(); }
+            set
+            {
+                _useLightspeedOnTankOnly = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -391,7 +732,11 @@ namespace Kefka.Models
         public bool UseSynastry
         {
             get => _useSynastry;
-            set { _useSynastry = value; OnPropertyChanged(); }
+            set
+            {
+                _useSynastry = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -399,7 +744,11 @@ namespace Kefka.Models
         public bool UseSynastryOnTankOnly
         {
             get => _useSynastryOnTankOnly;
-            set { _useSynastryOnTankOnly = value; OnPropertyChanged(); }
+            set
+            {
+                _useSynastryOnTankOnly = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -407,7 +756,11 @@ namespace Kefka.Models
         public int DiurnalAspectedHeliosPlayerCount
         {
             get => _diurnalAspectedHeliosPlayerCount;
-            set { _diurnalAspectedHeliosPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _diurnalAspectedHeliosPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -415,7 +768,11 @@ namespace Kefka.Models
         public int SynastryHpPct
         {
             get => _synastryHpPct;
-            set { _synastryHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _synastryHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -423,7 +780,11 @@ namespace Kefka.Models
         public int DamageMinMpPct
         {
             get => _damageMinMpPct;
-            set { _damageMinMpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _damageMinMpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -431,7 +792,11 @@ namespace Kefka.Models
         public int CombustRfsh
         {
             get => _combustRfsh;
-            set { _combustRfsh = value; OnPropertyChanged(); }
+            set
+            {
+                _combustRfsh = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -439,7 +804,11 @@ namespace Kefka.Models
         public int Combust2Rfsh
         {
             get => _combust2Rfsh;
-            set { _combust2Rfsh = value; OnPropertyChanged(); }
+            set
+            {
+                _combust2Rfsh = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -447,7 +816,11 @@ namespace Kefka.Models
         public int GravityMinTargets
         {
             get => _gravityMinTargets;
-            set { _gravityMinTargets = value; OnPropertyChanged(); }
+            set
+            {
+                _gravityMinTargets = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -455,7 +828,11 @@ namespace Kefka.Models
         public int GravityMinMpPct
         {
             get => _gravityMinMpPct;
-            set { _gravityMinMpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _gravityMinMpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -463,7 +840,11 @@ namespace Kefka.Models
         public bool UseAscend
         {
             get => _useAscend;
-            set { _useAscend = value; OnPropertyChanged(); }
+            set
+            {
+                _useAscend = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -471,7 +852,11 @@ namespace Kefka.Models
         public int StopHealHpPct
         {
             get => _stopHealHpPct;
-            set { _stopHealHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _stopHealHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -479,7 +864,11 @@ namespace Kefka.Models
         public bool UseEssentialDignityOnTankOnly
         {
             get => _useEssentialDignityOnTankOnly;
-            set { _useEssentialDignityOnTankOnly = value; OnPropertyChanged(); }
+            set
+            {
+                _useEssentialDignityOnTankOnly = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -487,7 +876,11 @@ namespace Kefka.Models
         public bool DoDamage
         {
             get => _doDamage;
-            set { _doDamage = value; OnPropertyChanged(); }
+            set
+            {
+                _doDamage = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -495,7 +888,11 @@ namespace Kefka.Models
         public bool UseAspectedBeneficWithDiurnal
         {
             get => _useAspectedBeneficWithDiurnal;
-            set { _useAspectedBeneficWithDiurnal = value; OnPropertyChanged(); }
+            set
+            {
+                _useAspectedBeneficWithDiurnal = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -503,7 +900,11 @@ namespace Kefka.Models
         public bool DiurnalAspectedBeneficTanks
         {
             get => _diurnalAspectedBeneficTanks;
-            set { _diurnalAspectedBeneficTanks = value; OnPropertyChanged(); }
+            set
+            {
+                _diurnalAspectedBeneficTanks = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -511,7 +912,11 @@ namespace Kefka.Models
         public bool DiurnalAspectedBeneficHealers
         {
             get => _diurnalAspectedBeneficHealers;
-            set { _diurnalAspectedBeneficHealers = value; OnPropertyChanged(); }
+            set
+            {
+                _diurnalAspectedBeneficHealers = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -519,7 +924,11 @@ namespace Kefka.Models
         public bool DiurnalAspectedBeneficDps
         {
             get => _diurnalAspectedBeneficDps;
-            set { _diurnalAspectedBeneficDps = value; OnPropertyChanged(); }
+            set
+            {
+                _diurnalAspectedBeneficDps = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -527,7 +936,11 @@ namespace Kefka.Models
         public bool KeepDiurnalAspectedBeneficOnTanks
         {
             get => _keepDiurnalAspectedBeneficOnTanks;
-            set { _keepDiurnalAspectedBeneficOnTanks = value; OnPropertyChanged(); }
+            set
+            {
+                _keepDiurnalAspectedBeneficOnTanks = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -535,7 +948,11 @@ namespace Kefka.Models
         public bool KeepDiurnalAspectedBeneficOnHealers
         {
             get => _keepDiurnalAspectedBeneficOnHealers;
-            set { _keepDiurnalAspectedBeneficOnHealers = value; OnPropertyChanged(); }
+            set
+            {
+                _keepDiurnalAspectedBeneficOnHealers = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -543,7 +960,11 @@ namespace Kefka.Models
         public bool KeepDiurnalAspectedBeneficOnDps
         {
             get => _keepDiurnalAspectedBeneficOnDps;
-            set { _keepDiurnalAspectedBeneficOnDps = value; OnPropertyChanged(); }
+            set
+            {
+                _keepDiurnalAspectedBeneficOnDps = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -551,7 +972,11 @@ namespace Kefka.Models
         public bool UseDiurnalAspectedHelios
         {
             get => _useDiurnalAspectedHelios;
-            set { _useDiurnalAspectedHelios = value; OnPropertyChanged(); }
+            set
+            {
+                _useDiurnalAspectedHelios = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -559,7 +984,11 @@ namespace Kefka.Models
         public int DiurnalAspectedBeneficHpPct
         {
             get => _diurnalAspectedBeneficHpPct;
-            set { _diurnalAspectedBeneficHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _diurnalAspectedBeneficHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -567,7 +996,11 @@ namespace Kefka.Models
         public int NocturnalAspectedBeneficHpPct
         {
             get => _nocturnalAspectedBeneficHpPct;
-            set { _nocturnalAspectedBeneficHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _nocturnalAspectedBeneficHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -575,7 +1008,11 @@ namespace Kefka.Models
         public int DiurnalAspectedHeliosHpPct
         {
             get => _diurnalAspectedHeliosHpPct;
-            set { _diurnalAspectedHeliosHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _diurnalAspectedHeliosHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -583,7 +1020,11 @@ namespace Kefka.Models
         public bool UseCombust
         {
             get => _useCombust;
-            set { _useCombust = value; OnPropertyChanged(); }
+            set
+            {
+                _useCombust = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -591,7 +1032,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterCollectiveUnconsciousness
         {
             get => _useCelestialOppositionAfterCollectiveUnconsciousness;
-            set { _useCelestialOppositionAfterCollectiveUnconsciousness = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterCollectiveUnconsciousness = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -599,7 +1044,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterExpandedCard
         {
             get => _useCelestialOppositionAfterExpandedCard;
-            set { _useCelestialOppositionAfterExpandedCard = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterExpandedCard = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -607,7 +1056,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterSpearExpanded
         {
             get => _useCelestialOppositionAfterSpearExpanded;
-            set { _useCelestialOppositionAfterSpearExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterSpearExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -615,7 +1068,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterBoleExpanded
         {
             get => _useCelestialOppositionAfterBoleExpanded;
-            set { _useCelestialOppositionAfterBoleExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterBoleExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -623,7 +1080,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterBalanceExpanded
         {
             get => _useCelestialOppositionAfterBalanceExpanded;
-            set { _useCelestialOppositionAfterBalanceExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterBalanceExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -631,7 +1092,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterArrowExpanded
         {
             get => _useCelestialOppositionAfterArrowExpanded;
-            set { _useCelestialOppositionAfterArrowExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterArrowExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -639,7 +1104,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterSpireExpanded
         {
             get => _useCelestialOppositionAfterSpireExpanded;
-            set { _useCelestialOppositionAfterSpireExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterSpireExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -647,7 +1116,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterEwerExpanded
         {
             get => _useCelestialOppositionAfterEwerExpanded;
-            set { _useCelestialOppositionAfterEwerExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterEwerExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -655,7 +1128,11 @@ namespace Kefka.Models
         public int CelestialOppositionPlayerCount
         {
             get => _celestialOppositionPlayerCount;
-            set { _celestialOppositionPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _celestialOppositionPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -663,7 +1140,11 @@ namespace Kefka.Models
         public bool UseTimeDilation
         {
             get => _useTimeDilation;
-            set { _useTimeDilation = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilation = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -671,7 +1152,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterBole
         {
             get => _useTimeDilationAfterBole;
-            set { _useTimeDilationAfterBole = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -679,7 +1164,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterBalance
         {
             get => _useTimeDilationAfterBalance;
-            set { _useTimeDilationAfterBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -687,7 +1176,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterArrow
         {
             get => _useTimeDilationAfterArrow;
-            set { _useTimeDilationAfterArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -695,7 +1188,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterSpear
         {
             get => _useTimeDilationAfterSpear;
-            set { _useTimeDilationAfterSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -703,7 +1200,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterSpire
         {
             get => _useTimeDilationAfterSpire;
-            set { _useTimeDilationAfterSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -711,7 +1212,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterEwer
         {
             get => _useTimeDilationAfterEwer;
-            set { _useTimeDilationAfterEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -719,7 +1224,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterSynastry
         {
             get => _useTimeDilationAfterSynastry;
-            set { _useTimeDilationAfterSynastry = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterSynastry = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -727,7 +1236,11 @@ namespace Kefka.Models
         public bool UseTimeDilationAfterTankDiurnalBenefic
         {
             get => _useTimeDilationAfterTankDiurnalBenefic;
-            set { _useTimeDilationAfterTankDiurnalBenefic = value; OnPropertyChanged(); }
+            set
+            {
+                _useTimeDilationAfterTankDiurnalBenefic = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -735,7 +1248,11 @@ namespace Kefka.Models
         public int AspectedBeneficFloorPct
         {
             get => _aspectedBeneficFloorPct;
-            set { _aspectedBeneficFloorPct = value; OnPropertyChanged(); }
+            set
+            {
+                _aspectedBeneficFloorPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -743,7 +1260,11 @@ namespace Kefka.Models
         public bool AspectedBeneficFloorTanks
         {
             get => _aspectedBeneficFloorTanks;
-            set { _aspectedBeneficFloorTanks = value; OnPropertyChanged(); }
+            set
+            {
+                _aspectedBeneficFloorTanks = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -751,7 +1272,11 @@ namespace Kefka.Models
         public bool AspectedBeneficFloorHealers
         {
             get => _aspectedBeneficFloorHealers;
-            set { _aspectedBeneficFloorHealers = value; OnPropertyChanged(); }
+            set
+            {
+                _aspectedBeneficFloorHealers = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -759,70 +1284,155 @@ namespace Kefka.Models
         public bool AspectedBeneficFloorDps
         {
             get => _aspectedBeneficFloorDps;
-            set { _aspectedBeneficFloorDps = value; OnPropertyChanged(); }
+            set
+            {
+                _aspectedBeneficFloorDps = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseEarthlyStar
-        { get { return _useEarthlyStar; } set { _useEarthlyStar = value; OnPropertyChanged(); } }
+        {
+            get => _useEarthlyStar;
+            set
+            {
+                _useEarthlyStar = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseEarthlyStarForDamage
-        { get { return _useEarthlyStarForDamage; } set { _useEarthlyStarForDamage = value; OnPropertyChanged(); } }
+        {
+            get => _useEarthlyStarForDamage;
+            set
+            {
+                _useEarthlyStarForDamage = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(60)]
         public int EarthlyStarHpPct
-        { get { return _earthlyStarHpPct; } set { _earthlyStarHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _earthlyStarHpPct;
+            set
+            {
+                _earthlyStarHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(3)]
         public int EarthlyStarPlayerCount
-        { get { return _earthlyStarPlayerCount; } set { _earthlyStarPlayerCount = value; OnPropertyChanged(); } }
+        {
+            get => _earthlyStarPlayerCount;
+            set
+            {
+                _earthlyStarPlayerCount = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(50)]
         public int LadyofCrownsHpPct
-        { get { return _ladyofCrownsHpPct; } set { _ladyofCrownsHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _ladyofCrownsHpPct;
+            set
+            {
+                _ladyofCrownsHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseEyeforanEye
-        { get { return _useEyeforanEye; } set { _useEyeforanEye = value; OnPropertyChanged(); } }
+        {
+            get => _useEyeforanEye;
+            set
+            {
+                _useEyeforanEye = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(80)]
         public int EyeforanEyeHpPct
-        { get { return _eyeforanEyeHpPct; } set { _eyeforanEyeHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _eyeforanEyeHpPct;
+            set
+            {
+                _eyeforanEyeHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseLargesse
-        { get { return _useLargesse; } set { _useLargesse = value; OnPropertyChanged(); } }
+        {
+            get => _useLargesse;
+            set
+            {
+                _useLargesse = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseLargesseOnTankOnly
-        { get { return _useLargesseOnTankOnly; } set { _useLargesseOnTankOnly = value; OnPropertyChanged(); } }
+        {
+            get => _useLargesseOnTankOnly;
+            set
+            {
+                _useLargesseOnTankOnly = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(60)]
         public int LargesseHpPct
-        { get { return _largesseHpPct; } set { _largesseHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _largesseHpPct;
+            set
+            {
+                _largesseHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(1)]
         public int LargessePlayerCount
-        { get { return _largessePlayerCount; } set { _largessePlayerCount = value; OnPropertyChanged(); } }
+        {
+            get => _largessePlayerCount;
+            set
+            {
+                _largessePlayerCount = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseCards
         {
             get => _useCards;
-            set { _useCards = value; OnPropertyChanged(); }
+            set
+            {
+                _useCards = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -830,7 +1440,11 @@ namespace Kefka.Models
         public bool OnlyDraw
         {
             get => _onlyDraw;
-            set { _onlyDraw = value; OnPropertyChanged(); }
+            set
+            {
+                _onlyDraw = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -838,7 +1452,11 @@ namespace Kefka.Models
         public int CardDrawTimeMin
         {
             get => _cardDrawTimeMin;
-            set { _cardDrawTimeMin = value; OnPropertyChanged(); }
+            set
+            {
+                _cardDrawTimeMin = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -846,7 +1464,11 @@ namespace Kefka.Models
         public bool UseSpread
         {
             get => _useSpread;
-            set { _useSpread = value; OnPropertyChanged(); }
+            set
+            {
+                _useSpread = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -854,7 +1476,11 @@ namespace Kefka.Models
         public bool UseRedraw
         {
             get => _useRedraw;
-            set { _useRedraw = value; OnPropertyChanged(); }
+            set
+            {
+                _useRedraw = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -862,7 +1488,11 @@ namespace Kefka.Models
         public bool CastTrashCards
         {
             get => _castTrashCards;
-            set { _castTrashCards = value; OnPropertyChanged(); }
+            set
+            {
+                _castTrashCards = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -870,7 +1500,11 @@ namespace Kefka.Models
         public bool UseCardPrepOutOfCombatOnlyInParty
         {
             get => _useCardPrepOutOfCombatOnlyInParty;
-            set { _useCardPrepOutOfCombatOnlyInParty = value; OnPropertyChanged(); }
+            set
+            {
+                _useCardPrepOutOfCombatOnlyInParty = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -878,7 +1512,11 @@ namespace Kefka.Models
         public bool UseUndraw
         {
             get => _useUndraw;
-            set { _useUndraw = value; OnPropertyChanged(); }
+            set
+            {
+                _useUndraw = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -886,7 +1524,11 @@ namespace Kefka.Models
         public bool UseSleeveDraw
         {
             get => _useSleeveDraw;
-            set { _useSleeveDraw = value; OnPropertyChanged(); }
+            set
+            {
+                _useSleeveDraw = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -894,7 +1536,11 @@ namespace Kefka.Models
         public int BoleHpPct
         {
             get => _boleHpPct;
-            set { _boleHpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _boleHpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -902,7 +1548,11 @@ namespace Kefka.Models
         public int EwerMpPct
         {
             get => _ewerMpPct;
-            set { _ewerMpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _ewerMpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -910,7 +1560,11 @@ namespace Kefka.Models
         public int SpireTpPct
         {
             get => _spireTpPct;
-            set { _spireTpPct = value; OnPropertyChanged(); }
+            set
+            {
+                _spireTpPct = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -918,7 +1572,11 @@ namespace Kefka.Models
         public bool BoleTank
         {
             get => _boleTank;
-            set { _boleTank = value; OnPropertyChanged(); }
+            set
+            {
+                _boleTank = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -926,7 +1584,11 @@ namespace Kefka.Models
         public bool EwerHealer
         {
             get => _ewerHealer;
-            set { _ewerHealer = value; OnPropertyChanged(); }
+            set
+            {
+                _ewerHealer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -934,7 +1596,11 @@ namespace Kefka.Models
         public bool RedrawBalance
         {
             get => _redrawBalance;
-            set { _redrawBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _redrawBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -942,7 +1608,11 @@ namespace Kefka.Models
         public bool RedrawBole
         {
             get => _redrawBole;
-            set { _redrawBole = value; OnPropertyChanged(); }
+            set
+            {
+                _redrawBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -950,7 +1620,11 @@ namespace Kefka.Models
         public bool RedrawArrow
         {
             get => _redrawArrow;
-            set { _redrawArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _redrawArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -958,7 +1632,11 @@ namespace Kefka.Models
         public bool RedrawSpear
         {
             get => _redrawSpear;
-            set { _redrawSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _redrawSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -966,7 +1644,11 @@ namespace Kefka.Models
         public bool RedrawEwer
         {
             get => _redrawEwer;
-            set { _redrawEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _redrawEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -974,7 +1656,11 @@ namespace Kefka.Models
         public bool RedrawSpire
         {
             get => _redrawSpire;
-            set { _redrawSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _redrawSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -982,7 +1668,11 @@ namespace Kefka.Models
         public bool EnhancedBalance
         {
             get => _enhancedBalance;
-            set { _enhancedBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _enhancedBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -990,7 +1680,11 @@ namespace Kefka.Models
         public bool ExtendedBalance
         {
             get => _extendedBalance;
-            set { _extendedBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _extendedBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -998,7 +1692,11 @@ namespace Kefka.Models
         public bool ExpandedBalance
         {
             get => _expandedBalance;
-            set { _expandedBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1006,7 +1704,11 @@ namespace Kefka.Models
         public bool EnhancedBole
         {
             get => _enhancedBole;
-            set { _enhancedBole = value; OnPropertyChanged(); }
+            set
+            {
+                _enhancedBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1014,7 +1716,11 @@ namespace Kefka.Models
         public bool ExtendedBole
         {
             get => _extendedBole;
-            set { _extendedBole = value; OnPropertyChanged(); }
+            set
+            {
+                _extendedBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1022,7 +1728,11 @@ namespace Kefka.Models
         public bool ExpandedBole
         {
             get => _expandedBole;
-            set { _expandedBole = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1030,7 +1740,11 @@ namespace Kefka.Models
         public bool EnhancedArrow
         {
             get => _enhancedArrow;
-            set { _enhancedArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _enhancedArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1038,7 +1752,11 @@ namespace Kefka.Models
         public bool ExtendedArrow
         {
             get => _extendedArrow;
-            set { _extendedArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _extendedArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1046,7 +1764,11 @@ namespace Kefka.Models
         public bool ExpandedArrow
         {
             get => _expandedArrow;
-            set { _expandedArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1054,7 +1776,11 @@ namespace Kefka.Models
         public bool EnhancedSpear
         {
             get => _enhancedSpear;
-            set { _enhancedSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _enhancedSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1062,7 +1788,11 @@ namespace Kefka.Models
         public bool ExtendedSpear
         {
             get => _extendedSpear;
-            set { _extendedSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _extendedSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1070,7 +1800,11 @@ namespace Kefka.Models
         public bool ExpandedSpear
         {
             get => _expandedSpear;
-            set { _expandedSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1078,7 +1812,11 @@ namespace Kefka.Models
         public bool EnhancedEwer
         {
             get => _enhancedEwer;
-            set { _enhancedEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _enhancedEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1086,7 +1824,11 @@ namespace Kefka.Models
         public bool ExtendedEwer
         {
             get => _extendedEwer;
-            set { _extendedEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _extendedEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1094,7 +1836,11 @@ namespace Kefka.Models
         public bool ExpandedEwer
         {
             get => _expandedEwer;
-            set { _expandedEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1102,7 +1848,11 @@ namespace Kefka.Models
         public bool EnhancedSpire
         {
             get => _enhancedSpire;
-            set { _enhancedSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _enhancedSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1110,7 +1860,11 @@ namespace Kefka.Models
         public bool ExtendedSpire
         {
             get => _extendedSpire;
-            set { _extendedSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _extendedSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1118,7 +1872,11 @@ namespace Kefka.Models
         public bool ExpandedSpire
         {
             get => _expandedSpire;
-            set { _expandedSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1126,7 +1884,11 @@ namespace Kefka.Models
         public bool RoyalRoadEnhanced
         {
             get => _royalRoadEnhanced;
-            set { _royalRoadEnhanced = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadEnhanced = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1134,7 +1896,11 @@ namespace Kefka.Models
         public bool RoyalRoadExtended
         {
             get => _royalRoadExtended;
-            set { _royalRoadExtended = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadExtended = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1142,7 +1908,11 @@ namespace Kefka.Models
         public bool RoyalRoadExpanded
         {
             get => _royalRoadExpanded;
-            set { _royalRoadExpanded = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadExpanded = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1150,7 +1920,11 @@ namespace Kefka.Models
         public bool SpreadBalance
         {
             get => _spreadBalance;
-            set { _spreadBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _spreadBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1158,7 +1932,11 @@ namespace Kefka.Models
         public bool SpreadBole
         {
             get => _spreadBole;
-            set { _spreadBole = value; OnPropertyChanged(); }
+            set
+            {
+                _spreadBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1166,7 +1944,11 @@ namespace Kefka.Models
         public bool SpreadArrow
         {
             get => _spreadArrow;
-            set { _spreadArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _spreadArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1174,7 +1956,11 @@ namespace Kefka.Models
         public bool SpreadSpear
         {
             get => _spreadSpear;
-            set { _spreadSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _spreadSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1182,7 +1968,11 @@ namespace Kefka.Models
         public bool SpreadEwer
         {
             get => _spreadEwer;
-            set { _spreadEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _spreadEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1190,7 +1980,11 @@ namespace Kefka.Models
         public bool SpreadSpire
         {
             get => _spreadSpire;
-            set { _spreadSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _spreadSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1198,7 +1992,11 @@ namespace Kefka.Models
         public bool UseHeldAndRoyalRoad
         {
             get => _useHeldAndRoyalRoad;
-            set { _useHeldAndRoyalRoad = value; OnPropertyChanged(); }
+            set
+            {
+                _useHeldAndRoyalRoad = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1206,7 +2004,11 @@ namespace Kefka.Models
         public bool RoyalRoadBalance
         {
             get => _royalRoadBalance;
-            set { _royalRoadBalance = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadBalance = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1214,7 +2016,11 @@ namespace Kefka.Models
         public bool RoyalRoadBole
         {
             get => _royalRoadBole;
-            set { _royalRoadBole = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadBole = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1222,7 +2028,11 @@ namespace Kefka.Models
         public bool RoyalRoadArrow
         {
             get => _royalRoadArrow;
-            set { _royalRoadArrow = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadArrow = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1230,7 +2040,11 @@ namespace Kefka.Models
         public bool RoyalRoadSpear
         {
             get => _royalRoadSpear;
-            set { _royalRoadSpear = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadSpear = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1238,7 +2052,11 @@ namespace Kefka.Models
         public bool RoyalRoadEwer
         {
             get => _royalRoadEwer;
-            set { _royalRoadEwer = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadEwer = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1246,7 +2064,11 @@ namespace Kefka.Models
         public bool RoyalRoadSpire
         {
             get => _royalRoadSpire;
-            set { _royalRoadSpire = value; OnPropertyChanged(); }
+            set
+            {
+                _royalRoadSpire = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1254,7 +2076,11 @@ namespace Kefka.Models
         public int ExpandedPlayerCount
         {
             get => _expandedPlayerCount;
-            set { _expandedPlayerCount = value; OnPropertyChanged(); }
+            set
+            {
+                _expandedPlayerCount = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1262,7 +2088,11 @@ namespace Kefka.Models
         public bool UseCelestialOppositionAfterLucidDreaming
         {
             get => _useCelestialOppositionAfterLucidDreaming;
-            set { _useCelestialOppositionAfterLucidDreaming = value; OnPropertyChanged(); }
+            set
+            {
+                _useCelestialOppositionAfterLucidDreaming = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1270,7 +2100,11 @@ namespace Kefka.Models
         public bool ShowPotion
         {
             get => _showPotion;
-            set { _showPotion = value; OnPropertyChanged(); }
+            set
+            {
+                _showPotion = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1278,7 +2112,11 @@ namespace Kefka.Models
         public bool ShowDoDamage
         {
             get => _showDoDamage;
-            set { _showDoDamage = value; OnPropertyChanged(); }
+            set
+            {
+                _showDoDamage = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1286,7 +2124,11 @@ namespace Kefka.Models
         public bool ShowGravity
         {
             get => _showGravity;
-            set { _showGravity = value; OnPropertyChanged(); }
+            set
+            {
+                _showGravity = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1294,7 +2136,11 @@ namespace Kefka.Models
         public bool ShowEssentialDignity
         {
             get => _showEssentialDignity;
-            set { _showEssentialDignity = value; OnPropertyChanged(); }
+            set
+            {
+                _showEssentialDignity = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1302,7 +2148,11 @@ namespace Kefka.Models
         public bool ShowLightspeed
         {
             get => _showLightspeed;
-            set { _showLightspeed = value; OnPropertyChanged(); }
+            set
+            {
+                _showLightspeed = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1310,7 +2160,11 @@ namespace Kefka.Models
         public bool ShowSynastry
         {
             get => _showSynastry;
-            set { _showSynastry = value; OnPropertyChanged(); }
+            set
+            {
+                _showSynastry = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1318,7 +2172,11 @@ namespace Kefka.Models
         public bool ShowEyeforanEye
         {
             get => _showEyeforanEye;
-            set { _showEyeforanEye = value; OnPropertyChanged(); }
+            set
+            {
+                _showEyeforanEye = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1326,7 +2184,11 @@ namespace Kefka.Models
         public bool ShowLargesse
         {
             get => _showLargesse;
-            set { _showLargesse = value; OnPropertyChanged(); }
+            set
+            {
+                _showLargesse = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1334,7 +2196,11 @@ namespace Kefka.Models
         public bool ShowCards
         {
             get => _showCard;
-            set { _showCard = value; OnPropertyChanged(); }
+            set
+            {
+                _showCard = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1342,7 +2208,11 @@ namespace Kefka.Models
         public bool ShowOnlyDraw
         {
             get => _showOnlyDraw;
-            set { _showOnlyDraw = value; OnPropertyChanged(); }
+            set
+            {
+                _showOnlyDraw = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1350,7 +2220,11 @@ namespace Kefka.Models
         public bool ShowSleeveDraw
         {
             get => _showSleeveDraw;
-            set { _showSleeveDraw = value; OnPropertyChanged(); }
+            set
+            {
+                _showSleeveDraw = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1358,7 +2232,11 @@ namespace Kefka.Models
         public bool ShowRoyalRoad
         {
             get => _showRoyalRoad;
-            set { _showRoyalRoad = value; OnPropertyChanged(); }
+            set
+            {
+                _showRoyalRoad = value;
+                OnPropertyChanged();
+            }
         }
 
         [Setting]
@@ -1366,7 +2244,11 @@ namespace Kefka.Models
         public bool ShowSpread
         {
             get => _showSpread;
-            set { _showSpread = value; OnPropertyChanged(); }
+            set
+            {
+                _showSpread = value;
+                OnPropertyChanged();
+            }
         }
 
         private SoloSectMode _selectedSectMode;
@@ -1375,7 +2257,11 @@ namespace Kefka.Models
         public SoloSectMode SelectedSectMode
         {
             get => _selectedSectMode;
-            set { _selectedSectMode = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedSectMode = value;
+                OnPropertyChanged();
+            }
         }
     }
 

@@ -1,13 +1,13 @@
-﻿using Buddy.Coroutines;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
 using Kefka.Models;
-using Kefka.Utilities;
-using System.Linq;
-using System.Threading.Tasks;
 using Kefka.Routine_Files.General;
+using Kefka.Utilities;
+using static Kefka.Utilities.Constants;
 using Auras = Kefka.Routine_Files.General.Auras;
 
 namespace Kefka.Routine_Files.Eiko

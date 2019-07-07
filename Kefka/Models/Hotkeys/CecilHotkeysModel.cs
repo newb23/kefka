@@ -1,14 +1,12 @@
-﻿using ff14bot;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using Kefka.Utilities;
 using Kefka.ViewModels;
-using static Kefka.Utilities.Constants;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -18,7 +16,7 @@ namespace Kefka.Models
         private static CecilHotkeysModel _instance;
         public static CecilHotkeysModel Instance => _instance ?? (_instance = new CecilHotkeysModel());
 
-        private CecilHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Cecil_Hotkeys.json")
+        private CecilHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Cecil_Hotkeys.json")
         {
         }
 

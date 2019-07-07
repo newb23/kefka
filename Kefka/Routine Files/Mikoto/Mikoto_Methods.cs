@@ -1,13 +1,12 @@
-﻿using Buddy.Coroutines;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using Kefka.Routine_Files.General;
-using System.Linq;
-using System.Threading.Tasks;
 using Kefka.Models;
+using Kefka.Routine_Files.General;
 using Kefka.Utilities;
+using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Auras = Kefka.Routine_Files.General.Auras;
 
@@ -173,7 +172,7 @@ namespace Kefka.Routine_Files.Mikoto
                     if (MikotoSettingsModel.Instance.UseSwiftcastRaise && ActionManager.CanCast(Spells.Swiftcast, Me))
                         await Spells.Swiftcast.CastBuff(Me, true, Auras.Swiftcast);
 
-                    return await Spells.Raise.Use(target, true, true); 
+                    return await Spells.Raise.Use(target, true, true);
                 }
             }
             return false;

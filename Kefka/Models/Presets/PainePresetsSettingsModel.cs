@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static PainePresetsSettingsModel _instance;
         public static PainePresetsSettingsModel Instance => _instance ?? (_instance = new PainePresetsSettingsModel());
 
-        private PainePresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Paine/Paine_Preset_Settings.json")
+        private PainePresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Paine/Paine_Preset_Settings.json")
         {
         }
 

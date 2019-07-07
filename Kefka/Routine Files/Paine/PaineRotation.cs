@@ -81,7 +81,7 @@ namespace Kefka.Routine_Files.Paine
             if (await DpsPotion()) return true;
             if (await Stance()) return true;
             if (await Berserk()) return true;
-            if (await InnerRelease()) return true;         
+            if (await InnerRelease()) return true;
             if (await Unchained()) return true;
             return await OffGcd();
         }

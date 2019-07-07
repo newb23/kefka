@@ -1,14 +1,12 @@
-﻿using ff14bot;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using Kefka.Utilities;
 using Kefka.ViewModels;
-using static Kefka.Utilities.Constants;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -18,19 +16,19 @@ namespace Kefka.Models
         private static BeatrixHotkeysModel _instance;
         public static BeatrixHotkeysModel Instance => _instance ?? (_instance = new BeatrixHotkeysModel());
 
-        private BeatrixHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Beatrix_Hotkeys.json")
+        private BeatrixHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Beatrix_Hotkeys.json")
         {
         }
 
         private volatile Keys _preset1Key, _preset2Key, _preset3Key, _preset4Key, _preset5Key,
-            _opener, _potion, _tankSwap, _swordOath, 
-            _mainTank, _flash, _shieldLob, _clemency, _buffs, 
+            _opener, _potion, _tankSwap, _swordOath,
+            _mainTank, _flash, _shieldLob, _clemency, _buffs,
             _defensives, _awareness, _sheltron, _divineVeil, _hallowedGround, _sentinel, _bulwark, _rampart, _convalescence, _anticipation, _reprisal,
             _interrupt, _busterDefense;
 
         private volatile ModifierKeys _preset1Modifier, _preset2Modifier, _preset3Modifier, _preset4Modifier, _preset5Modifier,
-            _openerModifier, _potionModifier, _tankSwapModifier, _swordOathModifier, 
-            _mainTankModifier, _flashModifier, _shieldLobModifier, _buffsModifier, 
+            _openerModifier, _potionModifier, _tankSwapModifier, _swordOathModifier,
+            _mainTankModifier, _flashModifier, _shieldLobModifier, _buffsModifier,
             _defensivesModifier, _awarenessModifier, _sheltronModifier, _clemencyModifier, _divineVeilModifier, _hallowedGroundModifier, _sentinelModifier, _bulwarkModifier, _rampartModifier, _convalescenceModifier, _anticipationModifier, _reprisalModifier,
             _interruptModifier, _busterDefenseModifier;
 

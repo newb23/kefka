@@ -1,17 +1,15 @@
 ﻿using System;
-using Buddy.Coroutines;
+using System.Linq;
+using System.Threading.Tasks;
+using ff14bot.Enums;
 using ff14bot.Managers;
-using static Kefka.Utilities.Constants;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.ViewModels;
-using System.Linq;
-using System.Threading.Tasks;
-using ff14bot.Enums;
+using static Kefka.Utilities.Constants;
 using static ff14bot.Managers.ActionResourceManager.RedMage;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
-using Auras = Kefka.Routine_Files.General.Auras;
 
 namespace Kefka.Routine_Files.Elayne
 {
@@ -54,7 +52,7 @@ namespace Kefka.Routine_Files.Elayne
         {
             if (Me.HasAura(Auras.VerstoneReady)) return false;
 
-            if ((Me.HasAura(Auras.Dualcast) || Me.HasAura(Auras.Swiftcast) || _swiftcastReady) && 
+            if ((Me.HasAura(Auras.Dualcast) || Me.HasAura(Auras.Swiftcast) || _swiftcastReady) &&
                 WhiteMana <= BlackMana)
             {
                 if (!ElayneSettingsModel.Instance.UseSwiftcastForVerraise)
@@ -69,7 +67,7 @@ namespace Kefka.Routine_Files.Elayne
         {
             if (Me.HasAura(Auras.VerfireReady)) return false;
 
-            if ((Me.HasAura(Auras.Dualcast) || Me.HasAura(Auras.Swiftcast) || _swiftcastReady) && 
+            if ((Me.HasAura(Auras.Dualcast) || Me.HasAura(Auras.Swiftcast) || _swiftcastReady) &&
                 (BlackMana < WhiteMana || Me.ClassLevel < 10))
             {
                 if (!ElayneSettingsModel.Instance.UseSwiftcastForVerraise)

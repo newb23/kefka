@@ -6,8 +6,8 @@ namespace Kefka.Models
     {
         #region Fields
 
-        private string ignoreTargetName;
-        private uint ignoreTargetId;
+        private string _ignoreTargetName;
+        private uint _ignoreTargetId;
 
         #endregion Fields
 
@@ -15,20 +15,20 @@ namespace Kefka.Models
 
         public string IgnoreTargetName
         {
-            get { return ignoreTargetName; }
+            get => _ignoreTargetName;
             set
             {
-                ignoreTargetName = value;
+                _ignoreTargetName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint IgnoreTargetId
         {
-            get { return ignoreTargetId; }
+            get => _ignoreTargetId;
             set
             {
-                ignoreTargetId = value;
+                _ignoreTargetId = value;
                 OnPropertyChanged();
             }
         }

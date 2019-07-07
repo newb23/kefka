@@ -1,11 +1,7 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Configuration;
 using System.IO;
 using System.Windows.Input;
-using ff14bot;
-using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
 using Kefka.Commands;
 using Kefka.Properties;
 using Kefka.Utilities;
@@ -18,19 +14,71 @@ namespace Kefka.Models
         private static ShadowSettingsModel _instance;
         public static ShadowSettingsModel Instance => _instance ?? (_instance = new ShadowSettingsModel());
 
-        private ShadowSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Shadow/Shadow_Settings.json")
+        private ShadowSettingsModel() : base(CharacterSettingsDirectory +
+                                             "/Kefka/Routine Settings/Shadow/Shadow_Settings.json")
         {
         }
 
-        private bool _useBuffs, _useNinjutsu, _useAoE, _useDpsPotion, _useAssassinate, _useShukuchi, _useDots, _useOpener, _useDeathBlossom, _useTenChiJin,
-            _useShadwalkerTarget, _useManualShadewalker, _useInterruptList, _useMudrasOoc, _useAbilitiesFromStealth, _useManualInterrupt, _useThrowingDagger, _useShadeShift, _useSmokeScreen,
-            _useTrueNorth, _useFeint;
+        private bool
+            _useBuffs,
+            _useNinjutsu,
+            _useAoE,
+            _useDpsPotion,
+            _useAssassinate,
+            _useShukuchi,
+            _useDots,
+            _useOpener,
+            _useDeathBlossom,
+            _useTenChiJin,
+            _useShadwalkerTarget,
+            _useManualShadewalker,
+            _useInterruptList,
+            _useMudrasOoc,
+            _useAbilitiesFromStealth,
+            _useManualInterrupt,
+            _useThrowingDagger,
+            _useShadeShift,
+            _useSmokeScreen,
+            _useTrueNorth,
+            _useFeint;
 
-        private bool _showBuffs, _showNinjutsu, _showAoE, _showDpsPotion, _showAssassinate, _showShukuchi, _showDots, _showDynamicPositionals, _showOpener, _showDeathBlossom,
-            _showTenChiJin, _showShadwalkerTarget, _showManualShadewalker, _showInterruptList, _showMudrasOoc, _showAbilitiesFromStealth, _showManualInterrupt, _showThrowingDagger,
-            _showShadeShift, _showSmokeScreen, _showTrueNorth, _showFeint;
+        private bool
+            _showBuffs,
+            _showNinjutsu,
+            _showAoE,
+            _showDpsPotion,
+            _showAssassinate,
+            _showShukuchi,
+            _showDots,
+            _showDynamicPositionals,
+            _showOpener,
+            _showDeathBlossom,
+            _showTenChiJin,
+            _showShadwalkerTarget,
+            _showManualShadewalker,
+            _showInterruptList,
+            _showMudrasOoc,
+            _showAbilitiesFromStealth,
+            _showManualInterrupt,
+            _showThrowingDagger,
+            _showShadeShift,
+            _showSmokeScreen,
+            _showTrueNorth,
+            _showFeint;
 
-        private int _armorCrushRfsh, _shadowFangRfsh, _mutilateRfsh, _mobCount, _suitonHpInt, _suitonHpPct, _tpLimit, _mudraAdjust, _ninjutsuAdjust, _deathBlossomMobCount, _shadeShiftHpPct, _healingHpPct;
+        private int
+            _armorCrushRfsh,
+            _shadowFangRfsh,
+            _mutilateRfsh,
+            _mobCount,
+            _suitonHpInt,
+            _suitonHpPct,
+            _tpLimit,
+            _mudraAdjust,
+            _ninjutsuAdjust,
+            _deathBlossomMobCount,
+            _shadeShiftHpPct,
+            _healingHpPct;
 
         [JsonIgnore]
         public ICommand UncheckUseInterruptListCommand => new DelegateCommand(UncheckUseInterruptList);
@@ -47,297 +95,692 @@ namespace Kefka.Models
         public void Load(string path)
         {
             if (File.Exists(path))
-            {
                 LoadFrom(path);
-            }
         }
 
         public void UncheckUseInterruptList()
-        { if (UseManualInterrupt) { UseInterruptList = false; } }
+        {
+            if (UseManualInterrupt)
+                UseInterruptList = false;
+        }
 
         public void UncheckUseManualInterrupt()
-        { if (_useInterruptList) { UseManualInterrupt = false; } }
+        {
+            if (_useInterruptList)
+                UseManualInterrupt = false;
+        }
 
         public void UncheckUseShadewalkerTarget()
-        { if (_useManualShadewalker) { UseShadewalkerTarget = false; } }
+        {
+            if (_useManualShadewalker)
+                UseShadewalkerTarget = false;
+        }
 
         public void UncheckUseManualShadewalker()
-        { if (UseShadewalkerTarget) { UseManualShadewalker = false; } }
+        {
+            if (UseShadewalkerTarget)
+                UseManualShadewalker = false;
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseBuffs
-        { get { return _useBuffs; } set { _useBuffs = value; OnPropertyChanged(); } }
+        {
+            get => _useBuffs;
+            set
+            {
+                _useBuffs = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseNinjutsu
-        { get { return _useNinjutsu; } set { _useNinjutsu = value; OnPropertyChanged(); } }
+        {
+            get => _useNinjutsu;
+            set
+            {
+                _useNinjutsu = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseAoE
-        { get { return _useAoE; } set { _useAoE = value; OnPropertyChanged(); } }
+        {
+            get => _useAoE;
+            set
+            {
+                _useAoE = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseDpsPotion
-        { get { return _useDpsPotion; } set { _useDpsPotion = value; OnPropertyChanged(); } }
+        {
+            get => _useDpsPotion;
+            set
+            {
+                _useDpsPotion = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseAssassinate
-        { get { return _useAssassinate; } set { _useAssassinate = value; OnPropertyChanged(); } }
+        {
+            get => _useAssassinate;
+            set
+            {
+                _useAssassinate = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseShukuchi
-        { get { return _useShukuchi; } set { _useShukuchi = value; OnPropertyChanged(); } }
+        {
+            get => _useShukuchi;
+            set
+            {
+                _useShukuchi = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(30000)]
         public int ArmorCrushRfsh
-        { get { return _armorCrushRfsh; } set { _armorCrushRfsh = value; OnPropertyChanged(); } }
+        {
+            get => _armorCrushRfsh;
+            set
+            {
+                _armorCrushRfsh = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(7000)]
         public int ShadowFangRfsh
-        { get { return _shadowFangRfsh; } set { _shadowFangRfsh = value; OnPropertyChanged(); } }
+        {
+            get => _shadowFangRfsh;
+            set
+            {
+                _shadowFangRfsh = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(4000)]
         public int MutilateRfsh
-        { get { return _mutilateRfsh; } set { _mutilateRfsh = value; OnPropertyChanged(); } }
+        {
+            get => _mutilateRfsh;
+            set
+            {
+                _mutilateRfsh = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseDots
-        { get { return _useDots; } set { _useDots = value; OnPropertyChanged(); } }
+        {
+            get => _useDots;
+            set
+            {
+                _useDots = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseTenChiJin
-        { get { return _useTenChiJin; } set { _useTenChiJin = value; OnPropertyChanged(); } }
+        {
+            get => _useTenChiJin;
+            set
+            {
+                _useTenChiJin = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(3)]
         public int MobCount
-        { get { return _mobCount; } set { _mobCount = value; OnPropertyChanged(); } }
+        {
+            get => _mobCount;
+            set
+            {
+                _mobCount = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(0)]
         public int SuitonHpInt
-        { get { return _suitonHpInt; } set { _suitonHpInt = value; OnPropertyChanged(); } }
+        {
+            get => _suitonHpInt;
+            set
+            {
+                _suitonHpInt = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(0)]
         public int SuitonHpPct
-        { get { return _suitonHpPct; } set { _suitonHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _suitonHpPct;
+            set
+            {
+                _suitonHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(500)]
         public int TpLimit
-        { get { return _tpLimit; } set { _tpLimit = value; OnPropertyChanged(); } }
+        {
+            get => _tpLimit;
+            set
+            {
+                _tpLimit = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(50)]
         public int MudraAdjust
-        { get { return _mudraAdjust; } set { _mudraAdjust = value; OnPropertyChanged(); } }
+        {
+            get => _mudraAdjust;
+            set
+            {
+                _mudraAdjust = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseOpener
-        { get { return _useOpener; } set { _useOpener = value; OnPropertyChanged(); } }
+        {
+            get => _useOpener;
+            set
+            {
+                _useOpener = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseDeathBlossom
-        { get { return _useDeathBlossom; } set { _useDeathBlossom = value; OnPropertyChanged(); } }
+        {
+            get => _useDeathBlossom;
+            set
+            {
+                _useDeathBlossom = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(50)]
         public int NinjutsuAdjust
-        { get { return _ninjutsuAdjust; } set { _ninjutsuAdjust = value; OnPropertyChanged(); } }
+        {
+            get => _ninjutsuAdjust;
+            set
+            {
+                _ninjutsuAdjust = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseShadewalkerTarget
-        { get { return _useShadwalkerTarget; } set { _useShadwalkerTarget = value; OnPropertyChanged(); } }
+        {
+            get => _useShadwalkerTarget;
+            set
+            {
+                _useShadwalkerTarget = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseInterruptList
-        { get { return _useInterruptList; } set { _useInterruptList = value; OnPropertyChanged(); } }
+        {
+            get => _useInterruptList;
+            set
+            {
+                _useInterruptList = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseMudrasOoc
-        { get { return _useMudrasOoc; } set { _useMudrasOoc = value; OnPropertyChanged(); } }
+        {
+            get => _useMudrasOoc;
+            set
+            {
+                _useMudrasOoc = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseManualInterrupt
-        { get { return _useManualInterrupt; } set { _useManualInterrupt = value; OnPropertyChanged(); } }
+        {
+            get => _useManualInterrupt;
+            set
+            {
+                _useManualInterrupt = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseAbilitiesFromStealth
-        { get { return _useAbilitiesFromStealth; } set { _useAbilitiesFromStealth = value; OnPropertyChanged(); } }
+        {
+            get => _useAbilitiesFromStealth;
+            set
+            {
+                _useAbilitiesFromStealth = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseManualShadewalker
-        { get { return _useManualShadewalker; } set { _useManualShadewalker = value; OnPropertyChanged(); } }
+        {
+            get => _useManualShadewalker;
+            set
+            {
+                _useManualShadewalker = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseShadeShift
-        { get { return _useShadeShift; } set { _useShadeShift = value; OnPropertyChanged(); } }
+        {
+            get => _useShadeShift;
+            set
+            {
+                _useShadeShift = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(20)]
         public int ShadeShiftHpPct
-        { get { return _shadeShiftHpPct; } set { _shadeShiftHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _shadeShiftHpPct;
+            set
+            {
+                _shadeShiftHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(3)]
         public int DeathBlossomMobCount
-        { get { return _deathBlossomMobCount; } set { _deathBlossomMobCount = value; OnPropertyChanged(); } }
+        {
+            get => _deathBlossomMobCount;
+            set
+            {
+                _deathBlossomMobCount = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseThrowingDagger
-        { get { return _useThrowingDagger; } set { _useThrowingDagger = value; OnPropertyChanged(); } }
+        {
+            get => _useThrowingDagger;
+            set
+            {
+                _useThrowingDagger = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowBuffs
-        { get { return _showBuffs; } set { _showBuffs = value; OnPropertyChanged(); } }
+        {
+            get => _showBuffs;
+            set
+            {
+                _showBuffs = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowNinjutsu
-        { get { return _showNinjutsu; } set { _showNinjutsu = value; OnPropertyChanged(); } }
+        {
+            get => _showNinjutsu;
+            set
+            {
+                _showNinjutsu = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowAoE
-        { get { return _showAoE; } set { _showAoE = value; OnPropertyChanged(); } }
+        {
+            get => _showAoE;
+            set
+            {
+                _showAoE = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowDpsPotion
-        { get { return _showDpsPotion; } set { _showDpsPotion = value; OnPropertyChanged(); } }
+        {
+            get => _showDpsPotion;
+            set
+            {
+                _showDpsPotion = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowAssassinate
-        { get { return _showAssassinate; } set { _showAssassinate = value; OnPropertyChanged(); } }
+        {
+            get => _showAssassinate;
+            set
+            {
+                _showAssassinate = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowShukuchi
-        { get { return _showShukuchi; } set { _showShukuchi = value; OnPropertyChanged(); } }
+        {
+            get => _showShukuchi;
+            set
+            {
+                _showShukuchi = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowDots
-        { get { return _showDots; } set { _showDots = value; OnPropertyChanged(); } }
+        {
+            get => _showDots;
+            set
+            {
+                _showDots = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowTenChiJin
-        { get { return _showTenChiJin; } set { _showTenChiJin = value; OnPropertyChanged(); } }
+        {
+            get => _showTenChiJin;
+            set
+            {
+                _showTenChiJin = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowDynamicPositionals
-        { get { return _showDynamicPositionals; } set { _showDynamicPositionals = value; OnPropertyChanged(); } }
+        {
+            get => _showDynamicPositionals;
+            set
+            {
+                _showDynamicPositionals = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowOpener
-        { get { return _showOpener; } set { _showOpener = value; OnPropertyChanged(); } }
+        {
+            get => _showOpener;
+            set
+            {
+                _showOpener = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowDeathBlossom
-        { get { return _showDeathBlossom; } set { _showDeathBlossom = value; OnPropertyChanged(); } }
+        {
+            get => _showDeathBlossom;
+            set
+            {
+                _showDeathBlossom = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowShadewalkerTarget
-        { get { return _showShadwalkerTarget; } set { _showShadwalkerTarget = value; OnPropertyChanged(); } }
+        {
+            get => _showShadwalkerTarget;
+            set
+            {
+                _showShadwalkerTarget = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowInterruptList
-        { get { return _showInterruptList; } set { _showInterruptList = value; OnPropertyChanged(); } }
+        {
+            get => _showInterruptList;
+            set
+            {
+                _showInterruptList = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowMudrasOoc
-        { get { return _showMudrasOoc; } set { _showMudrasOoc = value; OnPropertyChanged(); } }
+        {
+            get => _showMudrasOoc;
+            set
+            {
+                _showMudrasOoc = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowManualInterrupt
-        { get { return _showManualInterrupt; } set { _showManualInterrupt = value; OnPropertyChanged(); } }
+        {
+            get => _showManualInterrupt;
+            set
+            {
+                _showManualInterrupt = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowAbilitiesFromStealth
-        { get { return _showAbilitiesFromStealth; } set { _showAbilitiesFromStealth = value; OnPropertyChanged(); } }
+        {
+            get => _showAbilitiesFromStealth;
+            set
+            {
+                _showAbilitiesFromStealth = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowManualShadewalker
-        { get { return _showManualShadewalker; } set { _showManualShadewalker = value; OnPropertyChanged(); } }
+        {
+            get => _showManualShadewalker;
+            set
+            {
+                _showManualShadewalker = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowShadeShift
-        { get { return _showShadeShift; } set { _showShadeShift = value; OnPropertyChanged(); } }
+        {
+            get => _showShadeShift;
+            set
+            {
+                _showShadeShift = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowThrowingDagger
-        { get { return _showThrowingDagger; } set { _showThrowingDagger = value; OnPropertyChanged(); } }
+        {
+            get => _showThrowingDagger;
+            set
+            {
+                _showThrowingDagger = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(false)]
         public bool UseSmokeScreen
-        { get { return _useSmokeScreen; } set { _useSmokeScreen = value; OnPropertyChanged(); } }
+        {
+            get => _useSmokeScreen;
+            set
+            {
+                _useSmokeScreen = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowSmokeScreen
-        { get { return _showSmokeScreen; } set { _showSmokeScreen = value; OnPropertyChanged(); } }
+        {
+            get => _showSmokeScreen;
+            set
+            {
+                _showSmokeScreen = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseTrueNorth
-        { get { return _useTrueNorth; } set { _useTrueNorth = value; OnPropertyChanged(); } }
+        {
+            get => _useTrueNorth;
+            set
+            {
+                _useTrueNorth = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowTrueNorth
-        { get { return _showTrueNorth; } set { _showTrueNorth = value; OnPropertyChanged(); } }
+        {
+            get => _showTrueNorth;
+            set
+            {
+                _showTrueNorth = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool UseFeint
-        { get { return _useFeint; } set { _useFeint = value; OnPropertyChanged(); } }
+        {
+            get => _useFeint;
+            set
+            {
+                _useFeint = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(true)]
         public bool ShowFeint
-        { get { return _showFeint; } set { _showFeint = value; OnPropertyChanged(); } }
+        {
+            get => _showFeint;
+            set
+            {
+                _showFeint = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         [DefaultValue(70)]
         public int HealingHpPct
-        { get { return _healingHpPct; } set { _healingHpPct = value; OnPropertyChanged(); } }
+        {
+            get => _healingHpPct;
+            set
+            {
+                _healingHpPct = value;
+                OnPropertyChanged();
+            }
+        }
 
         private volatile TCJMode _tcjMode;
 
@@ -347,15 +790,36 @@ namespace Kefka.Models
 
         [Setting]
         public TCJMode TcjSelection
-        { get { return _tcjMode; } set { _tcjMode = value; OnPropertyChanged(); } }
+        {
+            get => _tcjMode;
+            set
+            {
+                _tcjMode = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         public NinjutsuMode Ninjutsu
-        { get { return _ninjutsuMode; } set { _ninjutsuMode = value; OnPropertyChanged(); } }
+        {
+            get => _ninjutsuMode;
+            set
+            {
+                _ninjutsuMode = value;
+                OnPropertyChanged();
+            }
+        }
 
         [Setting]
         public NinjutsuAoEModeSelection NinjutsuAoEMode
-        { get { return _ninjutsuAoEModeSelection; } set { _ninjutsuAoEModeSelection = value; OnPropertyChanged(); } }
+        {
+            get => _ninjutsuAoEModeSelection;
+            set
+            {
+                _ninjutsuAoEModeSelection = value;
+                OnPropertyChanged();
+            }
+        }
 
         [JsonIgnore]
         public ICommand ChangeTenChiJinSelectionCommand => new DelegateCommand(ChangeTenChiJinSelection);

@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static FreyaPresetsSettingsModel _instance;
         public static FreyaPresetsSettingsModel Instance => _instance ?? (_instance = new FreyaPresetsSettingsModel());
 
-        private FreyaPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Freya/Freya_Preset_Settings.json")
+        private FreyaPresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Freya/Freya_Preset_Settings.json")
         {
         }
 

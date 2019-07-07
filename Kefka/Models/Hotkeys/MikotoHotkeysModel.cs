@@ -8,7 +8,6 @@ using System.Windows.Media;
 using ff14bot;
 using Kefka.Utilities;
 using Kefka.ViewModels;
-using static Kefka.Utilities.Constants;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -18,7 +17,7 @@ namespace Kefka.Models
         private static MikotoHotkeysModel _instance;
         public static MikotoHotkeysModel Instance => _instance ?? (_instance = new MikotoHotkeysModel());
 
-        private MikotoHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Mikoto_Hotkeys.json")
+        private MikotoHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Mikoto_Hotkeys.json")
         {
         }
 

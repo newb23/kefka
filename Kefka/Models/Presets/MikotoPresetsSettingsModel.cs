@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static MikotoPresetsSettingsModel _instance;
         public static MikotoPresetsSettingsModel Instance => _instance ?? (_instance = new MikotoPresetsSettingsModel());
 
-        private MikotoPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Mikoto/Mikoto_Preset_Settings.json")
+        private MikotoPresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Mikoto/Mikoto_Preset_Settings.json")
         {
         }
 

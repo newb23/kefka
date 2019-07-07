@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Buddy.Coroutines;
+using ff14bot;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using ff14bot.Objects;
@@ -11,15 +12,15 @@ using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
 using static Kefka.Utilities.Constants;
-using ff14bot;
 using Auras = Kefka.Routine_Files.General.Auras;
+using RoutineManager = ff14bot.Managers.RoutineManager;
 
 namespace Kefka.Routine_Files
 {
     public static class Ability
     {
-        internal static bool IsHealingSpell = false, IsDot = false, IsBuff = false;
-        private static DateTime facingLimiter;
+        internal static bool IsHealingSpell, IsDot, IsBuff;
+        private static DateTime _facingLimiter;
 
         internal static bool OpenerEnabled => BarretSettingsModel.Instance.UseOpener
                                              || BeatrixSettingsModel.Instance.UseOpener
@@ -42,7 +43,7 @@ namespace Kefka.Routine_Files
 
         //Used to cast a spell with nothing but a successful cast check.
         public static async Task<bool> Use(this SpellData ability, GameObject tar, bool reqs, bool HealSpell = false)
-        {            
+        {
             CurrentTarget = tar;
             CastedAura = 0;
             IsDot = false;
@@ -91,7 +92,7 @@ namespace Kefka.Routine_Files
 
         //Used to cast a healing spell.
         public static async Task<bool> CastHeal(this SpellData ability, GameObject tar, bool reqs, uint aura = 0, int refreshtime = 0)
-        {            
+        {
             CurrentTarget = Me.CurrentTarget;
             CastedAura = aura;
             IsDot = false;
@@ -254,9 +255,9 @@ namespace Kefka.Routine_Files
             if (tar == null || !ActionManager.HasSpell(ability.LocalizedName) || (Me.ClassLevel < ability.LevelAcquired && !roleSkills.Contains(ability.Id)))
                 return false;
 
-            if (BotManager.Current.IsAutonomous && !ff14bot.Managers.RoutineManager.IsAnyDisallowed(CapabilityFlags.Facing) && DateTime.Now > facingLimiter && Target != null && !Me.IsFacing(Target))
+            if (BotManager.Current.IsAutonomous && !RoutineManager.IsAnyDisallowed(CapabilityFlags.Facing) && DateTime.Now > _facingLimiter && Target != null && !Me.IsFacing(Target))
             {
-                facingLimiter = DateTime.Now.AddSeconds(1);
+                _facingLimiter = DateTime.Now.AddSeconds(1);
                 tar.Face();
             }
 

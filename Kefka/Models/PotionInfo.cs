@@ -4,32 +4,32 @@ namespace Kefka.Models
 {
     public class PotionInfo : BaseViewModel
     {
-        private string potionName;
-        private uint potionId;
+        private string _potionName;
+        private uint _potionId;
 
         public string PotionName
         {
-            get { return potionName; }
+            get => _potionName;
             set
             {
-                potionName = value;
+                _potionName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint PotionId
         {
-            get { return potionId; }
+            get => _potionId;
             set
             {
-                potionId = value;
+                _potionId = value;
                 OnPropertyChanged();
             }
         }
 
         public override string ToString()
         {
-            return $"{potionName}{potionId}";
+            return $"{_potionName}{_potionId}";
         }
     }
 }

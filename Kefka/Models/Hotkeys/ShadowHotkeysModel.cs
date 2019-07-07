@@ -1,13 +1,11 @@
-﻿using ff14bot;
-using static Kefka.Utilities.Constants;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using Kefka.Utilities;
 using Kefka.ViewModels;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
@@ -18,7 +16,7 @@ namespace Kefka.Models
         private static ShadowHotkeysModel _instance;
         public static ShadowHotkeysModel Instance => _instance ?? (_instance = new ShadowHotkeysModel());
 
-        private ShadowHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Shadow_Hotkeys.json")
+        private ShadowHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Shadow_Hotkeys.json")
         {
         }
 

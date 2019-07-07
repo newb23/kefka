@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static ShadowPresetsSettingsModel _instance;
         public static ShadowPresetsSettingsModel Instance => _instance ?? (_instance = new ShadowPresetsSettingsModel());
 
-        private ShadowPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Shadow/Shadow_Preset_Settings.json")
+        private ShadowPresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Shadow/Shadow_Preset_Settings.json")
         {
         }
 

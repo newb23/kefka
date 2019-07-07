@@ -170,7 +170,6 @@ namespace Kefka.Views
 
         private void HideWindow(object sender, RoutedEventArgs e)
         {
-            InterruptManager.ResetInterrupts();
             TankBusterManager.ResetTankBusters();
             FormManager.SaveFormInstances();
             Hide();

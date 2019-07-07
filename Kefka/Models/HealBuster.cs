@@ -4,249 +4,249 @@ namespace Kefka.Models
 {
     public class HealBuster : BaseViewModel
     {
-        private string spellName;
-        private uint spellId;
+        private string _spellName;
+        private uint _spellId;
 
         private bool
-            cureII,
-            benediction,
-            tetragrammaton,
-            divineBenison,
-            medica,
-            medicaII,
-            plenaryIndulgence,
-            asylum,
+            _cureII,
+            _benediction,
+            _tetragrammaton,
+            _divineBenison,
+            _medica,
+            _medicaII,
+            _plenaryIndulgence,
+            _asylum,
 
-            adloquium,
-            excogitation,
-            lustrate,
-            aetherpact,
-            succor,
-            sacredSoil,
-            rouse,
+            _adloquium,
+            _excogitation,
+            _lustrate,
+            _aetherpact,
+            _succor,
+            _sacredSoil,
+            _rouse,
 
-            beneficII,
-            aspectedBenefic,
-            essentialDignity,
-            aspectedHelios,
-            collectiveUnconscious;
+            _beneficII,
+            _aspectedBenefic,
+            _essentialDignity,
+            _aspectedHelios,
+            _collectiveUnconscious;
 
         public string SpellName
         {
-            get { return spellName; }
+            get => _spellName;
             set
             {
-                spellName = value;
+                _spellName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint SpellId
         {
-            get { return spellId; }
+            get => _spellId;
             set
             {
-                spellId = value;
+                _spellId = value;
                 OnPropertyChanged();
             }
         }
 
         public bool CureII
         {
-            get { return cureII; }
+            get => _cureII;
             set
             {
-                cureII = value;
+                _cureII = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Benediction
         {
-            get { return benediction; }
+            get => _benediction;
             set
             {
-                benediction = value;
+                _benediction = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Tetragrammaton
         {
-            get { return tetragrammaton; }
+            get => _tetragrammaton;
             set
             {
-                tetragrammaton = value;
+                _tetragrammaton = value;
                 OnPropertyChanged();
             }
         }
 
         public bool DivineBenison
         {
-            get { return divineBenison; }
+            get => _divineBenison;
             set
             {
-                divineBenison = value;
+                _divineBenison = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Medica
         {
-            get { return medica; }
+            get => _medica;
             set
             {
-                medica = value;
+                _medica = value;
                 OnPropertyChanged();
             }
         }
 
         public bool MedicaII
         {
-            get { return medicaII; }
+            get => _medicaII;
             set
             {
-                medicaII = value;
+                _medicaII = value;
                 OnPropertyChanged();
             }
         }
 
         public bool PlenaryIndulgence
         {
-            get { return plenaryIndulgence; }
+            get => _plenaryIndulgence;
             set
             {
-                plenaryIndulgence = value;
+                _plenaryIndulgence = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Asylum
         {
-            get { return asylum; }
+            get => _asylum;
             set
             {
-                asylum = value;
+                _asylum = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Adloquium
         {
-            get { return adloquium; }
+            get => _adloquium;
             set
             {
-                adloquium = value;
+                _adloquium = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Excogitation
         {
-            get { return excogitation; }
+            get => _excogitation;
             set
             {
-                excogitation = value;
+                _excogitation = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Aetherpact
         {
-            get { return aetherpact; }
+            get => _aetherpact;
             set
             {
-                aetherpact = value;
+                _aetherpact = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Succor
         {
-            get { return succor; }
+            get => _succor;
             set
             {
-                succor = value;
+                _succor = value;
                 OnPropertyChanged();
             }
         }
 
         public bool SacredSoil
         {
-            get { return sacredSoil; }
+            get => _sacredSoil;
             set
             {
-                sacredSoil = value;
+                _sacredSoil = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Lustrate
         {
-            get { return lustrate; }
+            get => _lustrate;
             set
             {
-                lustrate = value;
+                _lustrate = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Rouse
         {
-            get { return rouse; }
+            get => _rouse;
             set
             {
-                rouse = value;
+                _rouse = value;
                 OnPropertyChanged();
             }
         }
 
         public bool AspectedBenefic
         {
-            get { return aspectedBenefic; }
+            get => _aspectedBenefic;
             set
             {
-                aspectedBenefic = value;
+                _aspectedBenefic = value;
                 OnPropertyChanged();
             }
         }
 
         public bool EssentialDignity
         {
-            get { return essentialDignity; }
+            get => _essentialDignity;
             set
             {
-                essentialDignity = value;
+                _essentialDignity = value;
                 OnPropertyChanged();
             }
         }
 
         public bool AspectedHelios
         {
-            get { return aspectedHelios; }
+            get => _aspectedHelios;
             set
             {
-                aspectedHelios = value;
+                _aspectedHelios = value;
                 OnPropertyChanged();
             }
         }
 
         public bool CollectiveUnconscious
         {
-            get { return collectiveUnconscious; }
+            get => _collectiveUnconscious;
             set
             {
-                collectiveUnconscious = value;
+                _collectiveUnconscious = value;
                 OnPropertyChanged();
             }
         }
 
         public bool BeneficII
         {
-            get { return beneficII; }
+            get => _beneficII;
             set
             {
-                beneficII = value;
+                _beneficII = value;
                 OnPropertyChanged();
             }
         }

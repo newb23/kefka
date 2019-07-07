@@ -4,8 +4,8 @@ namespace Kefka.Models
 {
     public class TankBuster : BaseViewModel
     {
-        private string spellName;
-        private uint spellId;
+        private string _spellName;
+        private uint _spellId;
 
         private bool
             convalescence,
@@ -32,27 +32,27 @@ namespace Kefka.Models
 
         public string SpellName
         {
-            get { return spellName; }
+            get => _spellName;
             set
             {
-                spellName = value;
+                _spellName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint SpellId
         {
-            get { return spellId; }
+            get => _spellId;
             set
             {
-                spellId = value;
+                _spellId = value;
                 OnPropertyChanged();
             }
         }
 
         public bool Convalescence
         {
-            get { return convalescence; }
+            get => convalescence;
             set
             {
                 convalescence = value;
@@ -62,7 +62,7 @@ namespace Kefka.Models
 
         public bool Awareness
         {
-            get { return awareness; }
+            get => awareness;
             set
             {
                 awareness = value;
@@ -72,7 +72,7 @@ namespace Kefka.Models
 
         public bool DivineVeil
         {
-            get { return divineVeil; }
+            get => divineVeil;
             set
             {
                 divineVeil = value;
@@ -82,7 +82,7 @@ namespace Kefka.Models
 
         public bool Sheltron
         {
-            get { return sheltron; }
+            get => sheltron;
             set
             {
                 sheltron = value;
@@ -92,7 +92,7 @@ namespace Kefka.Models
 
         public bool HallowedGround
         {
-            get { return hallowedGround; }
+            get => hallowedGround;
             set
             {
                 hallowedGround = value;
@@ -102,7 +102,7 @@ namespace Kefka.Models
 
         public bool Sentinel
         {
-            get { return sentinel; }
+            get => sentinel;
             set
             {
                 sentinel = value;
@@ -112,7 +112,7 @@ namespace Kefka.Models
 
         public bool Foresight
         {
-            get { return foresight; }
+            get => foresight;
             set
             {
                 foresight = value;
@@ -122,7 +122,7 @@ namespace Kefka.Models
 
         public bool Bulwark
         {
-            get { return bulwark; }
+            get => bulwark;
             set
             {
                 bulwark = value;
@@ -132,7 +132,7 @@ namespace Kefka.Models
 
         public bool Rampart
         {
-            get { return rampart; }
+            get => rampart;
             set
             {
                 rampart = value;
@@ -142,7 +142,7 @@ namespace Kefka.Models
 
         public bool ThrillofBattle
         {
-            get { return thrillOfBattle; }
+            get => thrillOfBattle;
             set
             {
                 thrillOfBattle = value;
@@ -152,7 +152,7 @@ namespace Kefka.Models
 
         public bool Holmgang
         {
-            get { return holmgang; }
+            get => holmgang;
             set
             {
                 holmgang = value;
@@ -162,7 +162,7 @@ namespace Kefka.Models
 
         public bool Vengeance
         {
-            get { return vengeance; }
+            get => vengeance;
             set
             {
                 vengeance = value;
@@ -172,7 +172,7 @@ namespace Kefka.Models
 
         public bool Equilibrium
         {
-            get { return equilibrium; }
+            get => equilibrium;
             set
             {
                 equilibrium = value;
@@ -182,7 +182,7 @@ namespace Kefka.Models
 
         public bool RawIntuition
         {
-            get { return rawIntuition; }
+            get => rawIntuition;
             set
             {
                 rawIntuition = value;
@@ -192,7 +192,7 @@ namespace Kefka.Models
 
         public bool Anticipation
         {
-            get { return anticipation; }
+            get => anticipation;
             set
             {
                 anticipation = value;
@@ -202,7 +202,7 @@ namespace Kefka.Models
 
         public bool ShadowWall
         {
-            get { return shadowWall; }
+            get => shadowWall;
             set
             {
                 shadowWall = value;
@@ -212,7 +212,7 @@ namespace Kefka.Models
 
         public bool DarkMind
         {
-            get { return darkMind; }
+            get => darkMind;
             set
             {
                 darkMind = value;
@@ -222,7 +222,7 @@ namespace Kefka.Models
 
         public bool BlackestNight
         {
-            get { return blackestNight; }
+            get => blackestNight;
             set
             {
                 blackestNight = value;
@@ -232,7 +232,7 @@ namespace Kefka.Models
 
         public bool LivingDead
         {
-            get { return livingDead; }
+            get => livingDead;
             set
             {
                 livingDead = value;
@@ -242,7 +242,7 @@ namespace Kefka.Models
 
         public bool Reprisal
         {
-            get { return reprisal; }
+            get => reprisal;
             set
             {
                 reprisal = value;
@@ -252,7 +252,7 @@ namespace Kefka.Models
 
         public bool Palisade
         {
-            get { return palisade; }
+            get => palisade;
             set
             {
                 palisade = value;

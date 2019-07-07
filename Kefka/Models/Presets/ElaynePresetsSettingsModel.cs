@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static ElaynePresetsSettingsModel _instance;
         public static ElaynePresetsSettingsModel Instance => _instance ?? (_instance = new ElaynePresetsSettingsModel());
 
-        private ElaynePresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Elayne/Elayne_Preset_Settings.json")
+        private ElaynePresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Elayne/Elayne_Preset_Settings.json")
         {
         }
 

@@ -8,7 +8,6 @@ using System.Windows.Media;
 using ff14bot;
 using Kefka.Utilities;
 using Kefka.ViewModels;
-using static Kefka.Utilities.Constants;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -18,7 +17,7 @@ namespace Kefka.Models
         private static SuritoHotkeysModel _instance;
         public static SuritoHotkeysModel Instance => _instance ?? (_instance = new SuritoHotkeysModel());
 
-        private SuritoHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Surito_Hotkeys.json")
+        private SuritoHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Surito_Hotkeys.json")
         {
         }
 

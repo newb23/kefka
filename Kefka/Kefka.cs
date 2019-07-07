@@ -17,20 +17,13 @@ namespace Kefka
 {
     public class Kefka
     {
-        private DateTime pulseLimiter, saveFormTime;
+        private DateTime _pulseLimiter, _saveFormTime;
         private bool _inInstance => DutyManager.InInstance;
         internal static bool windowInitialized = false, IsChineseVersion;
-        //private static readonly string VersionPath = Path.Combine(Environment.CurrentDirectory, @"Routines\Kefka\version.txt");
-
-        public Kefka()
-        {
-
-        }
 
         public void OnInitialize(int version)
         {
-            //Logger.KefkaLog($"Initializing Version: {File.ReadAllText(VersionPath)}");
-            Logger.KefkaLog($"Initializing Version: GitHub 1.0.0");
+            Logger.KefkaLog($"Initializing Version: GitHub {System.Windows.Forms.Application.ProductVersion}");
 
             TreeRoot.OnStart += OnBotStart;
             TreeRoot.OnStop += OnBotStop;
@@ -42,8 +35,6 @@ namespace Kefka
 
             HookBehaviors();
 
-            var _class = RoutineManager.CurrentClass;
-            InterruptManager.ResetInterrupts();
             IgnoreTargetManager.ResetIgnoreTargets();
             TankBusterManager.ResetTankBusters();
             OpenerManager.ResetOpeners();
@@ -72,11 +63,10 @@ namespace Kefka
         {
             Monitor.OverlayUpdate();
 
-            if (DateTime.Now < pulseLimiter) return;
-            pulseLimiter = DateTime.Now.AddSeconds(1);
+            if (DateTime.Now < _pulseLimiter) return;
+            _pulseLimiter = DateTime.Now.AddSeconds(1);
 
-            var _class = RoutineManager.CurrentClass;
-            if (DateTime.Now > saveFormTime)
+            if (DateTime.Now > _saveFormTime)
             {
                 FormManager.SaveFormInstances();
 
@@ -86,7 +76,7 @@ namespace Kefka
                 if (_inInstance && Common_Utils.InActiveInstance())
                     Logger.DebugLog($"Instance Time Remaining: {Common_Utils.InstanceTimeRemaining}");
 
-                saveFormTime = DateTime.Now.AddSeconds(60);
+                _saveFormTime = DateTime.Now.AddSeconds(60);
             }
 
             try
@@ -98,7 +88,6 @@ namespace Kefka
                 Logger.KefkaLog(e.ToString());
             }
             Monitor.SpellLog();
-            AutoDuty.AutoDutyRoot();
             FormManager.Window_Check();
             TargetSelectorManager.UpdatePartyMembers();
             CombatHelper.ResetLastUsed();
@@ -108,7 +97,6 @@ namespace Kefka
         {
             if (ff14bot.Managers.RoutineManager.Current.Name != "Kefka") return;
 
-            var _class = RoutineManager.CurrentClass;
             OpenerManager.ResetOpeners();
             HotkeyManager.RegisterHotkeys();
             FormManager.ClassChange();

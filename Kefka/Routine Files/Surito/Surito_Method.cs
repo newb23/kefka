@@ -1,13 +1,12 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
+using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using System.Threading.Tasks;
-using Buddy.Coroutines;
-using ff14bot.Enums;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
+using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Auras = Kefka.Routine_Files.General.Auras;
 
@@ -218,7 +217,7 @@ namespace Kefka.Routine_Files.Surito
         {
             if (!SuritoSettingsModel.Instance.UseDeploymentTactics) return false;
 
-            var target = PartyMembers.FirstOrDefault(hm => (hm.HasAura(Auras.Adloquium, true, SuritoSettingsModel.Instance.DeploymentTacticsMinBuffTime) || hm.HasAura(Auras.EyeforanEye, true, SuritoSettingsModel.Instance.DeploymentTacticsMinBuffTime)) && 
+            var target = PartyMembers.FirstOrDefault(hm => (hm.HasAura(Auras.Adloquium, true, SuritoSettingsModel.Instance.DeploymentTacticsMinBuffTime) || hm.HasAura(Auras.EyeforanEye, true, SuritoSettingsModel.Instance.DeploymentTacticsMinBuffTime)) &&
             !hm.IsMe && hm.AlliesInRange(10) >= SuritoSettingsModel.Instance.DeploymentTacticsPlayerCount);
 
             if (SuritoSettingsModel.Instance.UseDelpoymentTacticsOnBothBuffsOnly)

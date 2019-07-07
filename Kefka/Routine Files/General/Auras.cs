@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Kefka.Routine_Files.General
+﻿namespace Kefka.Routine_Files.General
 {
     internal class Auras
     {

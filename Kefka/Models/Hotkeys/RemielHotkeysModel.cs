@@ -8,7 +8,6 @@ using System.Windows.Media;
 using ff14bot;
 using Kefka.Utilities;
 using Kefka.ViewModels;
-using static Kefka.Utilities.Constants;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -18,7 +17,7 @@ namespace Kefka.Models
         private static RemielHotkeysModel _instance;
         public static RemielHotkeysModel Instance => _instance ?? (_instance = new RemielHotkeysModel());
 
-        private RemielHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Remiel_Hotkeys.json")
+        private RemielHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Remiel_Hotkeys.json")
         {
         }
 

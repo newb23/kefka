@@ -1,13 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Buddy.Coroutines;
 using ff14bot.Managers;
 using ff14bot.Navigation;
 using Kefka.Models;
-using Kefka.Utilities;
-using System.Threading.Tasks;
 using Kefka.Routine_Files.General;
+using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
-using Auras = Kefka.Routine_Files.General.Auras;
 using static Kefka.Utilities.Constants;
 
 namespace Kefka.Routine_Files.Elayne

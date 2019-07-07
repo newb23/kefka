@@ -1,20 +1,13 @@
-﻿using Buddy.Coroutines;
-using ff14bot;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
 using Kefka.ViewModels;
-using Kefka.ViewModels.Openers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
+using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
 using Auras = Kefka.Routine_Files.General.Auras;
 
@@ -44,16 +37,14 @@ namespace Kefka.Routine_Files.Beatrix
 
         private static async Task<bool> SavageBlade()
         {
-            if (!BeatrixSettingsModel.Instance.MainTank || (CombatHelper.LastSpell != Spells.FastBlade && ActionManager.LastSpell != Spells.FastBlade)) return false;
-
-            if (await KefkaEnmityManager.EnmityDifference() >= BeatrixSettingsModel.Instance.RageofHaloneCount && Me.ClassLevel >= 54) return false;
+            if (!BeatrixSettingsModel.Instance.MainTank || CombatHelper.LastSpell != Spells.FastBlade && ActionManager.LastSpell != Spells.FastBlade) return false;
 
             return await Spells.SavageBlade.Use(Target, true);
         }
 
         private static async Task<bool> RageOfHalone()
         {
-            if (Me.ClassLevel < 26 || (CombatHelper.LastSpell != Spells.SavageBlade && ActionManager.LastSpell != Spells.SavageBlade)) return false;
+            if (Me.ClassLevel < 26 || CombatHelper.LastSpell != Spells.SavageBlade && ActionManager.LastSpell != Spells.SavageBlade) return false;
 
             return await Spells.RageofHalone.Use(Target, true);
         }
@@ -62,9 +53,7 @@ namespace Kefka.Routine_Files.Beatrix
         {
             if ((CombatHelper.LastSpell != Spells.FastBlade && ActionManager.LastSpell != Spells.FastBlade)) return false;
 
-            if (await KefkaEnmityManager.EnmityDifference() < BeatrixSettingsModel.Instance.RageofHaloneCount && BeatrixSettingsModel.Instance.MainTank) return false;
-
-            return await Spells.RiotBlade.Use(Target, (!Target.HasAura(Auras.GoringBlade, true, 6000) && Me.ClassLevel >= 54 && Target.HealthCheck(false) && Target.TimeToDeathCheck()) || (Me.ClassLevel >= 60));
+            return await Spells.RiotBlade.Use(Target, !Target.HasAura(Auras.GoringBlade, true, 6000) && Me.ClassLevel >= 54 && Target.HealthCheck(false) && Target.TimeToDeathCheck() || Me.ClassLevel >= 60);
         }
 
         private static async Task<bool> GoringBlade()
@@ -109,7 +98,7 @@ namespace Kefka.Routine_Files.Beatrix
 
         private static async Task<bool> SpiritsWithin()
         {
-            if ((Spells.FightorFlight.Cooldown.TotalMilliseconds < 20000 && BeatrixSettingsModel.Instance.UseFightorFlight) && (await KefkaEnmityManager.EnmityDifference() > BeatrixSettingsModel.Instance.RageofHaloneCount || Me.ClassLevel < 54)) return false;
+            if (Spells.FightorFlight.Cooldown.TotalMilliseconds < 20000 && BeatrixSettingsModel.Instance.UseFightorFlight) return false;
 
             return await Spells.SpiritsWithin.Use(Target, true);
         }
@@ -118,7 +107,7 @@ namespace Kefka.Routine_Files.Beatrix
         {
             if (!Target.HealthCheck(false) || !Target.TimeToDeathCheck()) return false;
 
-            if ((Spells.FightorFlight.Cooldown.TotalMilliseconds < 20000 && BeatrixSettingsModel.Instance.UseFightorFlight) && (await KefkaEnmityManager.EnmityDifference() > BeatrixSettingsModel.Instance.RageofHaloneCount || Me.ClassLevel < 54)) return false;
+            if (Spells.FightorFlight.Cooldown.TotalMilliseconds < 20000 && BeatrixSettingsModel.Instance.UseFightorFlight) return false;
 
             return await Spells.CircleofScorn.Use(Me, Target.Distance(Me) < 5);
         }
@@ -300,7 +289,7 @@ namespace Kefka.Routine_Files.Beatrix
 
         private static async Task<bool> Provoke()
         {
-            if (!BeatrixSettingsModel.Instance.MainTank || await KefkaEnmityManager.EnmityDifference() >= 0) return false;
+            if (!BeatrixSettingsModel.Instance.MainTank) return false;
 
             return await Spells.Provoke.Use(Target, true);
         }

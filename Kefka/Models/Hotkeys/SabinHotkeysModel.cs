@@ -1,15 +1,11 @@
-﻿using ff14bot;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using static Kefka.Utilities.Constants;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using Kefka.Utilities;
 using Kefka.ViewModels;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
@@ -20,7 +16,7 @@ namespace Kefka.Models
         private static SabinHotkeysModel _instance;
         public static SabinHotkeysModel Instance => _instance ?? (_instance = new SabinHotkeysModel());
 
-        private SabinHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Sabin_Hotkeys.json")
+        private SabinHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Sabin_Hotkeys.json")
         {
         }
 

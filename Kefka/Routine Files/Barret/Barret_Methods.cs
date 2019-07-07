@@ -7,22 +7,18 @@ using System.Windows.Media;
 using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Managers;
-using static Kefka.Utilities.Constants;
 using Kefka.Models;
 using Kefka.Routine_Files.General;
 using Kefka.Utilities;
-using Kefka.Utilities.Extensions;
 using Kefka.ViewModels;
+using static Kefka.Utilities.Constants;
 using static Kefka.Utilities.Extensions.GameObjectExtensions;
-using Auras = Kefka.Routine_Files.General.Auras;
 
 namespace Kefka.Routine_Files.Barret
 {
     public static partial class BarretRotation
     {
-        private static int AmmunitionLoadedStacks => ActionResourceManager.Machinist.Ammo;
-        private static bool AmmunitionLoaded => ActionResourceManager.Machinist.Ammo > 0;
-        private static bool Overheated => ActionResourceManager.Machinist.Heat == 100 && ActionResourceManager.Machinist.Timer.TotalMilliseconds > 0;
+        private static bool Overheated => ActionResourceManager.Machinist.Heat == 100;
         private static bool UseWildfire => BarretSettingsModel.Instance.UseWildfire && Target.HealthCheck(false) && Target.TimeToDeathCheck();
 
         private static bool WFMessage;
@@ -80,9 +76,7 @@ namespace Kefka.Routine_Files.Barret
         {
             if (Target == null || !Target.CanAttack) return false;
 
-            return await Spells.QuickReload.Use(Me, AmmunitionLoadedStacks < 3
-                && ActionResourceManager.Machinist.GaussBarrel
-                && (ActionResourceManager.Machinist.Heat > 60 || Me.ClassLevel < Spells.GaussBarrel.LevelAcquired)
+            return await Spells.QuickReload.Use(Me, (ActionResourceManager.Machinist.Heat > 60 || Me.ClassLevel < Spells.GaussBarrel.LevelAcquired)
                 && Me.HasAura(Auras.HotShot, true, BarretSettingsModel.Instance.HotShotRfsh)
                 && Target.HealthCheck(false)
                 && Target.TimeToDeathCheck());
@@ -93,7 +87,6 @@ namespace Kefka.Routine_Files.Barret
             return await Spells.Reload.Use(Me, BarretSettingsModel.Instance.UseCooldowns
                 && (Spells.Wildfire.Cooldown.TotalMilliseconds >= BarretSettingsModel.Instance.WfBuffDelay || Me.ClassLevel < 37)
                 && CombatHelper.LastSpell != Spells.QuickReload
-                && !AmmunitionLoaded
                 && (Me.HasAura(Auras.HotShot, true, 18000) || Me.ClassLevel < 30)
                 && Target.HealthCheck(false)
                 && Target.TimeToDeathCheck());
@@ -124,7 +117,7 @@ namespace Kefka.Routine_Files.Barret
 
         private static async Task<bool> ReassembleUnderLevel35()
         {
-            return await Spells.Reassemble.Use(Me, Me.ClassLevel < 35 && Me.HasAura(Auras.EnhancedSlugShot) && AmmunitionLoaded);
+            return await Spells.Reassemble.Use(Me, Me.ClassLevel < 35 && Me.HasAura(Auras.EnhancedSlugShot));
         }
 
         private static async Task<bool> Blank()
@@ -176,10 +169,10 @@ namespace Kefka.Routine_Files.Barret
                 return await Spells.CleanShot.Use(Target, true);
             }
 
-            if (AmmunitionLoaded && !Me.HasAura(Auras.EnhancedSlugShot))
+            if (!Me.HasAura(Auras.EnhancedSlugShot))
                 return await Spells.SplitShot.Use(Target, true);
 
-            if (Me.HasAura(Auras.EnhancedSlugShot) || !AmmunitionLoaded)
+            if (Me.HasAura(Auras.EnhancedSlugShot))
                 return await Spells.CleanShot.Use(Target, true);
 
             return await Spells.CleanShot.Use(Target, Spells.Wildfire.Cooldown.TotalMilliseconds >= BarretSettingsModel.Instance.WfProcDelay || !BarretSettingsModel.Instance.UseCooldowns);
@@ -187,7 +180,7 @@ namespace Kefka.Routine_Files.Barret
 
         private static async Task<bool> GaussBarrel()
         {
-            return await Spells.GaussBarrel.Use(Me, (BarretSettingsModel.Instance.UseGaussBarrel && !ActionResourceManager.Machinist.GaussBarrel) || (!BarretSettingsModel.Instance.UseGaussBarrel && ActionResourceManager.Machinist.GaussBarrel));
+            return await Spells.GaussBarrel.Use(Me, (BarretSettingsModel.Instance.UseGaussBarrel) || (!BarretSettingsModel.Instance.UseGaussBarrel));
         }
 
         private static async Task<bool> GaussRound()
@@ -197,12 +190,12 @@ namespace Kefka.Routine_Files.Barret
 
         private static async Task<bool> Cooldown()
         {
-            if (Overheated && !Core.Player.HasAura(Auras.EnhancedSlugShot) && !Core.Player.HasAura(Auras.CleanerShot) && ActionResourceManager.Machinist.Ammo < 2)
+            if (Overheated && !Core.Player.HasAura(Auras.EnhancedSlugShot) && !Core.Player.HasAura(Auras.CleanerShot))
             {
                 return await Spells.Cooldown.Use(Target, true);
             }
 
-            if (!Overheated && ActionResourceManager.Machinist.Heat >= BarretSettingsModel.Instance.CooldownThreshold && 
+            if (!Overheated && ActionResourceManager.Machinist.Heat >= BarretSettingsModel.Instance.CooldownThreshold &&
                 (!ActionManager.CanCast(Spells.BarrelStabilizer, Core.Player) || !UseWildfire || Spells.Wildfire.Cooldown.TotalMilliseconds > 3000))
             {
                 return await Spells.Cooldown.Use(Target, true);
@@ -213,7 +206,7 @@ namespace Kefka.Routine_Files.Barret
 
         private static async Task<bool> BarrelStabilizer()
         {
-            return await Spells.BarrelStabilizer.Use(Me, (ActionResourceManager.Machinist.GaussBarrel || ActionManager.LastSpell == Spells.GaussBarrel || CombatHelper.LastSpell == Spells.GaussBarrel) && ActionResourceManager.Machinist.Heat < 20);
+            return await Spells.BarrelStabilizer.Use(Me, (ActionManager.LastSpell == Spells.GaussBarrel || CombatHelper.LastSpell == Spells.GaussBarrel) && ActionResourceManager.Machinist.Heat < 20);
         }
 
         private static async Task<bool> Hypercharge()
@@ -229,7 +222,6 @@ namespace Kefka.Routine_Files.Barret
         {
             return await Spells.Ricochet.Use(Target, Overheated
                 && BarretSettingsModel.Instance.UseCooldowns
-                && AmmunitionLoaded
                 && Target.HealthCheck(false)
                 && Target.TimeToDeathCheck());
         }
@@ -273,7 +265,7 @@ namespace Kefka.Routine_Files.Barret
 
                 if (await Spells.Flamethrower.Use(Me, Spells.BarrelStabilizer.Cooldown.TotalMilliseconds < 20000))
                 {
-                    await Coroutine.Wait(3000, () => Core.Player.HasAura(Auras.Flamethrower) && (ActionResourceManager.Machinist.Heat == 100 || ActionResourceManager.Machinist.Timer.TotalMilliseconds > 0));
+                    await Coroutine.Wait(3000, () => Core.Player.HasAura(Auras.Flamethrower) && ActionResourceManager.Machinist.Heat == 100);
                     WFMessage = true;
                     return true;
                 }
@@ -340,7 +332,7 @@ namespace Kefka.Routine_Files.Barret
             if (await Spells.Flamethrower.Use(Me, BarretSettingsModel.Instance.UseFlamethrower && ActionResourceManager.Machinist.Heat < 100))
             {
                 await Coroutine.Wait(2500, () => Me.HasAura(Auras.Flamethrower));
-                while (ActionResourceManager.Machinist.Timer == TimeSpan.Zero && Me.HasAura(Auras.Flamethrower))
+                while (Me.HasAura(Auras.Flamethrower))
                 {
                     await Coroutine.Yield();
                 }

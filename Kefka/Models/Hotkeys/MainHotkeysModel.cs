@@ -1,13 +1,11 @@
-﻿using ff14bot;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
-using static Kefka.Utilities.Constants;
+using Kefka.Utilities;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -17,7 +15,7 @@ namespace Kefka.Models
         private static MainHotkeysModel _instance;
         public static MainHotkeysModel Instance => _instance ?? (_instance = new MainHotkeysModel());
 
-        private MainHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Main_Hotkeys.json")
+        private MainHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Main_Hotkeys.json")
         {
         }
 

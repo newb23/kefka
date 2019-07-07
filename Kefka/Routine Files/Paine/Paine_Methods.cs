@@ -45,7 +45,7 @@ namespace Kefka.Routine_Files.Paine
 
         private static async Task<bool> SkullSunder()
         {
-            if (!PaineSettingsModel.Instance.MainTank || await KefkaEnmityManager.EnmityDifference() >= PaineSettingsModel.Instance.ButchersBlockCount) return false;
+            if (!PaineSettingsModel.Instance.MainTank) return false;
 
             if (CombatHelper.LastSpell != Spells.HeavySwing && ActionManager.LastSpell != Spells.HeavySwing) return false;
 
@@ -66,7 +66,7 @@ namespace Kefka.Routine_Files.Paine
             if (Me.ClassLevel < 38 && !Target.HasAura(Auras.Maim, true, 4500))
                 return await Spells.Maim.CastDot(Target, true, Auras.Maim);
             if (Me.ClassLevel >= 38)
-                return await Spells.Maim.CastDot(Target, (await KefkaEnmityManager.EnmityDifference() >= PaineSettingsModel.Instance.ButchersBlockCount && PaineSettingsModel.Instance.MainTank) || ((!Me.HasAura(Auras.StormsEye, true, PaineSettingsModel.Instance.StormsEyeRefresh) || (Me.HasAura(Auras.Berserk) && !Me.HasAura(Auras.StormsEye, true, PaineSettingsModel.Instance.StormsEyeRefreshBerserk))) && Me.ClassLevel >= 50), Auras.Maim);
+                return await Spells.Maim.CastDot(Target, (PaineSettingsModel.Instance.MainTank) || ((!Me.HasAura(Auras.StormsEye, true, PaineSettingsModel.Instance.StormsEyeRefresh) || (Me.HasAura(Auras.Berserk) && !Me.HasAura(Auras.StormsEye, true, PaineSettingsModel.Instance.StormsEyeRefreshBerserk))) && Me.ClassLevel >= 50), Auras.Maim);
 
             return false;
         }
@@ -234,7 +234,7 @@ namespace Kefka.Routine_Files.Paine
 
             if (Target.Distance(Me) > 20) return false;
 
-            if (!Me.InCombat || (PaineSettingsModel.Instance.MainTank && await KefkaEnmityManager.EnmityDifference() < PaineSettingsModel.Instance.ButchersBlockCount) || (Target.Distance(Me) - Target.CombatReach < 3 && Me.HasAura(Auras.InnerRelease)))
+            if (!Me.InCombat || PaineSettingsModel.Instance.MainTank  || (Target.Distance(Me) - Target.CombatReach < 3 && Me.HasAura(Auras.InnerRelease)))
                 return await Spells.Onslaught.Use(Target, !((Character)Target).IsCasting);
 
             return await Spells.Onslaught.Use(Target, ActionResourceManager.Warrior.BeastGauge >= 90 && Spells.Berserk.Cooldown.TotalMilliseconds >= 8000 && !((Character)Target).IsCasting);
@@ -246,7 +246,7 @@ namespace Kefka.Routine_Files.Paine
 
             if (ActionResourceManager.Warrior.BeastGauge < 20 && !Me.HasAura(Auras.InnerRelease)) return false;
 
-            if (PaineSettingsModel.Instance.MainTank && await KefkaEnmityManager.EnmityDifference() < PaineSettingsModel.Instance.ButchersBlockCount)
+            if (PaineSettingsModel.Instance.MainTank)
                 return await Spells.Upheaval.Use(Target, true);
 
             if (Me.ClassLevel < 70 && (Spells.Berserk.Cooldown.TotalMilliseconds <= 25000 || Spells.InnerRelease.Cooldown.TotalMilliseconds <= 25000) && PaineSettingsModel.Instance.UseBuffs) return false;

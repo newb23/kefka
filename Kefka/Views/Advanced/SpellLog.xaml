@@ -47,7 +47,6 @@
                 </DataGrid>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Width="75" Height="25" Content="Interrupt" Command="{Binding Instance.TransferSpellToInterruptsCommand}" CommandParameter="{Binding ElementName=SpellLogGrid, Path=SelectedValue}" />
                 <Button Width="75" Height="25" Content="Tankbuster" Margin="2,0,0,0" Command="{Binding Instance.TransferSpellToTankbustersCommand}" CommandParameter="{Binding ElementName=SpellLogGrid, Path=SelectedValue}" />
             </StackPanel>
         </Grid>

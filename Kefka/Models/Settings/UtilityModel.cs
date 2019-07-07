@@ -24,7 +24,7 @@ namespace Kefka.Models.Settings
 
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 _name = value;
@@ -34,7 +34,7 @@ namespace Kefka.Models.Settings
 
         public uint Id
         {
-            get { return _id; }
+            get => _id;
             set
             {
                 _id = value;
@@ -44,7 +44,7 @@ namespace Kefka.Models.Settings
 
         public bool Stun
         {
-            get { return _stun; }
+            get => _stun;
             set
             {
                 _stun = value;
@@ -54,7 +54,7 @@ namespace Kefka.Models.Settings
 
         public bool Silence
         {
-            get { return _silence; }
+            get => _silence;
             set
             {
                 _silence = value;

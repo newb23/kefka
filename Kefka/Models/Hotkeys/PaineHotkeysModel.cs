@@ -1,14 +1,12 @@
-﻿using ff14bot;
-using Kefka.Utilities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using Kefka.Utilities;
 using Kefka.ViewModels;
-using static Kefka.Utilities.Constants;
 using HotkeyManager = ff14bot.Managers.HotkeyManager;
 
 namespace Kefka.Models
@@ -18,7 +16,7 @@ namespace Kefka.Models
         private static PaineHotkeysModel _instance;
         public static PaineHotkeysModel Instance => _instance ?? (_instance = new PaineHotkeysModel());
 
-        private PaineHotkeysModel() : base(@"Settings/" + Me.Name + "/Kefka/Hotkeys/Paine_Hotkeys.json")
+        private PaineHotkeysModel() : base(CharacterSettingsDirectory + "/Kefka/Hotkeys/Paine_Hotkeys.json")
         {
         }
 
@@ -26,7 +24,7 @@ namespace Kefka.Models
             _tankSwap, _awareness, _potion, _buffs, _tomahawk, _defensives, _autoInterrupt, _convalescence, _thrillofBattle, _vengeance, _opener, _berserk, _onslaught, _innerBeast, _equilibrium, _holmgang, _busterDefense, _provoke, _deliverance, _overpowerSpam, _mainTank, _damageOverride, _rampart, _anticipation, _reprisal;
 
         private volatile ModifierKeys _preset1Modifier, _preset2Modifier, _preset3Modifier, _preset4Modifier, _preset5Modifier,
-            _tankSwapModifier, _awarenessModifier, _potionModifier, _buffsModifier, _tomahawkModifier, _defensivesModifier, _autoInterruptModifier, _convalescenceModifier, _thrillofBattleModifier, _vengeanceModifier, _openerModifier, _berserkModifier, _onslaughtModifier, _innerBeastModifier, _equilibriumModifier, _holmgangModifier, 
+            _tankSwapModifier, _awarenessModifier, _potionModifier, _buffsModifier, _tomahawkModifier, _defensivesModifier, _autoInterruptModifier, _convalescenceModifier, _thrillofBattleModifier, _vengeanceModifier, _openerModifier, _berserkModifier, _onslaughtModifier, _innerBeastModifier, _equilibriumModifier, _holmgangModifier,
             _busterDefenseModifier, _provokeModifier, _deliveranceModifier, _overpowerSpamModifier, _mainTankModifier, _damageOverrideModifier, _rampartModifier, _anticipationModifier, _reprisalModifier;
 
         public PainePresetsSettingsModel PresetNames => PainePresetsSettingsModel.Instance;

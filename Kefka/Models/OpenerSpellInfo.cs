@@ -6,9 +6,9 @@ namespace Kefka.Models
     {
         #region Fields
 
-        private string spellName;
-        private uint spellId;
-        private bool isPet, isItem;
+        private string _spellName;
+        private uint _spellId;
+        private bool _isPet, _isItem;
 
         #endregion Fields
 
@@ -16,40 +16,40 @@ namespace Kefka.Models
 
         public string SpellName
         {
-            get { return spellName; }
+            get => _spellName;
             set
             {
-                spellName = value;
+                _spellName = value;
                 OnPropertyChanged();
             }
         }
 
         public uint SpellId
         {
-            get { return spellId; }
+            get => _spellId;
             set
             {
-                spellId = value;
+                _spellId = value;
                 OnPropertyChanged();
             }
         }
 
         public bool IsPet
         {
-            get { return isPet; }
+            get => _isPet;
             set
             {
-                isPet = value;
+                _isPet = value;
                 OnPropertyChanged();
             }
         }
 
         public bool IsItem
         {
-            get { return isItem; }
+            get => _isItem;
             set
             {
-                isItem = value;
+                _isItem = value;
                 OnPropertyChanged();
             }
         }

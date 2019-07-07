@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Configuration;
 using Newtonsoft.Json;
-using static Kefka.Utilities.Constants;
 
 namespace Kefka.Models
 {
@@ -10,7 +9,7 @@ namespace Kefka.Models
         private static EdwardPresetsSettingsModel _instance;
         public static EdwardPresetsSettingsModel Instance => _instance ?? (_instance = new EdwardPresetsSettingsModel());
 
-        private EdwardPresetsSettingsModel() : base(@"Settings/" + Me.Name + "/Kefka/Routine Settings/Edward/Edward_Preset_Settings.json")
+        private EdwardPresetsSettingsModel() : base(CharacterSettingsDirectory + "/Kefka/Routine Settings/Edward/Edward_Preset_Settings.json")
         {
         }
 

@@ -6,11 +6,12 @@ using System.Windows;
 using System.Windows.Media;
 using Buddy.Coroutines;
 using ff14bot;
+using ff14bot.Directors;
 using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using GreyMagic;
 using Kefka.Models;
+using Kefka.Routine_Files.Freya;
 using Kefka.Utilities;
 using Kefka.Utilities.Extensions;
 using Kefka.ViewModels;
@@ -131,34 +132,27 @@ namespace Kefka.Routine_Files.General
         }
 
         internal static TimeSpan InstanceTimeRemaining;
+        private static InstanceContentDirector _instanceContentDirector;
 
         internal static bool InActiveInstance()
         {
-            //TODO: Fix the Pattern
+            if (!DutyManager.InInstance)
+                return false;
 
+            if (DirectorManager.ActiveDirector == null || DirectorManager.ActiveDirector.GetType() != typeof(InstanceContentDirector))
+                return false;
 
-            if (!DutyManager.InInstance || !PartyManager.IsInParty || Kefka.IsChineseVersion) return true;
-
-            return true;
-
+            if(_instanceContentDirector == null || !_instanceContentDirector.IsValid)
+                _instanceContentDirector = DirectorManager.ActiveDirector as InstanceContentDirector;
 
             TimeSpan instanceTimeRemainingVar;
             try
             {
-                if (Kefka.IsChineseVersion)
-                    return true;
-                //instanceTimeRemainingVar = TimeSpan.FromSeconds(Core.Memory.Read<float>(Core.Memory.Read<IntPtr>(Core.Memory.ImageBase + 0x17B3840) + 0x4E0));
-                else
-                {
-                    var instanceTimeRemainingIntPtr = Core.Memory.Read<IntPtr>(Memory._instanceTimeRemainingPattern) + 0x540;
-                    instanceTimeRemainingVar = TimeSpan.FromSeconds(Core.Memory.Read<float>(instanceTimeRemainingIntPtr));
-                }
+                instanceTimeRemainingVar = _instanceContentDirector.TimeLeftInDungeon;
             }
             catch (Exception)
             {
                 instanceTimeRemainingVar = TimeSpan.Zero;
-                InstanceTimeRemaining = instanceTimeRemainingVar;
-                Logger.DebugLog("There is something wrong with the dungeon time remaining. Please let Omni know!");
             }
             InstanceTimeRemaining = instanceTimeRemainingVar;
             return instanceTimeRemainingVar > TimeSpan.FromSeconds(5);
@@ -434,7 +428,7 @@ namespace Kefka.Routine_Files.General
                         case "Freya":
                             if (openerSpell == Spells.DragonSight)
                             {
-                                if (await Freya.FreyaRotation.DragonSightOpener())
+                                if (await FreyaRotation.DragonSightOpener())
                                 {
                                     openerQueue.Dequeue();
                                     continue;
